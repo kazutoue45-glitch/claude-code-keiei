@@ -6,6 +6,8 @@ node_modules/
 .smtcmp_vector_db.tar.gz
 *.log
 dist/
+.env
+__pycache__/
 
 # 各LPプロジェクト（個別gitリポで管理）
 projects/app/
