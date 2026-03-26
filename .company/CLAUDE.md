@@ -31,7 +31,11 @@
 │       ├── lp/
 │       ├── web-app/
 │       └── ai-agent/
-└── cto/                       # CTO（技術基盤・自動化）
+├── cto/                       # CTO（技術基盤・自動化）
+│   └── CLAUDE.md
+├── 財務/                       # CFO（請求書・売上管理・経費・契約）
+│   └── CLAUDE.md
+└── 営業/                       # CSO（顧客対応・商談・営業戦略）
     └── CLAUDE.md
 ```
 
@@ -43,6 +47,8 @@
 | CMO | cmo | マーケティング・X発信・コンテンツ戦略 | human-like-writing, x-post-creator, x-article-creator, content-creator |
 | CPO | cpo | プロダクト制作（Notion構築・LP・Webアプリ・AIエージェント） | frontend-design, content-design, notion-crud |
 | CTO | cto | 技術基盤・自動化スクリプト・MCP管理 | notion-crud |
+| 財務（CFO） | 財務 | 請求書・売上管理・経費精算・契約書 | notion-crud |
+| 営業（CSO） | 営業 | 顧客対応・商談管理・営業戦略・提案書 | notion-crud, human-like-writing, content-creator |
 | ナビゲーション | context | Notionデータの所在マップ・スキルレジストリ | — |
 
 
@@ -60,6 +66,8 @@
 | Xポスト・記事・発信・コンテンツ | CMO |
 | LP・Notion構築・Webアプリ・AIエージェント | CPO |
 | スクリプト・MCP・技術基盤・自動化 | CTO |
+| 請求書・見積書・売上・経費・契約書 | 財務（CFO） |
+| 商談・顧客対応・提案書・営業資料 | 営業（CSO） |
 
 ### スキルの参照方法
 - 各部署のCLAUDE.mdに「参照スキル」を明記

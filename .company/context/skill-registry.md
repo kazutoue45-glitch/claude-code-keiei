@@ -6,13 +6,13 @@
 
 | スキル | パス | 概要 | 主な利用部署 |
 |---|---|---|---|
-| human-like-writing | `.agents/skills/human-like-writing/SKILL.md` | AIっぽさを消す前提ルール | CMO, CPO（全文章生成の土台） |
+| human-like-writing | `.agents/skills/human-like-writing/SKILL.md` | AIっぽさを消す前提ルール | CMO, CPO, 営業（全文章生成の土台） |
 | x-post-creator | `.agents/skills/x-post-creator/SKILL.md` | Xポスト作成の統合ルール | CMO |
 | x-article-creator | `.agents/skills/x-article-creator/SKILL.md` | 長文記事作成 | CMO |
-| content-creator | `.agents/skills/content-creator/SKILL.md` | コンテンツ作成フレームワーク | CMO |
+| content-creator | `.agents/skills/content-creator/SKILL.md` | コンテンツ作成フレームワーク | CMO, 営業 |
 | content-design | `.agents/skills/content-design/SKILL.md` | LP・UIコピー設計 | CPO |
 | frontend-design | `.agents/skills/frontend-design/SKILL.md` | フロントエンドデザイン | CPO |
-| notion-crud | `.agents/skills/notion-crud/SKILL.md` | Notion DB操作 | CPO, CTO |
+| notion-crud | `.agents/skills/notion-crud/SKILL.md` | Notion DB操作 | CPO, CTO, 財務, 営業 |
 
 ## スキルの階層構造
 
