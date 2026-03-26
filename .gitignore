@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+.venv/
+.obsidian/
+.smtcmp_json_db/
+.smtcmp_vector_db.tar.gz
+*.log
+dist/
+
+# 各LPプロジェクト（個別gitリポで管理）
+projects/app/
+projects/lp/brand-butsuryu/
+projects/lp/karma/
+projects/lp/notion-bizbase/
+projects/lp/tankyu-presen-battle/

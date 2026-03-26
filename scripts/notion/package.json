@@ -1,0 +1,9 @@
+{
+  "name": "notion-script",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@notionhq/client": "^2.2.14",
+    "dotenv": "^17.3.1"
+  }
+}
