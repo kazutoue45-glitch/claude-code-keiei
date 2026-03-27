@@ -2,10 +2,828 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=.company/プロダクト責任者/成果物/撮影代行ご利用手順.html">
-<title>リダイレクト中...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撮影代行のご利用手順｜サムライ外注</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #faf8f5;
+    --color-surface: #ffffff;
+    --color-primary: #c8856a;
+    --color-primary-light: #f2e0d6;
+    --color-primary-dark: #a06248;
+    --color-accent: #6a9ec8;
+    --color-accent-light: #e0edf6;
+    --color-text: #3d3532;
+    --color-text-light: #7a706a;
+    --color-border: #e8e0da;
+    --color-caution: #d4875e;
+    --color-caution-bg: #fef3ec;
+    --color-success: #6aaa7a;
+    --color-success-bg: #eef7f0;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow-soft: 0 2px 20px rgba(61, 53, 50, 0.06);
+    --shadow-card: 0 4px 24px rgba(61, 53, 50, 0.08);
+    --max-width: 720px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.9;
+    font-size: 15.5px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Hero ─── */
+  .hero {
+    background: linear-gradient(135deg, #f7ebe4 0%, #faf3ee 40%, #e8eff6 100%);
+    padding: 60px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(200, 133, 106, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--color-surface);
+    color: var(--color-primary-dark);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-soft);
+  }
+  .hero h1 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(24px, 5vw, 32px);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .hero p {
+    color: var(--color-text-light);
+    font-size: 14.5px;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ─── Container ─── */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ─── Notice Box ─── */
+  .notice-box {
+    background: var(--color-surface);
+    border: 2px solid var(--color-primary-light);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    margin: -24px auto 40px;
+    max-width: var(--max-width);
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--shadow-card);
+  }
+  .notice-box h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .notice-box p {
+    font-size: 14.5px;
+    color: var(--color-text-light);
+    margin-bottom: 0;
+  }
+
+  /* ─── Quick Checklist ─── */
+  .quick-check {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow-soft);
+  }
+  .quick-check h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .checklist li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--color-bg);
+    padding: 16px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 14.5px;
+    transition: transform 0.2s;
+  }
+  .checklist li:hover { transform: translateX(4px); }
+  .check-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .quick-check .note {
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--color-text-light);
+  }
+
+  /* ─── Section / Step ─── */
+  .section {
+    margin-bottom: 48px;
+  }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #fff;
+    border-radius: 14px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .step-header h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-soft);
+  }
+  .card p {
+    margin-bottom: 14px;
+    font-size: 14.5px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  .card h3 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 24px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid var(--color-primary);
+  }
+  .card h3:first-child { margin-top: 0; }
+
+  /* ─── Inline lists ─── */
+  .point-list {
+    list-style: none;
+    margin: 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .point-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .point-list li::before {
+    content: '●';
+    color: var(--color-primary);
+    font-size: 8px;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .num-list {
+    list-style: none;
+    counter-reset: numlist;
+    margin: 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .num-list li {
+    counter-increment: numlist;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .num-list li::before {
+    content: counter(numlist);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ─── Highlight boxes ─── */
+  .highlight-box {
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .highlight-box.caution {
+    background: var(--color-caution-bg);
+    border-left: 4px solid var(--color-caution);
+  }
+  .highlight-box.info {
+    background: var(--color-accent-light);
+    border-left: 4px solid var(--color-accent);
+  }
+  .highlight-box.success {
+    background: var(--color-success-bg);
+    border-left: 4px solid var(--color-success);
+  }
+  .highlight-box .box-title {
+    font-weight: 700;
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .highlight-box.caution .box-title { color: var(--color-caution); }
+  .highlight-box.info .box-title { color: var(--color-accent); }
+
+  .bold { font-weight: 600; }
+  .accent-text { color: var(--color-primary-dark); font-weight: 600; }
+
+  /* ─── Divider ─── */
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--color-border);
+    margin: 48px 0;
+  }
+
+  /* ─── Sub-sections (non-step) ─── */
+  .sub-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .sub-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    border-radius: 12px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .sub-header h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  /* ─── Image ─── */
+  .img-wrapper {
+    margin: 18px 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+  .img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .img-caption {
+    background: var(--color-bg);
+    padding: 10px 16px;
+    font-size: 12.5px;
+    color: var(--color-text-light);
+    text-align: center;
+  }
+
+  /* ─── Footer ─── */
+  footer {
+    text-align: center;
+    padding: 40px 24px 48px;
+    color: var(--color-text-light);
+    font-size: 13px;
+  }
+  footer .closing {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+
+  /* ─── Navigation dots ─── */
+  .progress-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+  }
+  .progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .progress-dot.active {
+    background: var(--color-primary);
+    transform: scale(1.3);
+  }
+  .progress-dot .tooltip {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-text);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .progress-dot:hover .tooltip { opacity: 1; }
+
+  /* ─── TOC (Table of Contents) ─── */
+  .toc {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow-soft);
+  }
+  .toc h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+  .toc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .toc-list a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 13.5px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .toc-list a:hover {
+    background: var(--color-bg);
+    color: var(--color-primary-dark);
+    transform: translateX(4px);
+  }
+  .toc-tag {
+    display: inline-block;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .toc-tag.sub {
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 768px) {
+    .hero { padding: 48px 20px 40px; }
+    .notice-box { margin: -16px 16px 32px; padding: 24px 20px; }
+    .card { padding: 22px 18px; }
+    .progress-nav { display: none; }
+    .container { padding: 0 16px; }
+  }
+
+  /* ─── Animations ─── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 </head>
 <body>
-<p><a href=".company/プロダクト責任者/成果物/撮影代行ご利用手順.html">こちらをクリックしてください</a></p>
+
+<!-- Navigation dots -->
+<nav class="progress-nav" aria-label="ページナビゲーション">
+  <button class="progress-dot active" onclick="scrollTo('#top')"><span class="tooltip">トップ</span></button>
+  <button class="progress-dot" onclick="scrollTo('#step1')"><span class="tooltip">STEP 1</span></button>
+  <button class="progress-dot" onclick="scrollTo('#step2')"><span class="tooltip">STEP 2</span></button>
+  <button class="progress-dot" onclick="scrollTo('#step3')"><span class="tooltip">STEP 3</span></button>
+  <button class="progress-dot" onclick="scrollTo('#after-sale')"><span class="tooltip">売れた後</span></button>
+  <button class="progress-dot" onclick="scrollTo('#schedule')"><span class="tooltip">スケジュール</span></button>
+  <button class="progress-dot" onclick="scrollTo('#packing')"><span class="tooltip">梱包</span></button>
+  <button class="progress-dot" onclick="scrollTo('#inspection')"><span class="tooltip">検品</span></button>
+  <button class="progress-dot" onclick="scrollTo('#photo')"><span class="tooltip">撮影</span></button>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="hero-badge">ご利用マニュアル</div>
+  <h1>撮影代行のご利用手順</h1>
+  <p>スムーズなお取引とトラブル防止のため、<br>商品をお送りいただく前に、こちらの内容をご確認ください。</p>
+</header>
+
+<!-- Notice -->
+<div class="container">
+  <div class="notice-box fade-up">
+    <h2>📋 発送前に必ずご確認ください</h2>
+    <p>商品発送前に、以下の内容をご確認お願いいたします。<br>
+    受け取り・管理・撮影・発送をスムーズに進めるため、ご協力をお願いいたします。</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Quick Checklist -->
+  <div class="quick-check fade-up">
+    <h2>まずはこの3つをご対応ください</h2>
+    <ul class="checklist">
+      <li><span class="check-num">1</span>商品一覧アルバムの共有</li>
+      <li><span class="check-num">2</span>管理番号が見える状態での共有</li>
+      <li><span class="check-num">3</span>ねじる式の管理番号シールの貼り付け</li>
+    </ul>
+    <p class="note">この3点をご対応いただければ、スムーズに進行できます。</p>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc fade-up">
+    <h2>もくじ</h2>
+    <ul class="toc-list">
+      <li><a href="#step1"><span class="toc-tag">STEP 1</span>商品一覧アルバムをご共有ください</a></li>
+      <li><a href="#step2"><span class="toc-tag">STEP 2</span>管理番号が見える状態でご準備ください</a></li>
+      <li><a href="#step3"><span class="toc-tag">STEP 3</span>管理番号シールを貼り付けてください</a></li>
+      <li><a href="#after-sale"><span class="toc-tag sub">ご案内</span>商品が売れた後に送っていただきたいもの</a></li>
+      <li><a href="#schedule"><span class="toc-tag sub">ご案内</span>発送スケジュール・納品について</a></li>
+      <li><a href="#packing"><span class="toc-tag sub">お願い</span>梱包について</a></li>
+      <li><a href="#inspection"><span class="toc-tag sub">お願い</span>検品について</a></li>
+      <li><a href="#photo"><span class="toc-tag sub">お願い</span>撮影について</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════ STEP 1 ═══════════ -->
+  <div class="section fade-up" id="step1">
+    <div class="step-header">
+      <div class="step-number">STEP<br>1</div>
+      <h2>発送前に商品一覧アルバムを<br>ご共有ください</h2>
+    </div>
+    <div class="card">
+      <p>発送前に、<span class="bold">商品一覧がわかるアルバム</span>の共有をお願いいたします。</p>
+      <p>その際、以下の2点が必ずわかるようにしてください。</p>
+      <ul class="point-list">
+        <li><span class="bold">発送する個数</span></li>
+        <li><span class="bold">発送日</span></li>
+      </ul>
+
+      <div class="img-wrapper">
+        <img src="https://assets.st-note.com/img/1752023971-nGYNyMp1at9WRIsOl4Hhx25j.jpg" alt="LINEアルバム共有の例" loading="lazy">
+        <div class="img-caption">LINEのアルバム機能で共有いただいた例（個数・日付がわかる形）</div>
+      </div>
+
+      <div class="highlight-box info">
+        <div class="box-title">💡 なぜ必要？</div>
+        この2点が事前に確認できることで、受け取り後の確認や管理がスムーズになります。
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ STEP 2 ═══════════ -->
+  <div class="section fade-up" id="step2">
+    <div class="step-header">
+      <div class="step-number">STEP<br>2</div>
+      <h2>管理番号が見える状態で<br>ご準備ください</h2>
+    </div>
+    <div class="card">
+      <p>商品ごとに、<span class="bold">管理番号がしっかり見える状態</span>でご共有をお願いいたします。</p>
+      <ul class="point-list">
+        <li>1枚で管理番号まで見える場合 → <span class="bold">1枚で問題ありません</span></li>
+        <li>1枚で見えにくい場合 → <span class="bold">2枚に分けていただいて問題ありません</span></li>
+      </ul>
+
+      <div class="img-wrapper">
+        <img src="https://assets.st-note.com/img/1752024066-iuHKoTRL8pyC3US5n9tqZdA1.jpg" alt="管理番号が見える商品写真の例" loading="lazy">
+        <div class="img-caption">管理番号シールが見える状態の例</div>
+      </div>
+
+      <h3>スーツについて</h3>
+      <p>スーツは<span class="bold">上下セットで1点扱い</span>です。<br>
+      ジャケットとパンツを分ける必要はありませんので、そのままセットで問題ございません。</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ STEP 3 ═══════════ -->
+  <div class="section fade-up" id="step3">
+    <div class="step-header">
+      <div class="step-number">STEP<br>3</div>
+      <h2>管理番号シールを<br>貼り付けてください</h2>
+    </div>
+    <div class="card">
+      <p>商品には、<span class="bold">管理番号シールの貼り付け</span>をお願いいたします。<br>
+      売れた商品を正確に特定し、発送ミスを防ぐためです。</p>
+
+      <h3>シールの種類について</h3>
+      <p>管理番号シールは、<span class="accent-text">ねじる式のラベル</span>をご使用ください。<br>
+      Amazonなどで購入できるもので問題ありません。</p>
+
+      <div class="img-wrapper">
+        <img src="https://assets.st-note.com/img/1752024245-rCZRIyo89avJtM70q4uXFk2B.jpg" alt="ねじる式タグの例（Amazon）" loading="lazy">
+        <div class="img-caption">ねじる式のラベル（Amazonで購入できます）</div>
+      </div>
+
+      <div class="highlight-box caution">
+        <div class="box-title">⚠ 紐タイプは不可です</div>
+        以下の理由から、紐タイプのシールはご遠慮いただいております。
+      </div>
+
+      <ul class="point-list">
+        <li>紐をほどく手間がかかる</li>
+        <li>作業効率が落ちる</li>
+        <li>外れてしまうことがある</li>
+        <li>管理番号が取れてしまい、商品特定ができなくなる可能性がある</li>
+      </ul>
+
+      <p>そのため、<span class="accent-text">ねじる式で統一</span>していただけると助かります。</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════ 売れた後 ═══════════ -->
+  <div class="section fade-up" id="after-sale">
+    <div class="sub-header">
+      <div class="sub-icon">🛒</div>
+      <h2>商品が売れた後に<br>送っていただきたいもの</h2>
+    </div>
+    <div class="card">
+      <p>商品が売れた際は、以下の<span class="bold">4点</span>をお送りいただけますと助かります。</p>
+      <ol class="num-list">
+        <li><span class="bold">管理番号シールが貼られた商品状態の写真</span></li>
+        <li><span class="bold">管理番号</span></li>
+        <li><span class="bold">売れた商品のスクリーンショット</span></li>
+        <li><span class="bold">ヤマト運輸のバーコード</span></li>
+      </ol>
+
+      <div class="img-wrapper">
+        <img src="https://assets.st-note.com/img/1752024311-n6BHEZcybS9UILatdXQT8V5e.jpg" alt="売れた商品の連絡例" loading="lazy">
+        <div class="img-caption">管理番号・スクリーンショット・バーコードをまとめて送っていただいた例</div>
+      </div>
+
+      <div class="highlight-box success">
+        <div class="box-title">✅ ポイント</div>
+        こちらが揃っていることで、発送を正確かつスムーズに進めやすくなります。
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ スケジュール ═══════════ -->
+  <div class="section fade-up" id="schedule">
+    <div class="sub-header">
+      <div class="sub-icon">📅</div>
+      <h2>発送スケジュール・納品について</h2>
+    </div>
+    <div class="card">
+      <h3>発送スケジュール</h3>
+      <p>納期は、<span class="bold">営業日7日間</span>で対応しております。<br>
+      <span class="bold">土日はお休み</span>のため、土日を除いた営業日ベースでの進行となります。</p>
+      <p>土日を挟む場合は、通常より少し後ろにずれることがありますので、あらかじめご了承いただけますと幸いです。</p>
+
+      <div class="highlight-box info">
+        <div class="box-title">💡 おすすめ</div>
+        メルカリなどの販売アカウントでは、プロフィール等に<span class="bold">「土日発送不可」</span>と記載していただくと、発送タイミングに関するクレーム防止につながります。
+      </div>
+
+      <h3>納品について</h3>
+      <p>納品は<span class="bold">営業日7日間</span>を目安に対応しております。<br>
+      なお、状況によっては<span class="bold">最短で翌営業日から対応</span>できる場合もございます。</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ 梱包 ═══════════ -->
+  <div class="section fade-up" id="packing">
+    <div class="sub-header">
+      <div class="sub-icon">📦</div>
+      <h2>梱包についてのお願い</h2>
+    </div>
+    <div class="card">
+      <p>商品発送時は、<span class="bold">輸送中や開封時に傷がつかない梱包</span>をお願いいたします。</p>
+      <p>特にアパレル商品を大量に送る際、箱に余裕がなく緩衝材もない状態だと、開封時にカッターが商品へ当たってしまう可能性があります。</p>
+
+      <div class="highlight-box caution">
+        <div class="box-title">⚠ 発送時のお願い</div>
+        <ul class="point-list" style="margin: 8px 0 0;">
+          <li><span class="bold">プチプチなどの緩衝材を入れる</span></li>
+          <li><span class="bold">カッターで開封しても商品に当たらない余白を作る</span></li>
+        </ul>
+      </div>
+
+      <p>安全に受け取れる状態での発送にご協力いただけますと助かります。</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ 検品 ═══════════ -->
+  <div class="section fade-up" id="inspection">
+    <div class="sub-header">
+      <div class="sub-icon">🔍</div>
+      <h2>検品についてのお願い</h2>
+    </div>
+    <div class="card">
+      <p>弊社は<span class="bold">撮影代行サービス</span>のため、簡易的な確認は行いますが、検品をメインとしたサービスではございません。</p>
+      <p>そのため、以下のような確認については<span class="bold">事前にお客様ご自身でご確認いただいた上で発送</span>をお願いいたします。</p>
+      <ul class="point-list">
+        <li>汚れはありますか？</li>
+        <li>この付属品はついていますか？</li>
+        <li>この状態は問題ありませんか？</li>
+      </ul>
+      <p>撮影時に明らかな見落としがあった場合は、気づいた範囲で共有させていただきます。<br>
+      ただし、大前提としては<span class="bold">お客様側で確認済みの商品をお送りいただく形</span>でお願いしたいです。</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ 撮影 ═══════════ -->
+  <div class="section fade-up" id="photo">
+    <div class="sub-header">
+      <div class="sub-icon">📸</div>
+      <h2>撮影についてのお願い</h2>
+    </div>
+    <div class="card">
+      <p>撮影は、できる限りお客様のご希望に沿って対応いたします。<br>
+      ただし、弊社には<span class="bold">撮影マニュアル・撮影基準</span>があるため、すべてを完全にお客様ごとの撮影方法に合わせることは難しい場合がございます。</p>
+
+      <p>もちろん、以下のような重要な箇所はしっかり撮影いたします。</p>
+      <ul class="point-list">
+        <li>傷</li>
+        <li>汚れ</li>
+        <li>必要なディテール</li>
+      </ul>
+
+      <p>基本的には<span class="bold">弊社の撮影基準にある程度合わせていただく形</span>でお願いしております。あらかじめご了承いただけますと幸いです。</p>
+
+      <h3>撮影に関するご要望について</h3>
+      <p>撮影方法について、以下のようなご要望がある場合はお気軽にご相談ください。</p>
+      <ul class="point-list">
+        <li>こういう角度で撮ってほしい</li>
+        <li>自分の出品スタイルに合わせてほしい</li>
+        <li>通常とは別のルールで管理してほしい</li>
+      </ul>
+
+      <div class="highlight-box info">
+        <div class="box-title">💡 オプション対応</div>
+        オプションにはなりますが、<span class="bold">専用マニュアルの作成も可能</span>です。<br>
+        ご希望がある場合は、何なりとご相談ください。
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p class="closing">ご不明な点がございましたら、お気軽にご連絡ください。</p>
+  <p>撮影代行サービス｜サムライ外注</p>
+</footer>
+
+<script>
+  // Scroll-to function
+  function scrollTo(selector) {
+    document.querySelector(selector).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Update active dot on scroll
+  const sections = ['#top', '#step1', '#step2', '#step3', '#after-sale', '#schedule', '#packing', '#inspection', '#photo'];
+  const dots = document.querySelectorAll('.progress-dot');
+
+  window.addEventListener('scroll', () => {
+    let current = 0;
+    sections.forEach((id, i) => {
+      const el = document.querySelector(id);
+      if (el && el.getBoundingClientRect().top <= 200) {
+        current = i;
+      }
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+    });
+  });
+</script>
+
 </body>
 </html>
