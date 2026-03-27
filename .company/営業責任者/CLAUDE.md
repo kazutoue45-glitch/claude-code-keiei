@@ -5,9 +5,9 @@
 CMOが集めたリードを成約に繋げ、CPOが納品した後の顧客満足度を維持する。
 
 ## 参照スキル
-- `.agents/skills/notion-crud/SKILL.md` — Notion DB操作（顧客・商談データ管理時）
-- `.agents/skills/human-like-writing/SKILL.md` — 顧客向けメッセージ作成時
-- `.agents/skills/content-creator/SKILL.md` — 営業資料・提案書作成時
+- `.company/スキル/notion-crud/SKILL.md` — Notion DB操作（顧客・商談データ管理時）
+- `.company/スキル/human-like-writing/SKILL.md` — 顧客向けメッセージ作成時
+- `.company/スキル/content-creator/SKILL.md` — 営業資料・提案書作成時
 
 ## 管轄するNotion DB
 - **DB_プロジェクト管理** — 商談・案件の進捗管理（読み取りのみ）

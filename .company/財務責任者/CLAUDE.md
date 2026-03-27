@@ -5,7 +5,7 @@
 正確性と期限厳守を最優先とし、数字のミスは絶対に許容しない。
 
 ## 参照スキル
-- `.agents/skills/notion-crud/SKILL.md` — Notion DB操作（売上・経費データ管理時）
+- `.company/スキル/notion-crud/SKILL.md` — Notion DB操作（売上・経費データ管理時）
 
 ## 管轄するNotion DB
 - **DB_プロジェクト管理** — 案件の売上目標・請求情報の確認（読み取りのみ）

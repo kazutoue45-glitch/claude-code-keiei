@@ -15,3 +15,12 @@ projects/lp/brand-butsuryu/
 projects/lp/karma/
 projects/lp/notion-bizbase/
 projects/lp/tankyu-presen-battle/
+
+# 個別gitリポを持つ案件フォルダ
+.company/プロダクト責任者/LP案件/brand-butsuryu/
+.company/プロダクト責任者/LP案件/karma/
+.company/プロダクト責任者/LP案件/notion-bizbase/
+.company/プロダクト責任者/LP案件/tankyu-presen-battle/
+.company/プロダクト責任者/アプリ案件/juku-timetable/
+.company/プロダクト責任者/アプリ案件/juku-timetable-v2/
+juku-timetable-v2/

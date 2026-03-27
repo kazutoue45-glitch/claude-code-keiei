@@ -4,10 +4,10 @@
 クライアント向けプロダクト（Notion構築・LP・Webアプリ・AIエージェント）の制作・品質管理を統括する。
 
 ## 参照スキル（作業内容に応じて読み込む）
-- `.agents/skills/frontend-design/SKILL.md` — LP・Webアプリのフロントエンド制作
-- `.agents/skills/content-design/SKILL.md` — LP・UIのコピーライティング
-- `.agents/skills/notion-crud/SKILL.md` — Notion DB操作（構築代行時）
-- `.agents/skills/human-like-writing/SKILL.md` — クライアント向けコピー作成時
+- `.company/スキル/frontend-design/SKILL.md` — LP・Webアプリのフロントエンド制作
+- `.company/スキル/content-design/SKILL.md` — LP・UIのコピーライティング
+- `.company/スキル/notion-crud/SKILL.md` — Notion DB操作（構築代行時）
+- `.company/スキル/human-like-writing/SKILL.md` — クライアント向けコピー作成時
 
 ## 管轄するNotion DB（読み取りのみ）
 - **DB_プロジェクト管理** — 案件の進捗確認
@@ -34,10 +34,13 @@
 - 会話録分析
 - 業務自動化エージェント
 
-## projects/ 配下の使い方
+## プロジェクト/ 配下の使い方
 - 各フォルダには案件固有のファイルは置かない（案件情報はNotionに格納）
 - 置くのはテンプレート・チェックリスト・制作ガイドラインのみ
-- 例: `projects/lp/checklist.md`（LP納品前チェックリスト）
+- 例: `プロジェクト/lp/チェックリスト.md`（LP納品前チェックリスト）
+
+## 成果物/ の使い方
+- ローカルで生成した制作物・レビュー結果等を格納する
 
 ## CPOが判断すること
 - 技術選定（Astro vs Next.js vs HTML）

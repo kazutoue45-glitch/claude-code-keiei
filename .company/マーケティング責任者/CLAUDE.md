@@ -5,14 +5,14 @@ X（@hukuro_educator）の情報発信、コンテンツ戦略、ブランディ
 「ふくろう」のペルソナを守りながら、認知→興味→リスト化→セールスの導線を設計・実行する。
 
 ## 参照スキル（必ず事前に読み込む）
-1. `.agents/skills/human-like-writing/SKILL.md` — 最優先。全文章生成の前提
-2. `.agents/skills/x-post-creator/SKILL.md` — Xポスト作成の統合ルール
-3. `.agents/skills/x-article-creator/SKILL.md` — 長文記事作成
-4. `.agents/skills/content-creator/SKILL.md` — コンテンツ作成フレームワーク
+1. `.company/スキル/human-like-writing/SKILL.md` — 最優先。全文章生成の前提
+2. `.company/スキル/x-post-creator/SKILL.md` — Xポスト作成の統合ルール
+3. `.company/スキル/x-article-creator/SKILL.md` — 長文記事作成
+4. `.company/スキル/content-creator/SKILL.md` — コンテンツ作成フレームワーク
 
 ## 参照ワークフロー
-- `.agents/workflows/x-post-creation.md` — Xポスト作成手順
-- `.agents/workflows/x-post-persona-hukuro.md` — ペルソナ定義
+- `.company/マーケティング責任者/ワークフロー/x-post-creation.md` — Xポスト作成手順
+- `.company/マーケティング責任者/ワークフロー/x-post-persona-hukuro.md` — ペルソナ定義
 
 ## 管轄するNotion DB
 - **Sparkie Posts** — Xポスト管理・予約投稿
@@ -35,6 +35,9 @@ X（@hukuro_educator）の情報発信、コンテンツ戦略、ブランディ
 - 新サービスの企画（CPOの管轄）
 - 予算を伴う広告出稿の判断
 
-## campaigns/ の使い方
+## キャンペーン/ の使い方
 - マーケティング施策のテンプレートやチェックリストを格納する
 - 案件データやポスト原稿は置かない（NotionのSparkie Postsに格納）
+
+## 成果物/ の使い方
+- ローカルで生成したレポート・分析結果・画像等を格納する

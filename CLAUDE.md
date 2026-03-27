@@ -69,7 +69,7 @@ Cursorが書き込んでよいDBは原則2つだけ：
 - それ以外（一過性の作業記録） → DB_AI作業ログ
 
 ### Notion操作時
-- `.agents/skills/notion-crud/SKILL.md` を必ず参照してから操作する
+- `.company/スキル/notion-crud/SKILL.md` を必ず参照してから操作する
 
 ## MEMORY.md 管理ルール
 
@@ -93,12 +93,12 @@ Cursorが書き込んでよいDBは原則2つだけ：
 
 以下のスキルファイルはタスクの種類に応じて自動的に参照すること：
 
-- **文章生成の前提（最優先）**: `.agents/skills/human-like-writing/SKILL.md` — AIっぽさを消す6つの違和感と5つのルール。content-creator、x-post-creator、content-design の土台
-- **Notion DB操作時**: `.agents/skills/notion-crud/SKILL.md` — MCP経由のCRUD操作・DBスキーマリファレンス
-- **フロントエンド制作時**: `.agents/skills/frontend-design/SKILL.md` — デザイン思考・美学ガイドライン
-- **マーケティングコピー作成時**: `.agents/skills/content-creator/SKILL.md` — コンテンツ作成フレームワーク
-- **LP・UIコピー作成時**: `.agents/skills/content-design/SKILL.md` — 日本語LP向けコンテンツ設計
-- **X Articles（長文記事）作成時**: `.agents/skills/x-article-creator/SKILL.md` — 8パート構成・スマホ最適化・図解挿入・公開戦略
+- **文章生成の前提（最優先）**: `.company/スキル/human-like-writing/SKILL.md` — AIっぽさを消す6つの違和感と5つのルール。content-creator、x-post-creator、content-design の土台
+- **Notion DB操作時**: `.company/スキル/notion-crud/SKILL.md` — MCP経由のCRUD操作・DBスキーマリファレンス
+- **フロントエンド制作時**: `.company/スキル/frontend-design/SKILL.md` — デザイン思考・美学ガイドライン
+- **マーケティングコピー作成時**: `.company/スキル/content-creator/SKILL.md` — コンテンツ作成フレームワーク
+- **LP・UIコピー作成時**: `.company/スキル/content-design/SKILL.md` — 日本語LP向けコンテンツ設計
+- **X Articles（長文記事）作成時**: `.company/スキル/x-article-creator/SKILL.md` — 8パート構成・スマホ最適化・図解挿入・公開戦略
 
 ## 基本原則
 

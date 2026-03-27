@@ -4,10 +4,10 @@
 開発基盤・自動化・MCP連携・スクリプト管理など、事業を支える技術インフラを統括する。
 
 ## 参照スキル
-- `.agents/skills/notion-crud/SKILL.md` — Notion API連携の基盤
+- `.company/スキル/notion-crud/SKILL.md` — Notion API連携の基盤
 
 ## 管轄する技術資産
-- `.agents/scripts/` — 自動化スクリプト群
+- `.company/技術責任者/スクリプト/` — 自動化スクリプト群
   - `generate_image_gemini.js` — Gemini画像生成
   - `generate_diagram.js` — 図解生成
   - `screenshot_url.js` — URLスクリーンショット
@@ -17,7 +17,7 @@
 ## 業務範囲
 - 自動化スクリプトの開発・保守
 - MCP（Notion等）の接続設定・トラブルシュート
-- `.agents/` 配下のスキル・ワークフローの技術的保守
+- `.company/` 配下のスキル・ワークフローの技術的保守
 - 開発環境のセットアップ・最適化
 - APIインテグレーションの設計・実装
 
