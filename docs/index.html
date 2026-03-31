@@ -358,6 +358,18 @@
     line-height: 1.5;
   }
 
+  /* ─── Image Grid ─── */
+  .img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0;
+  }
+  .img-grid .img-wrapper { margin: 0; }
+  @media (max-width: 480px) {
+    .img-grid { grid-template-columns: 1fr; }
+  }
+
   /* ─── Image ─── */
   .img-wrapper {
     margin: 18px 0;
@@ -633,14 +645,15 @@
       <p>管理番号シールは、<span class="accent-text">ねじる式のラベル</span>をご使用ください。<br>
       Amazonなどで購入できるもので問題ありません。</p>
 
-      <div class="img-wrapper">
-        <img src="images/nejiru-label-1.jpg" alt="ねじる式ラベル（単体）" loading="lazy">
-        <div class="img-caption">ねじる式のラベル（Amazonで購入できます）</div>
-      </div>
-
-      <div class="img-wrapper">
-        <img src="images/nejiru-label-2.jpg" alt="ねじる式ラベル（パッケージ）" loading="lazy">
-        <div class="img-caption">実際の商品パッケージ</div>
+      <div class="img-grid">
+        <div class="img-wrapper">
+          <img src="images/nejiru-label-1.jpg" alt="ねじる式ラベル（単体）" loading="lazy">
+          <div class="img-caption">ねじる式のラベル</div>
+        </div>
+        <div class="img-wrapper">
+          <img src="images/nejiru-label-2.jpg" alt="ねじる式ラベル（パッケージ）" loading="lazy">
+          <div class="img-caption">実際の商品パッケージ</div>
+        </div>
       </div>
 
       <div class="highlight-box caution">
