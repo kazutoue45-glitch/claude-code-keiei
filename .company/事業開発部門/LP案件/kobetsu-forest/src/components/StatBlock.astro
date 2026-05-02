@@ -32,7 +32,7 @@ const { value, unit, label, accent = "flame" } = Astro.props;
 
   .stat--flame::before { background: var(--flame); }
   .stat--forest::before { background: var(--forest); }
-  .stat--ember::before { background: var(--ember); }
+  .stat--ember::before { background: var(--gold); }
 
   .stat__value {
     display: flex;
@@ -44,18 +44,18 @@ const { value, unit, label, accent = "flame" } = Astro.props;
 
   .stat__num {
     font-family: var(--font-serif);
-    font-size: clamp(40px, 8vw, 64px);
+    font-size: clamp(44px, 8vw, 72px);
     font-weight: 900;
-    color: var(--forest-deep);
+    color: var(--flame-deep);
     letter-spacing: 0.02em;
     line-height: 1;
   }
 
   .stat__unit {
     font-family: var(--font-serif);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
-    color: var(--forest-deep);
+    color: var(--flame-deep);
   }
 
   .stat__label {

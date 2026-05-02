@@ -17,90 +17,100 @@ const strengths = [
 ---
 
 <Base current="home">
-  <!-- Hero -->
+  <!-- HERO: 1カラム・フルブリード・タイポグラフィ主役 -->
   <section class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__inner container">
-      <div class="hero__copy">
-        <span class="hero__eyebrow">大阪市城東区・生野区・東成区／個別指導</span>
-        <h1 class="hero__title">
-          意志あるところに、<br />
-          道は開ける。
-        </h1>
-        <p class="hero__lead">
-          できる子を集めるのではなく、<br />
-          目の前の一人を伸ばす塾でありたい。<br />
-          フォレストは、つきっきりの個別指導で<br />
-          子どもの「やる気の灯」を守ります。
-        </p>
-        <div class="hero__actions">
-          <a href={`${base}contact/`} class="btn btn--flame">
-            無料資料請求・個別相談
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <a href={`${base}strengths/`} class="btn btn--outline">フォレストの強みを見る</a>
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__noise"></div>
+      <span class="hero__kanji">炎</span>
+    </div>
+
+    <div class="hero__content">
+      <span class="hero__eyebrow">大阪市城東区／生野区／東成区　個別指導　2001年開校</span>
+
+      <h1 class="hero__title">
+        <span class="hero__title-line1">意志あるところに、</span>
+        <span class="hero__title-line2">道は開ける。</span>
+      </h1>
+
+      <p class="hero__lead">
+        できる子を集めるのではなく、目の前の一人を伸ばす塾でありたい。<br />
+        フォレストは、つきっきりの個別指導で「やる気の灯」を守り続けます。
+      </p>
+
+      <div class="hero__meta">
+        <div class="hero__meta-item">
+          <span class="hero__meta-num">25</span>
+          <span class="hero__meta-unit">年</span>
+          <span class="hero__meta-label">2001年開校</span>
         </div>
-        <div class="hero__campaign">
-          <div class="hero__campaign-flame" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
-          </div>
-          <div>
-            <strong>新年度キャンペーン</strong>
-            <span>スタート月謝 2ヶ月半額／入塾金無料</span>
-          </div>
+        <i class="hero__meta-divider" aria-hidden="true"></i>
+        <div class="hero__meta-item">
+          <span class="hero__meta-num">100</span>
+          <span class="hero__meta-unit">%</span>
+          <span class="hero__meta-label">中学受験合格率</span>
+        </div>
+        <i class="hero__meta-divider" aria-hidden="true"></i>
+        <div class="hero__meta-item">
+          <span class="hero__meta-num">2</span>
+          <span class="hero__meta-unit">校</span>
+          <span class="hero__meta-label">蒲生四丁目／今里</span>
         </div>
       </div>
-      <div class="hero__media">
-        <div class="hero__photo-frame">
-          <img src={`${base}images/jukucho.jpg`} alt="塾長 黒田清登（炎）" />
-          <div class="hero__photo-tag">
-            <span class="hero__photo-tag-eyebrow">塾長</span>
-            <span class="hero__photo-tag-name">黒田 清登</span>
-            <span class="hero__photo-tag-nick">― 炎 ―</span>
-          </div>
+
+      <div class="hero__actions">
+        <a href={`${base}contact/`} class="btn btn--white">
+          無料資料請求・個別相談
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href={`${base}strengths/`} class="btn btn--ghost">フォレストの強みを見る</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>SCROLL</span>
+      <i></i>
+    </div>
+  </section>
+
+  <!-- 塾長紹介（横長フルブリード写真） -->
+  <section class="principal">
+    <div class="principal__photo">
+      <img src={`${base}images/jukucho.jpg`} alt="塾長 黒田清登（炎）" />
+    </div>
+    <div class="principal__content">
+      <div class="principal__inner">
+        <span class="section-label">塾長メッセージ</span>
+        <h2>
+          成績で、<br />
+          生徒を選ばない。
+        </h2>
+        <p>
+          たとえ時代がどのようにぶれようが、子供中心の視点から子供達が本当に望んでいることに応え、そして親の子供に対する熱い思いに共感することが、塾本来の役割だと、私は思っています。
+        </p>
+        <p>
+          学校の先生より、塾の私たちは「本音で接する立場」にいます。教育現場の最前線で、子供達の小さな変化に気づき、保護者の皆様と並走する。それがフォレストの仕事です。
+        </p>
+        <div class="principal__sign">
+          <span class="principal__sign-role">個別指導塾フォレスト 塾長</span>
+          <span class="principal__sign-name">黒田 清登</span>
+          <span class="principal__sign-nick">― 炎 ―</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Stats -->
-  <section class="section">
-    <div class="container">
-      <div class="stats-grid">
-        <StatBlock value="25" unit="年" label="2001年開校・地域に根差した実績" accent="forest" />
-        <StatBlock value="100" unit="%" label="中学受験 合格率（開校以来）" accent="flame" />
-        <StatBlock value="2" unit="校" label="蒲生四丁目駅前校・今里校" accent="ember" />
-        <StatBlock value="土" unit="" label="毎週土曜・無料質問クラス" accent="forest" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Principal message -->
   <section class="section section--cream">
     <div class="container">
-      <div class="message-grid">
-        <div class="message-grid__media">
-          <img src={`${base}images/lesson.jpg`} alt="授業の様子" />
-          <div class="message-grid__quote">
-            <span>「成績で生徒を選ばない。」</span>
-          </div>
-        </div>
-        <div class="message-grid__copy">
-          <span class="section-label">塾長メッセージ</span>
-          <h2 class="section-title">
-            塾本来の役割は、<br />
-            子どもの本音に応えること。
-          </h2>
-          <p>
-            たとえ時代がどのようにぶれようが、子供中心の視点から子供達が本当に望んでいることに応え、そして親の子供に対する熱い思いに共感することが、塾本来の役割だと、私は思っています。
-          </p>
-          <p>
-            学校の先生より、塾の私たちは「本音で接する立場」にいます。教育現場の最前線で、子供達の小さな変化に気づき、保護者の皆様と並走する。それがフォレストの仕事です。
-          </p>
-          <p class="message-grid__sign">
-            個別指導塾フォレスト 塾長　<strong>黒田 清登</strong>
-          </p>
-        </div>
+      <div class="section-head">
+        <span class="section-label">FOREST IN NUMBERS</span>
+        <h2 class="section-title">数字で見るフォレスト</h2>
+      </div>
+      <div class="stats-grid">
+        <StatBlock value="25" unit="年" label="2001年開校・地域に根差した実績" accent="flame" />
+        <StatBlock value="100" unit="%" label="中学受験 合格率（開校以来）" accent="flame" />
+        <StatBlock value="2" unit="校" label="蒲生四丁目駅前校・今里校" accent="forest" />
+        <StatBlock value="土" unit="" label="毎週土曜・無料質問クラス" accent="ember" />
       </div>
     </div>
   </section>
@@ -109,7 +119,7 @@ const strengths = [
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="section-label">FORESTの強み</span>
+        <span class="section-label">FOREST STRENGTHS</span>
         <h2 class="section-title">
           ホンモノの個別指導は<br class="sp-only" />
           「つきっきり」でなければならない。
@@ -138,7 +148,7 @@ const strengths = [
   <section class="section section--cream">
     <div class="container">
       <div class="section-head">
-        <span class="section-label">教室案内</span>
+        <span class="section-label">SCHOOLS</span>
         <h2 class="section-title">通いやすい、地元の2校舎。</h2>
         <p class="section-lead">
           地元の小中学校に密着し、クラブ活動を終えた後でも通える時間割でお待ちしています。
@@ -167,11 +177,11 @@ const strengths = [
     </div>
   </section>
 
-  <!-- Voice -->
+  <!-- Voices -->
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="section-label">合格体験記</span>
+        <span class="section-label">VOICES</span>
         <h2 class="section-title">大逆転の合格を、何度も見てきました。</h2>
         <p class="section-lead">
           E判定からの志望校合格、勉強嫌いの克服、苦手だった教科が得意に変わる瞬間。フォレストには、生徒たち一人ひとりの「ビフォーアフター」があります。
@@ -200,276 +210,328 @@ const strengths = [
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--forest cta-section">
-    <div class="container">
-      <div class="cta-grid">
-        <div class="cta-grid__copy">
-          <span class="section-label">資料請求・無料個別相談</span>
-          <h2 class="section-title">
-            まずは、お子さまの<br />
-            「今」を聞かせてください。
-          </h2>
-          <p>
-            ご相談は無料、入塾の無理な勧誘は一切ありません。資料請求はかんたん1分。お電話・フォーム・公式LINE、お好きな方法でご連絡ください。
-          </p>
-          <ul class="cta-grid__bullets">
-            <li>スタート月謝 2ヶ月半額キャンペーン実施中</li>
-            <li>入塾金は無料</li>
-            <li>講習会は希望者のみ・強制ゼロ</li>
-          </ul>
-          <div class="cta-grid__actions">
-            <a href={`${base}contact/`} class="btn btn--flame">
-              無料資料請求・個別相談
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </a>
-            <a href={`${base}price/`} class="btn btn--ghost">お月謝を見る</a>
-          </div>
-        </div>
-        <div class="cta-grid__phones">
-          <h3 class="cta-grid__phones-title">お電話でのご相談</h3>
-          <a href="tel:0669391001" class="cta-grid__phone">
-            <span class="cta-grid__phone-label">蒲生四丁目駅前校</span>
-            <span class="cta-grid__phone-num">06-6939-1001</span>
-          </a>
-          <a href="tel:0643066300" class="cta-grid__phone">
-            <span class="cta-grid__phone-label">今里校</span>
-            <span class="cta-grid__phone-num">06-4306-6300</span>
-          </a>
-          <p class="cta-grid__hours">受付時間：平日 14:00〜22:00 ／ 土曜 14:00〜21:00</p>
-        </div>
+  <!-- CTA: 深紅フルブリード -->
+  <section class="cta">
+    <div class="cta__bg" aria-hidden="true"></div>
+    <div class="container cta__inner">
+      <span class="section-label">RESERVATION</span>
+      <h2>
+        まずは、お子さまの<br />
+        「今」を聞かせてください。
+      </h2>
+      <p>
+        ご相談は無料、入塾の無理な勧誘は一切ありません。<br />
+        資料請求はかんたん1分。お電話でも、フォームでも、お好きな方法でどうぞ。
+      </p>
+      <ul class="cta__bullets">
+        <li>スタート月謝 <strong>2ヶ月半額</strong> キャンペーン実施中</li>
+        <li>入塾金は <strong>無料</strong></li>
+        <li>講習会は <strong>希望者のみ・強制ゼロ</strong></li>
+      </ul>
+      <div class="cta__actions">
+        <a href={`${base}contact/`} class="btn btn--white">
+          無料資料請求・個別相談
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href={`${base}price/`} class="btn btn--ghost">お月謝を見る</a>
       </div>
+      <div class="cta__phones">
+        <a href="tel:0669391001" class="cta__phone">
+          <span class="cta__phone-label">蒲生四丁目駅前校</span>
+          <span class="cta__phone-num">06-6939-1001</span>
+        </a>
+        <a href="tel:0643066300" class="cta__phone">
+          <span class="cta__phone-label">今里校</span>
+          <span class="cta__phone-num">06-4306-6300</span>
+        </a>
+      </div>
+      <p class="cta__hours">受付時間：平日 14:00〜22:00 ／ 土曜 14:00〜21:00</p>
     </div>
   </section>
 </Base>
 
 <style>
-  /* Hero */
+  /* ===== HERO ===== */
   .hero {
     position: relative;
+    min-height: 92vh;
+    padding: 80px 24px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--paper);
+    text-align: center;
     overflow: hidden;
-    padding: 80px 0 100px;
-    background: linear-gradient(180deg, #FAF6EC 0%, #F4EEDD 100%);
+    isolation: isolate;
   }
 
   .hero__bg {
     position: absolute;
     inset: 0;
-    pointer-events: none;
+    z-index: -1;
     background:
-      radial-gradient(circle at 85% 20%, rgba(232, 163, 61, 0.18), transparent 45%),
-      radial-gradient(circle at 10% 80%, rgba(31, 77, 46, 0.08), transparent 40%);
+      radial-gradient(ellipse at 50% 30%, rgba(244, 184, 114, 0.25), transparent 55%),
+      radial-gradient(ellipse at 80% 80%, rgba(126, 18, 24, 0.7), transparent 60%),
+      linear-gradient(180deg, var(--flame-deep) 0%, #5a0d12 100%);
   }
 
-  .hero__inner {
+  .hero__noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255, 252, 246, 0.04) 0 2px, transparent 2px 4px),
+      radial-gradient(circle at 20% 50%, rgba(255, 252, 246, 0.08), transparent 30%),
+      radial-gradient(circle at 70% 20%, rgba(244, 184, 114, 0.12), transparent 35%);
+  }
+
+  /* 巨大な「炎」漢字（背景） */
+  .hero__kanji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: clamp(420px, 80vw, 920px);
+    color: rgba(255, 252, 246, 0.05);
+    line-height: 0.85;
+    letter-spacing: 0;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 0 0 80px rgba(244, 184, 114, 0.12);
+  }
+
+  .hero__content {
     position: relative;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 64px;
-    align-items: center;
+    max-width: 980px;
+    width: 100%;
+    z-index: 2;
   }
 
   .hero__eyebrow {
     display: inline-block;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.18em;
-    color: var(--forest);
-    background: rgba(31, 77, 46, 0.08);
-    padding: 8px 16px;
+    letter-spacing: 0.3em;
+    color: var(--flame-glow);
+    border: 1px solid rgba(244, 184, 114, 0.5);
+    padding: 8px 22px;
     border-radius: 999px;
-    margin-bottom: 24px;
+    margin-bottom: 36px;
+    background: rgba(126, 18, 24, 0.25);
+    backdrop-filter: blur(6px);
   }
 
   .hero__title {
-    font-size: clamp(36px, 6vw, 60px);
-    line-height: 1.3;
-    color: var(--forest-deep);
-    margin-bottom: 24px;
-    letter-spacing: 0.02em;
+    font-family: var(--font-serif);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    margin-bottom: 32px;
+    text-shadow: 0 8px 40px rgba(20, 17, 15, 0.45);
+  }
+
+  .hero__title-line1 {
+    display: block;
+    font-size: clamp(28px, 5vw, 52px);
+    color: var(--flame-glow);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .hero__title-line2 {
+    display: block;
+    font-size: clamp(56px, 11vw, 132px);
+    color: var(--paper);
+    line-height: 1.1;
   }
 
   .hero__lead {
+    font-size: clamp(15px, 1.6vw, 17px);
+    line-height: 2.2;
+    color: rgba(255, 252, 246, 0.92);
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+
+  /* メタ（数字3つを横並び） */
+  .hero__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+    padding: 22px 36px;
+    background: rgba(20, 17, 15, 0.32);
+    border: 1px solid rgba(255, 252, 246, 0.18);
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    margin-bottom: 48px;
+  }
+
+  .hero__meta-item {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .hero__meta-num {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--flame-glow);
+    line-height: 1;
+  }
+
+  .hero__meta-unit {
+    font-family: var(--font-serif);
     font-size: 16px;
-    line-height: 2;
-    color: var(--ink-soft);
-    margin-bottom: 32px;
+    font-weight: 700;
+    color: var(--flame-glow);
+    margin-right: 6px;
+  }
+
+  .hero__meta-label {
+    font-size: 11px;
+    color: rgba(255, 252, 246, 0.78);
+    letter-spacing: 0.1em;
+    margin-left: 2px;
+  }
+
+  .hero__meta-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 252, 246, 0.22);
   }
 
   .hero__actions {
-    display: flex;
+    display: inline-flex;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 32px;
-  }
-
-  .hero__actions .btn--outline {
-    background: transparent;
-  }
-
-  .hero__campaign {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 22px;
-    background: var(--paper);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .hero__campaign-flame {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--flame);
-    color: var(--paper);
-    display: inline-flex;
-    align-items: center;
     justify-content: center;
-    flex-shrink: 0;
   }
 
-  .hero__campaign strong {
-    display: block;
-    font-size: 14px;
-    color: var(--forest-deep);
-    margin-bottom: 2px;
+  .hero__scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 252, 246, 0.6);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    z-index: 3;
   }
 
-  .hero__campaign span {
-    font-size: 13px;
-    color: var(--ink-soft);
+  .hero__scroll i {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(180deg, rgba(255, 252, 246, 0.6), transparent);
+    animation: scrollLine 1.8s ease-in-out infinite;
   }
 
-  .hero__media {
-    position: relative;
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
   }
 
-  .hero__photo-frame {
-    position: relative;
-    border-radius: var(--radius-lg);
+  /* ===== PRINCIPAL ===== */
+  .principal {
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    min-height: 600px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    aspect-ratio: 4 / 5;
-    background: var(--forest-soft);
   }
 
-  .hero__photo-frame img {
+  .principal__photo {
+    position: relative;
+    overflow: hidden;
+    background: #2a1a1a;
+  }
+
+  .principal__photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 25%;
+    filter: contrast(1.05) saturate(0.95);
   }
 
-  .hero__photo-frame::after {
+  .principal__photo::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(20, 56, 32, 0.5) 100%);
+    background: linear-gradient(90deg, transparent 60%, var(--ink) 100%);
   }
 
-  .hero__photo-tag {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    z-index: 2;
-    color: var(--paper);
+  .principal__content {
     display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-  }
-
-  .hero__photo-tag-eyebrow {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: var(--ember);
-    margin-bottom: 4px;
-  }
-
-  .hero__photo-tag-name {
-    font-family: var(--font-serif);
-    font-size: 28px;
-    font-weight: 900;
-    margin-bottom: 4px;
-  }
-
-  .hero__photo-tag-nick {
-    font-family: var(--font-serif);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    opacity: 0.85;
-  }
-
-  /* Stats */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-
-  /* Message */
-  .message-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 64px;
     align-items: center;
+    padding: 80px 48px 80px 64px;
   }
 
-  .message-grid__media {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    aspect-ratio: 4 / 3;
+  .principal__inner {
+    max-width: 520px;
   }
 
-  .message-grid__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .message-grid__quote {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px 24px;
-    background: linear-gradient(180deg, transparent, rgba(20, 56, 32, 0.85));
+  .principal__inner h2 {
+    font-size: clamp(32px, 4.5vw, 52px);
     color: var(--paper);
-    font-family: var(--font-serif);
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    margin: 16px 0 28px;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
   }
 
-  .message-grid__copy p {
+  .principal__inner p {
     font-size: 15.5px;
-    line-height: 2;
-    color: var(--ink-soft);
+    line-height: 2.1;
+    color: rgba(255, 252, 246, 0.84);
     margin-bottom: 20px;
   }
 
-  .message-grid__sign {
-    margin-top: 24px;
+  .principal__sign {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 252, 246, 0.18);
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+  }
+
+  .principal__sign-role {
+    font-size: 12px;
+    color: rgba(255, 252, 246, 0.6);
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+  }
+
+  .principal__sign-name {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--paper);
+    margin-bottom: 2px;
+  }
+
+  .principal__sign-nick {
     font-family: var(--font-serif);
     font-size: 15px;
-    color: var(--forest-deep);
+    color: var(--flame-glow);
+    letter-spacing: 0.15em;
   }
 
-  .message-grid__sign strong {
-    font-size: 22px;
-    font-weight: 900;
-    margin-left: 4px;
-  }
-
-  /* Strengths grid */
+  /* ===== SECTION HEAD ===== */
   .section-head {
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 64px;
   }
 
   .section-head .section-label,
@@ -479,6 +541,14 @@ const strengths = [
     margin-right: auto;
   }
 
+  /* ===== STATS ===== */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  /* ===== STRENGTHS ===== */
   .strengths-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -487,17 +557,17 @@ const strengths = [
 
   .strengths-more {
     text-align: center;
-    margin-top: 48px;
+    margin-top: 56px;
   }
 
-  /* Schools */
+  /* ===== SCHOOLS ===== */
   .schools-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
 
-  /* Voices */
+  /* ===== VOICES ===== */
   .voices {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -507,7 +577,7 @@ const strengths = [
   .voice-card {
     display: block;
     padding: 32px 28px;
-    background: var(--cream);
+    background: var(--paper);
     border-radius: var(--radius-md);
     border: 1px solid var(--line);
     transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
@@ -515,7 +585,7 @@ const strengths = [
 
   .voice-card:hover {
     transform: translateY(-4px);
-    border-color: var(--forest);
+    border-color: var(--flame);
     box-shadow: var(--shadow-md);
   }
 
@@ -525,7 +595,7 @@ const strengths = [
     font-weight: 700;
     letter-spacing: 0.15em;
     color: var(--flame);
-    background: rgba(217, 75, 43, 0.1);
+    background: rgba(184, 35, 42, 0.1);
     padding: 5px 12px;
     border-radius: 999px;
     margin-bottom: 16px;
@@ -533,7 +603,7 @@ const strengths = [
 
   .voice-card h3 {
     font-size: 18px;
-    color: var(--forest-deep);
+    color: var(--ink);
     margin-bottom: 10px;
     line-height: 1.5;
   }
@@ -541,141 +611,161 @@ const strengths = [
   .voice-card p {
     font-size: 14px;
     color: var(--ink-soft);
-    line-height: 1.8;
+    line-height: 1.85;
     margin-bottom: 16px;
   }
 
   .voice-card__more {
     font-size: 13px;
     font-weight: 700;
-    color: var(--forest);
+    color: var(--flame);
   }
 
-  /* CTA */
-  .cta-section {
+  /* ===== CTA ===== */
+  .cta {
+    position: relative;
+    padding: 96px 0 112px;
+    color: var(--paper);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .cta__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background:
-      radial-gradient(circle at 90% 10%, rgba(232, 163, 61, 0.15), transparent 50%),
-      radial-gradient(circle at 10% 90%, rgba(217, 75, 43, 0.18), transparent 50%),
-      var(--forest);
+      radial-gradient(ellipse at 80% 20%, rgba(244, 184, 114, 0.2), transparent 50%),
+      linear-gradient(135deg, var(--flame-deep) 0%, var(--flame) 100%);
   }
 
-  .cta-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 56px;
-    align-items: center;
+  .cta__inner {
+    text-align: center;
   }
 
-  .cta-grid p {
-    color: rgba(255, 253, 248, 0.85);
-    font-size: 15.5px;
+  .cta h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    color: var(--paper);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .cta p {
+    font-size: 16px;
     line-height: 2;
-    margin-bottom: 24px;
+    color: rgba(255, 252, 246, 0.92);
+    margin-bottom: 32px;
   }
 
-  .cta-grid__bullets {
-    margin-bottom: 32px;
-    display: flex;
+  .cta__bullets {
+    display: inline-flex;
     flex-direction: column;
     gap: 10px;
+    margin: 0 auto 40px;
+    text-align: left;
   }
 
-  .cta-grid__bullets li {
-    color: var(--paper);
-    font-size: 14.5px;
-    padding-left: 28px;
+  .cta__bullets li {
+    font-size: 15px;
+    padding-left: 32px;
     position: relative;
+    color: rgba(255, 252, 246, 0.95);
   }
 
-  .cta-grid__bullets li::before {
+  .cta__bullets li::before {
     content: "";
     position: absolute;
     left: 0;
     top: 8px;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background: var(--ember);
+    background: var(--flame-glow);
   }
 
-  .cta-grid__bullets li::after {
+  .cta__bullets li::after {
     content: "✓";
     position: absolute;
-    left: 3px;
-    top: 5px;
-    color: var(--forest-deep);
-    font-size: 11px;
+    left: 4px;
+    top: 4px;
+    color: var(--flame-deep);
+    font-size: 12px;
     font-weight: 900;
   }
 
-  .cta-grid__actions {
-    display: flex;
+  .cta__bullets strong {
+    color: var(--flame-glow);
+    font-size: 17px;
+  }
+
+  .cta__actions {
+    display: inline-flex;
     gap: 16px;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 48px;
   }
 
-  .cta-grid__phones {
-    background: rgba(255, 253, 248, 0.06);
+  .cta__phones {
+    display: inline-flex;
+    gap: 0;
+    background: rgba(20, 17, 15, 0.28);
+    border: 1px solid rgba(255, 252, 246, 0.22);
+    border-radius: var(--radius-md);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 253, 248, 0.18);
-    border-radius: var(--radius-lg);
-    padding: 32px;
+    overflow: hidden;
+    margin-bottom: 16px;
   }
 
-  .cta-grid__phones-title {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--ember);
-    margin-bottom: 20px;
-    font-family: var(--font-sans);
-  }
-
-  .cta-grid__phone {
-    display: block;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255, 253, 248, 0.18);
+  .cta__phone {
+    padding: 20px 32px;
     color: var(--paper);
+    border-right: 1px solid rgba(255, 252, 246, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .cta-grid__phone:last-of-type {
-    border-bottom: none;
-    margin-bottom: 12px;
+  .cta__phone:last-child {
+    border-right: none;
   }
 
-  .cta-grid__phone-label {
-    display: block;
-    font-size: 12px;
-    color: rgba(255, 253, 248, 0.7);
+  .cta__phone-label {
+    font-size: 11px;
+    color: rgba(255, 252, 246, 0.7);
+    letter-spacing: 0.1em;
     margin-bottom: 4px;
-    letter-spacing: 0.05em;
   }
 
-  .cta-grid__phone-num {
-    display: block;
+  .cta__phone-num {
     font-family: var(--font-serif);
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 900;
     letter-spacing: 0.02em;
   }
 
-  .cta-grid__hours {
-    font-size: 12px !important;
-    color: rgba(255, 253, 248, 0.6) !important;
+  .cta__hours {
+    font-size: 13px !important;
+    color: rgba(255, 252, 246, 0.7) !important;
     margin: 0 !important;
   }
 
-  .sp-only {
-    display: none;
-  }
+  .sp-only { display: none; }
 
-  /* Responsive */
+  /* ===== Responsive ===== */
   @media (max-width: 980px) {
-    .hero__inner,
-    .message-grid,
-    .cta-grid {
+    .principal {
       grid-template-columns: 1fr;
-      gap: 40px;
+    }
+    .principal__photo {
+      aspect-ratio: 16 / 9;
+      max-height: 400px;
+    }
+    .principal__photo::after {
+      background: linear-gradient(180deg, transparent 50%, var(--ink) 100%);
+    }
+    .principal__content {
+      padding: 56px 32px;
     }
     .strengths-grid,
     .voices {
@@ -688,7 +778,28 @@ const strengths = [
 
   @media (max-width: 640px) {
     .hero {
-      padding: 56px 0 80px;
+      min-height: 88vh;
+      padding: 60px 20px 120px;
+    }
+    .hero__title-line1 {
+      font-size: 22px;
+    }
+    .hero__title-line2 {
+      font-size: clamp(48px, 14vw, 72px);
+    }
+    .hero__meta {
+      gap: 16px;
+      padding: 16px 22px;
+    }
+    .hero__meta-num {
+      font-size: 28px;
+    }
+    .hero__meta-label {
+      display: none;
+    }
+    .hero__actions .btn,
+    .cta__actions .btn {
+      width: 100%;
     }
     .strengths-grid,
     .voices,
@@ -698,8 +809,16 @@ const strengths = [
     .stats-grid {
       grid-template-columns: 1fr 1fr;
     }
-    .hero__photo-frame {
-      aspect-ratio: 4 / 4.2;
+    .cta__phones {
+      flex-direction: column;
+    }
+    .cta__phone {
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 252, 246, 0.18);
+      width: 100%;
+    }
+    .cta__phone:last-child {
+      border-bottom: none;
     }
     .sp-only {
       display: inline;
