@@ -1,0 +1,308 @@
+---
+import Base from "../layouts/Base.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Base current="schools" title="教室案内">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">SCHOOLS</span>
+      <h1>教室案内</h1>
+      <p class="page-hero__lead">
+        通いやすい立地と、明るく落ち着いた空間。<br />
+        2校舎それぞれの雰囲気をご紹介します。
+      </p>
+    </div>
+  </section>
+
+  <!-- 蒲生四丁目駅前校 -->
+  <section class="section">
+    <div class="container">
+      <div class="school-detail">
+        <div class="school-detail__media">
+          <img src={`${base}images/gamou.png`} alt="蒲生四丁目駅前校" />
+        </div>
+        <div class="school-detail__body">
+          <span class="eyebrow">本校</span>
+          <h2>蒲生四丁目駅前校</h2>
+          <p class="school-detail__lead">
+            地下鉄今里筋線・長堀鶴見緑地線「蒲生四丁目駅」徒歩1分。<br />
+            駅直結の通いやすさと、明るい教室が自慢の本校です。
+          </p>
+          <dl class="school-info">
+            <div>
+              <dt>住所</dt>
+              <dd>大阪市城東区中央1丁目12-17 モーガ第１ビル2F</dd>
+            </div>
+            <div>
+              <dt>電話</dt>
+              <dd><a href="tel:0669391001" class="school-info__tel">06-6939-1001</a></dd>
+            </div>
+            <div>
+              <dt>アクセス</dt>
+              <dd>地下鉄「蒲生四丁目駅」徒歩1分</dd>
+            </div>
+            <div>
+              <dt>受付時間</dt>
+              <dd>平日 14:00〜22:00／土曜 14:00〜21:00</dd>
+            </div>
+          </dl>
+          <a
+            href="https://maps.google.com/?q=大阪市城東区中央1丁目12-17"
+            target="_blank"
+            rel="noopener"
+            class="btn btn--outline"
+          >
+            Googleマップで開く
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 今里校 -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="school-detail school-detail--reverse">
+        <div class="school-detail__media">
+          <img src={`${base}images/imazato.jpg`} alt="今里校" />
+        </div>
+        <div class="school-detail__body">
+          <span class="eyebrow">分校</span>
+          <h2>今里校</h2>
+          <p class="school-detail__lead">
+            生野区・東成区の小中学生に長く愛される教室。<br />
+            地元密着で、地域の学校の宿題や定期テスト対策にも強い校舎です。
+          </p>
+          <dl class="school-info">
+            <div>
+              <dt>住所</dt>
+              <dd>大阪市生野区新今里3-1-2</dd>
+            </div>
+            <div>
+              <dt>電話</dt>
+              <dd><a href="tel:0643066300" class="school-info__tel">06-4306-6300</a></dd>
+            </div>
+            <div>
+              <dt>アクセス</dt>
+              <dd>地下鉄千日前線・今里筋線「今里駅」徒歩圏</dd>
+            </div>
+            <div>
+              <dt>受付時間</dt>
+              <dd>平日 14:00〜22:00／土曜 14:00〜21:00</dd>
+            </div>
+          </dl>
+          <a
+            href="https://maps.google.com/?q=大阪市生野区新今里3-1-2"
+            target="_blank"
+            rel="noopener"
+            class="btn btn--outline"
+          >
+            Googleマップで開く
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 校舎共通 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">FACILITY</span>
+        <h2 class="section-title">2校舎に共通する設備・サポート</h2>
+      </div>
+      <div class="facility-grid">
+        <div class="facility-card">
+          <h3>自習室</h3>
+          <p>平日17時から開放。塾生は自由に使えます。家では集中できないお子さまに最適。</p>
+        </div>
+        <div class="facility-card">
+          <h3>土曜質問クラス</h3>
+          <p>毎週土曜19:00〜22:00、5教科対応の無料質問クラス。塾生は何度来ても無料。</p>
+        </div>
+        <div class="facility-card">
+          <h3>進路相談室</h3>
+          <p>個別面談用のスペースを完備。塾長が直接、お子さまと保護者様のご相談にお答えします。</p>
+        </div>
+        <div class="facility-card">
+          <h3>遅い時間帯対応</h3>
+          <p>20:00〜21:50の遅い時間にも対応。クラブ活動と勉強を両立できる時間割です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--forest">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title">教室を見学にいらっしゃいませんか？</h2>
+      <p class="section-lead" style="margin-left: auto; margin-right: auto;">
+        実際の教室の雰囲気を、お子さまと一緒にご確認ください。見学・個別相談はもちろん無料です。
+      </p>
+      <a href={`${base}contact/`} class="btn btn--flame" style="margin-top: 16px;">
+        無料見学・個別相談のご予約
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    padding: 80px 0 56px;
+    background: linear-gradient(180deg, var(--cream), var(--paper));
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    color: var(--forest-deep);
+    margin: 16px 0 24px;
+  }
+
+  .page-hero__lead {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 2;
+  }
+
+  .school-detail {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .school-detail--reverse .school-detail__media {
+    order: 2;
+  }
+
+  .school-detail__media {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 4 / 3;
+    background: var(--forest-soft);
+  }
+
+  .school-detail__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .school-detail__body h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--forest-deep);
+    margin: 12px 0 20px;
+  }
+
+  .school-detail__lead {
+    font-size: 15.5px;
+    line-height: 2;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+
+  .school-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 28px;
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line);
+    padding: 8px 0;
+  }
+
+  .school-info > div {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .school-info > div:last-child {
+    border-bottom: none;
+  }
+
+  .school-info dt {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--flame);
+    padding-top: 4px;
+  }
+
+  .school-info dd {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  .school-info__tel {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--forest-deep);
+  }
+
+  .school-info__tel:hover {
+    color: var(--flame);
+  }
+
+  .facility-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .facility-card {
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .facility-card h3 {
+    font-size: 17px;
+    color: var(--forest-deep);
+    margin-bottom: 12px;
+  }
+
+  .facility-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+
+  @media (max-width: 900px) {
+    .school-detail,
+    .school-detail--reverse {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .school-detail--reverse .school-detail__media {
+      order: 0;
+    }
+    .facility-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .facility-grid {
+      grid-template-columns: 1fr;
+    }
+    .school-info > div {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+</style>

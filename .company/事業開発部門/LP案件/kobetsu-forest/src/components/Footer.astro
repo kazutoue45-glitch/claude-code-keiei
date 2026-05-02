@@ -1,0 +1,190 @@
+---
+const { base } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <div class="site-footer__logo">
+        <svg viewBox="0 0 40 40" width="32" height="32" aria-hidden="true">
+          <path d="M20 4 L34 30 H6 Z" fill="#FAF6EC" />
+          <path d="M20 14 L28 28 H12 Z" fill="rgba(232,163,61,0.6)" />
+          <circle cx="20" cy="34" r="3" fill="#D94B2B" />
+        </svg>
+        <div>
+          <div class="site-footer__lead">個別指導塾</div>
+          <div class="site-footer__name">フォレスト</div>
+        </div>
+      </div>
+      <p class="site-footer__motto">意志あるところに道は開ける。</p>
+      <p class="site-footer__desc">
+        2001年開校。大阪市城東区・生野区・東成区の小中学生を、つきっきりの個別指導で支えています。
+      </p>
+    </div>
+
+    <div class="site-footer__cols">
+      <div>
+        <h4>サイト</h4>
+        <ul>
+          <li><a href={base}>ホーム</a></li>
+          <li><a href={`${base}strengths/`}>フォレストの強み</a></li>
+          <li><a href={`${base}price/`}>お月謝のご案内</a></li>
+          <li><a href={`${base}schools/`}>教室案内</a></li>
+          <li><a href={`${base}contact/`}>資料請求・お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>蒲生四丁目駅前校</h4>
+        <p>大阪市城東区中央1丁目12-17<br />モーガ第１ビル2F</p>
+        <a href="tel:0669391001" class="site-footer__tel">06-6939-1001</a>
+      </div>
+      <div>
+        <h4>今里校</h4>
+        <p>大阪市生野区新今里3-1-2</p>
+        <a href="tel:0643066300" class="site-footer__tel">06-4306-6300</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <span>© 個別指導塾フォレスト</span>
+    <span class="site-footer__demo">※このページはリニューアル提案デモです</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--forest-deep);
+    color: var(--paper);
+    padding: 64px 0 0;
+  }
+
+  .site-footer__inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 56px;
+  }
+
+  .site-footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .site-footer__lead {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+  }
+
+  .site-footer__name {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+
+  .site-footer__motto {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--ember);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  .site-footer__desc {
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(255, 253, 248, 0.78);
+  }
+
+  .site-footer__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+
+  .site-footer__cols h4 {
+    font-size: 13px;
+    color: var(--ember);
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-family: var(--font-sans);
+  }
+
+  .site-footer__cols ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .site-footer__cols a {
+    font-size: 14px;
+    color: rgba(255, 253, 248, 0.85);
+    transition: color 0.2s;
+  }
+
+  .site-footer__cols a:hover {
+    color: var(--ember);
+  }
+
+  .site-footer__cols p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255, 253, 248, 0.78);
+    margin-bottom: 12px;
+  }
+
+  .site-footer__tel {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--paper);
+    letter-spacing: 0.02em;
+  }
+
+  .site-footer__tel:hover {
+    color: var(--ember);
+  }
+
+  .site-footer__bottom {
+    margin-top: 56px;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255, 253, 248, 0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255, 253, 248, 0.6);
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .site-footer__demo {
+    color: var(--ember);
+    opacity: 0.8;
+  }
+
+  @media (max-width: 900px) {
+    .site-footer__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .site-footer__cols {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .site-footer__bottom {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+  }
+</style>

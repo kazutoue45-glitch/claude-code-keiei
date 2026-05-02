@@ -1,0 +1,224 @@
+:root {
+  --forest: #1F4D2E;
+  --forest-deep: #143820;
+  --forest-soft: #E8EFE8;
+  --flame: #D94B2B;
+  --flame-deep: #B53A1E;
+  --ember: #E8A33D;
+  --cream: #FAF6EC;
+  --paper: #FFFDF8;
+  --ink: #1A1A1A;
+  --ink-soft: #4A4A4A;
+  --ink-mute: #7A7A7A;
+  --line: #D9D2BD;
+
+  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "游明朝", serif;
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "游ゴシック", sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(20, 56, 32, 0.08);
+  --shadow-md: 0 8px 24px rgba(20, 56, 32, 0.12);
+  --shadow-lg: 0 24px 60px rgba(20, 56, 32, 0.18);
+
+  --container: 1120px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.8;
+  font-feature-settings: "palt" 1;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 56px 0; }
+}
+
+.section--cream {
+  background: var(--cream);
+}
+
+.section--forest {
+  background: var(--forest);
+  color: var(--paper);
+}
+
+.section--forest h2,
+.section--forest h3 {
+  color: var(--paper);
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--flame);
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+}
+
+.section--forest .section-label {
+  color: var(--ember);
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 16px;
+}
+
+.section-lead {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 48px;
+  max-width: 720px;
+}
+
+.section--forest .section-lead {
+  color: rgba(255, 253, 248, 0.85);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 18px 32px;
+  border-radius: 999px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.btn--flame {
+  background: var(--flame);
+  color: var(--paper);
+  box-shadow: 0 6px 20px rgba(217, 75, 43, 0.32);
+}
+
+.btn--flame:hover {
+  background: var(--flame-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(217, 75, 43, 0.4);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--paper);
+  border: 2px solid rgba(255, 253, 248, 0.5);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 253, 248, 0.1);
+  border-color: var(--paper);
+}
+
+.btn--outline {
+  background: var(--paper);
+  color: var(--forest);
+  border: 2px solid var(--forest);
+}
+
+.btn--outline:hover {
+  background: var(--forest);
+  color: var(--paper);
+}
+
+.text-flame { color: var(--flame); }
+.text-forest { color: var(--forest); }
+.text-ember { color: var(--ember); }
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  text-transform: uppercase;
+}
+
+.callout-quote {
+  position: relative;
+  padding: 24px 32px;
+  background: var(--forest-soft);
+  border-radius: var(--radius-md);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--forest-deep);
+  line-height: 1.9;
+}
+
+.callout-quote::before {
+  content: "「";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  font-size: 48px;
+  color: var(--ember);
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 72px;
+  }
+  .container { padding: 0 20px; }
+  .btn { padding: 16px 24px; font-size: 15px; }
+}

@@ -1,0 +1,39 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyCta from "../components/StickyCta.astro";
+import "../styles/global.css";
+
+const { title, description, current = "home" } = Astro.props;
+const pageTitle = title
+  ? `${title}｜個別指導塾フォレスト 蒲生四丁目駅前校・今里校`
+  : "個別指導塾フォレスト｜大阪市城東区・生野区の個別指導塾";
+const pageDesc =
+  description ??
+  "意志あるところに道は開ける。大阪市城東区・生野区の個別指導塾フォレスト。蒲生四丁目駅前校・今里校。中学受験・高校受験・苦手克服までつきっきりの個別指導。";
+const base = import.meta.env.BASE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header current={current} base={base} />
+    <main>
+      <slot />
+    </main>
+    <Footer base={base} />
+    <StickyCta base={base} />
+  </body>
+</html>

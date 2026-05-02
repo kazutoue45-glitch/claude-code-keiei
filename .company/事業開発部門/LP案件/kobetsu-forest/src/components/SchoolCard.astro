@@ -1,0 +1,128 @@
+---
+const { name, station, address, tel, image, mapUrl, accent = "蒲生四丁目駅前校" } = Astro.props;
+const telLink = `tel:${tel.replace(/-/g, "")}`;
+---
+
+<article class="school-card">
+  <div class="school-card__media">
+    <img src={image} alt={`${name}の外観`} loading="lazy" />
+    <div class="school-card__badge">{accent}</div>
+  </div>
+  <div class="school-card__body">
+    <div class="school-card__station">{station}</div>
+    <h3>{name}</h3>
+    <p class="school-card__address">{address}</p>
+    <a href={telLink} class="school-card__tel">
+      <span class="school-card__tel-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+      </span>
+      <span>{tel}</span>
+    </a>
+    {mapUrl && (
+      <a href={mapUrl} target="_blank" rel="noopener" class="school-card__map">
+        Googleマップで見る →
+      </a>
+    )}
+  </div>
+</article>
+
+<style>
+  .school-card {
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .school-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .school-card__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--forest-soft);
+  }
+
+  .school-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .school-card__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--forest);
+    color: var(--paper);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+  }
+
+  .school-card__body {
+    padding: 28px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .school-card__station {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--flame);
+    text-transform: uppercase;
+  }
+
+  .school-card h3 {
+    font-size: 22px;
+    color: var(--forest-deep);
+    margin-bottom: 4px;
+  }
+
+  .school-card__address {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .school-card__tel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--forest-deep);
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+
+  .school-card__tel-icon {
+    color: var(--flame);
+  }
+
+  .school-card__map {
+    font-size: 13px;
+    color: var(--forest);
+    font-weight: 700;
+    margin-top: 4px;
+  }
+
+  .school-card__map:hover {
+    color: var(--flame);
+  }
+</style>

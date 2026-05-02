@@ -1,0 +1,67 @@
+---
+const { value, unit, label, accent = "flame" } = Astro.props;
+---
+
+<div class={`stat stat--${accent}`}>
+  <div class="stat__value">
+    <span class="stat__num">{value}</span>
+    {unit && <span class="stat__unit">{unit}</span>}
+  </div>
+  <div class="stat__label">{label}</div>
+</div>
+
+<style>
+  .stat {
+    text-align: center;
+    padding: 32px 16px;
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+  }
+
+  .stat--flame::before { background: var(--flame); }
+  .stat--forest::before { background: var(--forest); }
+  .stat--ember::before { background: var(--ember); }
+
+  .stat__value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .stat__num {
+    font-family: var(--font-serif);
+    font-size: clamp(40px, 8vw, 64px);
+    font-weight: 900;
+    color: var(--forest-deep);
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .stat__unit {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--forest-deep);
+  }
+
+  .stat__label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+</style>

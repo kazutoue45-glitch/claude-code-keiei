@@ -1,0 +1,467 @@
+---
+import Base from "../layouts/Base.astro";
+
+const base = import.meta.env.BASE_URL;
+
+const elementary = [
+  { grade: "小学1〜4年", w50: "週1（50分）", w50price: "9,900円〜", w100: "週1（100分）", w100price: "16,500円〜" },
+  { grade: "小学5・6年", w50: "週1（50分）", w50price: "11,000円〜", w100: "週1（100分）", w100price: "17,600円〜" },
+];
+
+const junior = [
+  { grade: "中学1・2年", w50: "週1（50分）", w50price: "13,200円〜", w100: "週1（100分）", w100price: "19,800円〜" },
+  { grade: "中学3年", w50: "週1（50分）", w50price: "14,300円〜", w100: "週1（100分）", w100price: "20,900円〜" },
+];
+---
+
+<Base current="price" title="お月謝のご案内">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">PRICE</span>
+      <h1>お月謝のご案内</h1>
+      <p class="page-hero__lead">
+        わかりやすい料金体系。<br />
+        季節講習も「希望者のみ・強制ゼロ」です。
+      </p>
+    </div>
+  </section>
+
+  <!-- Campaign banner -->
+  <section class="section">
+    <div class="container">
+      <div class="campaign-banner">
+        <div class="campaign-banner__left">
+          <span class="campaign-banner__badge">新年度キャンペーン</span>
+          <h2>スタート月謝<br />2ヶ月半額</h2>
+          <p>＋ 入塾金（通常 22,000円） 無料</p>
+        </div>
+        <div class="campaign-banner__right">
+          <div class="campaign-banner__num">
+            <span class="campaign-banner__big">50</span>
+            <span>%<small>OFF</small></span>
+          </div>
+          <p>最初の2ヶ月分のお月謝が半額になります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 小学生 -->
+  <section class="section">
+    <div class="container">
+      <div class="price-section">
+        <div class="price-section__head">
+          <span class="section-label">小学生コース</span>
+          <h2 class="section-title">小学生のお月謝</h2>
+          <p>1対2・1対3の個別指導。50分／100分から選べます。</p>
+        </div>
+        <div class="price-table">
+          <div class="price-table__row price-table__row--head">
+            <div>学年</div>
+            <div>50分コース</div>
+            <div>100分コース</div>
+          </div>
+          {elementary.map((e) => (
+            <div class="price-table__row">
+              <div class="price-table__grade">{e.grade}</div>
+              <div>
+                <small>{e.w50}</small>
+                <strong>{e.w50price}</strong>
+              </div>
+              <div>
+                <small>{e.w100}</small>
+                <strong>{e.w100price}</strong>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 中学生 -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="price-section">
+        <div class="price-section__head">
+          <span class="section-label">中学生コース</span>
+          <h2 class="section-title">中学生のお月謝</h2>
+          <p>定期テスト対策・高校受験対策まで対応。1対2・1対3の個別指導。</p>
+        </div>
+        <div class="price-table">
+          <div class="price-table__row price-table__row--head">
+            <div>学年</div>
+            <div>50分コース</div>
+            <div>100分コース</div>
+          </div>
+          {junior.map((j) => (
+            <div class="price-table__row">
+              <div class="price-table__grade">{j.grade}</div>
+              <div>
+                <small>{j.w50}</small>
+                <strong>{j.w50price}</strong>
+              </div>
+              <div>
+                <small>{j.w100}</small>
+                <strong>{j.w100price}</strong>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="price-note">※ 上記は週1回の目安です。週2・週3もお選びいただけます。</p>
+        <p class="price-note">※ 表示価格は税込み・1対2指導の場合の目安です。詳細はお気軽にお問い合わせください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 講習会 -->
+  <section class="section">
+    <div class="container">
+      <div class="price-section">
+        <div class="price-section__head">
+          <span class="section-label">講習会</span>
+          <h2 class="section-title">夏期・冬期・春期講習</h2>
+          <p>講習会は<strong class="text-flame">希望者のみ・強制は一切ありません</strong>。</p>
+        </div>
+        <div class="seminar-card">
+          <div class="seminar-card__head">
+            <h3>4回・100分・1対2</h3>
+            <span class="seminar-card__price">19,400円〜</span>
+          </div>
+          <p>
+            苦手単元の集中対策、受験前の総まとめなど、目的に応じてカリキュラムを組みます。「全員必修」「セット販売」のような押し売りはしません。
+          </p>
+          <ul class="seminar-card__list">
+            <li>夏期講習（7月下旬〜8月）</li>
+            <li>冬期講習（12月下旬〜1月）</li>
+            <li>春期講習（3月下旬〜4月）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 透明性 -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="price-section">
+        <div class="price-section__head">
+          <span class="section-label">料金の透明性</span>
+          <h2 class="section-title">月謝以外にかかる費用</h2>
+          <p>「あとから次々と教材費を請求された」というご不満をいただかないよう、最初にすべてご説明します。</p>
+        </div>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <h3>教材費</h3>
+            <p>学校の教科書・問題集を持ち込みOK。塾教材を使う場合のみ実費でご案内します（年間 数千円〜の目安）。</p>
+          </div>
+          <div class="cost-card">
+            <h3>模試代</h3>
+            <p>受験生のみ希望者対象。1回 2,000〜3,500円程度。受けるかどうかはご家庭の判断にお任せします。</p>
+          </div>
+          <div class="cost-card">
+            <h3>講習会費</h3>
+            <p>上記の講習会のみ。「年間に必ず◯回受けてください」という強制はありません。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--forest">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title">詳しい料金は資料でご確認ください</h2>
+      <p class="section-lead" style="margin-left: auto; margin-right: auto;">
+        各校舎の最新の料金表は、無料資料請求でお送りします。お電話でも丁寧にご案内します。
+      </p>
+      <a href={`${base}contact/`} class="btn btn--flame" style="margin-top: 16px;">
+        無料資料請求はこちら
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    padding: 80px 0 56px;
+    background: linear-gradient(180deg, var(--cream), var(--paper));
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    color: var(--forest-deep);
+    margin: 16px 0 24px;
+  }
+
+  .page-hero__lead {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 2;
+  }
+
+  .campaign-banner {
+    background: linear-gradient(135deg, var(--flame), #E96A4D);
+    color: var(--paper);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    box-shadow: var(--shadow-md);
+  }
+
+  .campaign-banner__badge {
+    display: inline-block;
+    background: rgba(255, 253, 248, 0.18);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.1em;
+  }
+
+  .campaign-banner h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--paper);
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .campaign-banner p {
+    font-size: 16px;
+    opacity: 0.95;
+    line-height: 1.8;
+  }
+
+  .campaign-banner__num {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: var(--paper);
+  }
+
+  .campaign-banner__big {
+    font-family: var(--font-serif);
+    font-size: clamp(80px, 14vw, 140px);
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .campaign-banner__num span:last-child {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    font-weight: 900;
+  }
+
+  .campaign-banner__num small {
+    font-size: 14px;
+    margin-left: 4px;
+  }
+
+  .campaign-banner__right {
+    text-align: right;
+  }
+
+  .price-section__head {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .price-section__head h2 {
+    margin-bottom: 12px;
+  }
+
+  .price-section__head p {
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .price-table {
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .price-table__row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.2fr;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .price-table__row:last-child {
+    border-bottom: none;
+  }
+
+  .price-table__row--head {
+    background: var(--forest);
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 16px 24px;
+  }
+
+  .price-table__grade {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--forest-deep);
+  }
+
+  .price-table__row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .price-table__row small {
+    font-size: 12px;
+    color: var(--ink-mute);
+  }
+
+  .price-table__row strong {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--forest-deep);
+  }
+
+  .price-note {
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .seminar-card {
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .seminar-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .seminar-card h3 {
+    font-size: 22px;
+    color: var(--forest-deep);
+  }
+
+  .seminar-card__price {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--flame);
+  }
+
+  .seminar-card p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  .seminar-card__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .seminar-card__list li {
+    font-size: 14px;
+    padding-left: 24px;
+    position: relative;
+    color: var(--ink);
+  }
+
+  .seminar-card__list li::before {
+    content: "●";
+    position: absolute;
+    left: 4px;
+    top: 0;
+    color: var(--ember);
+    font-size: 10px;
+  }
+
+  .cost-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .cost-card {
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    border: 1px solid var(--line);
+  }
+
+  .cost-card h3 {
+    font-size: 17px;
+    color: var(--forest-deep);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ember);
+  }
+
+  .cost-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+
+  @media (max-width: 768px) {
+    .campaign-banner {
+      grid-template-columns: 1fr;
+      padding: 32px;
+    }
+    .campaign-banner__right {
+      text-align: center;
+    }
+    .campaign-banner__num {
+      justify-content: center;
+    }
+    .price-table__row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .price-table__row--head {
+      display: none;
+    }
+    .price-table__row {
+      padding: 20px;
+    }
+    .price-table__row > div:not(.price-table__grade) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 8px 0;
+      border-top: 1px dashed var(--line);
+    }
+    .cost-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
