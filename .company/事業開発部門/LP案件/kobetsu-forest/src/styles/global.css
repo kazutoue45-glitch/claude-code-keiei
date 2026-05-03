@@ -117,19 +117,32 @@ h1, h2, h3, h4 {
 .section--flame h3 { color: var(--paper); }
 
 .section-label {
-  display: inline-block;
-  font-family: var(--font-sans);
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-serif);
+  font-size: 14px;
   font-weight: 700;
   color: var(--flame);
-  letter-spacing: 0.3em;
-  margin-bottom: 14px;
-  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--flame);
 }
 
 .section--ink .section-label,
 .section--flame .section-label {
   color: var(--flame-glow);
+}
+
+.section--ink .section-label::before,
+.section--flame .section-label::before {
+  background: var(--flame-glow);
 }
 
 .section-title {

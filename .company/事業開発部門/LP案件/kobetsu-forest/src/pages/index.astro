@@ -1,23 +1,21 @@
 ---
 import Base from "../layouts/Base.astro";
-import StatBlock from "../components/StatBlock.astro";
-import StrengthCard from "../components/StrengthCard.astro";
 import SchoolCard from "../components/SchoolCard.astro";
 
 const base = import.meta.env.BASE_URL;
 
 const strengths = [
-  { number: "01", title: "つきっきりの個別指導", body: "1対2・1対3でも、わからないを見逃さない。問題を解くスピード・理解度・やる気の3つを毎回見ています。", icon: "users" },
-  { number: "02", title: "成績で生徒を選ばない", body: "「できる子」だけ集めても本当の指導力は身につきません。一人ひとりの今からの伸びに本気で向き合います。", icon: "leaf" },
-  { number: "03", title: "毎週土曜・無料質問クラス", body: "19:00〜22:00、5教科対応の自由質問クラス。塾生は何度来ても無料。「わからない」を翌週に持ち越しません。", icon: "calendar" },
-  { number: "04", title: "中学受験 合格率100%", body: "2001年の開校以来、中学受験は合格率100%の実績。常翔学園・信愛女学院など地元中堅私学に対応。", icon: "star" },
-  { number: "05", title: "平日17時から自習室開放", body: "「集中して勉強できる場所がある」だけで、家では出せない力が出ます。塾生は自由に使えます。", icon: "book" },
-  { number: "06", title: "クラブ活動と両立できる時間割", body: "20:00〜21:50の遅い時間帯にも対応。部活で疲れた日も、無理なく通い続けられる仕組みです。", icon: "sun" },
+  { num: "01", title: "1対2・1対3のつきっきり指導", body: "わからない箇所をその場で潰します。問題を解くスピード・理解度・やる気を一回ごとに見ています。" },
+  { num: "02", title: "成績で生徒を選ばない", body: "「できる子」だけ集めません。今の偏差値ではなく、これから伸ばす力に本気で向き合う方針です。" },
+  { num: "03", title: "毎週土曜の無料質問クラス", body: "19:00〜22:00、5教科対応。塾生は何度来ても無料です。「わからない」を翌週に持ち越しません。" },
+  { num: "04", title: "中学受験 合格率100%", body: "2001年の開校以来、中学受験は合格率100%。常翔学園・信愛女学院など地元中堅私学に対応します。" },
+  { num: "05", title: "平日17時〜の自習室", body: "塾生は自由に使えます。家では出せない集中力が、ここなら出る。講師がそばにいるので質問もすぐ。" },
+  { num: "06", title: "クラブ活動と両立", body: "20:00〜21:50の遅い時間帯にも対応。部活で疲れた日も、無理なく通い続けられる時間割です。" },
 ];
 ---
 
 <Base current="home">
-  <!-- HERO: 1ビューポート完結。写真をカード全面背景にして大文字「個別指導」をオーバーレイ -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero__bg" aria-hidden="true"></div>
 
@@ -34,14 +32,12 @@ const strengths = [
 
           <h1 class="hero__title">
             <span class="hero__title-pre">講師がずっと横にいる、ホンモノの</span>
-            <span class="hero__title-main">
-              <span>個</span><span>別</span><span>指</span><span>導</span>
-            </span>
+            <span class="hero__title-main">個別指導</span>
           </h1>
 
           <p class="hero__lead">
-            <strong>安心の料金設定</strong>で、内容のぎっしり詰まった<br />
-            質の高い<strong>個別授業</strong>が受けられます。
+            安心の料金設定で、内容のぎっしり詰まった<br />
+            質の高い個別授業が受けられます。
           </p>
 
           <div class="hero__targets">
@@ -54,12 +50,8 @@ const strengths = [
             <a href={`${base}contact/`} class="hero__cta">
               <span class="hero__cta-mini">かんたん1分</span>
               <span class="hero__cta-main">無料資料請求・個別相談</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
             <a href="tel:0669391001" class="hero__tel">
-              <span class="hero__tel-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </span>
               <span class="hero__tel-text">
                 <span class="hero__tel-label">蒲生四丁目駅前校</span>
                 <span class="hero__tel-num">06-6939-1001</span>
@@ -69,7 +61,6 @@ const strengths = [
         </div>
       </article>
 
-      <!-- 元サイト準拠：白カード下の赤帯（他塾で〜） -->
       <div class="hero__strip">
         <strong>他塾で伸びなかった生徒の、成績アップを目指します</strong>
         <span class="hero__strip-area">大阪市城東区／生野区／東成区　2校舎</span>
@@ -84,11 +75,8 @@ const strengths = [
     </div>
     <div class="principal__content">
       <div class="principal__inner">
-        <span class="section-label">塾長メッセージ</span>
-        <h2>
-          成績で、<br />
-          生徒を選ばない。
-        </h2>
+        <span class="section-label">塾長より、保護者のみなさまへ</span>
+        <h2>成績で、<br />生徒を選ばない。</h2>
         <p>
           たとえ時代がどのようにぶれようが、子供中心の視点から子供達が本当に望んでいることに応え、そして親の子供に対する熱い思いに共感することが、塾本来の役割だと、私は思っています。
         </p>
@@ -103,60 +91,75 @@ const strengths = [
     </div>
   </section>
 
-  <!-- Stats -->
-  <section class="section section--cream">
+  <!-- 数字 -->
+  <section class="numbers">
     <div class="container">
-      <div class="section-head">
-        <span class="section-label">FOREST IN NUMBERS</span>
-        <h2 class="section-title">数字で見るフォレスト</h2>
+      <div class="numbers__head">
+        <span class="section-label">数字でわかるフォレスト</span>
+        <h2>地域に根を張って、25年。</h2>
       </div>
-      <div class="stats-grid">
-        <StatBlock value="25" unit="年" label="2001年開校・地域に根差した実績" accent="flame" />
-        <StatBlock value="100" unit="%" label="中学受験 合格率（開校以来）" accent="flame" />
-        <StatBlock value="2" unit="校" label="蒲生四丁目駅前校・今里校" accent="forest" />
-        <StatBlock value="土" unit="" label="毎週土曜・無料質問クラス" accent="ember" />
+      <div class="numbers__grid">
+        <div class="num-item">
+          <div class="num-item__num"><span>25</span><small>年</small></div>
+          <div class="num-item__label">2001年開校・地域に根差した実績</div>
+        </div>
+        <div class="num-item num-item--accent">
+          <div class="num-item__num"><span>100</span><small>％</small></div>
+          <div class="num-item__label">中学受験 合格率（開校以来）</div>
+        </div>
+        <div class="num-item">
+          <div class="num-item__num"><span>2</span><small>校</small></div>
+          <div class="num-item__label">蒲生四丁目駅前校・今里校</div>
+        </div>
+        <div class="num-item">
+          <div class="num-item__num"><span>1</span><small>対2〜3</small></div>
+          <div class="num-item__label">完全個別の少人数指導</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Strengths -->
-  <section class="section">
+  <!-- 強み -->
+  <section class="strengths">
     <div class="container">
-      <div class="section-head">
-        <span class="section-label">FOREST STRENGTHS</span>
-        <h2 class="section-title">
-          ホンモノの個別指導は<br class="sp-only" />
+      <div class="strengths__head">
+        <span class="section-label">フォレストの強み</span>
+        <h2>
+          ホンモノの個別指導は、<br class="sp-only" />
           「つきっきり」でなければならない。
         </h2>
-        <p class="section-lead">
-          フォレストの個別指導は、ただ机を並べるだけの時間ではありません。一問ごとに、生徒の理解度・スピード・表情まで見つめながら進める。それが、私たちが25年続けてきた指導の形です。
+        <p>
+          フォレストの個別指導は、机を並べるだけの時間ではありません。一問ごとに、生徒の理解度・スピード・表情まで見つめながら進める。それが私たちが25年続けてきた指導の形です。
         </p>
       </div>
 
-      <div class="strengths-grid">
+      <div class="strengths__list">
         {strengths.map((s) => (
-          <StrengthCard {...s} />
+          <div class="str-row">
+            <div class="str-row__num">
+              <span class="str-row__num-mini">No.</span>
+              <span class="str-row__num-big">{s.num}</span>
+            </div>
+            <div class="str-row__body">
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
+            </div>
+          </div>
         ))}
       </div>
 
-      <div class="strengths-more">
-        <a href={`${base}strengths/`} class="btn btn--outline">
-          強みの詳細を見る
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
+      <div class="strengths__more">
+        <a href={`${base}strengths/`} class="btn btn--outline">強みの詳細を読む</a>
       </div>
     </div>
   </section>
 
-  <!-- Schools -->
-  <section class="section section--cream">
+  <!-- 教室案内 -->
+  <section class="schools-section">
     <div class="container">
-      <div class="section-head">
-        <span class="section-label">SCHOOLS</span>
-        <h2 class="section-title">通いやすい、地元の2校舎。</h2>
-        <p class="section-lead">
-          地元の小中学校に密着し、クラブ活動を終えた後でも通える時間割でお待ちしています。
-        </p>
+      <div class="schools-section__head">
+        <span class="section-label">通える、地元の2校舎</span>
+        <h2>クラブ活動の後でも通える時間割。</h2>
       </div>
       <div class="schools-grid">
         <SchoolCard
@@ -181,81 +184,84 @@ const strengths = [
     </div>
   </section>
 
-  <!-- Voices -->
-  <section class="section">
+  <!-- 合格体験記 -->
+  <section class="voices-section">
     <div class="container">
-      <div class="section-head">
-        <span class="section-label">VOICES</span>
-        <h2 class="section-title">大逆転の合格を、何度も見てきました。</h2>
-        <p class="section-lead">
-          E判定からの志望校合格、勉強嫌いの克服、苦手だった教科が得意に変わる瞬間。フォレストには、生徒たち一人ひとりの「ビフォーアフター」があります。
-        </p>
+      <div class="voices-section__head">
+        <span class="section-label">合格体験記</span>
+        <h2>大逆転の合格を、何度も見てきました。</h2>
       </div>
       <div class="voices">
-        <a href="https://kobetsu-forest.com/2018-12-17-08-20-44.html" target="_blank" rel="noopener" class="voice-card">
-          <span class="voice-card__tag">大逆転合格</span>
+        <a href="https://kobetsu-forest.com/2018-12-17-08-20-44.html" target="_blank" rel="noopener" class="voice">
+          <div class="voice__head">
+            <span class="voice__tag">大逆転合格</span>
+          </div>
           <h3>「もうダメかも」から、第一志望へ。</h3>
-          <p>受験直前の追い込みで結果を変えた生徒たちのストーリー。</p>
-          <span class="voice-card__more">読む →</span>
+          <p>受験直前の追い込みで結果を変えた生徒たちのストーリーをご覧いただけます。</p>
+          <span class="voice__more">記事を読む →</span>
         </a>
-        <a href="https://kobetsu-forest.com/2019-05-27-14-29-10.html" target="_blank" rel="noopener" class="voice-card">
-          <span class="voice-card__tag">ビフォーアフター</span>
+        <a href="https://kobetsu-forest.com/2019-05-27-14-29-10.html" target="_blank" rel="noopener" class="voice">
+          <div class="voice__head">
+            <span class="voice__tag">ビフォーアフター</span>
+          </div>
           <h3>勉強への向き合い方が、変わった。</h3>
-          <p>入塾前と後で、生徒の変化を時系列で記録した実例集。</p>
-          <span class="voice-card__more">読む →</span>
+          <p>入塾前と後で、生徒の変化を時系列で記録した実例集をご覧いただけます。</p>
+          <span class="voice__more">記事を読む →</span>
         </a>
-        <a href="https://kobetsu-forest.com/diary.html" target="_blank" rel="noopener" class="voice-card">
-          <span class="voice-card__tag">合格体験記一覧</span>
+        <a href="https://kobetsu-forest.com/diary.html" target="_blank" rel="noopener" class="voice">
+          <div class="voice__head">
+            <span class="voice__tag">合格体験記一覧</span>
+          </div>
           <h3>すべての合格を、本人の言葉で。</h3>
-          <p>歴代の塾生が綴った合格までの道のりをご覧ください。</p>
-          <span class="voice-card__more">読む →</span>
+          <p>歴代の塾生が綴った合格までの道のりをご覧いただけます。</p>
+          <span class="voice__more">記事を読む →</span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta">
-    <div class="cta__bg" aria-hidden="true"></div>
-    <div class="container cta__inner">
-      <span class="section-label">RESERVATION</span>
-      <h2>
-        まずは、お子さまの<br />
-        「今」を聞かせてください。
-      </h2>
-      <p>
-        ご相談は無料、入塾の無理な勧誘は一切ありません。<br />
-        資料請求はかんたん1分。お電話でも、フォームでも、お好きな方法でどうぞ。
-      </p>
-      <ul class="cta__bullets">
-        <li>スタート月謝 <strong>2ヶ月半額</strong> キャンペーン実施中</li>
-        <li>入塾金は <strong>無料</strong></li>
-        <li>講習会は <strong>希望者のみ・強制ゼロ</strong></li>
-      </ul>
-      <div class="cta__actions">
-        <a href={`${base}contact/`} class="btn btn--white">
-          無料資料請求・個別相談
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <a href={`${base}price/`} class="btn btn--ghost">お月謝を見る</a>
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-grid">
+        <div class="cta-grid__left">
+          <span class="section-label">資料請求・お問い合わせ</span>
+          <h2>
+            まずは、お子さまの<br />
+            「今」を聞かせてください。
+          </h2>
+          <p>
+            ご相談は無料、入塾の無理な勧誘は一切ありません。資料請求はかんたん1分。お電話・フォーム・お好きな方法でご連絡ください。
+          </p>
+          <ul class="cta-grid__bullets">
+            <li><span>新年度キャンペーン</span>スタート月謝 <strong>2ヶ月半額</strong></li>
+            <li><span>入塾金</span>通常22,000円が <strong>無料</strong></li>
+            <li><span>講習会</span>希望者のみ・<strong>強制ゼロ</strong></li>
+          </ul>
+          <div class="cta-grid__actions">
+            <a href={`${base}contact/`} class="btn btn--flame">無料資料請求・個別相談</a>
+            <a href={`${base}price/`} class="btn btn--outline">お月謝表を見る</a>
+          </div>
+        </div>
+        <div class="cta-grid__right">
+          <h3 class="cta-grid__phones-title">お電話でのご相談</h3>
+          <a href="tel:0669391001" class="cta-grid__phone">
+            <span class="cta-grid__phone-label">蒲生四丁目駅前校</span>
+            <span class="cta-grid__phone-num">06-6939-1001</span>
+          </a>
+          <a href="tel:0643066300" class="cta-grid__phone">
+            <span class="cta-grid__phone-label">今里校</span>
+            <span class="cta-grid__phone-num">06-4306-6300</span>
+          </a>
+          <p class="cta-grid__hours">受付：平日 14:00〜22:00 ／ 土曜 14:00〜21:00</p>
+        </div>
       </div>
-      <div class="cta__phones">
-        <a href="tel:0669391001" class="cta__phone">
-          <span class="cta__phone-label">蒲生四丁目駅前校</span>
-          <span class="cta__phone-num">06-6939-1001</span>
-        </a>
-        <a href="tel:0643066300" class="cta__phone">
-          <span class="cta__phone-label">今里校</span>
-          <span class="cta__phone-num">06-4306-6300</span>
-        </a>
-      </div>
-      <p class="cta__hours">受付時間：平日 14:00〜22:00 ／ 土曜 14:00〜21:00</p>
     </div>
   </section>
 </Base>
 
 <style>
-  /* ===== HERO: 1ビューポート完結 ===== */
+  /* ===== HERO ===== */
   .hero {
     position: relative;
     min-height: calc(100vh - 72px);
@@ -270,7 +276,7 @@ const strengths = [
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(135deg, var(--flame) 0%, var(--flame-deep) 100%);
+    background: var(--flame);
   }
 
   .hero__bg::before {
@@ -287,15 +293,6 @@ const strengths = [
     opacity: 0.55;
   }
 
-  .hero__bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 100% 0%, rgba(244, 184, 114, 0.18), transparent 40%),
-      radial-gradient(circle at 0% 100%, rgba(126, 18, 24, 0.4), transparent 50%);
-  }
-
   .hero__container {
     width: 100%;
     max-width: 1240px;
@@ -303,16 +300,16 @@ const strengths = [
     position: relative;
   }
 
-  /* メインカード：写真をBG、テキストをoverlay */
   .hero__card {
     position: relative;
-    border-radius: 24px;
+    border-radius: 4px;
     overflow: hidden;
     background: var(--paper);
-    box-shadow: 0 24px 60px rgba(20, 8, 8, 0.32), 0 0 0 1px rgba(255, 252, 246, 0.45);
+    box-shadow: 0 16px 40px rgba(20, 8, 8, 0.32);
     aspect-ratio: 21 / 9;
     min-height: 480px;
-    max-height: 620px;
+    max-height: 600px;
+    border: 4px solid var(--paper);
   }
 
   .hero__photo {
@@ -321,7 +318,7 @@ const strengths = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 65% 45%;
+    object-position: 60% 40%;
     z-index: 1;
   }
 
@@ -337,44 +334,39 @@ const strengths = [
     position: relative;
     z-index: 3;
     height: 100%;
-    padding: 44px 56px 44px 56px;
+    padding: 44px 56px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 720px;
   }
 
-  /* バッジ */
   .hero__badges {
     display: inline-flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   .hero__badge {
     display: inline-flex;
     align-items: center;
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 700;
-    padding: 8px 14px;
-    border-radius: 6px;
+    padding: 6px 14px;
     letter-spacing: 0.02em;
   }
 
   .hero__badge--green {
     background: var(--forest);
     color: var(--paper);
-    box-shadow: 0 3px 0 var(--forest-deep);
   }
 
   .hero__badge--age {
-    background: var(--paper);
+    background: var(--cream);
     color: var(--ink);
-    border: 1.5px solid var(--ink);
   }
 
-  /* タイトル */
   .hero__title {
     font-family: var(--font-serif);
     font-weight: 900;
@@ -386,55 +378,31 @@ const strengths = [
     display: block;
     font-size: clamp(15px, 1.7vw, 19px);
     color: var(--ink);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-weight: 700;
     line-height: 1.5;
   }
 
   .hero__title-main {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0;
+    display: block;
     font-size: clamp(64px, 11vw, 132px);
     line-height: 0.95;
-    letter-spacing: 0.02em;
+    color: var(--flame-deep);
+    letter-spacing: 0.04em;
   }
-
-  .hero__title-main span {
-    background: linear-gradient(180deg, var(--flame) 0%, var(--flame-deep) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 2px 0 rgba(126, 18, 24, 0.06);
-    display: inline-block;
-    transform-origin: bottom center;
-  }
-
-  .hero__title-main span:nth-child(1) { transform: translateY(-2px); }
-  .hero__title-main span:nth-child(2) { transform: translateY(2px); }
-  .hero__title-main span:nth-child(3) { transform: translateY(-1px); }
-  .hero__title-main span:nth-child(4) { transform: translateY(3px); }
 
   .hero__lead {
     font-size: clamp(13.5px, 1.5vw, 15.5px);
-    line-height: 1.85;
-    color: var(--ink-soft);
+    line-height: 1.95;
+    color: var(--ink);
     margin-bottom: 22px;
     font-weight: 500;
   }
 
-  .hero__lead strong {
-    color: var(--flame-deep);
-    font-weight: 900;
-    background: linear-gradient(transparent 65%, rgba(244, 184, 114, 0.5) 65%);
-    padding: 0 2px;
-  }
-
-  /* 学年バッジ */
   .hero__targets {
     display: inline-flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 28px;
   }
 
@@ -443,25 +411,21 @@ const strengths = [
     align-items: center;
     justify-content: center;
     background: var(--paper);
-    border: 2px solid var(--ink);
+    border: 1.5px solid var(--ink);
     color: var(--ink);
     font-family: var(--font-serif);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 900;
-    padding: 8px 20px;
-    border-radius: 999px;
+    padding: 6px 18px;
     letter-spacing: 0.05em;
-    box-shadow: 2px 2px 0 var(--ink);
   }
 
   .hero__target--accent {
     background: var(--flame);
     border-color: var(--flame-deep);
     color: var(--paper);
-    box-shadow: 2px 2px 0 var(--flame-deep);
   }
 
-  /* CTA + Tel */
   .hero__actions {
     display: inline-flex;
     align-items: center;
@@ -473,20 +437,15 @@ const strengths = [
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2px;
     background: var(--flame);
     color: var(--paper);
-    padding: 12px 28px;
-    border-radius: 12px;
+    padding: 12px 32px 14px;
     font-weight: 700;
-    box-shadow: 0 6px 0 var(--flame-deep), 0 12px 24px rgba(184, 35, 42, 0.32);
-    transition: transform 0.15s, box-shadow 0.15s;
-    position: relative;
+    border: 2px solid var(--flame-deep);
   }
 
   .hero__cta:hover {
-    transform: translateY(2px);
-    box-shadow: 0 4px 0 var(--flame-deep), 0 8px 18px rgba(184, 35, 42, 0.32);
+    background: var(--flame-deep);
   }
 
   .hero__cta-mini {
@@ -494,19 +453,13 @@ const strengths = [
     font-weight: 700;
     letter-spacing: 0.1em;
     color: var(--flame-glow);
+    margin-bottom: 1px;
   }
 
   .hero__cta-main {
-    font-size: 17px;
+    font-size: 16.5px;
     font-weight: 900;
     letter-spacing: 0.02em;
-  }
-
-  .hero__cta svg {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
   .hero__tel {
@@ -514,18 +467,6 @@ const strengths = [
     align-items: center;
     gap: 10px;
     color: var(--ink);
-  }
-
-  .hero__tel-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--ink);
-    color: var(--paper);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
   }
 
   .hero__tel-text {
@@ -538,34 +479,30 @@ const strengths = [
     font-size: 10px;
     color: var(--ink-mute);
     letter-spacing: 0.05em;
-    margin-bottom: 1px;
   }
 
   .hero__tel-num {
     font-family: var(--font-serif);
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 900;
     color: var(--ink);
     letter-spacing: 0.02em;
   }
 
-  /* 下部の赤帯（元サイト準拠） */
   .hero__strip {
-    margin-top: 16px;
-    padding: 14px 28px;
+    margin-top: 12px;
+    padding: 12px 24px;
     background: var(--paper);
-    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 16px;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 2px solid var(--ink);
   }
 
   .hero__strip strong {
     font-family: var(--font-serif);
-    font-size: clamp(14px, 1.7vw, 18px);
+    font-size: clamp(14px, 1.6vw, 17px);
     font-weight: 900;
     color: var(--ink);
     letter-spacing: 0.02em;
@@ -574,7 +511,6 @@ const strengths = [
   .hero__strip-area {
     font-size: 12px;
     color: var(--ink-mute);
-    letter-spacing: 0.1em;
     font-weight: 600;
   }
 
@@ -615,14 +551,12 @@ const strengths = [
     padding: 72px 48px 72px 56px;
   }
 
-  .principal__inner {
-    max-width: 520px;
-  }
+  .principal__inner { max-width: 540px; }
 
   .principal__inner h2 {
     font-size: clamp(30px, 4.2vw, 48px);
     color: var(--paper);
-    margin: 16px 0 26px;
+    margin: 6px 0 26px;
     line-height: 1.4;
     letter-spacing: 0.04em;
   }
@@ -646,7 +580,6 @@ const strengths = [
   .principal__sign-role {
     font-size: 12px;
     color: rgba(255, 252, 246, 0.6);
-    letter-spacing: 0.15em;
     margin-bottom: 6px;
   }
 
@@ -657,34 +590,175 @@ const strengths = [
     color: var(--paper);
   }
 
-  /* ===== SECTION HEAD ===== */
-  .section-head {
+  /* ===== NUMBERS ===== */
+  .numbers {
+    background: var(--cream);
+    padding: 88px 0;
+  }
+
+  .numbers__head {
     text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .numbers__head h2 {
+    font-size: clamp(26px, 3.6vw, 36px);
+    color: var(--ink);
+  }
+
+  .numbers__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+  }
+
+  .num-item {
+    padding: 32px 24px;
+    text-align: center;
+    border-right: 1px solid var(--line);
+  }
+
+  .num-item:last-child { border-right: none; }
+
+  .num-item--accent {
+    background: var(--flame);
+    color: var(--paper);
+  }
+
+  .num-item__num {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    font-family: var(--font-serif);
+    line-height: 1;
+  }
+
+  .num-item__num span {
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .num-item--accent .num-item__num span {
+    color: var(--paper);
+  }
+
+  .num-item__num small {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .num-item--accent .num-item__num small {
+    color: var(--flame-glow);
+  }
+
+  .num-item__label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .num-item--accent .num-item__label {
+    color: rgba(255, 252, 246, 0.92);
+  }
+
+  /* ===== STRENGTHS ===== */
+  .strengths {
+    padding: 96px 0;
+  }
+
+  .strengths__head {
+    max-width: 720px;
     margin-bottom: 64px;
   }
 
-  .section-head .section-label,
-  .section-head .section-title,
-  .section-head .section-lead {
-    margin-left: auto;
-    margin-right: auto;
+  .strengths__head h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--ink);
+    margin-bottom: 18px;
+    line-height: 1.5;
   }
 
-  .stats-grid {
+  .strengths__head p {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 2;
+  }
+
+  .strengths__list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--line);
+  }
+
+  .str-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
   }
 
-  .strengths-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  .str-row__num {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
   }
 
-  .strengths-more {
+  .str-row__num-mini {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--flame);
+    margin-bottom: 6px;
+  }
+
+  .str-row__num-big {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .str-row__body h3 {
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .str-row__body p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 2;
+    max-width: 720px;
+  }
+
+  .strengths__more {
     text-align: center;
-    margin-top: 56px;
+    margin-top: 48px;
+  }
+
+  /* ===== SCHOOLS ===== */
+  .schools-section {
+    background: var(--cream);
+    padding: 96px 0;
+  }
+
+  .schools-section__head {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .schools-section__head h2 {
+    font-size: clamp(26px, 3.6vw, 36px);
+    color: var(--ink);
   }
 
   .schools-grid {
@@ -693,183 +767,189 @@ const strengths = [
     gap: 24px;
   }
 
+  /* ===== VOICES ===== */
+  .voices-section {
+    padding: 96px 0;
+  }
+
+  .voices-section__head {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .voices-section__head h2 {
+    font-size: clamp(26px, 3.6vw, 36px);
+    color: var(--ink);
+  }
+
   .voices {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
   }
 
-  .voice-card {
+  .voice {
     display: block;
     padding: 32px 28px;
     background: var(--paper);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--line);
-    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    border-right: 1px solid var(--line);
+    transition: background 0.15s;
   }
 
-  .voice-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--flame);
-    box-shadow: var(--shadow-md);
+  .voice:last-child { border-right: none; }
+
+  .voice:hover {
+    background: var(--cream);
   }
 
-  .voice-card__tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--flame);
-    background: rgba(184, 35, 42, 0.1);
-    padding: 5px 12px;
-    border-radius: 999px;
+  .voice__head {
     margin-bottom: 16px;
   }
 
-  .voice-card h3 {
-    font-size: 18px;
-    color: var(--ink);
-    margin-bottom: 10px;
-    line-height: 1.5;
+  .voice__tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--flame);
+    border: 1.5px solid var(--flame);
+    padding: 4px 12px;
   }
 
-  .voice-card p {
+  .voice h3 {
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .voice p {
     font-size: 14px;
     color: var(--ink-soft);
     line-height: 1.85;
     margin-bottom: 16px;
   }
 
-  .voice-card__more {
+  .voice__more {
     font-size: 13px;
     font-weight: 700;
     color: var(--flame);
   }
 
   /* ===== CTA ===== */
-  .cta {
-    position: relative;
-    padding: 96px 0 112px;
+  .cta-section {
+    background: var(--ink);
     color: var(--paper);
-    overflow: hidden;
-    isolation: isolate;
+    padding: 96px 0;
   }
 
-  .cta__bg {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background:
-      radial-gradient(ellipse at 80% 20%, rgba(244, 184, 114, 0.2), transparent 50%),
-      linear-gradient(135deg, var(--flame-deep) 0%, var(--flame) 100%);
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: center;
   }
 
-  .cta__inner {
-    text-align: center;
-  }
-
-  .cta h2 {
-    font-size: clamp(30px, 5vw, 48px);
+  .cta-grid h2 {
+    font-size: clamp(30px, 4.5vw, 44px);
     color: var(--paper);
-    margin-bottom: 20px;
+    margin: 6px 0 20px;
     line-height: 1.5;
   }
 
-  .cta p {
-    font-size: 16px;
+  .cta-grid p {
+    font-size: 15.5px;
     line-height: 2;
-    color: rgba(255, 252, 246, 0.92);
+    color: rgba(255, 252, 246, 0.85);
+    margin-bottom: 28px;
+  }
+
+  .cta-grid__bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-bottom: 32px;
   }
 
-  .cta__bullets {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 0 auto 40px;
-    text-align: left;
-  }
-
-  .cta__bullets li {
+  .cta-grid__bullets li {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 252, 246, 0.15);
     font-size: 15px;
-    padding-left: 32px;
-    position: relative;
-    color: rgba(255, 252, 246, 0.95);
   }
 
-  .cta__bullets li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: var(--flame-glow);
+  .cta-grid__bullets li:last-child {
+    border-bottom: 1px solid rgba(255, 252, 246, 0.15);
   }
 
-  .cta__bullets li::after {
-    content: "✓";
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    color: var(--flame-deep);
+  .cta-grid__bullets li span {
     font-size: 12px;
-    font-weight: 900;
+    color: var(--flame-glow);
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 
-  .cta__bullets strong {
-    color: var(--flame-glow);
+  .cta-grid__bullets li strong {
+    color: var(--paper);
+    font-weight: 900;
     font-size: 17px;
   }
 
-  .cta__actions {
-    display: inline-flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 48px;
-  }
-
-  .cta__phones {
-    display: inline-flex;
-    gap: 0;
-    background: rgba(20, 17, 15, 0.28);
-    border: 1px solid rgba(255, 252, 246, 0.22);
-    border-radius: var(--radius-md);
-    backdrop-filter: blur(8px);
-    overflow: hidden;
-    margin-bottom: 16px;
-  }
-
-  .cta__phone {
-    padding: 20px 32px;
-    color: var(--paper);
-    border-right: 1px solid rgba(255, 252, 246, 0.18);
+  .cta-grid__actions {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
   }
 
-  .cta__phone:last-child { border-right: none; }
+  .cta-grid__right {
+    background: rgba(255, 252, 246, 0.04);
+    border: 1px solid rgba(255, 252, 246, 0.15);
+    padding: 32px;
+  }
 
-  .cta__phone-label {
+  .cta-grid__phones-title {
+    font-size: 13px;
+    color: var(--flame-glow);
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 0.05em;
+    font-family: var(--font-sans);
+  }
+
+  .cta-grid__phone {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 252, 246, 0.15);
+    color: var(--paper);
+  }
+
+  .cta-grid__phone:last-of-type {
+    border-bottom: none;
+    margin-bottom: 8px;
+  }
+
+  .cta-grid__phone-label {
+    display: block;
     font-size: 11px;
-    color: rgba(255, 252, 246, 0.7);
-    letter-spacing: 0.1em;
+    color: rgba(255, 252, 246, 0.65);
     margin-bottom: 4px;
   }
 
-  .cta__phone-num {
+  .cta-grid__phone-num {
+    display: block;
     font-family: var(--font-serif);
     font-size: 26px;
     font-weight: 900;
     letter-spacing: 0.02em;
   }
 
-  .cta__hours {
-    font-size: 13px !important;
-    color: rgba(255, 252, 246, 0.7) !important;
+  .cta-grid__hours {
+    font-size: 12px !important;
+    color: rgba(255, 252, 246, 0.6) !important;
     margin: 0 !important;
   }
 
@@ -907,12 +987,29 @@ const strengths = [
     .principal__content {
       padding: 56px 32px;
     }
-    .strengths-grid,
-    .voices {
+    .numbers__grid {
       grid-template-columns: 1fr 1fr;
     }
-    .stats-grid {
-      grid-template-columns: 1fr 1fr;
+    .num-item {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .num-item:nth-child(2n) { border-right: none; }
+    .num-item:nth-child(n+3) { border-bottom: none; }
+    .voices {
+      grid-template-columns: 1fr;
+    }
+    .voice {
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+    .voice:last-child { border-bottom: none; }
+    .schools-grid {
+      grid-template-columns: 1fr;
+    }
+    .cta-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
     }
   }
 
@@ -920,9 +1017,6 @@ const strengths = [
     .hero {
       padding: 16px 12px 24px;
       min-height: auto;
-    }
-    .hero__title-pre {
-      font-size: 14px;
     }
     .hero__title-main {
       font-size: 64px;
@@ -932,36 +1026,46 @@ const strengths = [
     }
     .hero__target {
       font-size: 13px;
-      padding: 6px 14px;
+      padding: 5px 14px;
     }
     .hero__actions {
       width: 100%;
+      flex-direction: column;
+      align-items: stretch;
     }
     .hero__cta {
+      align-items: center;
       width: 100%;
+    }
+    .hero__tel {
+      justify-content: center;
+      padding: 10px 16px;
+      background: var(--cream);
     }
     .hero__strip {
       flex-direction: column;
       align-items: flex-start;
       gap: 4px;
     }
-    .strengths-grid,
-    .voices,
-    .schools-grid {
+    .str-row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .str-row__num-big {
+      font-size: 40px;
+    }
+    .numbers__grid {
       grid-template-columns: 1fr;
     }
-    .stats-grid {
-      grid-template-columns: 1fr 1fr;
+    .num-item {
+      border-right: none !important;
+      border-bottom: 1px solid var(--line);
     }
-    .cta__phones {
-      flex-direction: column;
+    .num-item:last-child { border-bottom: none; }
+    .cta-grid__bullets li {
+      grid-template-columns: 1fr;
+      gap: 4px;
     }
-    .cta__phone {
-      border-right: none;
-      border-bottom: 1px solid rgba(255, 252, 246, 0.18);
-      width: 100%;
-    }
-    .cta__phone:last-child { border-bottom: none; }
     .sp-only { display: inline; }
   }
 </style>
