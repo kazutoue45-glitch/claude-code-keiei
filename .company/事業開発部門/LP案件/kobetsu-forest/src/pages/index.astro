@@ -17,65 +17,77 @@ const strengths = [
 ---
 
 <Base current="home">
-  <!-- HERO: 1カラム・フルブリード・タイポグラフィ主役 -->
+  <!-- HERO: 元サイトのブランド資産（赤＋緑バッジ＋大きな漢字＋生徒写真）を踏襲しつつモダン化 -->
   <section class="hero">
-    <div class="hero__bg" aria-hidden="true">
-      <div class="hero__noise"></div>
-      <span class="hero__kanji">炎</span>
-    </div>
+    <div class="hero__bg" aria-hidden="true"></div>
 
-    <div class="hero__content">
-      <span class="hero__eyebrow">大阪市城東区／生野区／東成区　個別指導　2001年開校</span>
-
-      <h1 class="hero__title">
-        <span class="hero__title-line1">意志あるところに、</span>
-        <span class="hero__title-line2">道は開ける。</span>
-      </h1>
-
-      <p class="hero__lead">
-        できる子を集めるのではなく、目の前の一人を伸ばす塾でありたい。<br />
-        フォレストは、つきっきりの個別指導で「やる気の灯」を守り続けます。
-      </p>
-
-      <div class="hero__meta">
-        <div class="hero__meta-item">
-          <span class="hero__meta-num">25</span>
-          <span class="hero__meta-unit">年</span>
-          <span class="hero__meta-label">2001年開校</span>
+    <div class="hero__inner">
+      <div class="hero__card">
+        <div class="hero__head">
+          <span class="hero__badge">他塾で伸びなかった生徒の、成績アップを目指します</span>
+          <span class="hero__age">2001年開校・地域密着25年</span>
         </div>
-        <i class="hero__meta-divider" aria-hidden="true"></i>
-        <div class="hero__meta-item">
-          <span class="hero__meta-num">100</span>
-          <span class="hero__meta-unit">%</span>
-          <span class="hero__meta-label">中学受験合格率</span>
+
+        <p class="hero__eyebrow">個別指導塾フォレスト　大阪市城東区／生野区／東成区</p>
+
+        <h1 class="hero__title">
+          <span class="hero__title-pre">講師がずっと横にいる</span>
+          <span class="hero__title-main">つきっきり個別指導。</span>
+        </h1>
+
+        <p class="hero__lead">
+          内容のぎっしり詰まった質の高い個別授業を、安心の料金設定で。<br />
+          成績で生徒を選ばない。一人ひとりの「これから」に本気で向き合います。
+        </p>
+
+        <div class="hero__photo">
+          <img src={`${base}images/lesson.jpg`} alt="個別指導塾フォレストの個別指導の様子" />
+          <div class="hero__photo-tag">1対1〜1対3の個別指導</div>
         </div>
-        <i class="hero__meta-divider" aria-hidden="true"></i>
-        <div class="hero__meta-item">
-          <span class="hero__meta-num">2</span>
-          <span class="hero__meta-unit">校</span>
-          <span class="hero__meta-label">蒲生四丁目／今里</span>
+
+        <div class="hero__targets" aria-label="対象学年">
+          <div class="hero__target">
+            <span class="hero__target-label">対応</span>
+            <span class="hero__target-name">小学生</span>
+          </div>
+          <div class="hero__target">
+            <span class="hero__target-label">対応</span>
+            <span class="hero__target-name">中学生</span>
+          </div>
+          <div class="hero__target hero__target--accent">
+            <span class="hero__target-label">合格率100%</span>
+            <span class="hero__target-name">中学受験</span>
+          </div>
+        </div>
+
+        <div class="hero__actions">
+          <a href={`${base}contact/`} class="btn btn--flame btn--big">
+            かんたん1分・無料資料請求
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:0669391001" class="hero__tel">
+            <span class="hero__tel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="hero__tel-text">
+              <span class="hero__tel-label">蒲生四丁目駅前校</span>
+              <span class="hero__tel-num">06-6939-1001</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="hero__campaign">
+          <span class="hero__campaign-tag">新年度キャンペーン</span>
+          <span class="hero__campaign-text">スタート月謝<strong>2ヶ月半額</strong>／入塾金<strong>無料</strong></span>
         </div>
       </div>
-
-      <div class="hero__actions">
-        <a href={`${base}contact/`} class="btn btn--white">
-          無料資料請求・個別相談
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <a href={`${base}strengths/`} class="btn btn--ghost">フォレストの強みを見る</a>
-      </div>
-    </div>
-
-    <div class="hero__scroll" aria-hidden="true">
-      <span>SCROLL</span>
-      <i></i>
     </div>
   </section>
 
-  <!-- 塾長紹介（横長フルブリード写真） -->
+  <!-- 塾長メッセージ（横長フルブリード） -->
   <section class="principal">
     <div class="principal__photo">
-      <img src={`${base}images/jukucho.jpg`} alt="塾長 黒田清登（炎）" />
+      <img src={`${base}images/jukucho.jpg`} alt="個別指導塾フォレスト 塾長 黒田清登" />
     </div>
     <div class="principal__content">
       <div class="principal__inner">
@@ -93,7 +105,6 @@ const strengths = [
         <div class="principal__sign">
           <span class="principal__sign-role">個別指導塾フォレスト 塾長</span>
           <span class="principal__sign-name">黒田 清登</span>
-          <span class="principal__sign-nick">― 炎 ―</span>
         </div>
       </div>
     </div>
@@ -210,7 +221,7 @@ const strengths = [
     </div>
   </section>
 
-  <!-- CTA: 深紅フルブリード -->
+  <!-- CTA -->
   <section class="cta">
     <div class="cta__bg" aria-hidden="true"></div>
     <div class="container cta__inner">
@@ -254,14 +265,7 @@ const strengths = [
   /* ===== HERO ===== */
   .hero {
     position: relative;
-    min-height: 92vh;
-    padding: 80px 24px 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--paper);
-    text-align: center;
+    padding: 56px 24px 80px;
     overflow: hidden;
     isolation: isolate;
   }
@@ -271,173 +275,295 @@ const strengths = [
     inset: 0;
     z-index: -1;
     background:
-      radial-gradient(ellipse at 50% 30%, rgba(244, 184, 114, 0.25), transparent 55%),
-      radial-gradient(ellipse at 80% 80%, rgba(126, 18, 24, 0.7), transparent 60%),
-      linear-gradient(180deg, var(--flame-deep) 0%, #5a0d12 100%);
+      linear-gradient(135deg, var(--flame) 0%, var(--flame-deep) 100%);
   }
 
-  .hero__noise {
+  /* 元サイト準拠の斜め三角パターン */
+  .hero__bg::before {
+    content: "";
     position: absolute;
     inset: 0;
-    opacity: 0.18;
     background-image:
-      repeating-linear-gradient(45deg, rgba(255, 252, 246, 0.04) 0 2px, transparent 2px 4px),
-      radial-gradient(circle at 20% 50%, rgba(255, 252, 246, 0.08), transparent 30%),
-      radial-gradient(circle at 70% 20%, rgba(244, 184, 114, 0.12), transparent 35%);
+      linear-gradient(45deg, rgba(255, 252, 246, 0.06) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(126, 18, 24, 0.5) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(126, 18, 24, 0.4) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255, 252, 246, 0.04) 75%);
+    background-size: 56px 56px;
+    background-position: 0 0, 0 28px, 28px -28px, -28px 0;
+    opacity: 0.55;
   }
 
-  /* 巨大な「炎」漢字（背景） */
-  .hero__kanji {
+  .hero__bg::after {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-serif);
-    font-weight: 900;
-    font-size: clamp(420px, 80vw, 920px);
-    color: rgba(255, 252, 246, 0.05);
-    line-height: 0.85;
-    letter-spacing: 0;
-    pointer-events: none;
-    user-select: none;
-    text-shadow: 0 0 80px rgba(244, 184, 114, 0.12);
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(244, 184, 114, 0.18), transparent 50%),
+      radial-gradient(circle at 90% 10%, rgba(126, 18, 24, 0.4), transparent 50%);
   }
 
-  .hero__content {
+  .hero__inner {
+    max-width: 1080px;
+    margin: 0 auto;
     position: relative;
-    max-width: 980px;
-    width: 100%;
-    z-index: 2;
+    z-index: 1;
+  }
+
+  .hero__card {
+    background: var(--paper);
+    border-radius: 28px;
+    padding: 40px 48px 48px;
+    box-shadow: 0 30px 80px rgba(20, 8, 8, 0.32), 0 0 0 1px rgba(255, 252, 246, 0.4);
+    position: relative;
+  }
+
+  .hero__head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--forest);
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 3px 0 var(--forest-deep);
+  }
+
+  .hero__age {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    padding: 6px 12px;
+    background: var(--cream);
+    border-radius: 999px;
+    letter-spacing: 0.05em;
   }
 
   .hero__eyebrow {
-    display: inline-block;
     font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    color: var(--flame-glow);
-    border: 1px solid rgba(244, 184, 114, 0.5);
-    padding: 8px 22px;
-    border-radius: 999px;
-    margin-bottom: 36px;
-    background: rgba(126, 18, 24, 0.25);
-    backdrop-filter: blur(6px);
+    font-weight: 600;
+    color: var(--ink-mute);
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
   }
 
   .hero__title {
     font-family: var(--font-serif);
     font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: 0.04em;
-    margin-bottom: 32px;
-    text-shadow: 0 8px 40px rgba(20, 17, 15, 0.45);
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
   }
 
-  .hero__title-line1 {
+  .hero__title-pre {
     display: block;
-    font-size: clamp(28px, 5vw, 52px);
-    color: var(--flame-glow);
-    margin-bottom: 12px;
+    font-size: clamp(16px, 2.4vw, 22px);
+    color: var(--ink);
+    margin-bottom: 8px;
     font-weight: 700;
+    line-height: 1.5;
   }
 
-  .hero__title-line2 {
+  .hero__title-main {
     display: block;
-    font-size: clamp(56px, 11vw, 132px);
-    color: var(--paper);
+    font-size: clamp(44px, 8.5vw, 96px);
     line-height: 1.1;
+    background: linear-gradient(180deg, var(--flame) 0%, var(--flame-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 0 rgba(126, 18, 24, 0.08);
+    letter-spacing: 0.01em;
   }
 
   .hero__lead {
-    font-size: clamp(15px, 1.6vw, 17px);
-    line-height: 2.2;
-    color: rgba(255, 252, 246, 0.92);
-    margin-bottom: 48px;
-    font-weight: 400;
+    font-size: clamp(14.5px, 1.7vw, 16.5px);
+    line-height: 2;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    max-width: 800px;
   }
 
-  /* メタ（数字3つを横並び） */
-  .hero__meta {
-    display: inline-flex;
-    align-items: center;
-    gap: 28px;
-    padding: 22px 36px;
-    background: rgba(20, 17, 15, 0.32);
-    border: 1px solid rgba(255, 252, 246, 0.18);
-    border-radius: 100px;
-    backdrop-filter: blur(8px);
-    margin-bottom: 48px;
+  /* メインビジュアル写真 */
+  .hero__photo {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 21 / 9;
+    background: var(--cream);
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-md);
   }
 
-  .hero__meta-item {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
+  .hero__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
   }
 
-  .hero__meta-num {
-    font-family: var(--font-serif);
-    font-size: 36px;
-    font-weight: 900;
-    color: var(--flame-glow);
-    line-height: 1;
-  }
-
-  .hero__meta-unit {
-    font-family: var(--font-serif);
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--flame-glow);
-    margin-right: 6px;
-  }
-
-  .hero__meta-label {
-    font-size: 11px;
-    color: rgba(255, 252, 246, 0.78);
-    letter-spacing: 0.1em;
-    margin-left: 2px;
-  }
-
-  .hero__meta-divider {
-    width: 1px;
-    height: 32px;
-    background: rgba(255, 252, 246, 0.22);
-  }
-
-  .hero__actions {
-    display: inline-flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero__scroll {
+  .hero__photo-tag {
     position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 16px;
+    left: 16px;
+    background: rgba(20, 17, 15, 0.78);
+    color: var(--paper);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    letter-spacing: 0.05em;
+  }
+
+  /* 学年バッジ */
+  .hero__targets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .hero__target {
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 12px;
-    color: rgba(255, 252, 246, 0.6);
+  }
+
+  .hero__target--accent {
+    background: linear-gradient(135deg, var(--flame), var(--flame-deep));
+    border-color: var(--flame-deep);
+    color: var(--paper);
+  }
+
+  .hero__target-label {
     font-size: 10px;
-    letter-spacing: 0.3em;
-    z-index: 3;
+    color: var(--ink-mute);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: var(--paper);
+    padding: 3px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
   }
 
-  .hero__scroll i {
-    width: 1px;
-    height: 36px;
-    background: linear-gradient(180deg, rgba(255, 252, 246, 0.6), transparent);
-    animation: scrollLine 1.8s ease-in-out infinite;
+  .hero__target--accent .hero__target-label {
+    color: var(--flame-deep);
+    background: var(--flame-glow);
   }
 
-  @keyframes scrollLine {
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    51% { transform: scaleY(1); transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
+  .hero__target-name {
+    font-family: var(--font-serif);
+    font-size: clamp(16px, 2.2vw, 20px);
+    font-weight: 900;
+    color: var(--ink);
+  }
+
+  .hero__target--accent .hero__target-name {
+    color: var(--paper);
+  }
+
+  /* CTA + Tel */
+  .hero__actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .btn--big {
+    padding: 20px 36px;
+    font-size: 17px;
+  }
+
+  .hero__tel {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink);
+  }
+
+  .hero__tel-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .hero__tel-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .hero__tel-label {
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+  }
+
+  .hero__tel-num {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  /* キャンペーン帯 */
+  .hero__campaign {
+    margin-top: 16px;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, var(--flame-glow), #f7c585);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero__campaign-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--flame-deep);
+    background: var(--paper);
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+
+  .hero__campaign-text {
+    font-size: 14px;
+    color: var(--flame-deep);
+    font-weight: 600;
+  }
+
+  .hero__campaign-text strong {
+    font-weight: 900;
+    margin: 0 4px;
+    font-size: 16px;
   }
 
   /* ===== PRINCIPAL ===== */
@@ -447,7 +573,7 @@ const strengths = [
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
-    min-height: 600px;
+    min-height: 560px;
     overflow: hidden;
   }
 
@@ -461,8 +587,7 @@ const strengths = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 25%;
-    filter: contrast(1.05) saturate(0.95);
+    object-position: center 30%;
   }
 
   .principal__photo::after {
@@ -515,17 +640,9 @@ const strengths = [
 
   .principal__sign-name {
     font-family: var(--font-serif);
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 900;
     color: var(--paper);
-    margin-bottom: 2px;
-  }
-
-  .principal__sign-nick {
-    font-family: var(--font-serif);
-    font-size: 15px;
-    color: var(--flame-glow);
-    letter-spacing: 0.15em;
   }
 
   /* ===== SECTION HEAD ===== */
@@ -726,9 +843,7 @@ const strengths = [
     align-items: flex-start;
   }
 
-  .cta__phone:last-child {
-    border-right: none;
-  }
+  .cta__phone:last-child { border-right: none; }
 
   .cta__phone-label {
     font-size: 11px;
@@ -759,7 +874,7 @@ const strengths = [
     }
     .principal__photo {
       aspect-ratio: 16 / 9;
-      max-height: 400px;
+      max-height: 380px;
     }
     .principal__photo::after {
       background: linear-gradient(180deg, transparent 50%, var(--ink) 100%);
@@ -776,30 +891,34 @@ const strengths = [
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 720px) {
     .hero {
-      min-height: 88vh;
-      padding: 60px 20px 120px;
+      padding: 32px 16px 64px;
     }
-    .hero__title-line1 {
-      font-size: 22px;
+    .hero__card {
+      padding: 28px 24px 32px;
+      border-radius: 20px;
     }
-    .hero__title-line2 {
-      font-size: clamp(48px, 14vw, 72px);
+    .hero__targets {
+      grid-template-columns: 1fr 1fr;
     }
-    .hero__meta {
-      gap: 16px;
-      padding: 16px 22px;
+    .hero__target--accent {
+      grid-column: 1 / -1;
     }
-    .hero__meta-num {
-      font-size: 28px;
+    .hero__photo {
+      aspect-ratio: 4 / 3;
     }
-    .hero__meta-label {
-      display: none;
-    }
-    .hero__actions .btn,
-    .cta__actions .btn {
+  }
+
+  @media (max-width: 640px) {
+    .hero__actions { gap: 12px; }
+    .hero__actions .btn--big { width: 100%; }
+    .hero__tel {
       width: 100%;
+      justify-content: center;
+      padding: 12px 16px;
+      background: var(--cream);
+      border-radius: var(--radius-md);
     }
     .strengths-grid,
     .voices,
@@ -817,11 +936,7 @@ const strengths = [
       border-bottom: 1px solid rgba(255, 252, 246, 0.18);
       width: 100%;
     }
-    .cta__phone:last-child {
-      border-bottom: none;
-    }
-    .sp-only {
-      display: inline;
-    }
+    .cta__phone:last-child { border-bottom: none; }
+    .sp-only { display: inline; }
   }
 </style>
