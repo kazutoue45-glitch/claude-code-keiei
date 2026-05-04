@@ -12,20 +12,7 @@ const nav = [
 <header class="site-header">
   <div class="site-header__inner">
     <a href={base} class="site-logo" aria-label="個別指導塾フォレスト">
-      <span class="site-logo__mark" aria-hidden="true">
-        <svg viewBox="0 0 44 44" width="40" height="40">
-          <circle cx="22" cy="22" r="21" fill="#B8232A" />
-          <path d="M22 10 C 19 14, 16 16, 16 22 C 16 26, 19 29, 22 29 C 25 29, 28 26, 28 22 C 28 18, 25 15, 22 12 C 22 16, 20 18, 20 21 C 20 23, 21 24, 22 24 C 23 24, 24 23, 24 22"
-            fill="#F4B872"
-            stroke="#FFFCF6"
-            stroke-width="0.5"
-          />
-        </svg>
-      </span>
-      <span class="site-logo__text">
-        <span class="site-logo__lead">個別指導塾</span>
-        <span class="site-logo__name">フォレスト</span>
-      </span>
+      <img src={`${base}images/logo.png`} alt="個別指導塾フォレスト" />
     </a>
 
     <nav class="site-nav" aria-label="メインナビゲーション">
@@ -89,34 +76,17 @@ const nav = [
   .site-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
     flex-shrink: 0;
   }
 
-  .site-logo__mark {
-    display: inline-flex;
-    align-items: center;
+  .site-logo img {
+    height: 44px;
+    width: auto;
+    display: block;
   }
 
-  .site-logo__text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-
-  .site-logo__lead {
-    font-size: 11px;
-    color: var(--ink-soft);
-    letter-spacing: 0.2em;
-    font-weight: 500;
-  }
-
-  .site-logo__name {
-    font-family: var(--font-serif);
-    font-size: 22px;
-    font-weight: 900;
-    color: var(--ink);
-    letter-spacing: 0.04em;
+  @media (max-width: 600px) {
+    .site-logo img { height: 36px; }
   }
 
   .site-nav {

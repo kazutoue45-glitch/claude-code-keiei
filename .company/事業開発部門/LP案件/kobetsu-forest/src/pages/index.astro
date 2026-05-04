@@ -23,6 +23,10 @@ const strengths = [
       <article class="hero__card">
         <img class="hero__photo" src={`${base}images/lesson.jpg`} alt="個別指導塾フォレストの個別指導の様子" />
         <div class="hero__mask" aria-hidden="true"></div>
+        <div class="hero__thumbs" aria-hidden="true">
+          <img src={`${base}images/school-out.jpg`} alt="" />
+          <img src={`${base}images/jukucho.jpg`} alt="" />
+        </div>
 
         <div class="hero__content">
           <div class="hero__badges">
@@ -318,8 +322,9 @@ const strengths = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 60% 40%;
+    object-position: 75% 50%;
     z-index: 1;
+    filter: saturate(1.18) brightness(1.06) contrast(1.06);
   }
 
   .hero__mask {
@@ -327,7 +332,27 @@ const strengths = [
     inset: 0;
     z-index: 2;
     background:
-      linear-gradient(95deg, rgba(255, 252, 246, 0.97) 0%, rgba(255, 252, 246, 0.95) 38%, rgba(255, 252, 246, 0.65) 55%, rgba(255, 252, 246, 0.05) 75%, transparent 92%);
+      linear-gradient(95deg, rgba(255, 252, 246, 0.97) 0%, rgba(255, 252, 246, 0.94) 32%, rgba(255, 252, 246, 0.55) 48%, transparent 65%);
+  }
+
+  /* サブサムネ（右下に小さく重ねる） */
+  .hero__thumbs {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    z-index: 4;
+    display: flex;
+    gap: 8px;
+  }
+
+  .hero__thumbs img {
+    width: 96px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 3px solid var(--paper);
+    box-shadow: 0 4px 12px rgba(20, 8, 8, 0.3);
+    filter: saturate(1.1) brightness(1.04);
   }
 
   .hero__content {
@@ -338,7 +363,7 @@ const strengths = [
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 720px;
+    max-width: 620px;
   }
 
   .hero__badges {
@@ -965,10 +990,18 @@ const strengths = [
     .hero__photo {
       position: relative;
       width: 100%;
-      height: 200px;
+      height: 240px;
     }
     .hero__mask {
       display: none;
+    }
+    .hero__thumbs {
+      right: 12px;
+      bottom: 12px;
+    }
+    .hero__thumbs img {
+      width: 64px;
+      height: 48px;
     }
     .hero__content {
       padding: 32px 28px;
