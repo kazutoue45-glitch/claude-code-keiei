@@ -98,110 +98,98 @@ const faqs = [
 ---
 
 <Base>
-  {/* ============ §1 ファーストビュー ============ */}
+  {/* ============ §1 ファーストビュー（上下分割：画像／テキストエリア） ============ */}
   <section class="hero">
-    {/* 背景写真＋紫オーバーレイ */}
-    <div class="hero__bg" aria-hidden="true">
+    {/* 上部全幅の紫帯：ロゴ＋住所サブ */}
+    <div class="hero__topband">
+      <div class="hero__topband-inner">
+        <span class="hero__topband-logo">
+          <ruby>義塾<rt>よしじゅく</rt></ruby>
+        </span>
+        <span class="hero__topband-sub">
+          寝屋川市成田町の学習塾<br />
+          <small>小学生・中学生・高校生 対応</small>
+        </span>
+      </div>
+    </div>
+
+    {/* FV画像エリア（授業風景） */}
+    <div class="hero__photo">
       <picture>
         <source srcset={`${base}images/hero-photo.jpg`} type="image/jpeg" />
-        <img src={`${base}images/hero.svg`} alt="" loading="eager" />
+        <img src={`${base}images/hero.svg`} alt="義塾の授業風景" loading="eager" />
       </picture>
-      <div class="hero__overlay"></div>
     </div>
 
-    {/* 上部バー：左にロゴ／右にキャンペーンバッジ */}
-    <div class="hero__topbar">
-      <div class="hero__logobar">
-        <span class="hero__logobar-mark">義塾</span>
-        <span class="hero__logobar-sub">寝屋川市成田町の学習塾<br />小学生・中学生・高校生対応</span>
+    {/* 下段：白背景のテキストエリア */}
+    <div class="hero__panel">
+      <div class="hero__panel-grid">
+        {/* 左：メインキャッチ＋サブ */}
+        <div class="hero__catch">
+          <h1 class="hero__title">
+            <span class="hero__title-row">今よりもう一段上の</span>
+            <span class="hero__title-em">賢さを。</span>
+          </h1>
+          <p class="hero__sub">
+            『行きたい高校・大学に合格させたい』<br />
+            その想いに、8人の講師陣が本気で応えます。
+          </p>
+        </div>
+
+        {/* 右：キャンペーンバッジ */}
+        <div class="hero__badge" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
+          <span class="hero__badge-ribbon">新規入塾生限定</span>
+          <span class="hero__badge-body">
+            <span class="hero__badge-label">初月授業料</span>
+            <span class="hero__badge-main">1ヶ月無料</span>
+          </span>
+          <span class="hero__badge-note">※適用条件あり</span>
+        </div>
       </div>
 
-      <div class="hero__badge" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <span class="hero__badge-ribbon">新規入塾生限定</span>
-        <span class="hero__badge-body">
-          <span class="hero__badge-label">初月授業料</span>
-          <span class="hero__badge-main">1ヶ月無料</span>
-        </span>
-        <span class="hero__badge-note">※適用条件あり</span>
-      </div>
-    </div>
-
-    {/* 中段：縦書き「義塾」のれん＋黒板の手書き哲学 */}
-    <div class="hero__middle">
-      <div class="hero__noren" aria-hidden="true">
-        <span class="hero__noren-mark">義塾</span>
-        <span class="hero__noren-tag">本気の生徒に、<br />本気で向き合う。</span>
-      </div>
-
-      <div class="hero__chalk">
-        <p class="hero__chalk-title">目標から逆算し、<br />今日の一歩を大切に。</p>
-        <ul class="hero__chalk-list">
-          <li>・わかるまで考える</li>
-          <li>・できるまで繰り返す</li>
-          <li>・自分の言葉で説明できる</li>
-        </ul>
-      </div>
-    </div>
-
-    {/* メインキャッチ */}
-    <div class="hero__main">
-      <h1 class="hero__title">
-        <span class="hero__title-row">今よりもう一段上の</span>
-        <span class="hero__title-em">賢さを。</span>
-      </h1>
-
-      <p class="hero__sub">
-        一人ひとりに合わせて伸ばす、<br />義塾の<span class="hero__sub-em">3つの学び方</span>。
-      </p>
-
-      {/* 3サービスチップ（保護者視点の言い換え） */}
+      {/* 3つの実績ポイントチップ */}
       <ul class="hero__chips" role="list">
         <li>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="4" y="9" width="16" height="11" stroke="currentColor" stroke-width="1.6" rx="1"/>
-            <path d="M4 9 L12 3 L20 9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-            <rect x="10" y="13" width="4" height="7" stroke="currentColor" stroke-width="1.6"/>
-          </svg>
-          <span>校舎で学ぶ</span>
+          <span class="hero__chip-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M3 9l9-5 9 5-9 5-9-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M7 11v5c0 1 2.5 2 5 2s5-1 5-2v-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M21 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="hero__chip-text">中学受験・高校受験・<br />大学受験すべて対応</span>
         </li>
         <li>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="12" stroke="currentColor" stroke-width="1.6" rx="1"/>
-            <path d="M9 21h6M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-          <span>オンラインで<br />学ぶ</span>
+          <span class="hero__chip-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M21 12c0 4.4-4 8-9 8-1.5 0-3-.3-4.3-.9L3 20l1.4-3.6C3.5 15.2 3 13.6 3 12c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="hero__chip-text">公式LINEで<br />塾長と直接相談できる</span>
         </li>
         <li>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M5 21c0-3.5 3.1-6 7-6s7 2.5 7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-          <span>家庭教師に<br />来てもらう</span>
+          <span class="hero__chip-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <circle cx="12" cy="9" r="2.6" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <span class="hero__chip-text">寝屋川市成田町・<br />成田山不動尊近く</span>
         </li>
       </ul>
-
-      <p class="hero__location">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-        寝屋川市成田町の学習塾『義塾』｜京阪香里園駅から徒歩圏内
-      </p>
-
-      <p class="hero__pitch">
-        <span class="hero__pitch-line"></span>
-        本気の生徒に、本気で向き合う。
-        <span class="hero__pitch-line"></span>
-      </p>
     </div>
 
-    <span class="hero__scroll" aria-hidden="true">
-      <span></span>
-    </span>
+    {/* 下端のスクロール誘導 */}
+    <p class="hero__scrollguide">
+      <span>スクロールして詳細を見る</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </p>
   </section>
 
   {/* CTA ① FV直下（FV紫専用） */}
-  <CtaButton text="初月無料で、まず話を聞いてみる" href="#" id="cta-1" variant="fv" />
+  <CtaButton text="今だけ初月無料で申し込む" href="#" id="cta-1" variant="fv" />
 
   {/* ============ §2 サービスクイックナビ ============ */}
   <section class="section section--white quicknav">
@@ -502,112 +490,192 @@ const faqs = [
 
 <style>
   /* =========================================
-     §1 Hero（ChatGPT版を参考に再構築）
+     §1 Hero（上下分割：紫帯／画像／白テキストエリア）
      ========================================= */
   .hero {
     position: relative;
-    min-height: 100vh;
+    background: var(--paper);
     overflow: hidden;
+  }
+
+  /* ============== 上部紫帯：全幅 ロゴ＋住所 ============== */
+  .hero__topband {
+    background: var(--purple);
     color: var(--paper);
-    padding: 24px 0 56px;
-    isolation: isolate;
+    padding: 14px 0;
   }
 
-  .hero__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+  .hero__topband-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
   }
 
-  .hero__bg img,
-  .hero__bg picture {
+  .hero__topband-logo {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    color: var(--paper);
+  }
+
+  /* ふりがな（rt）の見栄え */
+  .hero__topband-logo ruby rt {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 2px;
+    font-family: var(--font-sans);
+  }
+
+  .hero__topband-sub {
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02em;
+  }
+
+  .hero__topband-sub small {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.78);
+    letter-spacing: 0.04em;
+  }
+
+  /* ============== FV画像エリア ============== */
+  .hero__photo {
+    position: relative;
+    aspect-ratio: 16 / 11;
+    max-height: 56vh;
+    overflow: hidden;
+    background: var(--purple-deep);
+  }
+
+  .hero__photo picture,
+  .hero__photo img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
   }
 
-  .hero__overlay {
+  /* 画像の下端に薄い紫グラデで馴染ませる */
+  .hero__photo::after {
+    content: "";
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(26, 15, 46, 0.78) 0%,
-      rgba(76, 29, 149, 0.7) 40%,
-      rgba(76, 29, 149, 0.78) 100%
-    );
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 100%);
+    pointer-events: none;
   }
 
-  /* ============== 上部バー：ロゴ＋バッジ ============== */
-  .hero__topbar {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px 20px;
+  /* ============== 下段：白背景パネル ============== */
+  .hero__panel {
     max-width: 720px;
     margin: 0 auto;
+    padding: 28px 24px 24px;
+    position: relative;
+    z-index: 2;
   }
 
-  .hero__logobar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--purple-deep);
-    padding: 10px 18px 10px 14px;
-    border-radius: 0 8px 8px 0;
-    margin-left: -20px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  .hero__panel-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 28px;
   }
 
-  .hero__logobar-mark {
+  /* メインキャッチエリア */
+  .hero__catch {
+    position: relative;
+    padding-left: 16px;
+  }
+
+  /* メインキャッチ左の紫縦罫 */
+  .hero__catch::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 12px;
+    width: 4px;
+    background: var(--purple);
+    border-radius: 2px;
+  }
+
+  .hero__title {
     font-family: var(--font-serif);
-    font-size: 26px;
     font-weight: 700;
-    color: var(--paper);
-    line-height: 1;
-    letter-spacing: 0.06em;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: var(--purple);
+    margin-bottom: 16px;
   }
 
-  .hero__logobar-sub {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.5;
+  .hero__title-row {
+    display: block;
+    font-size: clamp(20px, 5.5vw, 28px);
+    color: var(--charcoal);
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero__title-em {
+    display: inline-block;
+    font-size: clamp(48px, 14vw, 76px);
+    color: var(--purple-deep);
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+  }
+
+  .hero__sub {
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--charcoal-soft);
     letter-spacing: 0.02em;
   }
 
-  /* キャンペーンバッジ：ゴールドリボン仕立て */
+  /* キャンペーンバッジ：右上に独立配置（オレンジリボン+白パネル） */
   .hero__badge {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2px;
-    background: linear-gradient(180deg, #FBF7EE 0%, #F4E9CD 100%);
+    background: var(--paper);
+    border: 1.5px solid var(--orange);
     color: var(--purple-deep);
-    padding: 10px 18px 8px;
-    border-radius: 6px;
-    border: 1px solid rgba(201, 169, 97, 0.5);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-    min-width: 132px;
+    padding: 14px 16px 10px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(232, 122, 46, 0.18);
+    min-width: 130px;
+    margin-top: 12px;
   }
 
-  /* バッジ上部のリボン風タブ */
+  /* バッジ上部のオレンジリボンタブ */
   .hero__badge-ribbon {
     position: absolute;
-    top: -10px;
+    top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--purple-deep);
+    background: var(--orange);
     color: var(--paper);
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.12em;
-    padding: 4px 10px;
-    border-radius: 3px;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 4px;
     white-space: nowrap;
+    box-shadow: 0 3px 8px rgba(232, 122, 46, 0.32);
   }
 
   .hero__badge-body {
@@ -616,20 +684,21 @@ const faqs = [
     align-items: center;
     gap: 2px;
     margin-top: 6px;
+    text-align: center;
   }
 
   .hero__badge-label {
     font-size: 11px;
     font-weight: 700;
-    color: var(--purple);
+    color: var(--charcoal);
     letter-spacing: 0.04em;
   }
 
   .hero__badge-main {
     font-family: var(--font-serif);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
-    color: var(--purple-deep);
+    color: var(--orange);
     line-height: 1.1;
     letter-spacing: 0.02em;
   }
@@ -638,296 +707,168 @@ const faqs = [
     font-size: 9px;
     color: var(--muted);
     margin-top: 4px;
-  }
-
-  /* ============== 中段：のれん＋黒板 ============== */
-  .hero__middle {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 28px 20px 20px;
-    max-width: 720px;
-    margin: 0 auto;
-    align-items: flex-start;
-  }
-
-  /* 縦書き「義塾」のれん */
-  .hero__noren {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    background: rgba(255, 255, 255, 0.96);
-    padding: 18px 12px 22px;
-    border-radius: 0 0 4px 4px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    position: relative;
-  }
-
-  .hero__noren::before {
-    content: "";
-    position: absolute;
-    top: -6px;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: var(--purple-deep);
-    border-radius: 0 0 2px 2px;
-  }
-
-  .hero__noren-mark {
-    font-family: var(--font-serif);
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--purple-deep);
-    writing-mode: vertical-rl;
-    letter-spacing: 0.18em;
-    line-height: 1;
-  }
-
-  .hero__noren-tag {
-    font-family: var(--font-serif);
-    font-size: 11px;
-    color: var(--purple-deep);
-    writing-mode: vertical-rl;
-    line-height: 1.7;
-    letter-spacing: 0.06em;
-  }
-
-  /* 黒板の手書き哲学 */
-  .hero__chalk {
-    flex: 1;
-    color: var(--paper);
-    padding-top: 10px;
-  }
-
-  .hero__chalk-title {
-    font-family: var(--font-serif);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.7;
-    letter-spacing: 0.02em;
-    margin-bottom: 14px;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
-    padding-bottom: 10px;
-  }
-
-  .hero__chalk-list {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .hero__chalk-list li {
-    font-size: 12px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.92);
-    letter-spacing: 0.02em;
-  }
-
-  /* ============== メインキャッチ ============== */
-  .hero__main {
-    position: relative;
-    z-index: 2;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 36px 20px 24px;
-    text-align: center;
-  }
-
-  .hero__title {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    line-height: 1.3;
-    letter-spacing: 0.02em;
-    color: var(--paper);
-    margin-bottom: 28px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-  }
-
-  .hero__title-row {
-    display: block;
-    font-size: clamp(26px, 7vw, 38px);
-    margin-bottom: 4px;
-  }
-
-  .hero__title-em {
-    display: inline-block;
-    font-size: clamp(46px, 13vw, 74px);
-    color: var(--paper);
-    line-height: 1.05;
-    border-bottom: 3px solid var(--gold-line, #C9A961);
-    padding: 0 6px 6px;
-  }
-
-  .hero__sub {
-    font-family: var(--font-serif);
-    font-size: 14px;
-    line-height: 1.85;
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 22px;
     letter-spacing: 0.04em;
   }
 
-  .hero__sub-em {
-    color: var(--paper);
-    font-weight: 700;
-    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.45) 60%);
-    padding: 0 4px;
-  }
-
-  /* 3サービスチップ */
+  /* ============== 3つの実績ポイントチップ ============== */
   .hero__chips {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin-bottom: 22px;
   }
 
   .hero__chips li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.94);
+    justify-content: flex-start;
+    gap: 8px;
+    background: var(--purple-soft);
     color: var(--purple-deep);
-    padding: 14px 6px;
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.4;
-    letter-spacing: 0.02em;
+    padding: 16px 8px 14px;
+    border-radius: 12px;
     text-align: center;
-    min-height: 78px;
+    min-height: 96px;
   }
 
-  .hero__chips svg {
-    color: var(--purple);
+  .hero__chip-icon {
     flex-shrink: 0;
-  }
-
-  /* 駅情報 */
-  .hero__location {
+    width: 38px;
+    height: 38px;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    background: var(--paper);
+    color: var(--purple);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(76, 29, 149, 0.18);
+  }
+
+  .hero__chip-text {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.92);
-    margin-bottom: 22px;
-    line-height: 1.5;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--purple-deep);
     letter-spacing: 0.02em;
-    text-align: left;
   }
 
-  .hero__location svg {
-    color: var(--orange);
-    flex-shrink: 0;
-  }
-
-  /* ひと押しコピー */
-  .hero__pitch {
+  /* ============== スクロール誘導 ============== */
+  .hero__scrollguide {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    font-family: var(--font-serif);
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--paper);
-    letter-spacing: 0.04em;
-    line-height: 1.5;
+    gap: 6px;
+    padding: 20px 0 28px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
   }
 
-  .hero__pitch-line {
-    flex-shrink: 0;
-    width: 22px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.6);
+  .hero__scrollguide svg {
+    animation: scrollguide-bounce 1.6s ease-in-out infinite;
   }
 
-  .hero__scroll {
-    display: none;
+  @keyframes scrollguide-bounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(3px); opacity: 0.55; }
   }
 
-  /* PC幅で中央寄せ・余白調整 */
-  @media (min-width: 769px) {
-    .hero {
-      padding: 32px 0 80px;
-    }
-    .hero__topbar {
-      padding: 20px 32px;
-    }
-    .hero__logobar {
-      margin-left: -32px;
-      padding-left: 32px;
-    }
-    .hero__middle {
-      padding: 36px 32px 28px;
-    }
-    .hero__main {
-      padding: 48px 32px 32px;
-    }
-    .hero__chalk-title {
-      font-size: 16px;
-    }
-    .hero__chalk-list li {
-      font-size: 13px;
-    }
-    .hero__noren {
-      padding: 22px 16px 28px;
-    }
-    .hero__noren-mark {
-      font-size: 38px;
-    }
-    .hero__noren-tag {
-      font-size: 13px;
-    }
-    .hero__pitch {
-      font-size: 18px;
-    }
-    .hero__chips {
-      gap: 14px;
-    }
-    .hero__chips li {
-      padding: 16px 8px;
-      font-size: 13px;
-    }
-  }
+  /* ============== レスポンシブ ============== */
 
-  /* スマホで余白を詰める */
-  @media (max-width: 360px) {
-    .hero__topbar {
-      padding: 12px 16px;
+  /* スマホ狭幅 */
+  @media (max-width: 380px) {
+    .hero__topband-inner {
+      padding: 0 20px;
     }
-    .hero__logobar {
-      margin-left: -16px;
-      padding: 8px 12px 8px 10px;
+    .hero__topband-logo {
+      font-size: 24px;
     }
-    .hero__logobar-mark {
-      font-size: 22px;
+    .hero__topband-sub {
+      font-size: 11px;
     }
-    .hero__logobar-sub {
-      font-size: 9px;
+    .hero__panel {
+      padding: 24px 20px 20px;
+    }
+    .hero__panel-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
     .hero__badge {
-      min-width: 116px;
-      padding: 8px 14px 6px;
-    }
-    .hero__badge-main {
-      font-size: 17px;
-    }
-    .hero__noren-mark {
-      font-size: 26px;
+      align-self: center;
+      min-width: 0;
+      width: 100%;
+      max-width: 240px;
+      margin-top: 4px;
     }
     .hero__chips li {
+      min-height: 88px;
+      padding: 14px 6px 12px;
+    }
+    .hero__chip-text {
+      font-size: 10.5px;
+    }
+  }
+
+  /* PC */
+  @media (min-width: 769px) {
+    .hero__topband {
+      padding: 18px 0;
+    }
+    .hero__topband-logo {
+      font-size: 32px;
+    }
+    .hero__topband-sub {
+      font-size: 13px;
+    }
+    .hero__topband-sub small {
       font-size: 11px;
-      padding: 12px 4px;
-      min-height: 70px;
+    }
+    .hero__photo {
+      aspect-ratio: 16 / 7;
+      max-height: none;
+    }
+    .hero__panel {
+      padding: 40px 32px 32px;
+    }
+    .hero__panel-grid {
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+    .hero__catch {
+      padding-left: 22px;
+    }
+    .hero__catch::before {
+      width: 5px;
+    }
+    .hero__title-row {
+      font-size: 30px;
+    }
+    .hero__title-em {
+      font-size: 80px;
+    }
+    .hero__sub {
+      font-size: 15px;
+    }
+    .hero__badge {
+      min-width: 160px;
+      padding: 16px 20px 12px;
+    }
+    .hero__badge-main {
+      font-size: 26px;
+    }
+    .hero__chips {
+      gap: 16px;
+    }
+    .hero__chips li {
+      padding: 20px 12px 16px;
+      min-height: 110px;
+    }
+    .hero__chip-icon {
+      width: 44px;
+      height: 44px;
+    }
+    .hero__chip-text {
+      font-size: 12.5px;
     }
   }
 

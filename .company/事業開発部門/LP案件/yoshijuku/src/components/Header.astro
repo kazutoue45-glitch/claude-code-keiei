@@ -11,8 +11,10 @@ const nav = [
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a href={base} class="site-logo" aria-label="義塾 寝屋川市成田町">
-      <span class="site-logo__mark">義塾</span>
+    <a href={base} class="site-logo" aria-label="義塾 よしじゅく 寝屋川市成田町">
+      <span class="site-logo__mark">
+        <ruby>義塾<rt>よしじゅく</rt></ruby>
+      </span>
       <span class="site-logo__sub">寝屋川市成田町</span>
     </a>
 
@@ -80,6 +82,16 @@ const nav = [
     font-weight: 700;
     color: var(--purple);
     letter-spacing: 0.08em;
+    line-height: 1.1;
+  }
+
+  .site-logo__mark ruby rt {
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    margin-bottom: 1px;
+    font-family: var(--font-sans);
   }
 
   .site-logo__sub {
