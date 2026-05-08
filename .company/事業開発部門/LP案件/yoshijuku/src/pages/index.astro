@@ -100,30 +100,99 @@ const faqs = [
 <Base>
   {/* ============ §1 ファーストビュー ============ */}
   <section class="hero">
+    {/* 背景写真＋紫オーバーレイ */}
     <div class="hero__bg" aria-hidden="true">
-      <img src={`${base}images/hero.svg`} alt="" loading="eager" />
+      <picture>
+        <source srcset={`${base}images/hero-photo.jpg`} type="image/jpeg" />
+        <img src={`${base}images/hero.svg`} alt="" loading="eager" />
+      </picture>
       <div class="hero__overlay"></div>
     </div>
 
-    <div class="hero__inner">
-      <span class="hero__badge">
-        <span class="hero__badge-label">新規入塾生限定</span>
-        <span class="hero__badge-main">初月授業料 1ヶ月無料</span>
-      </span>
+    {/* 上部バー：左にロゴ／右にキャンペーンバッジ */}
+    <div class="hero__topbar">
+      <div class="hero__logobar">
+        <span class="hero__logobar-mark">義塾</span>
+        <span class="hero__logobar-sub">寝屋川市成田町の学習塾<br />小学生・中学生・高校生対応</span>
+      </div>
 
+      <div class="hero__badge" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
+        <span class="hero__badge-ribbon">新規入塾生限定</span>
+        <span class="hero__badge-body">
+          <span class="hero__badge-label">初月授業料</span>
+          <span class="hero__badge-main">1ヶ月無料</span>
+        </span>
+        <span class="hero__badge-note">※適用条件あり</span>
+      </div>
+    </div>
+
+    {/* 中段：縦書き「義塾」のれん＋黒板の手書き哲学 */}
+    <div class="hero__middle">
+      <div class="hero__noren" aria-hidden="true">
+        <span class="hero__noren-mark">義塾</span>
+        <span class="hero__noren-tag">本気の生徒に、<br />本気で向き合う。</span>
+      </div>
+
+      <div class="hero__chalk">
+        <p class="hero__chalk-title">目標から逆算し、<br />今日の一歩を大切に。</p>
+        <ul class="hero__chalk-list">
+          <li>・わかるまで考える</li>
+          <li>・できるまで繰り返す</li>
+          <li>・自分の言葉で説明できる</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* メインキャッチ */}
+    <div class="hero__main">
       <h1 class="hero__title">
-        今よりもう一段上の賢さを。<br />
-        <span class="hero__title-em">「行きたい高校・大学に合格させたい」</span>
-        <br class="hero__br-pc" />その想いに、<br class="hero__br-sp" />8人の講師陣が本気で応えます。
+        <span class="hero__title-row">今よりもう一段上の</span>
+        <span class="hero__title-em">賢さを。</span>
       </h1>
 
-      <p class="hero__sub">寝屋川市成田町の学習塾「義塾」</p>
+      <p class="hero__sub">
+        一人ひとりに合わせて伸ばす、<br />義塾の<span class="hero__sub-em">3つの学び方</span>。
+      </p>
 
-      <ul class="hero__points">
-        <li><span>✓</span>中学受験・高校受験・大学受験すべてに対応</li>
-        <li><span>✓</span>公式LINEで塾長と直接相談できる</li>
-        <li><span>✓</span>寝屋川市成田町（成田山不動尊近く）</li>
+      {/* 3サービスチップ（保護者視点の言い換え） */}
+      <ul class="hero__chips" role="list">
+        <li>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="4" y="9" width="16" height="11" stroke="currentColor" stroke-width="1.6" rx="1"/>
+            <path d="M4 9 L12 3 L20 9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <rect x="10" y="13" width="4" height="7" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          <span>校舎で学ぶ</span>
+        </li>
+        <li>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="12" stroke="currentColor" stroke-width="1.6" rx="1"/>
+            <path d="M9 21h6M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>オンラインで<br />学ぶ</span>
+        </li>
+        <li>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M5 21c0-3.5 3.1-6 7-6s7 2.5 7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>家庭教師に<br />来てもらう</span>
+        </li>
       </ul>
+
+      <p class="hero__location">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        寝屋川市成田町の学習塾『義塾』｜京阪香里園駅から徒歩圏内
+      </p>
+
+      <p class="hero__pitch">
+        <span class="hero__pitch-line"></span>
+        本気の生徒に、本気で向き合う。
+        <span class="hero__pitch-line"></span>
+      </p>
     </div>
 
     <span class="hero__scroll" aria-hidden="true">
@@ -433,17 +502,15 @@ const faqs = [
 
 <style>
   /* =========================================
-     §1 Hero
+     §1 Hero（ChatGPT版を参考に再構築）
      ========================================= */
   .hero {
     position: relative;
-    min-height: 88vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
     overflow: hidden;
     color: var(--paper);
-    padding: 80px 0;
+    padding: 24px 0 56px;
+    isolation: isolate;
   }
 
   .hero__bg {
@@ -452,9 +519,11 @@ const faqs = [
     z-index: 0;
   }
 
-  .hero__bg img {
+  .hero__bg img,
+  .hero__bg picture {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
   }
 
@@ -462,155 +531,404 @@ const faqs = [
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      135deg,
-      rgba(26, 15, 46, 0.86) 0%,
-      rgba(76, 29, 149, 0.68) 50%,
-      rgba(124, 58, 237, 0.4) 100%
+      180deg,
+      rgba(26, 15, 46, 0.78) 0%,
+      rgba(76, 29, 149, 0.7) 40%,
+      rgba(76, 29, 149, 0.78) 100%
     );
   }
 
-  /* FV最上部のブランド帯（FV紫グラデーション） */
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--fv-purple) 0%, var(--purple) 100%);
-    z-index: 2;
-  }
-
-  .hero__inner {
+  /* ============== 上部バー：ロゴ＋バッジ ============== */
+  .hero__topbar {
     position: relative;
-    z-index: 1;
-    max-width: 920px;
-    width: 100%;
-    padding: 0 24px;
-    text-align: center;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    max-width: 720px;
+    margin: 0 auto;
   }
 
+  .hero__logobar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--purple-deep);
+    padding: 10px 18px 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-left: -20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  .hero__logobar-mark {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1;
+    letter-spacing: 0.06em;
+  }
+
+  .hero__logobar-sub {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+
+  /* キャンペーンバッジ：ゴールドリボン仕立て */
   .hero__badge {
-    display: inline-flex;
+    position: relative;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    background: var(--orange);
+    gap: 2px;
+    background: linear-gradient(180deg, #FBF7EE 0%, #F4E9CD 100%);
+    color: var(--purple-deep);
+    padding: 10px 18px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(201, 169, 97, 0.5);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    min-width: 132px;
+  }
+
+  /* バッジ上部のリボン風タブ */
+  .hero__badge-ribbon {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--purple-deep);
     color: var(--paper);
-    padding: 14px 28px;
-    border-radius: 12px;
-    margin-bottom: 28px;
-    box-shadow: 0 6px 24px rgba(232, 122, 46, 0.42);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .hero__badge-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin-top: 6px;
   }
 
   .hero__badge-label {
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.18em;
-  }
-
-  .hero__badge-main {
-    font-size: 18px;
-    font-weight: 900;
+    color: var(--purple);
     letter-spacing: 0.04em;
   }
 
-  .hero__title {
-    position: relative;
-    font-family: var(--font-sans);
-    font-size: clamp(22px, 4.2vw, 38px);
+  .hero__badge-main {
+    font-family: var(--font-serif);
+    font-size: 20px;
     font-weight: 700;
-    line-height: 1.65;
+    color: var(--purple-deep);
+    line-height: 1.1;
     letter-spacing: 0.02em;
-    color: var(--paper);
-    margin-bottom: 20px;
-    padding-left: 18px;
-    text-align: left;
-    display: inline-block;
   }
 
-  /* メインキャッチ左にFV紫の縦罫 */
-  .hero__title::before {
+  .hero__badge-note {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ============== 中段：のれん＋黒板 ============== */
+  .hero__middle {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px 20px 20px;
+    max-width: 720px;
+    margin: 0 auto;
+    align-items: flex-start;
+  }
+
+  /* 縦書き「義塾」のれん */
+  .hero__noren {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 18px 12px 22px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    position: relative;
+  }
+
+  .hero__noren::before {
     content: "";
     position: absolute;
+    top: -6px;
     left: 0;
-    top: 4px;
-    bottom: 4px;
-    width: 5px;
-    background: var(--fv-purple);
-    border-radius: 2px;
-    box-shadow: 0 0 12px rgba(124, 58, 237, 0.6);
+    right: 0;
+    height: 6px;
+    background: var(--purple-deep);
+    border-radius: 0 0 2px 2px;
+  }
+
+  .hero__noren-mark {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--purple-deep);
+    writing-mode: vertical-rl;
+    letter-spacing: 0.18em;
+    line-height: 1;
+  }
+
+  .hero__noren-tag {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: var(--purple-deep);
+    writing-mode: vertical-rl;
+    line-height: 1.7;
+    letter-spacing: 0.06em;
+  }
+
+  /* 黒板の手書き哲学 */
+  .hero__chalk {
+    flex: 1;
+    color: var(--paper);
+    padding-top: 10px;
+  }
+
+  .hero__chalk-title {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+  }
+
+  .hero__chalk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hero__chalk-list li {
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.02em;
+  }
+
+  /* ============== メインキャッチ ============== */
+  .hero__main {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 36px 20px 24px;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    color: var(--paper);
+    margin-bottom: 28px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero__title-row {
+    display: block;
+    font-size: clamp(26px, 7vw, 38px);
+    margin-bottom: 4px;
   }
 
   .hero__title-em {
-    color: var(--fv-purple);
-    background: rgba(255, 255, 255, 0.08);
-    padding: 0 6px;
-    border-radius: 4px;
-    text-shadow: 0 0 16px rgba(124, 58, 237, 0.4);
-  }
-
-  .hero__br-pc { display: none; }
-  @media (min-width: 769px) {
-    .hero__br-pc { display: inline; }
-    .hero__br-sp { display: none; }
+    display: inline-block;
+    font-size: clamp(46px, 13vw, 74px);
+    color: var(--paper);
+    line-height: 1.05;
+    border-bottom: 3px solid var(--gold-line, #C9A961);
+    padding: 0 6px 6px;
   }
 
   .hero__sub {
+    font-family: var(--font-serif);
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.86);
-    letter-spacing: 0.06em;
-    margin-bottom: 32px;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 22px;
+    letter-spacing: 0.04em;
   }
 
-  .hero__points {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .hero__points li {
-    display: flex;
-    gap: 10px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.92);
-    line-height: 1.6;
-  }
-
-  .hero__points li span {
-    color: var(--orange);
+  .hero__sub-em {
+    color: var(--paper);
     font-weight: 700;
+    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.45) 60%);
+    padding: 0 4px;
+  }
+
+  /* 3サービスチップ */
+  .hero__chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .hero__chips li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--purple-deep);
+    padding: 14px 6px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-align: center;
+    min-height: 78px;
+  }
+
+  .hero__chips svg {
+    color: var(--purple);
     flex-shrink: 0;
   }
 
-  .hero__scroll {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    width: 22px;
-    height: 36px;
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
+  /* 駅情報 */
+  .hero__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 22px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+
+  .hero__location svg {
+    color: var(--orange);
+    flex-shrink: 0;
+  }
+
+  /* ひと押しコピー */
+  .hero__pitch {
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding-top: 8px;
+    gap: 12px;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--paper);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
   }
 
-  .hero__scroll span {
-    width: 3px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 2px;
-    animation: scroll-pulse 1.6s ease-in-out infinite;
+  .hero__pitch-line {
+    flex-shrink: 0;
+    width: 22px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
   }
 
-  @keyframes scroll-pulse {
-    0%, 100% { transform: translateY(0); opacity: 1; }
-    50% { transform: translateY(8px); opacity: 0.4; }
+  .hero__scroll {
+    display: none;
+  }
+
+  /* PC幅で中央寄せ・余白調整 */
+  @media (min-width: 769px) {
+    .hero {
+      padding: 32px 0 80px;
+    }
+    .hero__topbar {
+      padding: 20px 32px;
+    }
+    .hero__logobar {
+      margin-left: -32px;
+      padding-left: 32px;
+    }
+    .hero__middle {
+      padding: 36px 32px 28px;
+    }
+    .hero__main {
+      padding: 48px 32px 32px;
+    }
+    .hero__chalk-title {
+      font-size: 16px;
+    }
+    .hero__chalk-list li {
+      font-size: 13px;
+    }
+    .hero__noren {
+      padding: 22px 16px 28px;
+    }
+    .hero__noren-mark {
+      font-size: 38px;
+    }
+    .hero__noren-tag {
+      font-size: 13px;
+    }
+    .hero__pitch {
+      font-size: 18px;
+    }
+    .hero__chips {
+      gap: 14px;
+    }
+    .hero__chips li {
+      padding: 16px 8px;
+      font-size: 13px;
+    }
+  }
+
+  /* スマホで余白を詰める */
+  @media (max-width: 360px) {
+    .hero__topbar {
+      padding: 12px 16px;
+    }
+    .hero__logobar {
+      margin-left: -16px;
+      padding: 8px 12px 8px 10px;
+    }
+    .hero__logobar-mark {
+      font-size: 22px;
+    }
+    .hero__logobar-sub {
+      font-size: 9px;
+    }
+    .hero__badge {
+      min-width: 116px;
+      padding: 8px 14px 6px;
+    }
+    .hero__badge-main {
+      font-size: 17px;
+    }
+    .hero__noren-mark {
+      font-size: 26px;
+    }
+    .hero__chips li {
+      font-size: 11px;
+      padding: 12px 4px;
+      min-height: 70px;
+    }
   }
 
   /* =========================================
