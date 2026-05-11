@@ -37,20 +37,16 @@ const {
     position: relative;
     display: block;
     aspect-ratio: 3 / 5;
-    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
     color: var(--paper);
     text-decoration: none;
     background: var(--accent);
   }
 
-  .svc-card:hover,
   .svc-card:focus-visible {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-    outline: none;
+    outline: 3px solid var(--orange);
+    outline-offset: -3px;
   }
 
   .svc-card__bg {
@@ -68,7 +64,7 @@ const {
   }
 
   .svc-card:hover .svc-card__bg img {
-    transform: scale(1.06);
+    transform: scale(1.08);
   }
 
   .svc-card__overlay {
