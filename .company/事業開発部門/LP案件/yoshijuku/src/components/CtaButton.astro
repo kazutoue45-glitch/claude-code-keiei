@@ -3,14 +3,24 @@ const { text, href = "#", id, variant = "main" } = Astro.props;
 ---
 
 <div class="cta-wrap">
-  <a href={href} class:list={["cta-btn", variant === "fv" && "cta-btn--fv"]} id={id} aria-label={text}>
-    <svg class="cta-btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="1.6"/>
-    </svg>
+  <a href={href} class:list={["cta-btn", variant === "fv" && "cta-btn--fv"]} id={id} aria-label={`${text}（公式LINEで）`}>
+    <span class="cta-btn__line" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 3.5c-5.5 0-10 3.6-10 8 0 4 3.6 7.4 8.6 8 .3.1.7.2.8.5.1.3.1.7 0 1l-.2 1c-.1.4.3.7.7.5 1.3-.5 7.4-4.4 10-7.5 1.5-1.7 2.1-3.5 2.1-5.5 0-4.4-4.5-8-12-6z"
+          fill="#06C755"
+        />
+        <text
+          x="12" y="14.6" text-anchor="middle"
+          font-family="-apple-system, 'Helvetica Neue', sans-serif"
+          font-size="6.8" font-weight="900" fill="#FFFFFF"
+          letter-spacing="0.3"
+        >LINE</text>
+      </svg>
+    </span>
     <span>{text}</span>
     <svg class="cta-btn__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </a>
   <p class="cta-wrap__sub">ご相談・お申込みは公式LINEから。塾長が直接お返事します。</p>
@@ -36,23 +46,23 @@ const { text, href = "#", id, variant = "main" } = Astro.props;
     gap: 12px;
     width: 100%;
     height: 64px;
-    padding: 0 28px;
-    background: linear-gradient(180deg, #F08C42 0%, var(--orange) 60%, var(--orange-deep) 100%);
+    padding: 0 24px;
+    background: linear-gradient(180deg, #FFB76A 0%, #FF9540 55%, #ED7A1A 100%);
     color: var(--paper);
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.02em;
     border-radius: 999px;
-    box-shadow: 0 10px 26px rgba(232, 122, 46, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 26px rgba(255, 149, 64, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.55);
     transition: filter 0.2s, transform 0.2s, box-shadow 0.2s;
     line-height: 1;
   }
 
   .cta-btn:hover,
   .cta-btn:focus-visible {
-    filter: brightness(1.05);
+    filter: brightness(1.06);
     transform: translateY(-2px);
-    box-shadow: 0 16px 36px rgba(232, 122, 46, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    box-shadow: 0 16px 36px rgba(255, 149, 64, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.6);
     outline: none;
   }
 
@@ -67,13 +77,28 @@ const { text, href = "#", id, variant = "main" } = Astro.props;
     font-size: 18px;
   }
 
-  .cta-btn__icon {
+  /* LINEアイコン（公式LINEへの導線を示すバッジ） */
+  .cta-btn__line {
     flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--paper);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  }
+
+  .cta-btn__line svg {
+    width: 22px;
+    height: 22px;
+    display: block;
   }
 
   .cta-btn__chev {
     flex-shrink: 0;
-    opacity: 0.7;
+    opacity: 0.85;
   }
 
   .cta-wrap__sub {
