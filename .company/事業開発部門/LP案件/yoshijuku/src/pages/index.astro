@@ -8,17 +8,18 @@ import VoiceCard from "../components/VoiceCard.astro";
 import AchievementBadge from "../components/AchievementBadge.astro";
 import TeacherCard from "../components/TeacherCard.astro";
 import PriceTable from "../components/PriceTable.astro";
+import PricePlan from "../components/PricePlan.astro";
 import QaItem from "../components/QaItem.astro";
 import CtaButton from "../components/CtaButton.astro";
 
 const base = import.meta.env.BASE_URL;
 
-// 3サービス（クイックナビ用）
+// 3サービス（クイックナビ用・帯型カード）
 const services = [
   {
     index: "01",
     title: "義塾（リアル校舎）",
-    tagline: "成田町の校舎で、講師陣と一緒に学ぶ",
+    tagline: "成田町の校舎で、8人の講師陣と一緒に学ぶ",
     target: "小3〜高3",
     priceRange: "14,300〜44,000円",
     forWhom: [
@@ -29,6 +30,7 @@ const services = [
     anchorId: "service-real",
     accentColor: "#4C1D95",
     iconName: "building",
+    bgImage: `${base}images/room-class.jpg`,
   },
   {
     index: "02",
@@ -44,6 +46,7 @@ const services = [
     anchorId: "service-online",
     accentColor: "#2E8B57",
     iconName: "monitor",
+    bgImage: null,
   },
   {
     index: "03",
@@ -59,6 +62,7 @@ const services = [
     anchorId: "service-tutor",
     accentColor: "#2563B8",
     iconName: "bag",
+    bgImage: `${base}images/building-sign.jpg`,
   },
 ];
 
@@ -325,14 +329,18 @@ const faqs = [
   {/* CTA ① FV直下（FV紫専用） */}
   <CtaButton text="今だけ初月無料で申し込む" href="#" id="cta-1" variant="fv" />
 
-  {/* ============ §2 サービスクイックナビ ============ */}
-  <section class="section section--white quicknav">
+  {/* ============ §2 サービスクイックナビ（帯型カード3段・背景画像付き） ============ */}
+  <section class="section quicknav">
+    <span class="quicknav__bg" aria-hidden="true"></span>
     <div class="container">
-      <span class="quicknav__eyebrow">学び方を選ぶ</span>
-      <p class="quicknav__lead">
-        学び方は3つ。お子様の状況に合わせて、塾長と一緒に最適な学び方を見つけられます。
-      </p>
-      <div class="quicknav__grid" id="services">
+      <header class="quicknav__head">
+        <span class="quicknav__eyebrow">学び方を選ぶ</span>
+        <h2 class="quicknav__title">あなたに合う、3つの学び方。</h2>
+        <p class="quicknav__lead">
+          通塾・オンライン・家庭教師から、お子様の状況に合わせて選べます。
+        </p>
+      </header>
+      <div class="quicknav__list" id="services">
         {services.map((s) => <ServiceCard {...s} />)}
       </div>
     </div>
@@ -342,7 +350,6 @@ const faqs = [
   <section class="section section--pale-gray empathy">
     <div class="container">
       <SectionHeader
-        eyebrow="共感"
         title="「うちの子、本当に大丈夫かな。」"
         lead="夜にふと、そう思ったことはありませんか。<br />ひとつでも当てはまるなら、義塾にまとめてご相談ください。"
         align="center"
@@ -387,7 +394,8 @@ const faqs = [
       <SectionHeader
         eyebrow="3つの学び方"
         title="お子様に合う学び方が、必ずあります。"
-        lead="成績が伸びないのは、お子様の能力ではなく、<strong>学び方が合っていないだけ</strong>かもしれません。義塾は、リアル校舎・オンライン・家庭教師の3サービスを併走しています。通塾できる距離か、自宅で集中したいか、マンツーマンで進路相談まで含めたいか——お子様の状況に合わせて選べる、それが義塾の強みです。"
+        lead="成績が伸びないのは、お子様の能力ではなく、<strong>学び方が合っていないだけ</strong>かもしれません。義塾は、リアル校舎・オンライン・家庭教師の3サービスを併走しています。"
+        align="center"
       />
 
       {/* ① リアル校舎 */}
@@ -493,18 +501,18 @@ const faqs = [
         </figure>
 
         <figure class="campus__photo">
-          <img src={`${base}images/room-class.jpg`} alt="クラス授業の教室" loading="lazy" />
+          <img src={`${base}images/room-individual.jpg`} alt="第1教室／個別指導の教室" loading="lazy" />
           <figcaption>
             <span class="campus__photo-no">02</span>
-            <span class="campus__photo-label">第1教室／クラス授業</span>
+            <span class="campus__photo-label">第1教室／個別指導</span>
           </figcaption>
         </figure>
 
         <figure class="campus__photo">
-          <img src={`${base}images/room-individual.jpg`} alt="個別指導の教室" loading="lazy" />
+          <img src={`${base}images/room-class.jpg`} alt="第2教室／クラス授業の教室" loading="lazy" />
           <figcaption>
             <span class="campus__photo-no">03</span>
-            <span class="campus__photo-label">第2教室／個別指導</span>
+            <span class="campus__photo-label">第2教室／クラス授業</span>
           </figcaption>
         </figure>
       </div>
@@ -655,46 +663,142 @@ const faqs = [
     </div>
   </section>
 
-  {/* ============ §8 料金（プレミアムゴールドバッジ配置） ============ */}
+  {/* ============ §8 料金（カード型プラン表示） ============ */}
   <section class="section section--pale-gray-2 pricing section-anchor" id="pricing">
     <div class="container">
       <SectionHeader
         eyebrow="料金"
         title="料金は、すべて明朗にお伝えします。"
+        lead="3つのサービスごとに、税込月額を明示しています。"
         align="center"
       />
 
-      <PriceTable
-        caption="義塾（リアル校舎）"
-        headers={["学年", "指導方法", "科目・曜日", "時間", "税込月額"]}
-        rows={[
-          ["小3〜高3", "個別指導", "月水木金／5科目", "17:00〜21:40（45分選択制）", "14,300〜25,300円"],
-          ["中1", "クラス授業", "水：数学／金：英国", "19:05〜20:45", "19,800円"],
-          ["中3", "クラス授業", "木：数数社／金：英英理", "19:05〜21:40", "33,000円"],
-          ["高1", "クラス授業", "月：英・数", "19:05〜21:40", "15,400円"],
-          ["高3", "クラス授業", "月水木：国公立・難関私大対策", "19:05〜21:40", "44,000円"],
-        ]}
-        note="※ 中2・高2クラス料金、入塾金・教材費・季節講習費は教室までお問い合わせください。<!-- 要確認: 中2・高2料金/入塾金/教材費/季節講習費 -->"
-      />
+      {/* === リアル校舎 === */}
+      <div class="pricing__group" style="--accent:#4C1D95;">
+        <h3 class="pricing__group-title">義塾（リアル校舎）</h3>
 
-      <PriceTable
-        caption="義塾の家庭教師"
-        headers={["プラン", "対象", "頻度", "税込月額", "備考"]}
-        rows={[
-          ["通常（1名）", "中1〜高2", "週1日2時間（月4回・計8時間）", "26,400円＋講師交通費", "第1期生特別価格（2026年入塾生限定）"],
-          ["ペア受講", "中1〜高2", "週1日2時間（月4回・計8時間）", "46,200円＋講師交通費（お二人分）", "兄弟姉妹様・お友達とご一緒に"],
-        ]}
-        note="※ 初回のみ：入塾金 11,000円／教材費 2,200円・冊。中学受験生・高校3年生は個別にご相談ください。"
-      />
+        <div class="pricing__sub">
+          <h4 class="pricing__sub-label">個別指導</h4>
+          <PricePlan
+            title="小3〜高3 5科目対応"
+            subtitle="月水木金 17:00〜21:40 / 45分の選択制"
+            price="14,300〜25,300"
+            meta={[
+              { label: "対象", value: "小3〜高3" },
+              { label: "曜日", value: "月・水・木・金" },
+              { label: "時間", value: "17:00〜21:40" },
+            ]}
+            accent="#4C1D95"
+          />
+        </div>
 
-      <PriceTable
-        caption="義塾オンライン"
-        headers={["プラン", "形態", "1コマ料金", "税込月額", "備考"]}
-        rows={[
-          ["オンラインプライベートレッスン", "完全個別 1対1", "5,500円", "22,000円〜", "月4コマ目安／4講座から選択"],
-        ]}
-        note="※ 選べる4つの講座：探究プレゼン／実践プレゼン／AI音楽制作／英検・TOEIC対策"
-      />
+        <div class="pricing__sub">
+          <h4 class="pricing__sub-label">クラス授業</h4>
+          <div class="pricing__grid pricing__grid--four">
+            <PricePlan
+              badge="中1"
+              title="数学・英語・国語"
+              subtitle="水曜：数学／金曜：英国"
+              price="19,800"
+              meta={[{ label: "時間", value: "19:05〜20:45" }]}
+              accent="#4C1D95"
+            />
+            <PricePlan
+              badge="中3"
+              title="5科目（受験対策）"
+              subtitle="木曜：数数社／金曜：英英理"
+              price="33,000"
+              meta={[{ label: "時間", value: "19:05〜21:40" }]}
+              accent="#4C1D95"
+              highlight={true}
+            />
+            <PricePlan
+              badge="高1"
+              title="高校英語・高校数学"
+              subtitle="月曜のみ"
+              price="15,400"
+              meta={[{ label: "時間", value: "19:05〜21:40" }]}
+              accent="#4C1D95"
+            />
+            <PricePlan
+              badge="高3"
+              title="国公立・難関私大対策"
+              subtitle="月・水・木"
+              price="44,000"
+              meta={[{ label: "時間", value: "19:05〜21:40" }]}
+              accent="#4C1D95"
+              highlight={true}
+            />
+          </div>
+        </div>
+
+        <p class="pricing__note">
+          ※ 中2・高2クラス料金、入塾金・教材費・季節講習費は教室までお問い合わせください。
+          <!-- 要確認: 中2・高2料金/入塾金/教材費/季節講習費 -->
+        </p>
+      </div>
+
+      {/* === オンライン === */}
+      <div class="pricing__group" style="--accent:#2E8B57;">
+        <h3 class="pricing__group-title">義塾オンライン</h3>
+        <div class="pricing__sub">
+          <PricePlan
+            badge="ONLINE"
+            title="完全個別 1対1 プライベートレッスン"
+            subtitle="月4コマ目安 / 4講座から選択"
+            price="22,000"
+            unit="〜 / 月（税込）"
+            meta={[
+              { label: "1コマ", value: "5,500円" },
+              { label: "対象", value: "小4〜社会人" },
+              { label: "形態", value: "完全個別 1対1" },
+            ]}
+            accent="#2E8B57"
+          />
+        </div>
+        <p class="pricing__note">
+          ※ 選べる4つの講座：探究プレゼン／実践プレゼン／AI音楽制作／英検・TOEIC対策
+        </p>
+      </div>
+
+      {/* === 家庭教師 === */}
+      <div class="pricing__group" style="--accent:#2563B8;">
+        <h3 class="pricing__group-title">義塾の家庭教師</h3>
+        <div class="pricing__sub">
+          <div class="pricing__grid pricing__grid--two">
+            <PricePlan
+              badge="通常"
+              title="講師がご自宅へ訪問"
+              subtitle="週1日2時間（月4回・計8時間）"
+              price="26,400"
+              unit="〜 / 月（＋講師交通費）"
+              meta={[
+                { label: "対象", value: "中1〜高2" },
+                { label: "形態", value: "完全マンツーマン" },
+                { label: "備考", value: "第1期生特別価格" },
+              ]}
+              accent="#2563B8"
+            />
+            <PricePlan
+              badge="ペア受講"
+              title="兄弟姉妹・お友達と一緒に"
+              subtitle="週1日2時間（月4回・計8時間）"
+              price="46,200"
+              unit="〜 / 月（お二人分・＋交通費）"
+              meta={[
+                { label: "1人あたり", value: "23,100円〜" },
+                { label: "対象", value: "中1〜高2" },
+              ]}
+              accent="#2563B8"
+              highlight={true}
+            />
+          </div>
+        </div>
+        <p class="pricing__note">
+          ※ 初回のみ：入塾金 11,000円／教材費 2,200円・冊。<br />
+          ※ 中学受験生・高校3年生は個別にご相談ください。
+        </p>
+      </div>
 
       {/* §8.5 キャンペーンOffer再強調（プレミアムゴールド ワイドリボン型バッジ・SVG） */}
       <div class="campaign-ribbon" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
@@ -1081,36 +1185,70 @@ const faqs = [
   }
 
   /* =========================================
-     §2 サービスクイックナビ
+     §2 サービスクイックナビ（帯型カード3段＋背景画像）
      ========================================= */
+  .quicknav {
+    position: relative;
+    overflow: hidden;
+    color: var(--paper);
+  }
+
+  .quicknav__bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(26, 15, 46, 0.78) 0%, rgba(26, 15, 46, 0.92) 100%),
+      url("/claude-code-keiei/yoshijuku/images/building-exterior.jpg") center/cover no-repeat;
+    z-index: 0;
+  }
+
+  .quicknav .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .quicknav__head {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
   .quicknav__eyebrow {
-    display: block;
+    display: inline-block;
     font-size: 12px;
     font-weight: 700;
-    color: var(--muted);
-    letter-spacing: 0.2em;
-    margin-bottom: 8px;
-    text-align: center;
+    color: var(--gold-light);
+    letter-spacing: 0.24em;
+    margin-bottom: 16px;
     text-transform: uppercase;
   }
 
+  .quicknav__title {
+    font-size: clamp(26px, 4vw, 40px);
+    color: var(--paper);
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
   .quicknav__lead {
-    text-align: center;
     font-size: 15px;
-    color: var(--charcoal-soft);
-    margin-bottom: 56px;
+    color: rgba(255, 255, 255, 0.86);
     line-height: 2.1;
+    max-width: 560px;
+    margin: 0 auto;
   }
 
-  .quicknav__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+  .quicknav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     scroll-margin-top: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
-  @media (max-width: 900px) {
-    .quicknav__grid { grid-template-columns: 1fr; gap: 18px; }
+  @media (max-width: 768px) {
+    .quicknav__head { margin-bottom: 40px; }
+    .quicknav__list { gap: 18px; }
   }
 
   /* =========================================
@@ -1528,6 +1666,78 @@ const faqs = [
   /* =========================================
      §8 料金（ゴールドワイドリボンバッジ）
      ========================================= */
+  /* 料金セクション内の3グループ */
+  .pricing__group {
+    margin-top: 80px;
+  }
+
+  .pricing__group:first-of-type {
+    margin-top: 0;
+  }
+
+  .pricing__group-title {
+    font-size: 22px;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--accent);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.04em;
+  }
+
+  .pricing__sub {
+    margin-bottom: 32px;
+  }
+
+  .pricing__sub:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .pricing__sub-label {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .pricing__grid {
+    display: grid;
+    gap: 20px;
+  }
+
+  .pricing__grid--four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .pricing__grid--two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing__note {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  @media (max-width: 900px) {
+    .pricing__grid--four { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 540px) {
+    .pricing__grid--four,
+    .pricing__grid--two { grid-template-columns: 1fr; }
+    .pricing__group { margin-top: 56px; }
+    .pricing__group-title { font-size: 19px; }
+  }
+
   .campaign-ribbon {
     margin: 64px auto 0;
     max-width: 760px;

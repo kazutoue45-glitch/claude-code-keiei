@@ -35,42 +35,36 @@ const { text, href = "#", id, variant = "main" } = Astro.props;
     justify-content: center;
     gap: 12px;
     width: 100%;
-    height: 60px;
-    padding: 0 24px;
-    background: var(--purple);
+    height: 64px;
+    padding: 0 28px;
+    background: linear-gradient(180deg, #F08C42 0%, var(--orange) 60%, var(--orange-deep) 100%);
     color: var(--paper);
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.02em;
     border-radius: 999px;
-    box-shadow: 0 8px 24px rgba(76, 29, 149, 0.32);
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 10px 26px rgba(232, 122, 46, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: filter 0.2s, transform 0.2s, box-shadow 0.2s;
     line-height: 1;
   }
 
   .cta-btn:hover,
   .cta-btn:focus-visible {
-    background: var(--purple-deep);
+    filter: brightness(1.05);
     transform: translateY(-2px);
-    box-shadow: 0 14px 32px rgba(76, 29, 149, 0.42);
+    box-shadow: 0 16px 36px rgba(232, 122, 46, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
     outline: none;
   }
 
   .cta-btn:focus-visible {
-    outline: 3px solid var(--orange);
+    outline: 3px solid var(--purple);
     outline-offset: 3px;
   }
 
-  /* FV直下CTA専用：FV紫（より明るい紫で第一印象のアテンション最大化） */
+  /* FV直下CTA：少し大きめにしてアテンション強化（色は他CTAと統一） */
   .cta-btn--fv {
-    background: var(--fv-purple);
-    box-shadow: 0 8px 28px rgba(124, 58, 237, 0.4);
-  }
-
-  .cta-btn--fv:hover,
-  .cta-btn--fv:focus-visible {
-    background: var(--fv-purple-deep);
-    box-shadow: 0 14px 36px rgba(124, 58, 237, 0.5);
+    height: 68px;
+    font-size: 18px;
   }
 
   .cta-btn__icon {
