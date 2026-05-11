@@ -204,29 +204,31 @@ const faqs = [
       </div>
     </div>
 
-    {/* FV画像エリア（実写：義塾校舎外観） */}
+    {/* FV画像エリア（実写：義塾校舎外観＋キャッチコピーオーバーレイ） */}
     <div class="hero__photo">
       <img src={`${base}images/building-exterior.jpg`} alt="義塾の校舎外観（寝屋川市成田町）" loading="eager" />
       <span class="hero__photo-tint" aria-hidden="true"></span>
 
-      {/* §1 円形メダル型ゴールドバッジ（Codex生成・PNG） */}
-      <div class="hero__medal" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <img src={`${base}images/badge-medal.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="eager" />
-      </div>
-    </div>
-
-    {/* 下段：白背景のテキストエリア（キャッチを主役に） */}
-    <div class="hero__panel">
+      {/* キャッチコピー（写真の上にオーバーレイ） */}
       <div class="hero__catch">
         <h1 class="hero__title">
           <span class="hero__title-row">今よりもう一段上の</span>
           <span class="hero__title-em">賢さを。</span>
         </h1>
-        <p class="hero__sub">
-          『行きたい高校・大学に合格させたい』<br />
-          その想いに、8人の講師陣が本気で応えます。
-        </p>
       </div>
+
+      {/* §1 円形メダル型ゴールドバッジ（写真下端寄り・白パネルにまたぐ） */}
+      <div class="hero__medal" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
+        <img src={`${base}images/badge-medal.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="eager" />
+      </div>
+    </div>
+
+    {/* 下段：白背景のテキストエリア（サブコピー＋チップ） */}
+    <div class="hero__panel">
+      <p class="hero__sub">
+        『行きたい高校・大学に合格させたい』<br />
+        その想いに、8人の講師陣が本気で応えます。
+      </p>
 
       {/* 3つの実績ポイントチップ */}
       <ul class="hero__chips" role="list">
@@ -872,9 +874,9 @@ const faqs = [
 
   .hero__photo {
     position: relative;
-    aspect-ratio: 16 / 11;
-    max-height: 62vh;
-    overflow: hidden;
+    aspect-ratio: 16 / 13;
+    max-height: 78vh;
+    overflow: visible;
     background: var(--purple-deep);
   }
 
@@ -886,25 +888,36 @@ const faqs = [
     object-position: center 60%;
   }
 
-  /* 写真の上に薄い紫グラデで馴染ませる（テキストや帯との連続感） */
+  /* 写真の上にダークオーバーレイ（キャッチコピーを読みやすく） */
   .hero__photo-tint {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(76, 29, 149, 0.18) 0%, rgba(76, 29, 149, 0) 35%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0.96) 100%);
+      linear-gradient(180deg, rgba(26, 15, 46, 0.45) 0%, rgba(26, 15, 46, 0.18) 40%, rgba(26, 15, 46, 0.5) 100%);
     pointer-events: none;
   }
 
-  /* §1 円形メダル型ゴールドバッジ（FV右上・SVG） */
+  /* キャッチコピーを写真の上にオーバーレイ */
+  .hero__catch {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 28px;
+    z-index: 2;
+  }
+
+  /* §1 円形メダル型ゴールドバッジ（写真の右下・白パネルにまたぐ形） */
   .hero__medal {
     position: absolute;
-    top: 20px;
+    bottom: -50px;
     right: 20px;
-    width: 140px;
-    height: 140px;
-    z-index: 2;
-    filter: drop-shadow(0 10px 20px rgba(26, 15, 46, 0.35));
-    transform: rotate(-6deg);
+    width: 130px;
+    height: 130px;
+    z-index: 4;
+    filter: drop-shadow(0 12px 22px rgba(26, 15, 46, 0.4));
     animation: medal-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
@@ -916,52 +929,49 @@ const faqs = [
   }
 
   @keyframes medal-in {
-    from { opacity: 0; transform: rotate(-12deg) scale(0.85); }
-    to { opacity: 1; transform: rotate(-6deg) scale(1); }
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
   }
 
   .hero__panel {
     max-width: 720px;
     margin: 0 auto;
-    padding: 40px 24px 32px;
+    padding: 56px 24px 32px;
     position: relative;
     z-index: 2;
-  }
-
-  .hero__catch {
-    margin-bottom: 40px;
   }
 
   .hero__title {
     font-family: var(--font-serif);
     font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: 0.02em;
-    color: var(--purple);
-    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.6);
   }
 
   .hero__title-row {
     display: block;
-    font-size: clamp(20px, 5.5vw, 28px);
-    color: var(--charcoal);
-    margin-bottom: 4px;
-    letter-spacing: 0.04em;
+    font-size: clamp(18px, 5vw, 26px);
+    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+    opacity: 0.95;
   }
 
   .hero__title-em {
     display: inline-block;
-    font-size: clamp(48px, 14vw, 76px);
-    color: var(--purple-deep);
+    font-size: clamp(56px, 16vw, 84px);
     line-height: 1.05;
     letter-spacing: 0.04em;
   }
 
   .hero__sub {
-    font-size: 14px;
-    line-height: 1.95;
+    font-size: 15px;
+    line-height: 2;
     color: var(--charcoal-soft);
     letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 32px;
   }
 
   .hero__chips {
@@ -1009,10 +1019,11 @@ const faqs = [
     .hero__topband-inner { padding: 0 20px; }
     .hero__topband-logo { font-size: 24px; }
     .hero__topband-sub { font-size: 11px; }
-    .hero__panel { padding: 32px 20px 28px; }
+    .hero__panel { padding: 56px 20px 28px; }
+    .hero__catch { padding: 32px 20px; }
     .hero__chips li { min-height: 88px; padding: 14px 6px 12px; }
     .hero__chip-text { font-size: 10.5px; }
-    .hero__medal { width: 108px; height: 108px; top: 14px; right: 14px; }
+    .hero__medal { width: 100px; height: 100px; bottom: -40px; right: 14px; }
   }
 
   @media (min-width: 769px) {
@@ -1020,17 +1031,17 @@ const faqs = [
     .hero__topband-logo { font-size: 32px; }
     .hero__topband-sub { font-size: 13px; }
     .hero__topband-sub small { font-size: 11px; }
-    .hero__photo { aspect-ratio: 16 / 7; max-height: none; }
-    .hero__panel { padding: 56px 32px 40px; }
-    .hero__catch { margin-bottom: 56px; }
-    .hero__title-row { font-size: 30px; }
-    .hero__title-em { font-size: 80px; }
-    .hero__sub { font-size: 16px; }
+    .hero__photo { aspect-ratio: 16 / 8; max-height: none; }
+    .hero__panel { padding: 72px 32px 40px; }
+    .hero__catch { padding: 60px 56px; }
+    .hero__title-row { font-size: 28px; }
+    .hero__title-em { font-size: 96px; }
+    .hero__sub { font-size: 17px; }
     .hero__chips { gap: 20px; }
     .hero__chips li { padding: 20px 12px 16px; min-height: 110px; }
     .hero__chip-icon { width: 44px; height: 44px; }
     .hero__chip-text { font-size: 12.5px; }
-    .hero__medal { width: 180px; height: 180px; top: 32px; right: 32px; }
+    .hero__medal { width: 180px; height: 180px; bottom: -70px; right: 40px; }
   }
 
   /* =========================================
