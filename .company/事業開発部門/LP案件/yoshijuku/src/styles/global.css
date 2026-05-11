@@ -148,17 +148,17 @@ h1, h2, h3, h4 {
 
 .section-title {
   font-size: clamp(26px, 4vw, 40px);
-  margin-bottom: 18px;
-  line-height: 1.5;
+  margin-bottom: 28px;
+  line-height: 1.55;
   color: var(--purple);
 }
 
 .section-lead {
   font-size: 16px;
   color: var(--charcoal-soft);
-  margin-bottom: 40px;
+  margin-bottom: 0;
   max-width: 760px;
-  line-height: 2;
+  line-height: 2.1;
 }
 
 .text-purple { color: var(--purple); }

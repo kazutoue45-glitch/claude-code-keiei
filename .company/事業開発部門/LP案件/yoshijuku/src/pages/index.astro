@@ -224,48 +224,62 @@ const faqs = [
       </div>
     </div>
 
-    {/* FV画像エリア（授業風景） */}
+    {/* FV画像エリア（実写：義塾校舎外観） */}
     <div class="hero__photo">
-      <picture>
-        <source srcset={`${base}images/hero-photo.jpg`} type="image/jpeg" />
-        <img src={`${base}images/hero.svg`} alt="義塾の授業風景" loading="eager" />
-      </picture>
+      <img src={`${base}images/building-exterior.jpg`} alt="義塾の校舎外観（寝屋川市成田町）" loading="eager" />
+      <span class="hero__photo-tint" aria-hidden="true"></span>
 
       {/* §1 円形メダル型ゴールドバッジ（FV右上） */}
       <div class="hero__medal" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <picture>
-          <source srcset={`${base}images/badge-medal.svg`} type="image/svg+xml" />
-          <img src={`${base}images/badge-medal.svg`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="eager" onerror="this.style.display='none';this.parentElement.parentElement.querySelector('.hero__medal-fallback').style.display='flex';" />
-        </picture>
-        {/* 画像未着時のCSSフォールバック（Codex生成画像が届くまで） */}
-        <span class="hero__medal-fallback img-placeholder img-placeholder--gold img-placeholder--circle">
-          新規入塾生限定<br /><strong>初月1ヶ月無料</strong>
-        </span>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <defs>
+            <radialGradient id="medalFill" cx="50%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#FFE9A8"/>
+              <stop offset="50%" stop-color="#D4AF37"/>
+              <stop offset="100%" stop-color="#8B6914"/>
+            </radialGradient>
+            <linearGradient id="medalRim" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFEAA8"/>
+              <stop offset="100%" stop-color="#7A5A0E"/>
+            </linearGradient>
+          </defs>
+          {/* 外周ringと装飾 */}
+          <circle cx="100" cy="100" r="96" fill="url(#medalRim)"/>
+          <circle cx="100" cy="100" r="88" fill="url(#medalFill)"/>
+          <circle cx="100" cy="100" r="84" fill="none" stroke="#7A5A0E" stroke-width="1.2" opacity="0.7"/>
+          <circle cx="100" cy="100" r="78" fill="none" stroke="#FFE9A8" stroke-width="0.8" opacity="0.85"/>
+          {/* 月桂冠（左右） */}
+          <path d="M22 100 Q34 70 44 100 Q34 130 22 100" fill="#7A5A0E" opacity="0.55"/>
+          <path d="M178 100 Q166 70 156 100 Q166 130 178 100" fill="#7A5A0E" opacity="0.55"/>
+          {/* sparkle */}
+          <g fill="#FFFBE6">
+            <circle cx="48" cy="44" r="2.4"/>
+            <circle cx="156" cy="50" r="1.6"/>
+            <circle cx="160" cy="148" r="2"/>
+            <circle cx="42" cy="156" r="1.4"/>
+            <circle cx="100" cy="20" r="2"/>
+          </g>
+          {/* テキスト */}
+          <text x="100" y="74" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-weight="700" font-size="13" fill="#5A1414" letter-spacing="2">新規入塾生限定</text>
+          <line x1="56" y1="84" x2="144" y2="84" stroke="#5A1414" stroke-width="0.8" opacity="0.5"/>
+          <text x="100" y="108" text-anchor="middle" font-family="'Noto Serif JP', serif" font-weight="900" font-size="20" fill="#3D0C0C" letter-spacing="1">初月授業料</text>
+          <text x="100" y="142" text-anchor="middle" font-family="'Noto Serif JP', serif" font-weight="900" font-size="34" fill="#3D0C0C" letter-spacing="2">1ヶ月無料</text>
+          <text x="100" y="170" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-weight="500" font-size="9" fill="#5A1414" opacity="0.75">※適用条件あり</text>
+        </svg>
       </div>
     </div>
 
-    {/* 下段：白背景のテキストエリア */}
+    {/* 下段：白背景のテキストエリア（キャッチを主役に） */}
     <div class="hero__panel">
-      <div class="hero__panel-grid">
-        <div class="hero__catch">
-          <h1 class="hero__title">
-            <span class="hero__title-row">今よりもう一段上の</span>
-            <span class="hero__title-em">賢さを。</span>
-          </h1>
-          <p class="hero__sub">
-            『行きたい高校・大学に合格させたい』<br />
-            その想いに、8人の講師陣が本気で応えます。
-          </p>
-        </div>
-
-        <div class="hero__badge" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-          <span class="hero__badge-ribbon">新規入塾生限定</span>
-          <span class="hero__badge-body">
-            <span class="hero__badge-label">初月授業料</span>
-            <span class="hero__badge-main">1ヶ月無料</span>
-          </span>
-          <span class="hero__badge-note">※適用条件あり</span>
-        </div>
+      <div class="hero__catch">
+        <h1 class="hero__title">
+          <span class="hero__title-row">今よりもう一段上の</span>
+          <span class="hero__title-em">賢さを。</span>
+        </h1>
+        <p class="hero__sub">
+          『行きたい高校・大学に合格させたい』<br />
+          その想いに、8人の講師陣が本気で応えます。
+        </p>
       </div>
 
       {/* 3つの実績ポイントチップ */}
@@ -470,24 +484,28 @@ const faqs = [
       />
 
       <div class="campus__gallery">
-        <figure class="campus__photo campus__photo--main">
-          <img src={`${base}images/building-exterior.jpg`} alt="義塾の校舎外観（成田町）" loading="lazy" />
-          <figcaption>校舎外観／寝屋川市成田町</figcaption>
-        </figure>
-
         <figure class="campus__photo">
           <img src={`${base}images/building-sign.jpg`} alt="義塾のエントランスサイン" loading="lazy" />
-          <figcaption>エントランス／義塾・小川探究</figcaption>
+          <figcaption>
+            <span class="campus__photo-no">01</span>
+            <span class="campus__photo-label">エントランス</span>
+          </figcaption>
         </figure>
 
         <figure class="campus__photo">
           <img src={`${base}images/room-class.jpg`} alt="クラス授業の教室" loading="lazy" />
-          <figcaption>第1教室／クラス授業用</figcaption>
+          <figcaption>
+            <span class="campus__photo-no">02</span>
+            <span class="campus__photo-label">第1教室／クラス授業</span>
+          </figcaption>
         </figure>
 
         <figure class="campus__photo">
           <img src={`${base}images/room-individual.jpg`} alt="個別指導の教室" loading="lazy" />
-          <figcaption>第2教室／個別指導用</figcaption>
+          <figcaption>
+            <span class="campus__photo-no">03</span>
+            <span class="campus__photo-label">第2教室／個別指導</span>
+          </figcaption>
         </figure>
       </div>
 
@@ -678,22 +696,46 @@ const faqs = [
         note="※ 選べる4つの講座：探究プレゼン／実践プレゼン／AI音楽制作／英検・TOEIC対策"
       />
 
-      {/* §8.5 キャンペーンOffer再強調（プレミアムゴールド ワイドリボン型バッジ） */}
+      {/* §8.5 キャンペーンOffer再強調（プレミアムゴールド ワイドリボン型バッジ・SVG） */}
       <div class="campaign-ribbon" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <picture>
-          <img
-            src={`${base}images/badge-ribbon.svg`}
-            alt="新規入塾生限定 初月授業料1ヶ月無料"
-            loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-          />
-        </picture>
-        {/* CSSフォールバック */}
-        <div class="campaign-ribbon__fallback img-placeholder img-placeholder--gold">
-          <span class="campaign-ribbon__top">新規入塾生限定</span>
-          <span class="campaign-ribbon__main">初月授業料 1ヶ月無料</span>
-          <span class="campaign-ribbon__note">※ 対象期間・対象サービス・適用条件は公式LINEにてご案内</span>
-        </div>
+        <svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="ribbonFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFE9A8"/>
+              <stop offset="50%" stop-color="#D4AF37"/>
+              <stop offset="100%" stop-color="#9C7314"/>
+            </linearGradient>
+            <linearGradient id="ribbonTail" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#7A5A0E"/>
+              <stop offset="100%" stop-color="#3D2C00"/>
+            </linearGradient>
+          </defs>
+          {/* 左テール */}
+          <path d="M0,30 L60,30 L40,90 L60,150 L0,150 Z" fill="url(#ribbonTail)"/>
+          {/* 右テール */}
+          <path d="M800,30 L740,30 L760,90 L740,150 L800,150 Z" fill="url(#ribbonTail)"/>
+          {/* 本体 */}
+          <rect x="40" y="20" width="720" height="140" rx="6" fill="url(#ribbonFill)"/>
+          {/* 内側二重ボーダー */}
+          <rect x="48" y="28" width="704" height="124" rx="4" fill="none" stroke="#7A5A0E" stroke-width="1.2" opacity="0.6"/>
+          <rect x="54" y="34" width="692" height="112" rx="3" fill="none" stroke="#FFE9A8" stroke-width="0.8" opacity="0.85"/>
+          {/* sparkle */}
+          <g fill="#FFFBE6">
+            <circle cx="100" cy="50" r="2.4"/>
+            <circle cx="700" cy="55" r="2"/>
+            <circle cx="120" cy="135" r="1.8"/>
+            <circle cx="690" cy="130" r="2.2"/>
+            <circle cx="400" cy="22" r="1.8"/>
+            <circle cx="400" cy="160" r="1.8"/>
+          </g>
+          {/* テキスト */}
+          <text x="400" y="70" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-weight="700" font-size="18" fill="#5A1414" letter-spacing="6">新規入塾生限定</text>
+          <line x1="280" y1="82" x2="520" y2="82" stroke="#5A1414" stroke-width="0.8" opacity="0.45"/>
+          <text x="400" y="128" text-anchor="middle" font-family="'Noto Serif JP', serif" font-weight="900" font-size="46" fill="#3D0C0C" letter-spacing="3">初月授業料 1ヶ月無料</text>
+        </svg>
+        <p class="campaign-ribbon__note">
+          ※ 対象期間・対象サービス・適用条件の詳細は公式LINEにてご案内します。
+        </p>
       </div>
     </div>
   </section>
@@ -728,19 +770,29 @@ const faqs = [
         align="center"
       />
 
-      {/* §10 小型ゴールドバッジ（意思決定の最終後押し） */}
+      {/* §10 小型ゴールドバッジ（意思決定の最終後押し・SVG） */}
       <div class="access__mini-badge" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <picture>
-          <img
-            src={`${base}images/badge-mini.svg`}
-            alt="新規入塾生限定 初月授業料1ヶ月無料"
-            loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-          />
-        </picture>
-        <span class="img-placeholder img-placeholder--gold img-placeholder--circle access__mini-fallback">
-          初月<br /><strong>1ヶ月無料</strong>
-        </span>
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <defs>
+            <radialGradient id="miniFill" cx="50%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#FFE9A8"/>
+              <stop offset="55%" stop-color="#D4AF37"/>
+              <stop offset="100%" stop-color="#8B6914"/>
+            </radialGradient>
+          </defs>
+          <circle cx="70" cy="70" r="68" fill="#7A5A0E"/>
+          <circle cx="70" cy="70" r="62" fill="url(#miniFill)"/>
+          <circle cx="70" cy="70" r="58" fill="none" stroke="#7A5A0E" stroke-width="1" opacity="0.65"/>
+          <circle cx="70" cy="70" r="53" fill="none" stroke="#FFE9A8" stroke-width="0.6" opacity="0.9"/>
+          <g fill="#FFFBE6">
+            <circle cx="34" cy="34" r="1.6"/>
+            <circle cx="108" cy="38" r="1.4"/>
+            <circle cx="106" cy="106" r="1.6"/>
+            <circle cx="32" cy="108" r="1.2"/>
+          </g>
+          <text x="70" y="58" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-weight="700" font-size="11" fill="#5A1414" letter-spacing="1.5">初月授業料</text>
+          <text x="70" y="92" text-anchor="middle" font-family="'Noto Serif JP', serif" font-weight="900" font-size="22" fill="#3D0C0C" letter-spacing="1">1ヶ月無料</text>
+        </svg>
       </div>
 
       <div class="access__qr">
@@ -835,88 +887,64 @@ const faqs = [
   .hero__photo {
     position: relative;
     aspect-ratio: 16 / 11;
-    max-height: 56vh;
+    max-height: 62vh;
     overflow: hidden;
     background: var(--purple-deep);
   }
 
-  .hero__photo picture,
-  .hero__photo > picture > img {
+  .hero__photo > img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
+    object-position: center 60%;
   }
 
-  .hero__photo::after {
-    content: "";
+  /* 写真の上に薄い紫グラデで馴染ませる（テキストや帯との連続感） */
+  .hero__photo-tint {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 100%);
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(76, 29, 149, 0.18) 0%, rgba(76, 29, 149, 0) 35%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0.96) 100%);
     pointer-events: none;
   }
 
-  /* §1 円形メダル型ゴールドバッジ（FV右上） */
+  /* §1 円形メダル型ゴールドバッジ（FV右上・SVG） */
   .hero__medal {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 132px;
-    height: 132px;
+    top: 20px;
+    right: 20px;
+    width: 140px;
+    height: 140px;
     z-index: 2;
-    filter: drop-shadow(0 8px 16px rgba(26, 15, 46, 0.32));
+    filter: drop-shadow(0 10px 20px rgba(26, 15, 46, 0.35));
+    transform: rotate(-6deg);
+    animation: medal-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  .hero__medal picture,
-  .hero__medal img {
+  .hero__medal svg {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: contain;
   }
 
-  .hero__medal-fallback {
-    display: none;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    font-size: 10px;
-    line-height: 1.5;
-  }
-
-  .hero__medal-fallback strong {
-    font-size: 14px;
-    margin-top: 2px;
-  }
-
-  /* 画像が読み込み失敗 or 存在しない場合に表示するためのcss-only fallback */
-  .hero__medal img:not([src]),
-  .hero__medal img[src=""] {
-    display: none;
+  @keyframes medal-in {
+    from { opacity: 0; transform: rotate(-12deg) scale(0.85); }
+    to { opacity: 1; transform: rotate(-6deg) scale(1); }
   }
 
   .hero__panel {
     max-width: 720px;
     margin: 0 auto;
-    padding: 28px 24px 24px;
+    padding: 40px 24px 32px;
     position: relative;
     z-index: 2;
-  }
-
-  .hero__panel-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-    align-items: start;
-    margin-bottom: 28px;
   }
 
   .hero__catch {
     position: relative;
     padding-left: 16px;
+    margin-bottom: 40px;
   }
 
   .hero__catch::before {
@@ -956,74 +984,10 @@ const faqs = [
   }
 
   .hero__sub {
-    font-size: 13px;
-    line-height: 1.85;
+    font-size: 14px;
+    line-height: 1.95;
     color: var(--charcoal-soft);
     letter-spacing: 0.02em;
-  }
-
-  .hero__badge {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    background: var(--paper);
-    border: 1.5px solid var(--orange);
-    color: var(--purple-deep);
-    padding: 14px 16px 10px;
-    border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(232, 122, 46, 0.18);
-    min-width: 130px;
-    margin-top: 12px;
-  }
-
-  .hero__badge-ribbon {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--orange);
-    color: var(--paper);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    padding: 4px 12px;
-    border-radius: 4px;
-    white-space: nowrap;
-    box-shadow: 0 3px 8px rgba(232, 122, 46, 0.32);
-  }
-
-  .hero__badge-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    margin-top: 6px;
-    text-align: center;
-  }
-
-  .hero__badge-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--charcoal);
-    letter-spacing: 0.04em;
-  }
-
-  .hero__badge-main {
-    font-family: var(--font-serif);
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--orange);
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-  }
-
-  .hero__badge-note {
-    font-size: 9px;
-    color: var(--muted);
-    margin-top: 4px;
-    letter-spacing: 0.04em;
   }
 
   .hero__chips {
@@ -1091,12 +1055,10 @@ const faqs = [
     .hero__topband-inner { padding: 0 20px; }
     .hero__topband-logo { font-size: 24px; }
     .hero__topband-sub { font-size: 11px; }
-    .hero__panel { padding: 24px 20px 20px; }
-    .hero__panel-grid { grid-template-columns: 1fr; gap: 16px; }
-    .hero__badge { align-self: center; min-width: 0; width: 100%; max-width: 240px; margin-top: 4px; }
+    .hero__panel { padding: 32px 20px 28px; }
     .hero__chips li { min-height: 88px; padding: 14px 6px 12px; }
     .hero__chip-text { font-size: 10.5px; }
-    .hero__medal { width: 96px; height: 96px; top: 12px; right: 12px; }
+    .hero__medal { width: 108px; height: 108px; top: 14px; right: 14px; }
   }
 
   @media (min-width: 769px) {
@@ -1105,20 +1067,17 @@ const faqs = [
     .hero__topband-sub { font-size: 13px; }
     .hero__topband-sub small { font-size: 11px; }
     .hero__photo { aspect-ratio: 16 / 7; max-height: none; }
-    .hero__panel { padding: 40px 32px 32px; }
-    .hero__panel-grid { gap: 32px; margin-bottom: 36px; }
-    .hero__catch { padding-left: 22px; }
+    .hero__panel { padding: 56px 32px 40px; }
+    .hero__catch { padding-left: 22px; margin-bottom: 56px; }
     .hero__catch::before { width: 5px; }
     .hero__title-row { font-size: 30px; }
     .hero__title-em { font-size: 80px; }
-    .hero__sub { font-size: 15px; }
-    .hero__badge { min-width: 160px; padding: 16px 20px 12px; }
-    .hero__badge-main { font-size: 26px; }
-    .hero__chips { gap: 16px; }
+    .hero__sub { font-size: 16px; }
+    .hero__chips { gap: 20px; }
     .hero__chips li { padding: 20px 12px 16px; min-height: 110px; }
     .hero__chip-icon { width: 44px; height: 44px; }
     .hero__chip-text { font-size: 12.5px; }
-    .hero__medal { width: 168px; height: 168px; top: 24px; right: 24px; }
+    .hero__medal { width: 180px; height: 180px; top: 32px; right: 32px; }
   }
 
   /* =========================================
@@ -1139,14 +1098,14 @@ const faqs = [
     text-align: center;
     font-size: 15px;
     color: var(--charcoal-soft);
-    margin-bottom: 40px;
-    line-height: 1.85;
+    margin-bottom: 56px;
+    line-height: 2.1;
   }
 
   .quicknav__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 32px;
     scroll-margin-top: 80px;
   }
 
@@ -1160,21 +1119,21 @@ const faqs = [
   .empathy__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 20px;
     max-width: 820px;
     margin: 0 auto;
   }
 
   .empathy__list li {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     align-items: flex-start;
     background: var(--paper);
-    padding: 18px 22px;
+    padding: 24px 28px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     font-size: 15px;
-    line-height: 1.75;
+    line-height: 1.85;
     color: var(--charcoal-soft);
   }
 
@@ -1186,10 +1145,11 @@ const faqs = [
 
   .empathy__solve {
     text-align: center;
-    margin-top: 36px;
-    font-size: 17px;
+    margin-top: 56px;
+    font-size: 18px;
     color: var(--purple);
     letter-spacing: 0.02em;
+    line-height: 1.85;
   }
 
   .empathy__solve strong {
@@ -1211,8 +1171,8 @@ const faqs = [
   .reasons__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-top: 16px;
+    gap: 36px;
+    margin-top: 24px;
   }
 
   @media (max-width: 900px) {
@@ -1225,9 +1185,9 @@ const faqs = [
   .svc-detail {
     display: flex;
     flex-direction: column;
-    gap: 28px;
-    margin-top: 56px;
-    padding: 36px;
+    gap: 36px;
+    margin-top: 80px;
+    padding: 48px;
     background: var(--paper);
     border: 1px solid var(--line);
     border-left: 4px solid var(--accent);
@@ -1351,18 +1311,13 @@ const faqs = [
   }
 
   /* =========================================
-     §6 校舎紹介＋「思い出の場所に」
+     §6 校舎紹介＋「思い出の場所に」（縦写真3枚・均等3列）
      ========================================= */
   .campus__gallery {
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas:
-      "main sub1"
-      "main sub2"
-      "main sub3";
-    gap: 16px;
-    margin-bottom: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 24px;
   }
 
   .campus__photo {
@@ -1371,7 +1326,14 @@ const faqs = [
     border-radius: var(--radius-md);
     overflow: hidden;
     background: var(--pale-gray);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 3 / 4;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .campus__photo:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
   }
 
   .campus__photo img {
@@ -1382,51 +1344,63 @@ const faqs = [
     image-orientation: from-image;
   }
 
-  .campus__photo--main {
-    grid-area: main;
-    aspect-ratio: 4 / 5;
-  }
-
-  .campus__photo:nth-of-type(2) { grid-area: sub1; aspect-ratio: 4 / 3; }
-  .campus__photo:nth-of-type(3) { grid-area: sub2; aspect-ratio: 4 / 3; }
-  .campus__photo:nth-of-type(4) { grid-area: sub3; aspect-ratio: 4 / 3; }
-
   .campus__photo figcaption {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 12px 16px 10px;
-    background: linear-gradient(180deg, rgba(26, 15, 46, 0) 0%, rgba(26, 15, 46, 0.78) 100%);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 32px 20px 18px;
+    background: linear-gradient(180deg, rgba(26, 15, 46, 0) 0%, rgba(26, 15, 46, 0.85) 70%);
     color: var(--paper);
-    font-size: 12px;
+  }
+
+  .campus__photo-no {
+    font-family: var(--font-serif);
     font-weight: 700;
-    letter-spacing: 0.06em;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    font-size: 22px;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+
+  .campus__photo-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   .campus__caption {
     text-align: center;
-    margin-top: 24px;
-    font-size: 14px;
+    margin-top: 56px;
+    font-size: 15px;
     color: var(--charcoal-soft);
-    line-height: 2;
+    line-height: 2.1;
+    letter-spacing: 0.02em;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .campus__gallery {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      grid-template-areas:
-        "main main"
-        "sub1 sub2"
-        "sub3 sub3";
-      gap: 12px;
+      gap: 16px;
     }
-    .campus__photo--main { aspect-ratio: 4 / 3; }
-    .campus__photo:nth-of-type(4) { aspect-ratio: 16 / 9; }
-    .campus__photo figcaption { font-size: 11px; padding: 10px 12px 8px; }
-    .campus__caption { font-size: 13px; }
+    .campus__photo:nth-of-type(3) {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 10;
+    }
+    .campus__photo:nth-of-type(3) figcaption { padding: 24px 18px 16px; }
+  }
+
+  @media (max-width: 540px) {
+    .campus__gallery {
+      grid-template-columns: 1fr;
+    }
+    .campus__photo,
+    .campus__photo:nth-of-type(3) { aspect-ratio: 4 / 5; }
+    .campus__caption { font-size: 14px; margin-top: 36px; }
   }
 
   /* =========================================
@@ -1435,12 +1409,13 @@ const faqs = [
   .voices__achievements {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-bottom: 56px;
+    gap: 40px;
+    margin-bottom: 24px;
   }
 
   .voices__achievements--two {
     grid-template-columns: 1fr 2.4fr;
+    gap: 56px;
     align-items: start;
   }
 
@@ -1449,14 +1424,14 @@ const faqs = [
     font-size: 22px;
     color: var(--purple);
     text-align: center;
-    margin: 56px 0 28px;
+    margin: 80px 0 40px;
     letter-spacing: 0.04em;
   }
 
   .voices__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 32px;
   }
 
   .voices__grid--two {
@@ -1479,17 +1454,17 @@ const faqs = [
   .teachers__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-    margin-top: 16px;
+    gap: 40px;
+    margin-top: 24px;
   }
 
   @media (max-width: 900px) {
-    .teachers__grid { grid-template-columns: 1fr; gap: 20px; }
+    .teachers__grid { grid-template-columns: 1fr; gap: 28px; }
   }
 
   .media {
-    margin-top: 80px;
-    padding: 40px 32px;
+    margin-top: 96px;
+    padding: 48px 40px;
     background: var(--pale-gray);
     border-radius: var(--radius-md);
   }
@@ -1554,54 +1529,28 @@ const faqs = [
      §8 料金（ゴールドワイドリボンバッジ）
      ========================================= */
   .campaign-ribbon {
-    position: relative;
-    margin: 48px auto 0;
-    max-width: 720px;
-    min-height: 130px;
+    margin: 64px auto 0;
+    max-width: 760px;
+    text-align: center;
   }
 
-  .campaign-ribbon picture,
-  .campaign-ribbon > picture > img {
+  .campaign-ribbon svg {
     display: block;
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 12px 24px rgba(139, 105, 20, 0.3));
-  }
-
-  .campaign-ribbon__fallback {
-    display: none;
-    width: 100%;
-    min-height: 130px;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    text-align: center;
-    padding: 22px 24px;
-    border-radius: var(--radius-md);
-  }
-
-  .campaign-ribbon__top {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-  }
-
-  .campaign-ribbon__main {
-    font-family: var(--font-serif);
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 0.04em;
+    filter: drop-shadow(0 14px 28px rgba(139, 105, 20, 0.32));
   }
 
   .campaign-ribbon__note {
-    font-size: 11px;
-    opacity: 0.85;
-    line-height: 1.6;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    letter-spacing: 0.04em;
   }
 
   @media (max-width: 768px) {
-    .campaign-ribbon { margin-top: 36px; }
-    .campaign-ribbon__main { font-size: 22px; }
+    .campaign-ribbon { margin-top: 48px; }
   }
 
   /* =========================================
@@ -1612,51 +1561,35 @@ const faqs = [
   }
 
   .faq__list {
-    margin-top: 32px;
+    margin-top: 24px;
   }
 
   .faq__more {
-    margin-top: 32px;
+    margin-top: 56px;
     text-align: center;
     font-size: 13px;
     color: var(--muted);
+    line-height: 1.85;
   }
 
   /* =========================================
      §10 アクセス
      ========================================= */
   .access__mini-badge {
-    position: relative;
-    width: 110px;
-    height: 110px;
-    margin: 32px auto 0;
+    width: 120px;
+    height: 120px;
+    margin: 40px auto 0;
     filter: drop-shadow(0 6px 14px rgba(139, 105, 20, 0.32));
   }
 
-  .access__mini-badge picture,
-  .access__mini-badge > picture > img {
+  .access__mini-badge svg {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: contain;
-  }
-
-  .access__mini-fallback {
-    display: none;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    font-size: 10px;
-    line-height: 1.5;
-  }
-
-  .access__mini-fallback strong {
-    font-size: 13px;
-    margin-top: 2px;
   }
 
   .access__qr {
-    margin: 24px auto 0;
+    margin: 56px auto 0;
     text-align: center;
     max-width: 300px;
   }
@@ -1743,9 +1676,9 @@ const faqs = [
   }
 
   @media (max-width: 768px) {
-    .access__info { padding: 24px 20px; }
-    .access__info-list > div { grid-template-columns: 72px 1fr; gap: 12px; }
-    .access__mini-badge { width: 96px; height: 96px; }
+    .access__info { padding: 28px 22px; }
+    .access__info-list > div { grid-template-columns: 80px 1fr; gap: 14px; }
+    .access__mini-badge { width: 104px; height: 104px; }
   }
 </style>
 

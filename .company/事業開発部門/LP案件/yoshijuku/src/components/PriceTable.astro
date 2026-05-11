@@ -27,16 +27,17 @@ const { caption, headers, rows, note } = Astro.props;
 
 <style>
   .price {
-    margin-bottom: 36px;
+    margin-bottom: 56px;
   }
 
   .price__caption {
     font-size: 17px;
     font-weight: 700;
     color: var(--purple);
-    margin-bottom: 14px;
-    padding-left: 12px;
+    margin-bottom: 20px;
+    padding-left: 14px;
     border-left: 3px solid var(--orange);
+    line-height: 1.5;
   }
 
   .price__scroll {
@@ -56,7 +57,7 @@ const { caption, headers, rows, note } = Astro.props;
 
   .price__table th,
   .price__table td {
-    padding: 14px 16px;
+    padding: 18px 20px;
     text-align: left;
     border-bottom: 1px solid var(--line);
     vertical-align: middle;

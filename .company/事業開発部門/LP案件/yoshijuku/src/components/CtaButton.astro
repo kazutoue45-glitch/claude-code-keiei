@@ -18,11 +18,15 @@ const { text, href = "#", id, variant = "main" } = Astro.props;
 
 <style>
   .cta-wrap {
-    margin: 64px auto;
+    margin: 80px auto;
     max-width: 480px;
     width: 100%;
     padding: 0 24px;
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .cta-wrap { margin: 56px auto; }
   }
 
   .cta-btn {
@@ -86,7 +90,6 @@ const { text, href = "#", id, variant = "main" } = Astro.props;
   }
 
   @media (max-width: 768px) {
-    .cta-wrap { margin: 48px auto; padding: 0 20px; }
     .cta-btn { font-size: 15px; height: 56px; }
   }
 </style>
