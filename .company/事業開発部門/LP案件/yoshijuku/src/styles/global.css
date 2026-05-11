@@ -118,7 +118,8 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
-  .section { padding: 80px 0; }
+  .section { padding: 64px 0; }
+  .container { padding: 0 18px; }
 }
 
 .section--white { background: var(--paper); }
@@ -192,34 +193,48 @@ h1, h2, h3, h4 {
   }
 }
 
-/* === スマホ：縦方向フェード、写真を上半分にうっすら、テキストは下の白背景に === */
+/* === スマホ：写真を section 上部に固定表示（::before の高さ制限）、その下からテキスト === */
 @media (max-width: 900px) {
+  .section--bg-empathy,
+  .section--bg-reasons,
+  .section--bg-voices {
+    padding-top: calc(58vw + 24px);
+  }
   .section--bg-empathy::before,
   .section--bg-reasons::before,
   .section--bg-voices::before {
-    background-position: 70% top;
+    bottom: auto;
+    height: 58vw;
+    max-height: 320px;
+    background-position: 70% center;
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
   }
   .section--bg-empathy::before {
     background-image:
-      linear-gradient(180deg, rgba(245, 246, 248, 0.45) 0%, rgba(245, 246, 248, 0.78) 28%, rgba(245, 246, 248, 0.98) 50%, rgba(245, 246, 248, 1) 100%),
+      linear-gradient(180deg, rgba(245, 246, 248, 0) 0%, rgba(245, 246, 248, 0.05) 85%, rgba(245, 246, 248, 0.6) 100%),
       url("/claude-code-keiei/yoshijuku/images/section-empathy.jpg");
   }
   .section--bg-reasons::before {
     background-image:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.78) 28%, rgba(255, 255, 255, 0.98) 50%, rgba(255, 255, 255, 1) 100%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 85%, rgba(255, 255, 255, 0.6) 100%),
       url("/claude-code-keiei/yoshijuku/images/section-reasons.jpg");
   }
   .section--bg-voices::before {
     background-image:
-      linear-gradient(180deg, rgba(243, 238, 251, 0.45) 0%, rgba(243, 238, 251, 0.78) 28%, rgba(243, 238, 251, 0.98) 50%, rgba(243, 238, 251, 1) 100%),
+      linear-gradient(180deg, rgba(243, 238, 251, 0) 0%, rgba(243, 238, 251, 0.05) 85%, rgba(243, 238, 251, 0.6) 100%),
       url("/claude-code-keiei/yoshijuku/images/section-voices.jpg");
   }
-  /* スマホでは写真エリア分の余白を section 上部に確保 */
-  .section--bg-empathy,
-  .section--bg-reasons,
-  .section--bg-voices {
-    padding-top: 200px;
-  }
+  /* スマホ section 自体は無背景色（::beforeで写真領域だけ、その下は親の背景色） */
+  .section--bg-empathy { background: var(--pale-gray); }
+  .section--bg-reasons { background: var(--paper); }
+  .section--bg-voices { background: var(--purple-pale); }
+  .section--bg-faq { background: var(--paper); }
+}
+
+/* スマホ：base font-size 確保、各カードの本文サイズも引き上げ */
+@media (max-width: 768px) {
+  body { font-size: 16px; }
 }
 
 .section-anchor {

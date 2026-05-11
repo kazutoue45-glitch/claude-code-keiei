@@ -71,8 +71,10 @@ const { q, a } = Astro.props;
   }
 
   @media (max-width: 768px) {
-    .qa { padding: 20px 0; }
-    .qa__mark { width: 28px; height: 28px; font-size: 13px; }
-    .qa__q p { font-size: 15px; }
+    .qa { padding: 24px 0; }
+    .qa__q, .qa__a { gap: 14px; }
+    .qa__mark { width: 30px; height: 30px; font-size: 13px; }
+    .qa__q p { font-size: 16px; line-height: 1.65; }
+    .qa__a p { font-size: 14.5px; line-height: 1.9; }
   }
 </style>
