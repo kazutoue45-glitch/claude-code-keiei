@@ -1,0 +1,128 @@
+---
+const { services } = Astro.props;
+const rows = [
+  { key: "target", label: "対象学年" },
+  { key: "form", label: "指導形態" },
+  { key: "price", label: "月額目安" },
+  { key: "forWhom", label: "こんな方に" },
+];
+---
+
+<div class="cmp">
+  <div class="cmp__scroll">
+    <table class="cmp__table">
+      <thead>
+        <tr>
+          <th class="cmp__corner" aria-hidden="true"></th>
+          {services.map((s) => (
+            <th class="cmp__head" style={`--accent:${s.accent};`}>
+              <span class="cmp__head-name">{s.name}</span>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr>
+            <th class="cmp__rowhead">{row.label}</th>
+            {services.map((s) => (
+              <td class="cmp__cell" style={`--accent:${s.accent};`}>{s[row.key]}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .cmp {
+    margin-top: 64px;
+  }
+
+  .cmp__scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+    background: var(--paper);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .cmp__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+    font-size: 14px;
+  }
+
+  .cmp__corner {
+    background: var(--paper);
+    width: 130px;
+  }
+
+  .cmp__head {
+    padding: 18px 14px;
+    background: var(--accent);
+    color: var(--paper);
+    text-align: center;
+    border-left: 1px solid var(--paper);
+  }
+
+  .cmp__head:first-of-type {
+    border-top-left-radius: var(--radius-md);
+  }
+
+  .cmp__head:last-of-type {
+    border-top-right-radius: var(--radius-md);
+  }
+
+  .cmp__head-name {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .cmp__rowhead {
+    background: var(--pale-gray);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    white-space: nowrap;
+  }
+
+  .cmp__cell {
+    padding: 14px 16px;
+    text-align: center;
+    color: var(--charcoal);
+    font-size: 13px;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--line);
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+  }
+
+  .cmp__cell:hover {
+    background: rgba(76, 29, 149, 0.03);
+    border-left-color: var(--accent);
+    border-right-color: var(--accent);
+  }
+
+  .cmp__table tbody tr:last-child td,
+  .cmp__table tbody tr:last-child th {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    .cmp { margin-top: 40px; }
+    .cmp__corner { width: 92px; }
+    .cmp__rowhead { padding: 12px 10px; font-size: 11px; }
+    .cmp__cell { padding: 12px 10px; font-size: 12.5px; }
+    .cmp__head { padding: 14px 10px; }
+    .cmp__head-name { font-size: 13px; }
+  }
+</style>
