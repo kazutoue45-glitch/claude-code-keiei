@@ -233,43 +233,9 @@ const faqs = [
       <img src={`${base}images/building-exterior.jpg`} alt="義塾の校舎外観（寝屋川市成田町）" loading="eager" />
       <span class="hero__photo-tint" aria-hidden="true"></span>
 
-      {/* §1 円形メダル型ゴールドバッジ（FV右上） */}
+      {/* §1 円形メダル型ゴールドバッジ（Codex生成・PNG） */}
       <div class="hero__medal" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <defs>
-            <radialGradient id="medalFill" cx="50%" cy="35%" r="70%">
-              <stop offset="0%" stop-color="#FFE9A8"/>
-              <stop offset="50%" stop-color="#D4AF37"/>
-              <stop offset="100%" stop-color="#8B6914"/>
-            </radialGradient>
-            <linearGradient id="medalRim" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#FFEAA8"/>
-              <stop offset="100%" stop-color="#7A5A0E"/>
-            </linearGradient>
-          </defs>
-          {/* 外周ringと装飾 */}
-          <circle cx="100" cy="100" r="96" fill="url(#medalRim)"/>
-          <circle cx="100" cy="100" r="88" fill="url(#medalFill)"/>
-          <circle cx="100" cy="100" r="84" fill="none" stroke="#7A5A0E" stroke-width="1.2" opacity="0.7"/>
-          <circle cx="100" cy="100" r="78" fill="none" stroke="#FFE9A8" stroke-width="0.8" opacity="0.85"/>
-          {/* 月桂冠（左右） */}
-          <path d="M22 100 Q34 70 44 100 Q34 130 22 100" fill="#7A5A0E" opacity="0.55"/>
-          <path d="M178 100 Q166 70 156 100 Q166 130 178 100" fill="#7A5A0E" opacity="0.55"/>
-          {/* sparkle */}
-          <g fill="#FFFBE6">
-            <circle cx="48" cy="44" r="2.4"/>
-            <circle cx="156" cy="50" r="1.6"/>
-            <circle cx="160" cy="148" r="2"/>
-            <circle cx="42" cy="156" r="1.4"/>
-            <circle cx="100" cy="20" r="2"/>
-          </g>
-          {/* テキスト */}
-          <text x="100" y="74" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-weight="700" font-size="13" fill="#5A1414" letter-spacing="2">新規入塾生限定</text>
-          <line x1="56" y1="84" x2="144" y2="84" stroke="#5A1414" stroke-width="0.8" opacity="0.5"/>
-          <text x="100" y="108" text-anchor="middle" font-family="'Noto Serif JP', serif" font-weight="900" font-size="20" fill="#3D0C0C" letter-spacing="1">初月授業料</text>
-          <text x="100" y="142" text-anchor="middle" font-family="'Noto Serif JP', serif" font-weight="900" font-size="34" fill="#3D0C0C" letter-spacing="2">1ヶ月無料</text>
-          <text x="100" y="170" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-weight="500" font-size="9" fill="#5A1414" opacity="0.75">※適用条件あり</text>
-        </svg>
+        <img src={`${base}images/badge-medal.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="eager" />
       </div>
     </div>
 
@@ -794,43 +760,9 @@ const faqs = [
         </p>
       </div>
 
-      {/* §8.5 キャンペーンOffer再強調（プレミアムゴールド ワイドリボン型バッジ・SVG） */}
+      {/* §8.5 キャンペーンOffer再強調（Codex生成 PNG ワイドリボン） */}
       <div class="campaign-ribbon" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <defs>
-            <linearGradient id="ribbonFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#FFE9A8"/>
-              <stop offset="50%" stop-color="#D4AF37"/>
-              <stop offset="100%" stop-color="#9C7314"/>
-            </linearGradient>
-            <linearGradient id="ribbonTail" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#7A5A0E"/>
-              <stop offset="100%" stop-color="#3D2C00"/>
-            </linearGradient>
-          </defs>
-          {/* 左テール */}
-          <path d="M0,30 L60,30 L40,90 L60,150 L0,150 Z" fill="url(#ribbonTail)"/>
-          {/* 右テール */}
-          <path d="M800,30 L740,30 L760,90 L740,150 L800,150 Z" fill="url(#ribbonTail)"/>
-          {/* 本体 */}
-          <rect x="40" y="20" width="720" height="140" rx="6" fill="url(#ribbonFill)"/>
-          {/* 内側二重ボーダー */}
-          <rect x="48" y="28" width="704" height="124" rx="4" fill="none" stroke="#7A5A0E" stroke-width="1.2" opacity="0.6"/>
-          <rect x="54" y="34" width="692" height="112" rx="3" fill="none" stroke="#FFE9A8" stroke-width="0.8" opacity="0.85"/>
-          {/* sparkle */}
-          <g fill="#FFFBE6">
-            <circle cx="100" cy="50" r="2.4"/>
-            <circle cx="700" cy="55" r="2"/>
-            <circle cx="120" cy="135" r="1.8"/>
-            <circle cx="690" cy="130" r="2.2"/>
-            <circle cx="400" cy="22" r="1.8"/>
-            <circle cx="400" cy="160" r="1.8"/>
-          </g>
-          {/* テキスト */}
-          <text x="400" y="70" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-weight="700" font-size="18" fill="#5A1414" letter-spacing="6">新規入塾生限定</text>
-          <line x1="280" y1="82" x2="520" y2="82" stroke="#5A1414" stroke-width="0.8" opacity="0.45"/>
-          <text x="400" y="128" text-anchor="middle" font-family="'Noto Serif JP', serif" font-weight="900" font-size="46" fill="#3D0C0C" letter-spacing="3">初月授業料 1ヶ月無料</text>
-        </svg>
+        <img src={`${base}images/badge-ribbon.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="lazy" />
         <p class="campaign-ribbon__note">
           ※ 対象期間・対象サービス・適用条件の詳細は公式LINEにてご案内します。
         </p>
@@ -868,29 +800,9 @@ const faqs = [
         align="center"
       />
 
-      {/* §10 小型ゴールドバッジ（意思決定の最終後押し・SVG） */}
+      {/* §10 小型ゴールドバッジ（Codex生成 PNG） */}
       <div class="access__mini-badge" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <defs>
-            <radialGradient id="miniFill" cx="50%" cy="35%" r="70%">
-              <stop offset="0%" stop-color="#FFE9A8"/>
-              <stop offset="55%" stop-color="#D4AF37"/>
-              <stop offset="100%" stop-color="#8B6914"/>
-            </radialGradient>
-          </defs>
-          <circle cx="70" cy="70" r="68" fill="#7A5A0E"/>
-          <circle cx="70" cy="70" r="62" fill="url(#miniFill)"/>
-          <circle cx="70" cy="70" r="58" fill="none" stroke="#7A5A0E" stroke-width="1" opacity="0.65"/>
-          <circle cx="70" cy="70" r="53" fill="none" stroke="#FFE9A8" stroke-width="0.6" opacity="0.9"/>
-          <g fill="#FFFBE6">
-            <circle cx="34" cy="34" r="1.6"/>
-            <circle cx="108" cy="38" r="1.4"/>
-            <circle cx="106" cy="106" r="1.6"/>
-            <circle cx="32" cy="108" r="1.2"/>
-          </g>
-          <text x="70" y="58" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-weight="700" font-size="11" fill="#5A1414" letter-spacing="1.5">初月授業料</text>
-          <text x="70" y="92" text-anchor="middle" font-family="'Noto Serif JP', serif" font-weight="900" font-size="22" fill="#3D0C0C" letter-spacing="1">1ヶ月無料</text>
-        </svg>
+        <img src={`${base}images/badge-mini.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="lazy" />
       </div>
 
       <div class="access__qr">
@@ -1020,10 +932,11 @@ const faqs = [
     animation: medal-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  .hero__medal svg {
+  .hero__medal img {
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: contain;
   }
 
   @keyframes medal-in {
@@ -1703,11 +1616,11 @@ const faqs = [
     text-align: center;
   }
 
-  .campaign-ribbon svg {
+  .campaign-ribbon img {
     display: block;
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 14px 28px rgba(139, 105, 20, 0.32));
+    filter: drop-shadow(0 14px 28px rgba(139, 105, 20, 0.28));
   }
 
   .campaign-ribbon__note {
@@ -1751,10 +1664,11 @@ const faqs = [
     filter: drop-shadow(0 6px 14px rgba(139, 105, 20, 0.32));
   }
 
-  .access__mini-badge svg {
+  .access__mini-badge img {
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: contain;
   }
 
   .access__qr {
