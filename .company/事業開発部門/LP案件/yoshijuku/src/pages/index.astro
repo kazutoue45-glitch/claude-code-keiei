@@ -287,7 +287,6 @@ const faqs = [
       <SectionHeader
         title="「うちの子、本当に大丈夫かな。」"
         lead="夜にふと、そう思ったことはありませんか。<br />ひとつでも当てはまるなら、義塾にまとめてご相談ください。"
-        align="center"
       />
       <ul class="empathy__list">
         {empathyItems.map((item) => (
@@ -315,7 +314,6 @@ const faqs = [
         eyebrow="選ばれる理由"
         title="寝屋川・成田町のご家庭から、<br />義塾が選ばれている理由。"
         lead="塾の数は地域に星の数ほどあります。その中で、なぜ義塾が選ばれ続けてきたのか。塾長の小川と8名の講師陣が、長年大事にしてきた3つの軸でお伝えします。"
-        align="center"
       />
       <div class="reasons__grid">
         {reasons.map((r) => <ReasonCard {...r} />)}
@@ -330,7 +328,6 @@ const faqs = [
         eyebrow="3つの学び方"
         title="お子様に合う学び方が、必ずあります。"
         lead="成績が伸びないのは、お子様の能力ではなく、<strong>学び方が合っていないだけ</strong>かもしれません。義塾は、リアル校舎・オンライン・家庭教師の3サービスを併走しています。"
-        align="center"
       />
 
       {/* ① リアル校舎 */}
@@ -423,7 +420,6 @@ const faqs = [
         eyebrow="校舎紹介"
         title="義塾を、<br />学生時代の思い出の場所に。"
         lead="勉強の点数を上げるだけが、塾の役割ではないと考えています。<br />お子様が大人になったとき、「あの教室で、先生や仲間と一緒に頑張った」と<strong class='text-orange'>ふと思い出せる場所</strong>であってほしい——塾長の小川と8人の講師陣が、そんな想いで毎日この校舎の灯りをともしています。"
-        align="center"
       />
 
       <div class="campus__gallery">
@@ -466,7 +462,6 @@ const faqs = [
         eyebrow="声・実績"
         title="義塾で、子どもが変わった。<br />保護者の声と合格実績。"
         lead="ここで紹介するのは、実際に義塾に通われたご家庭の声と、卒塾生の合格実績の一部です。同じ寝屋川・成田町で「うちの子の番だ」と通い始めた先輩たちが、どんな未来をつかんだのか。"
-        align="center"
       />
 
       {/* §6.3 合格実績（Notion確定リスト） */}
@@ -524,7 +519,6 @@ const faqs = [
         eyebrow="講師紹介"
         title="お子様の未来に、本気で寄り添う8人の講師陣。"
         lead="義塾は、ただ勉強を教える場所ではありません。お子様一人ひとりの個性と目標に向き合い、「行きたい学校に行ける」「学ぶことが好きになる」未来を、ベテランから若手まで、多様な経歴を持つ8名の講師陣と一緒に、本気で支える場所です。<br /><br />ここでは、義塾を率いる<strong class='text-orange'>塾長</strong>と、オンライン講座を担当する<strong class='text-orange'>英語スペシャリスト</strong>の2名をご紹介します。"
-        align="center"
       />
       <div class="teachers__grid">
         <TeacherCard
@@ -605,7 +599,6 @@ const faqs = [
         eyebrow="料金"
         title="料金は、すべて明朗にお伝えします。"
         lead="3つのサービスごとに、税込月額を明示しています。"
-        align="center"
       />
 
       {/* === リアル校舎 === */}
@@ -754,7 +747,6 @@ const faqs = [
       <SectionHeader
         eyebrow="よくあるご質問"
         title="保護者の方からよくいただくご質問"
-        align="center"
       />
       <div class="faq__list">
         {faqs.map((item) => <QaItem q={item.q} a={item.a} />)}
@@ -772,7 +764,6 @@ const faqs = [
         eyebrow="お問い合わせ"
         title="まずは、公式LINEで気軽にご相談ください。"
         lead="<strong class='text-orange'>新規入塾生限定／初月の授業料 1ヶ月無料。</strong><br />体験授業・無料相談・進路相談、すべて公式LINEから受け付けています。塾長が直接お返事します。"
-        align="center"
       />
 
       {/* §10 小型ゴールドバッジ（Codex生成 PNG） */}
@@ -950,7 +941,6 @@ const faqs = [
     line-height: 2;
     color: var(--charcoal-soft);
     letter-spacing: 0.02em;
-    text-align: center;
     margin-bottom: 32px;
   }
 
@@ -1047,7 +1037,6 @@ const faqs = [
   }
 
   .quicknav__head {
-    text-align: center;
     margin-bottom: 56px;
   }
 
@@ -1073,7 +1062,6 @@ const faqs = [
     color: rgba(255, 255, 255, 0.86);
     line-height: 2.1;
     max-width: 560px;
-    margin: 0 auto;
   }
 
   .quicknav__list {
@@ -1123,7 +1111,6 @@ const faqs = [
   }
 
   .empathy__solve {
-    text-align: center;
     margin-top: 56px;
     font-size: 18px;
     color: var(--purple);
@@ -1353,7 +1340,6 @@ const faqs = [
   }
 
   .campus__caption {
-    text-align: center;
     margin-top: 56px;
     font-size: 15px;
     color: var(--charcoal-soft);
@@ -1402,7 +1388,6 @@ const faqs = [
     font-family: var(--font-serif);
     font-size: 22px;
     color: var(--purple);
-    text-align: center;
     margin: 80px 0 40px;
     letter-spacing: 0.04em;
   }
@@ -1451,7 +1436,6 @@ const faqs = [
   .media__title {
     font-size: 18px;
     color: var(--purple);
-    text-align: center;
     margin-bottom: 32px;
     padding-bottom: 14px;
     border-bottom: 2px solid var(--purple-line);
@@ -1519,11 +1503,7 @@ const faqs = [
   .pricing__group-title {
     font-size: 24px;
     color: var(--accent);
-    text-align: center;
     margin-bottom: 36px;
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
     letter-spacing: 0.04em;
   }
 
@@ -1536,7 +1516,6 @@ const faqs = [
   }
 
   .pricing__sub-label {
-    text-align: center;
     font-size: 13px;
     color: var(--muted);
     font-weight: 700;
@@ -1560,7 +1539,6 @@ const faqs = [
 
   .pricing__note {
     margin-top: 24px;
-    text-align: center;
     font-size: 12px;
     color: var(--muted);
     line-height: 1.85;
@@ -1615,7 +1593,6 @@ const faqs = [
 
   .faq__more {
     margin-top: 56px;
-    text-align: center;
     font-size: 13px;
     color: var(--muted);
     line-height: 1.85;
@@ -1721,7 +1698,6 @@ const faqs = [
     font-size: 11px;
     color: var(--muted);
     line-height: 1.7;
-    text-align: center;
     margin-top: 20px;
   }
 
