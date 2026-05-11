@@ -14,54 +14,30 @@ import CtaButton from "../components/CtaButton.astro";
 
 const base = import.meta.env.BASE_URL;
 
-// 3サービス（クイックナビ用・帯型カード）
+// 3サービス（クイックナビ用・縦長カラムカード）
 const services = [
   {
     index: "01",
     title: "義塾（リアル校舎）",
-    tagline: "成田町の校舎で、8人の講師陣と一緒に学ぶ",
-    target: "小3〜高3",
-    priceRange: "14,300〜44,000円",
-    forWhom: [
-      "通塾できる距離に住んでいる",
-      "同年代と切磋琢磨させたい",
-      "クラスと個別を使い分けたい",
-    ],
+    shortLabel: "成田町の校舎で学ぶ",
     anchorId: "service-real",
     accentColor: "#4C1D95",
-    iconName: "building",
     bgImage: `${base}images/room-class.jpg`,
   },
   {
     index: "02",
     title: "義塾オンライン",
-    tagline: "完全個別1対1、選べる4つの専門講座をご自宅から",
-    target: "小4〜社会人",
-    priceRange: "22,000円〜",
-    forWhom: [
-      "自宅で集中して学ばせたい",
-      "英検・TOEIC・探究・AIなど専門領域を伸ばしたい",
-      "移動時間をゼロにしたい",
-    ],
+    shortLabel: "ご自宅から1対1",
     anchorId: "service-online",
     accentColor: "#2E8B57",
-    iconName: "monitor",
-    bgImage: null,
+    bgImage: `${base}images/building-exterior.jpg`,
   },
   {
     index: "03",
     title: "義塾の家庭教師",
-    tagline: "講師がご自宅へ訪問・塾長と直接つながる",
-    target: "中1〜高2",
-    priceRange: "26,400円〜",
-    forWhom: [
-      "マンツーマンで進路相談まで含めたい",
-      "兄弟姉妹・お友達とペア受講したい",
-      "塾長と直接つながる安心がほしい",
-    ],
+    shortLabel: "講師がご自宅へ訪問",
     anchorId: "service-tutor",
     accentColor: "#2563B8",
-    iconName: "bag",
     bgImage: `${base}images/building-sign.jpg`,
   },
 ];
@@ -1113,18 +1089,15 @@ const faqs = [
   .quicknav__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 24px;
     scroll-margin-top: 80px;
     max-width: 1100px;
     margin: 0 auto;
   }
 
-  @media (max-width: 900px) {
-    .quicknav__list { grid-template-columns: 1fr; gap: 20px; max-width: 480px; }
-  }
-
   @media (max-width: 768px) {
-    .quicknav__head { margin-bottom: 40px; }
+    .quicknav__head { margin-bottom: 32px; }
+    .quicknav__list { gap: 10px; }
   }
 
   /* =========================================
