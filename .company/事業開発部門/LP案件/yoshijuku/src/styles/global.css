@@ -133,8 +133,7 @@ h1, h2, h3, h4 {
 .section--deep h2,
 .section--deep h3 { color: var(--paper); }
 
-/* === 背景画像セクション ===
-   PCは左にテキスト・右に人物が見える横グラデ、スマホは縦並びでテキスト下半分 */
+/* === 背景画像セクション（全面背景・紫フィルタ無し・タイトルが画像の上に乗る） === */
 .section--bg {
   position: relative;
 }
@@ -152,31 +151,32 @@ h1, h2, h3, h4 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right center;
+  /* 画像生成時の紫被りを CSS フィルタで中和（彩度を落とす） */
+  filter: saturate(0.55);
 }
 
-/* === PC: 左テキスト・右人物が見える横グラデ === */
+/* === オーバーレイ：白/中性グレー系のみ。紫成分なし === */
 .section--bg-empathy::before {
   background-image:
-    linear-gradient(95deg, rgba(245, 246, 248, 0.97) 0%, rgba(245, 246, 248, 0.92) 38%, rgba(245, 246, 248, 0.55) 60%, rgba(245, 246, 248, 0.05) 92%, rgba(245, 246, 248, 0) 100%),
+    linear-gradient(95deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 35%, rgba(255, 255, 255, 0.3) 65%, rgba(255, 255, 255, 0) 100%),
     url("/claude-code-keiei/yoshijuku/images/section-empathy.jpg");
 }
 
 .section--bg-reasons::before {
   background-image:
-    linear-gradient(95deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.92) 38%, rgba(255, 255, 255, 0.55) 60%, rgba(255, 255, 255, 0.05) 92%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(95deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 35%, rgba(255, 255, 255, 0.3) 65%, rgba(255, 255, 255, 0) 100%),
     url("/claude-code-keiei/yoshijuku/images/section-reasons.jpg");
 }
 
 .section--bg-voices::before {
   background-image:
-    linear-gradient(95deg, rgba(243, 238, 251, 0.96) 0%, rgba(243, 238, 251, 0.92) 38%, rgba(243, 238, 251, 0.55) 60%, rgba(243, 238, 251, 0.05) 92%, rgba(243, 238, 251, 0) 100%),
+    linear-gradient(95deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 35%, rgba(255, 255, 255, 0.3) 65%, rgba(255, 255, 255, 0) 100%),
     url("/claude-code-keiei/yoshijuku/images/section-voices.jpg");
 }
 
-/* FAQ は机のシーンで人物なし、全体に薄く重ねる */
 .section--bg-faq::before {
   background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.94) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.92) 100%),
     url("/claude-code-keiei/yoshijuku/images/section-faq.jpg");
   background-position: center center;
 }
@@ -193,46 +193,32 @@ h1, h2, h3, h4 {
   }
 }
 
-/* === スマホ：写真を section 上部に固定表示（::before の高さ制限）、その下からテキスト === */
+/* === スマホ：全面背景＋上にタイトルを乗せる構造、紫フィルタなし === */
 @media (max-width: 900px) {
-  .section--bg-empathy,
-  .section--bg-reasons,
-  .section--bg-voices {
-    padding-top: calc(58vw + 24px);
-  }
   .section--bg-empathy::before,
   .section--bg-reasons::before,
-  .section--bg-voices::before {
-    bottom: auto;
-    height: 58vw;
-    max-height: 320px;
+  .section--bg-voices::before,
+  .section--bg-faq::before {
     background-position: 70% center;
-    border-bottom-left-radius: var(--radius-md);
-    border-bottom-right-radius: var(--radius-md);
   }
   .section--bg-empathy::before {
     background-image:
-      linear-gradient(180deg, rgba(245, 246, 248, 0) 0%, rgba(245, 246, 248, 0.05) 85%, rgba(245, 246, 248, 0.6) 100%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.82) 38%, rgba(255, 255, 255, 0.96) 100%),
       url("/claude-code-keiei/yoshijuku/images/section-empathy.jpg");
   }
   .section--bg-reasons::before {
     background-image:
-      linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 85%, rgba(255, 255, 255, 0.6) 100%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.82) 38%, rgba(255, 255, 255, 0.96) 100%),
       url("/claude-code-keiei/yoshijuku/images/section-reasons.jpg");
   }
   .section--bg-voices::before {
     background-image:
-      linear-gradient(180deg, rgba(243, 238, 251, 0) 0%, rgba(243, 238, 251, 0.05) 85%, rgba(243, 238, 251, 0.6) 100%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.82) 38%, rgba(255, 255, 255, 0.96) 100%),
       url("/claude-code-keiei/yoshijuku/images/section-voices.jpg");
   }
-  /* スマホ section 自体は無背景色（::beforeで写真領域だけ、その下は親の背景色） */
-  .section--bg-empathy { background: var(--pale-gray); }
-  .section--bg-reasons { background: var(--paper); }
-  .section--bg-voices { background: var(--purple-pale); }
-  .section--bg-faq { background: var(--paper); }
 }
 
-/* スマホ：base font-size 確保、各カードの本文サイズも引き上げ */
+/* スマホ：base font-size 確保 */
 @media (max-width: 768px) {
   body { font-size: 16px; }
 }
