@@ -27,22 +27,19 @@ const {
 
 <style>
   .reason {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: linear-gradient(180deg, var(--purple-pale) 0%, var(--paper) 32%);
-    border: 1px solid var(--purple-line);
-    border-top: 4px solid var(--purple);
+    background: var(--paper);
     border-radius: var(--radius-md);
-    padding: 40px 32px 32px;
-    box-shadow: var(--shadow-sm);
+    padding: 44px 36px 36px;
+    box-shadow: var(--shadow-md);
     transition: box-shadow 0.25s, transform 0.25s;
     height: 100%;
   }
 
   .reason:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     transform: translateY(-3px);
   }
 
@@ -80,33 +77,19 @@ const {
   .reason__title {
     font-size: 18px;
     color: var(--purple);
-    line-height: 1.6;
-    padding-bottom: 14px;
-    border-bottom: 2px solid var(--purple-line);
+    line-height: 1.7;
   }
 
   .reason__bullets {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .reason__bullets li {
     font-size: 14px;
     color: var(--charcoal-soft);
-    line-height: 1.85;
-    padding-left: 18px;
-    position: relative;
-  }
-
-  .reason__bullets li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 11px;
-    width: 10px;
-    height: 2px;
-    background: var(--orange);
+    line-height: 1.95;
   }
 
   @media (max-width: 768px) {

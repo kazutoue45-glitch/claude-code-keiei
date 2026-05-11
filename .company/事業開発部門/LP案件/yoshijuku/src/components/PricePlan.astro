@@ -42,23 +42,20 @@ const {
     flex-direction: column;
     gap: 14px;
     background: var(--paper);
-    border: 1.5px solid var(--line);
-    border-top: 4px solid var(--accent);
     border-radius: var(--radius-md);
-    padding: 28px 26px;
-    box-shadow: var(--shadow-sm);
+    padding: 32px 28px;
+    box-shadow: var(--shadow-md);
     transition: transform 0.2s, box-shadow 0.2s;
     height: 100%;
   }
 
   .plan:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
   }
 
   .plan--highlight {
-    background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, var(--paper)) 0%, var(--paper) 60%);
-    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 6%, var(--paper));
   }
 
   .plan__badge {

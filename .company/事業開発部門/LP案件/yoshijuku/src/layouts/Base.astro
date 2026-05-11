@@ -1,5 +1,4 @@
 ---
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -32,7 +31,6 @@ const base = import.meta.env.BASE_URL;
     />
   </head>
   <body>
-    <Header base={base} />
     <main>
       <slot />
     </main>
