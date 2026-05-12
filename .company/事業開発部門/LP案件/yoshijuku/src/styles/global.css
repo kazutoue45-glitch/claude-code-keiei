@@ -238,18 +238,23 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-  font-size: clamp(26px, 4vw, 40px);
+  font-size: clamp(28px, 4.6vw, 44px);
   margin-bottom: 28px;
-  line-height: 1.55;
+  line-height: 1.5;
   color: var(--purple);
+  letter-spacing: 0.02em;
 }
 
 .section-lead {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--charcoal-soft);
   margin-bottom: 0;
   max-width: 760px;
-  line-height: 2.1;
+  line-height: 2.05;
+}
+
+@media (max-width: 768px) {
+  .section-lead { font-size: 15.5px; line-height: 1.95; }
 }
 
 .text-purple { color: var(--purple); }
@@ -260,6 +265,41 @@ h1, h2, h3, h4 {
   background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.28) 60%);
   padding: 0 2px;
 }
+
+/* === 強調マーカー（ZERO LP参考・キーワード装飾） === */
+.mark {
+  background: linear-gradient(transparent 60%, rgba(247, 199, 64, 0.55) 60%);
+  font-weight: 700;
+  padding: 0 2px;
+}
+
+.mark--orange {
+  background: linear-gradient(transparent 60%, rgba(247, 122, 31, 0.32) 60%);
+  font-weight: 700;
+  padding: 0 2px;
+}
+
+.mark--purple {
+  background: linear-gradient(transparent 60%, rgba(124, 58, 237, 0.18) 60%);
+  font-weight: 700;
+  padding: 0 2px;
+  color: var(--purple);
+}
+
+/* === 数字強調（実績・人数・金額） === */
+.num {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 1.35em;
+  color: var(--purple);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  vertical-align: -0.04em;
+  margin: 0 0.1em;
+}
+
+.num--orange { color: var(--orange-deep); }
+.num--gold { color: var(--gold-classic); }
 
 .callout {
   background: var(--pale-gray);
