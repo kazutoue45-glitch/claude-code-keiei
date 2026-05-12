@@ -70,7 +70,7 @@ const servicesCompare = [
   },
 ];
 
-// 共感ブロック チェックリスト
+// 共感ブロック Before：6項目チェックリスト（悩み）
 const empathyItems = [
   "お子様のテストの点数が伸び悩んでいる",
   "受験までに間に合うか不安",
@@ -78,6 +78,16 @@ const empathyItems = [
   "通塾の送迎が大変",
   "自宅学習だと集中できない",
   "進路や勉強法を相談できる相手が欲しい",
+];
+
+// 共感ブロック After：6項目の解決約束（Beforeと同じ並び順）
+const solveItems = [
+  "学び方から見直し、点数の伸びる指導を設計します",
+  "入塾面談で、受験までのカリキュラムを一緒に設計します",
+  "リアル校舎／オンライン／家庭教師の3つから最適な形をご提案します",
+  "ご自宅で受けられるオンライン・家庭教師も選べます",
+  "集中できる校舎環境と週次の伴走で学習を習慣化します",
+  "塾長と公式LINEで直接ご相談いただけます",
 ];
 
 // §4 選ばれる3つの理由
@@ -281,13 +291,15 @@ const faqs = [
     </div>
   </section>
 
-  {/* ============ §3 共感ブロック ============ */}
+  {/* ============ §3 共感＋解決＋根拠（統合セクション） ============ */}
   <section class="section section--bg section--bg-empathy empathy">
     <div class="container">
       <SectionHeader
         title="成績・進路で、こんなお悩みありませんか？"
-        lead="その不安、<span class='mark'>一人で抱え込まないでください</span>。<br />ひとつでも当てはまるなら、ぜひ義塾にご相談ください！"
+        lead="一つでも当てはまるなら、<span class='mark'>一人で抱え込まずに義塾にご相談ください。</span>"
       />
+
+      {/* ① Before：悩みリスト */}
       <ul class="empathy__list">
         {empathyItems.map((item) => (
           <li>
@@ -298,24 +310,38 @@ const faqs = [
           </li>
         ))}
       </ul>
-    </div>
-  </section>
 
-  {/* CTA ② 共感末尾 */}
-  <CtaButton text="塾長に無料相談する" href="#" id="cta-2" />
+      {/* ② 橋渡しコピー */}
+      <p class="empathy__bridge">
+        <span>義塾はこれで解決します！</span>
+      </p>
 
-  {/* ============ §4 義塾が選ばれる3つの理由（NEW） ============ */}
-  <section class="section section--bg section--bg-reasons reasons">
-    <div class="container">
-      <SectionHeader
-        title="寝屋川・成田町のご家庭から、<br />義塾が選ばれている理由。"
-        lead="<span class='mark'>なぜ今、義塾が選ばれているのか。</span><br />塾長の小川が、大事にしてきた<span class='num'>3</span>つの軸でお伝えします。"
-      />
+      {/* ③ After：解決リスト */}
+      <ul class="empathy__list empathy__list--solve">
+        {solveItems.map((item) => (
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* ④ 締めコピー */}
+      <p class="empathy__close">
+        <span>だから、義塾は選ばれています。</span>
+      </p>
+
+      {/* ⑤ 3つの理由カード */}
       <div class="reasons__grid">
         {reasons.map((r) => <ReasonCard {...r} />)}
       </div>
     </div>
   </section>
+
+  {/* CTA ② 共感末尾 */}
+  <CtaButton text="塾長に無料相談する" href="#" id="cta-2" />
 
   {/* ============ §5 3サービス比較 ============ */}
   <section class="section section--pale-gray services-detail">
@@ -1099,25 +1125,50 @@ const faqs = [
     margin-top: 4px;
   }
 
-  .empathy__solve {
-    margin-top: 56px;
-    font-size: 18px;
-    color: var(--purple);
-    letter-spacing: 0.02em;
-    line-height: 1.85;
+  /* Before/After 切り替えの橋渡し・締めコピー */
+  .empathy__bridge,
+  .empathy__close {
+    margin: 64px auto 32px;
+    text-align: center;
   }
 
-  .empathy__solve strong {
+  .empathy__bridge span,
+  .empathy__close span {
+    display: inline-block;
     font-family: var(--font-serif);
-    font-weight: 700;
-    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.28) 60%);
-    padding: 0 4px;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 900;
+    color: var(--orange-deep);
+    letter-spacing: 0.04em;
+    padding: 8px 4px;
+    background: linear-gradient(transparent 62%, rgba(255, 105, 0, 0.22) 62%);
+    line-height: 1.5;
+  }
+
+  /* After リスト（解決約束）：紫系トーンで Before と差別化 */
+  .empathy__list--solve {
+    margin-top: 0;
+  }
+
+  .empathy__list--solve li {
+    background: linear-gradient(180deg, var(--purple-pale) 0%, var(--paper) 100%);
+    color: var(--charcoal);
+  }
+
+  .empathy__list--solve svg {
+    color: var(--purple);
+  }
+
+  /* 3つの理由カードへの余白 */
+  .empathy .reasons__grid {
+    margin-top: 24px;
   }
 
   @media (max-width: 768px) {
     .empathy__list { grid-template-columns: 1fr; gap: 6px; }
     .empathy__list li { padding: 16px 18px; font-size: 14px; }
-    .empathy__solve { font-size: 15px; margin-top: 28px; }
+    .empathy__bridge,
+    .empathy__close { margin: 44px auto 24px; }
   }
 
   /* =========================================
