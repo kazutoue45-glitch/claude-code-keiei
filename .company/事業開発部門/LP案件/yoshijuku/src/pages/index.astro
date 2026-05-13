@@ -291,25 +291,26 @@ const faqs = [
     </div>
   </section>
 
-  {/* ============ §3 共感＋解決＋根拠（明るい背景＋紫シルエット） ============ */}
+  {/* ============ §3 共感＋解決＋根拠（リスト脇にシルエット並行配置） ============ */}
   <section class="section section--pale-gray empathy">
-    <img class="empathy__silhouette empathy__silhouette--left" src={`${base}images/empathy-silhouette-question.png`} alt="" aria-hidden="true" />
-    <img class="empathy__silhouette empathy__silhouette--right" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
     <div class="container">
       <SectionHeader
         title="成績・進路で、こんなお悩みありませんか？"
         lead="一つでも当てはまるなら、<span class='mark'>一人で抱え込まずに義塾にご相談ください。</span>"
       />
 
-      {/* ① Before：悩みリスト（?マーク） */}
-      <ul class="empathy__list empathy__list--problems">
-        {empathyItems.map((item) => (
-          <li>
-            <span class="empathy__mark empathy__mark--q" aria-hidden="true">?</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+      {/* ① Before：悩みリスト＋左にシルエット */}
+      <div class="empathy__pair empathy__pair--problems">
+        <img class="empathy__silhouette empathy__silhouette--left" src={`${base}images/empathy-silhouette-question.png`} alt="" aria-hidden="true" />
+        <ul class="empathy__list empathy__list--problems">
+          {empathyItems.map((item) => (
+            <li>
+              <span class="empathy__mark empathy__mark--q" aria-hidden="true">?</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       {/* ② 橋渡しコピー */}
       <p class="empathy__bridge">
@@ -317,19 +318,22 @@ const faqs = [
         <span>義塾はこれで解決します！</span>
       </p>
 
-      {/* ③ After：解決リスト（丸なしの太い✓記号で?と視覚区別） */}
-      <ul class="empathy__list empathy__list--solve">
-        {solveItems.map((item) => (
-          <li>
-            <span class="empathy__check" aria-hidden="true">
-              <svg viewBox="0 0 28 28" fill="none" width="32" height="32">
-                <path d="M5 14l6 6 13-13" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+      {/* ③ After：解決リスト＋右にシルエット */}
+      <div class="empathy__pair empathy__pair--solve">
+        <ul class="empathy__list empathy__list--solve">
+          {solveItems.map((item) => (
+            <li>
+              <span class="empathy__check" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none" width="28" height="28">
+                  <path d="M5 14l6 6 13-13" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <img class="empathy__silhouette empathy__silhouette--right" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
+      </div>
 
       {/* ④ 締めコピー */}
       <p class="empathy__close">
@@ -1101,83 +1105,85 @@ const faqs = [
   /* =========================================
      §3 共感
      ========================================= */
-  /* §3 共感セクション（明るい背景・紫シルエット） */
+  /* §3 共感セクション（余白圧縮） */
   .empathy {
     position: relative;
-    overflow: hidden;
+    padding: 64px 0;
   }
 
-  .empathy .container {
+  @media (max-width: 768px) {
+    .empathy { padding: 40px 0; }
+  }
+
+  /* SectionHeader下マージン縮小（§3のみ） */
+  .empathy :global(.sh) { margin-bottom: 28px; }
+  @media (max-width: 768px) {
+    .empathy :global(.sh) { margin-bottom: 20px; }
+  }
+
+  /* リスト+シルエットのペアレイアウト */
+  .empathy__pair {
     position: relative;
-    z-index: 1;
+    margin: 0 auto;
+    max-width: 720px;
   }
 
-  /* 左右のシルエット：白→紫に変換して明るい背景に馴染ませる */
+  /* シルエット：リスト脇に並行配置（紫系に色変換・適度に見える） */
   .empathy__silhouette {
     position: absolute;
     pointer-events: none;
     z-index: 0;
-    /* 純白PNG→ペールパープルに着色（明るい背景上で透かし装飾） */
     filter: brightness(0) saturate(100%) invert(13%) sepia(80%) saturate(3500%) hue-rotate(265deg) brightness(95%) contrast(95%);
-    opacity: 0.12;
+    opacity: 0.28;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: auto;
   }
 
   .empathy__silhouette--left {
-    left: -24px;
-    top: 40px;
-    height: 50%;
-    width: auto;
+    left: -120px;
   }
 
   .empathy__silhouette--right {
-    right: -24px;
-    bottom: 40px;
-    height: 50%;
-    width: auto;
+    right: -120px;
   }
 
   @media (max-width: 768px) {
     .empathy__silhouette {
-      opacity: 0.1;
+      opacity: 0.18;
     }
-    .empathy__silhouette--left {
-      left: -60px;
-      top: 80px;
-      height: 28%;
-    }
-    .empathy__silhouette--right {
-      right: -60px;
-      bottom: 80px;
-      height: 28%;
-    }
+    .empathy__silhouette--left { left: -90px; }
+    .empathy__silhouette--right { right: -90px; }
   }
 
-  /* §3 共感リスト：カード廃止・破線区切りでZERO風 */
+  /* §3 共感リスト：1行1項目・余白最小・密度高 */
   .empathy__list {
     display: flex;
     flex-direction: column;
-    max-width: 720px;
-    margin: 0 auto;
     list-style: none;
     padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .empathy__list li {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 10px 4px;
-    font-size: 15px;
-    line-height: 1.65;
+    gap: 14px;
+    padding: 6px 0;
+    font-size: 14.5px;
+    line-height: 1.55;
     color: var(--charcoal);
   }
 
   @media (max-width: 768px) {
     .empathy__list li {
-      padding: 14px 4px;
+      padding: 5px 0;
       gap: 12px;
-      font-size: 14.5px;
-      line-height: 1.55;
+      font-size: 14px;
+      line-height: 1.5;
     }
   }
 
@@ -1209,35 +1215,35 @@ const faqs = [
     color: var(--orange);
   }
 
-  /* Before/After 切り替えの橋渡し・締めコピー（明るい背景） */
+  /* Before/After 切り替えの橋渡し・締めコピー（余白圧縮） */
   .empathy__bridge,
   .empathy__close {
-    margin: 48px auto 32px;
+    margin: 24px auto 20px;
     text-align: center;
     color: var(--charcoal-soft);
-    font-size: 14.5px;
-    line-height: 1.8;
+    font-size: 13.5px;
+    line-height: 1.7;
   }
 
   .empathy__bridge span,
   .empathy__close span {
     display: inline-block;
     font-family: var(--font-serif);
-    font-size: clamp(20px, 5.5vw, 30px);
+    font-size: clamp(20px, 5.5vw, 28px);
     font-weight: 900;
     color: var(--purple-deep);
     letter-spacing: 0.04em;
-    padding: 4px 12px;
+    padding: 2px 10px;
     background: linear-gradient(transparent 60%, rgba(255, 105, 0, 0.32) 60%);
     line-height: 1.5;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   @media (max-width: 768px) {
     .empathy__bridge,
     .empathy__close {
-      margin: 36px auto 24px;
-      font-size: 13.5px;
+      margin: 18px auto 14px;
+      font-size: 13px;
     }
   }
 
