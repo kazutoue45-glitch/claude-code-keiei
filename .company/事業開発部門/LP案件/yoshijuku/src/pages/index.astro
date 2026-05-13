@@ -1105,20 +1105,35 @@ const faqs = [
   /* =========================================
      §3 共感
      ========================================= */
-  /* §3 共感セクション（余白圧縮） */
+  /* §3 共感セクション（余白を徹底圧縮） */
   .empathy {
     position: relative;
-    padding: 64px 0;
+    padding: 56px 0;
   }
 
   @media (max-width: 768px) {
-    .empathy { padding: 40px 0; }
+    .empathy { padding: 28px 0; }
   }
 
   /* SectionHeader下マージン縮小（§3のみ） */
-  .empathy :global(.sh) { margin-bottom: 28px; }
+  .empathy :global(.sh) { margin-bottom: 20px; }
   @media (max-width: 768px) {
-    .empathy :global(.sh) { margin-bottom: 20px; }
+    .empathy :global(.sh) { margin-bottom: 12px; }
+  }
+
+  /* SectionHeader 内のタイトル・リードも§3でコンパクトに */
+  .empathy :global(.section-title) {
+    font-size: clamp(22px, 5.8vw, 36px);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .empathy :global(.section-lead) {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  @media (max-width: 768px) {
+    .empathy :global(.section-title) { font-size: 20px; margin-bottom: 8px; line-height: 1.4; }
+    .empathy :global(.section-lead) { font-size: 13px; line-height: 1.7; }
   }
 
   /* リスト+シルエットのペアレイアウト */
@@ -1170,19 +1185,19 @@ const faqs = [
   .empathy__list li {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 6px 0;
+    gap: 12px;
+    padding: 3px 0;
     font-size: 14.5px;
-    line-height: 1.55;
+    line-height: 1.45;
     color: var(--charcoal);
   }
 
   @media (max-width: 768px) {
     .empathy__list li {
-      padding: 5px 0;
-      gap: 12px;
-      font-size: 14px;
-      line-height: 1.5;
+      padding: 2px 0;
+      gap: 10px;
+      font-size: 13.5px;
+      line-height: 1.4;
     }
   }
 
@@ -1214,41 +1229,44 @@ const faqs = [
     color: var(--orange);
   }
 
-  /* Before/After 切り替えの橋渡し・締めコピー（余白圧縮） */
+  /* Before/After 切り替えの橋渡し・締めコピー（さらに圧縮） */
   .empathy__bridge,
   .empathy__close {
-    margin: 24px auto 20px;
+    margin: 16px auto 14px;
     text-align: center;
     color: var(--charcoal-soft);
-    font-size: 13.5px;
-    line-height: 1.7;
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .empathy__bridge span,
   .empathy__close span {
     display: inline-block;
     font-family: var(--font-serif);
-    font-size: clamp(20px, 5.5vw, 28px);
+    font-size: clamp(18px, 5vw, 26px);
     font-weight: 900;
     color: var(--purple-deep);
     letter-spacing: 0.04em;
     padding: 2px 10px;
     background: linear-gradient(transparent 60%, rgba(255, 105, 0, 0.32) 60%);
-    line-height: 1.5;
-    margin-top: 6px;
+    line-height: 1.4;
+    margin-top: 4px;
   }
 
   @media (max-width: 768px) {
     .empathy__bridge,
     .empathy__close {
-      margin: 18px auto 14px;
-      font-size: 13px;
+      margin: 10px auto 8px;
+      font-size: 12px;
     }
   }
 
-  /* 3つの理由カードへの余白 */
+  /* 3つの理由カードへの余白（圧縮） */
   .empathy .reasons__grid {
-    margin-top: 24px;
+    margin-top: 16px;
+  }
+  @media (max-width: 768px) {
+    .empathy .reasons__grid { margin-top: 12px; }
   }
 
   @media (max-width: 768px) {
