@@ -1128,7 +1128,7 @@ const faqs = [
     max-width: 720px;
   }
 
-  /* シルエット：リスト脇に並行配置（高さ固定で歪み防止・半身が見える） */
+  /* シルエット：リスト脇に並行配置（画面内にしっかり見えるサイズ） */
   .empathy__silhouette {
     position: absolute;
     pointer-events: none;
@@ -1136,21 +1136,22 @@ const faqs = [
     opacity: 0.22;
     top: 50%;
     transform: translateY(-50%);
-    width: 280px;
+    width: 220px;
     height: auto;
-    /* bottom/height: 100% は使わない（pair高さに連動して伸びるのを防止） */
   }
 
-  .empathy__silhouette--left { left: -160px; }
-  .empathy__silhouette--right { right: -160px; }
+  /* PC: pair の外側に半身が見える */
+  .empathy__silhouette--left { left: -110px; }
+  .empathy__silhouette--right { right: -110px; }
 
+  /* スマホ: 画面端に小さく全体が見える（リストに被らない） */
   @media (max-width: 768px) {
     .empathy__silhouette {
-      opacity: 0.16;
-      width: 180px;
+      opacity: 0.18;
+      width: 110px;
     }
-    .empathy__silhouette--left { left: -100px; }
-    .empathy__silhouette--right { right: -100px; }
+    .empathy__silhouette--left { left: -28px; }
+    .empathy__silhouette--right { right: -28px; }
   }
 
   /* §3 共感リスト：1行1項目・余白最小・密度高 */
