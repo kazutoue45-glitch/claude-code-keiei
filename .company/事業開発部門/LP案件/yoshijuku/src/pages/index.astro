@@ -100,7 +100,7 @@ const reasons = [
       "進路相談・成績不振の相談・通塾相談まで、公式LINEから直接連絡可能",
       "担当が変わっても、塾長は変わらず伴走する",
     ],
-    iconSrc: `${base}images/reason-icon-line.svg`,
+    iconSrc: `${base}images/reason-icon-line.png`,
     iconAlt: "公式LINEで塾長と直接つながる",
   },
   {
@@ -111,7 +111,7 @@ const reasons = [
       "部活・習い事・送迎事情・性格・志望校に合わせて最適な学び方を提案",
       "入塾後も状況変化に応じて指導形態を柔軟に変更可能",
     ],
-    iconSrc: `${base}images/reason-icon-fork.svg`,
+    iconSrc: `${base}images/reason-icon-fork.png`,
     iconAlt: "3つの学び方から選べる柔軟性",
   },
   {
@@ -122,7 +122,7 @@ const reasons = [
       "TOEIC990点23回連続満点・英検1級保持のスペシャリストも在籍",
       "1人の講師に依存しないチーム指導で、苦手単元を講師同士でカバー",
     ],
-    iconSrc: `${base}images/reason-icon-team.svg`,
+    iconSrc: `${base}images/reason-icon-team.png`,
     iconAlt: "9名の講師チーム",
   },
 ];
@@ -292,12 +292,15 @@ const faqs = [
   </section>
 
   {/* ============ §3 共感＋解決＋根拠（統合セクション） ============ */}
-  <section class="section section--bg section--bg-empathy empathy">
+  <section class="section section--pale-gray empathy">
     <div class="container">
-      <SectionHeader
-        title="成績・進路で、こんなお悩みありませんか？"
-        lead="一つでも当てはまるなら、<span class='mark'>一人で抱え込まずに義塾にご相談ください。</span>"
-      />
+      <div class="empathy__intro">
+        <SectionHeader
+          title="成績・進路で、こんなお悩みありませんか？"
+          lead="一つでも当てはまるなら、<span class='mark'>一人で抱え込まずに義塾にご相談ください。</span>"
+        />
+        <img class="empathy__hero" src={`${base}images/empathy-illustration.png`} alt="夜のリビングで考えごとをする保護者" loading="lazy" />
+      </div>
 
       {/* ① Before：悩みリスト */}
       <ul class="empathy__list">
@@ -1098,6 +1101,34 @@ const faqs = [
   /* =========================================
      §3 共感
      ========================================= */
+  /* §3 共感セクション 上部（タイトル＋イラスト） */
+  .empathy__intro {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .empathy__hero {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+  }
+
+  @media (max-width: 768px) {
+    .empathy__intro {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .empathy__hero {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+  }
+
   .empathy__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
