@@ -230,17 +230,17 @@ const faqs = [
       </div>
     </div>
 
-    {/* 下段：白背景のテキストエリア（サブコピー＋チップ） */}
+    {/* 下段：白背景のテキストエリア（サブコピー） */}
     <div class="hero__panel">
       <p class="hero__sub">
         <span class="mark">『行きたい高校・大学に合格させたい』</span><br />
         その想いに、<span class="num">9</span>人の講師陣が本気で応えます。
       </p>
+    </div>
 
-      {/* 3サービスナビ：タップで対応セクションへ移動 */}
-      <div class="hero__nav" id="services">
-        {services.map((s) => <ServiceCard {...s} />)}
-      </div>
+    {/* 3サービスナビ：横幅いっぱい・gap無し */}
+    <div class="hero__nav" id="services">
+      {services.map((s) => <ServiceCard {...s} />)}
     </div>
 
   </section>
@@ -922,18 +922,16 @@ const faqs = [
     line-height: 2;
     color: var(--charcoal-soft);
     letter-spacing: 0.02em;
-    margin-bottom: 32px;
+    margin-bottom: 0;
   }
 
-  /* FV内3サービスナビ：タップで対応セクションへスクロール */
+  /* FV内3サービスナビ：横幅いっぱい・gap無し */
   .hero__nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 0;
+    width: 100%;
     scroll-margin-top: 80px;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
   }
 
   @media (max-width: 380px) {
@@ -955,7 +953,6 @@ const faqs = [
     .hero__catch { padding: 0 56px 30px; }
     .hero__logo { width: clamp(280px, 38vw, 440px); }
     .hero__sub { font-size: 17px; }
-    .hero__nav { gap: 16px; }
     .hero__medal { width: 180px; height: 180px; bottom: 38px; right: 40px; }
   }
 
