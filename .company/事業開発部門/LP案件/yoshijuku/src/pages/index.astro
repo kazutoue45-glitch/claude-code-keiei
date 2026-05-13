@@ -291,8 +291,10 @@ const faqs = [
     </div>
   </section>
 
-  {/* ============ §3 共感＋解決＋根拠（統合セクション） ============ */}
-  <section class="section section--pale-gray empathy">
+  {/* ============ §3 共感＋解決＋根拠（統合セクション・ZERO風ダーク） ============ */}
+  <section class="section empathy empathy--dark">
+    <img class="empathy__silhouette empathy__silhouette--left" src={`${base}images/empathy-silhouette-question.png`} alt="" aria-hidden="true" />
+    <img class="empathy__silhouette empathy__silhouette--right" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
     <div class="container">
       <SectionHeader
         title="成績・進路で、こんなお悩みありませんか？"
@@ -1099,6 +1101,51 @@ const faqs = [
   /* =========================================
      §3 共感
      ========================================= */
+  /* §3 共感セクション全体：ZERO風ダーク */
+  .empathy--dark {
+    background: var(--purple-deep);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .empathy--dark .section-title {
+    color: var(--paper);
+    text-align: center;
+  }
+
+  .empathy--dark .section-lead {
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 左右の白シルエット（透かしで配置） */
+  .empathy__silhouette {
+    position: absolute;
+    height: 90%;
+    width: auto;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .empathy__silhouette--left {
+    left: -40px;
+    top: 5%;
+  }
+
+  .empathy__silhouette--right {
+    right: -40px;
+    bottom: 5%;
+  }
+
+  .empathy--dark .container {
+    position: relative;
+    z-index: 1;
+  }
+
   /* §3 共感リスト：カード廃止・破線区切りでZERO風 */
   .empathy__list {
     display: flex;
@@ -1114,10 +1161,10 @@ const faqs = [
     align-items: center;
     gap: 18px;
     padding: 18px 4px;
-    border-bottom: 1px dashed rgba(76, 29, 149, 0.25);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
     font-size: 15.5px;
     line-height: 1.6;
-    color: var(--charcoal);
+    color: var(--paper);
   }
 
   .empathy__list li:last-child { border-bottom: none; }
@@ -1150,24 +1197,28 @@ const faqs = [
     color: var(--orange);
   }
 
-  /* Before/After 切り替えの橋渡し・締めコピー */
+  /* Before/After 切り替えの橋渡し・締めコピー（ダーク背景上） */
   .empathy__bridge,
   .empathy__close {
-    margin: 64px auto 32px;
+    margin: 56px auto 32px;
     text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    line-height: 1.8;
   }
 
   .empathy__bridge span,
   .empathy__close span {
     display: inline-block;
     font-family: var(--font-serif);
-    font-size: clamp(22px, 3.5vw, 30px);
+    font-size: clamp(22px, 4vw, 32px);
     font-weight: 900;
-    color: var(--orange-deep);
+    color: var(--paper);
     letter-spacing: 0.04em;
-    padding: 8px 4px;
-    background: linear-gradient(transparent 62%, rgba(255, 105, 0, 0.22) 62%);
+    padding: 4px 12px;
+    background: linear-gradient(transparent 60%, var(--orange) 60%);
     line-height: 1.5;
+    margin-top: 8px;
   }
 
   /* 3つの理由カードへの余白 */
