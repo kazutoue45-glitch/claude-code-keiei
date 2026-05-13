@@ -293,25 +293,24 @@ const faqs = [
 
   {/* ============ §3 共感＋解決＋根拠（リスト脇にシルエット並行配置） ============ */}
   <section class="section section--pale-gray empathy">
-    {/* シルエット：section 全体の左右端に固定配置（pair の高さに引きずられない） */}
-    <img class="empathy__silhouette empathy__silhouette--problems" src={`${base}images/empathy-silhouette-question.png`} alt="" aria-hidden="true" />
-    <img class="empathy__silhouette empathy__silhouette--solve" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
-
     <div class="container">
       <SectionHeader
         title="成績・進路で、こんなお悩みありませんか？"
         lead="一つでも当てはまるなら、<span class='mark'>一人で抱え込まずに義塾にご相談ください。</span>"
       />
 
-      {/* ① Before：悩みリスト */}
-      <ul class="empathy__list empathy__list--problems">
-        {empathyItems.map((item) => (
-          <li>
-            <span class="empathy__mark empathy__mark--q" aria-hidden="true">?</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+      {/* ① Before：悩みリスト＋左にシルエット（リストに追従） */}
+      <div class="empathy__pair empathy__pair--problems">
+        <img class="empathy__silhouette empathy__silhouette--problems" src={`${base}images/empathy-silhouette-question.png`} alt="" aria-hidden="true" />
+        <ul class="empathy__list empathy__list--problems">
+          {empathyItems.map((item) => (
+            <li>
+              <span class="empathy__mark empathy__mark--q" aria-hidden="true">?</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       {/* ② 橋渡しコピー */}
       <p class="empathy__bridge">
@@ -319,19 +318,22 @@ const faqs = [
         <span>義塾はこれで解決します！</span>
       </p>
 
-      {/* ③ After：解決リスト */}
-      <ul class="empathy__list empathy__list--solve">
-        {solveItems.map((item) => (
-          <li>
-            <span class="empathy__check" aria-hidden="true">
-              <svg viewBox="0 0 28 28" fill="none" width="28" height="28">
-                <path d="M5 14l6 6 13-13" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+      {/* ③ After：解決リスト＋右にシルエット（リストに追従） */}
+      <div class="empathy__pair empathy__pair--solve">
+        <ul class="empathy__list empathy__list--solve">
+          {solveItems.map((item) => (
+            <li>
+              <span class="empathy__check" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none" width="28" height="28">
+                  <path d="M5 14l6 6 13-13" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <img class="empathy__silhouette empathy__silhouette--solve" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
+      </div>
 
       {/* ④ 締めコピー＋▼形の視線誘導ブロック（ZERO LP参考） */}
       <div class="empathy__transition">
@@ -1122,46 +1124,43 @@ const faqs = [
     .empathy :global(.sh) { margin-bottom: 28px; }
   }
 
-  /* シルエット：リスト本体と重なる装飾配置（ZERO LP参考・後ろに透けて見える） */
+  /* pair：リスト＋シルエットをまとめる箱（シルエットがリストに追従） */
+  .empathy__pair {
+    position: relative;
+    margin: 0 auto;
+    max-width: 720px;
+  }
+
+  /* リスト本体を前面に */
+  .empathy__pair > .empathy__list {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* シルエット：pair の縦中央に絶対配置 → リストの真横に並ぶ */
   .empathy__silhouette {
     position: absolute;
     pointer-events: none;
-    z-index: 0;  /* z-index 0：text/list (z-index:1) より下に */
-    opacity: 0.14;  /* テキストの可読性を確保しつつ装飾として認識できる薄さ */
-    width: 280px;
+    z-index: 0;
+    opacity: 0.14;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 180px;
     height: auto;
   }
 
-  .empathy__silhouette--problems {
-    left: 8%;
-    top: 140px;
-  }
+  /* PC: リストの左/右側にシルエットが重なる */
+  .empathy__silhouette--problems { left: -40px; }
+  .empathy__silhouette--solve { right: -40px; }
 
-  .empathy__silhouette--solve {
-    right: 8%;
-    bottom: 200px;
-  }
-
-  /* スマホ：画面幅に合わせて中央寄りに配置（リスト本体の中央〜半分に重なる） */
+  /* スマホ: リストの真横、画面端寄りで薄く */
   @media (max-width: 768px) {
     .empathy__silhouette {
       opacity: 0.1;
-      width: 180px;
+      width: 120px;
     }
-    .empathy__silhouette--problems {
-      left: 12%;
-      top: 130px;
-    }
-    .empathy__silhouette--solve {
-      right: 12%;
-      bottom: 230px;
-    }
-  }
-
-  /* テキスト/リストを前面に */
-  .empathy .container > * {
-    position: relative;
-    z-index: 1;
+    .empathy__silhouette--problems { left: -20px; }
+    .empathy__silhouette--solve { right: -20px; }
   }
 
   /* §3 共感リスト：1行1項目・余白最小・密度高 */
