@@ -315,13 +315,13 @@ const faqs = [
         <span>義塾はこれで解決します！</span>
       </p>
 
-      {/* ③ After：解決リスト（✓マーク） */}
+      {/* ③ After：解決リスト（丸なしの太い✓記号で?と視覚区別） */}
       <ul class="empathy__list empathy__list--solve">
         {solveItems.map((item) => (
           <li>
-            <span class="empathy__mark empathy__mark--check" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
-                <path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <span class="empathy__check" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none" width="32" height="32">
+                <path d="M5 14l6 6 13-13" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
             <span>{item}</span>
@@ -1099,11 +1099,10 @@ const faqs = [
   /* =========================================
      §3 共感
      ========================================= */
-  /* §3 共感リスト：アイコン+1行のコンパクトレイアウト（ZERO参考） */
+  /* §3 共感リスト：カード廃止・破線区切りでZERO風 */
   .empathy__list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     max-width: 720px;
     margin: 0 auto;
     list-style: none;
@@ -1113,38 +1112,42 @@ const faqs = [
   .empathy__list li {
     display: flex;
     align-items: center;
-    gap: 16px;
-    background: var(--paper);
-    padding: 16px 20px;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(26, 15, 46, 0.06);
-    font-size: 15px;
+    gap: 18px;
+    padding: 18px 4px;
+    border-bottom: 1px dashed rgba(76, 29, 149, 0.25);
+    font-size: 15.5px;
     line-height: 1.6;
     color: var(--charcoal);
   }
 
-  /* お悩み（?マーク）・解決（✓マーク）共通のアイコン円 */
-  .empathy__mark {
+  .empathy__list li:last-child { border-bottom: none; }
+
+  /* お悩み：オレンジ円に白の「?」（記号で識別） */
+  .empathy__mark--q {
     flex-shrink: 0;
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
+    background: var(--orange);
+    color: var(--paper);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--paper);
     font-family: var(--font-serif);
     font-weight: 900;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1;
   }
 
-  .empathy__mark--q {
-    background: var(--orange);
-  }
-
-  .empathy__mark--check {
-    background: var(--orange);
+  /* 解決：丸ナシ・太いオレンジ単独チェック（?と形で明確に区別） */
+  .empathy__check {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
   }
 
   /* Before/After 切り替えの橋渡し・締めコピー */
@@ -1165,20 +1168,6 @@ const faqs = [
     padding: 8px 4px;
     background: linear-gradient(transparent 62%, rgba(255, 105, 0, 0.22) 62%);
     line-height: 1.5;
-  }
-
-  /* After リスト（解決約束）：紫系トーンで Before と差別化 */
-  .empathy__list--solve {
-    margin-top: 0;
-  }
-
-  .empathy__list--solve li {
-    background: linear-gradient(180deg, var(--purple-pale) 0%, var(--paper) 100%);
-    color: var(--charcoal);
-  }
-
-  .empathy__list--solve svg {
-    color: var(--purple);
   }
 
   /* 3つの理由カードへの余白 */
