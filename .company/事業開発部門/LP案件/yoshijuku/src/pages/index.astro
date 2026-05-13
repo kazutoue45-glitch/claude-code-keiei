@@ -1121,24 +1121,40 @@ const faqs = [
     margin-right: auto;
   }
 
-  /* 左右の白シルエット（透かしで配置） */
+  /* 左右の白シルエット（ZERO LP風にしっかり見える） */
   .empathy__silhouette {
     position: absolute;
-    height: 90%;
+    height: 56%;
     width: auto;
-    opacity: 0.08;
+    opacity: 0.85;
     pointer-events: none;
     z-index: 0;
+    filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.2));
   }
 
   .empathy__silhouette--left {
-    left: -40px;
-    top: 5%;
+    left: -20px;
+    top: 8%;
   }
 
   .empathy__silhouette--right {
-    right: -40px;
-    bottom: 5%;
+    right: -20px;
+    bottom: 8%;
+  }
+
+  @media (max-width: 768px) {
+    .empathy__silhouette {
+      height: 32%;
+      opacity: 0.7;
+    }
+    .empathy__silhouette--left {
+      left: -40px;
+      top: 6%;
+    }
+    .empathy__silhouette--right {
+      right: -40px;
+      bottom: 6%;
+    }
   }
 
   .empathy--dark .container {
