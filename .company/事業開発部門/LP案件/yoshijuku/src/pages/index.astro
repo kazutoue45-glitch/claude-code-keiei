@@ -1122,46 +1122,46 @@ const faqs = [
     .empathy :global(.sh) { margin-bottom: 28px; }
   }
 
-  /* シルエット：テキストに侵入しないよう画面端の外側寄りに配置 */
+  /* シルエット：リスト本体と重なる装飾配置（ZERO LP参考・後ろに透けて見える） */
   .empathy__silhouette {
     position: absolute;
     pointer-events: none;
-    z-index: 0;
-    opacity: 0.22;
-    width: 240px;
+    z-index: 0;  /* z-index 0：text/list (z-index:1) より下に */
+    opacity: 0.14;  /* テキストの可読性を確保しつつ装飾として認識できる薄さ */
+    width: 280px;
     height: auto;
   }
 
-  /* PC: container 幅は中央 1180px。container 外側に半身が出る */
   .empathy__silhouette--problems {
-    left: max(-180px, calc((100vw - var(--container)) / 2 - 200px));
+    left: 8%;
     top: 140px;
   }
 
   .empathy__silhouette--solve {
-    right: max(-180px, calc((100vw - var(--container)) / 2 - 200px));
+    right: 8%;
     bottom: 200px;
   }
 
-  /* スマホ：完全に画面端の外側寄りに（テキストに被らない） */
+  /* スマホ：画面幅に合わせて中央寄りに配置（リスト本体の中央〜半分に重なる） */
   @media (max-width: 768px) {
     .empathy__silhouette {
-      opacity: 0.18;
-      width: 90px;
+      opacity: 0.1;
+      width: 180px;
     }
     .empathy__silhouette--problems {
-      left: -68px;   /* 画面に見えるのは 22px のみ。container padding 18px の外側に近い */
-      top: 90px;
+      left: 12%;
+      top: 130px;
     }
     .empathy__silhouette--solve {
-      right: -68px;  /* 同上 */
-      bottom: 220px;
+      right: 12%;
+      bottom: 230px;
     }
   }
 
-  /* 極狭スマホはシルエット非表示（テキスト優先） */
-  @media (max-width: 360px) {
-    .empathy__silhouette { display: none; }
+  /* テキスト/リストを前面に */
+  .empathy .container > * {
+    position: relative;
+    z-index: 1;
   }
 
   /* §3 共感リスト：1行1項目・余白最小・密度高 */
