@@ -291,8 +291,8 @@ const faqs = [
     </div>
   </section>
 
-  {/* ============ §3 共感＋解決＋根拠（統合セクション・ZERO風ダーク） ============ */}
-  <section class="section empathy empathy--dark">
+  {/* ============ §3 共感＋解決＋根拠（明るい背景＋紫シルエット） ============ */}
+  <section class="section section--pale-gray empathy">
     <img class="empathy__silhouette empathy__silhouette--left" src={`${base}images/empathy-silhouette-question.png`} alt="" aria-hidden="true" />
     <img class="empathy__silhouette empathy__silhouette--right" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
     <div class="container">
@@ -1101,65 +1101,55 @@ const faqs = [
   /* =========================================
      §3 共感
      ========================================= */
-  /* §3 共感セクション全体：ZERO風ダーク */
-  .empathy--dark {
-    background: var(--purple-deep);
-    color: var(--paper);
+  /* §3 共感セクション（明るい背景・紫シルエット） */
+  .empathy {
     position: relative;
     overflow: hidden;
   }
 
-  .empathy--dark .section-title {
-    color: var(--paper);
-    text-align: center;
+  .empathy .container {
+    position: relative;
+    z-index: 1;
   }
 
-  .empathy--dark .section-lead {
-    color: rgba(255, 255, 255, 0.85);
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* 左右の白シルエット（ZERO LP風にしっかり見える） */
+  /* 左右のシルエット：白→紫に変換して明るい背景に馴染ませる */
   .empathy__silhouette {
     position: absolute;
-    height: 56%;
-    width: auto;
-    opacity: 0.85;
     pointer-events: none;
     z-index: 0;
-    filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.2));
+    /* 純白PNG→ペールパープルに着色（明るい背景上で透かし装飾） */
+    filter: brightness(0) saturate(100%) invert(13%) sepia(80%) saturate(3500%) hue-rotate(265deg) brightness(95%) contrast(95%);
+    opacity: 0.12;
   }
 
   .empathy__silhouette--left {
-    left: -20px;
-    top: 8%;
+    left: -24px;
+    top: 40px;
+    height: 50%;
+    width: auto;
   }
 
   .empathy__silhouette--right {
-    right: -20px;
-    bottom: 8%;
+    right: -24px;
+    bottom: 40px;
+    height: 50%;
+    width: auto;
   }
 
   @media (max-width: 768px) {
     .empathy__silhouette {
-      height: 32%;
-      opacity: 0.7;
+      opacity: 0.1;
     }
     .empathy__silhouette--left {
-      left: -40px;
-      top: 6%;
+      left: -60px;
+      top: 80px;
+      height: 28%;
     }
     .empathy__silhouette--right {
-      right: -40px;
-      bottom: 6%;
+      right: -60px;
+      bottom: 80px;
+      height: 28%;
     }
-  }
-
-  .empathy--dark .container {
-    position: relative;
-    z-index: 1;
   }
 
   /* §3 共感リスト：カード廃止・破線区切りでZERO風 */
@@ -1175,15 +1165,24 @@ const faqs = [
   .empathy__list li {
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding: 18px 4px;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
-    font-size: 15.5px;
-    line-height: 1.6;
-    color: var(--paper);
+    gap: 16px;
+    padding: 16px 4px;
+    border-bottom: 1px dashed rgba(76, 29, 149, 0.22);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--charcoal);
   }
 
   .empathy__list li:last-child { border-bottom: none; }
+
+  @media (max-width: 768px) {
+    .empathy__list li {
+      padding: 14px 4px;
+      gap: 12px;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+  }
 
   /* お悩み：オレンジ円に白の「?」（記号で識別） */
   .empathy__mark--q {
@@ -1213,13 +1212,13 @@ const faqs = [
     color: var(--orange);
   }
 
-  /* Before/After 切り替えの橋渡し・締めコピー（ダーク背景上） */
+  /* Before/After 切り替えの橋渡し・締めコピー（明るい背景） */
   .empathy__bridge,
   .empathy__close {
-    margin: 56px auto 32px;
+    margin: 48px auto 32px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 15px;
+    color: var(--charcoal-soft);
+    font-size: 14.5px;
     line-height: 1.8;
   }
 
@@ -1227,14 +1226,22 @@ const faqs = [
   .empathy__close span {
     display: inline-block;
     font-family: var(--font-serif);
-    font-size: clamp(22px, 4vw, 32px);
+    font-size: clamp(20px, 5.5vw, 30px);
     font-weight: 900;
-    color: var(--paper);
+    color: var(--purple-deep);
     letter-spacing: 0.04em;
     padding: 4px 12px;
-    background: linear-gradient(transparent 60%, var(--orange) 60%);
+    background: linear-gradient(transparent 60%, rgba(255, 105, 0, 0.32) 60%);
     line-height: 1.5;
     margin-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .empathy__bridge,
+    .empathy__close {
+      margin: 36px auto 24px;
+      font-size: 13.5px;
+    }
   }
 
   /* 3つの理由カードへの余白 */
