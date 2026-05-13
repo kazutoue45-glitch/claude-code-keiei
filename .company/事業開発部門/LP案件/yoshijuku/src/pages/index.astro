@@ -925,7 +925,7 @@ const faqs = [
     margin-bottom: 0;
   }
 
-  /* FV内3サービスナビ：横幅いっぱい・カード間を斜めに区切る */
+  /* FV内3サービスナビ：3カードを全て同形の平行四辺形に統一（=可視面積完全一致） */
   .hero__nav {
     display: flex;
     width: 100%;
@@ -936,48 +936,27 @@ const faqs = [
   .hero__nav :global(.svc-card) {
     flex: 1 1 0;
     min-width: 0;
-  }
-
-  /* 中央カードは両側を斜めにカットされる分、DOM幅を slant/2 だけ広げて見える面積を揃える */
-  .hero__nav :global(.svc-card:nth-child(2)) {
-    flex: 1 1 calc(var(--slant) / 2);
-  }
-
-  /* カード①：右端を斜めに切る */
-  .hero__nav :global(.svc-card:nth-child(1)) {
-    clip-path: polygon(0 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
-    margin-right: calc(-1 * var(--slant));
-  }
-
-  /* カード②：両端を斜めに切る */
-  .hero__nav :global(.svc-card:nth-child(2)) {
     clip-path: polygon(var(--slant) 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
+  }
+
+  .hero__nav :global(.svc-card:not(:last-child)) {
     margin-right: calc(-1 * var(--slant));
   }
 
-  /* カード③：左端を斜めに切る */
-  .hero__nav :global(.svc-card:nth-child(3)) {
-    clip-path: polygon(var(--slant) 0, 100% 0, 100% 100%, 0 100%);
-  }
-
-  /* 斜めカットされた領域にコンテンツが食い込まないようパディング調整 */
-  .hero__nav :global(.svc-card:nth-child(2) .svc-card__num),
-  .hero__nav :global(.svc-card:nth-child(3) .svc-card__num) {
+  /* 斜めカットされた左上にnumが食い込まないよう全カードで右にずらす */
+  .hero__nav :global(.svc-card .svc-card__num) {
     left: calc(18px + var(--slant) * 0.7);
   }
-  .hero__nav :global(.svc-card:nth-child(2) .svc-card__content),
-  .hero__nav :global(.svc-card:nth-child(3) .svc-card__content) {
+
+  /* 斜めカットされた左下/右下に本文が食い込まないよう全カードで両側パディング */
+  .hero__nav :global(.svc-card .svc-card__content) {
     padding-left: calc(18px + var(--slant) * 0.5);
-  }
-  .hero__nav :global(.svc-card:nth-child(1) .svc-card__content),
-  .hero__nav :global(.svc-card:nth-child(2) .svc-card__content) {
     padding-right: calc(18px + var(--slant) * 0.5);
   }
 
   @media (max-width: 768px) {
     .hero__nav { --slant: 18px; }
-    .hero__nav :global(.svc-card:nth-child(2) .svc-card__num),
-    .hero__nav :global(.svc-card:nth-child(3) .svc-card__num) {
+    .hero__nav :global(.svc-card .svc-card__num) {
       left: calc(12px + var(--slant) * 0.6);
     }
   }
