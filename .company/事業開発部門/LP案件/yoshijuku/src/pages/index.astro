@@ -1142,25 +1142,25 @@ const faqs = [
     position: absolute;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.14;
+    opacity: 0.18;
     top: 50%;
     transform: translateY(-50%);
-    width: 180px;
+    width: 360px;
     height: auto;
   }
 
-  /* PC: リストの左/右側にシルエットが重なる */
-  .empathy__silhouette--problems { left: -40px; }
-  .empathy__silhouette--solve { right: -40px; }
+  /* PC: リストの左/右側にしっかり大きく見える */
+  .empathy__silhouette--problems { left: -120px; }
+  .empathy__silhouette--solve { right: -120px; }
 
-  /* スマホ: リストの真横、画面端寄りで薄く */
+  /* スマホ: リスト本体と重なるサイズで配置 */
   @media (max-width: 768px) {
     .empathy__silhouette {
-      opacity: 0.1;
-      width: 120px;
+      opacity: 0.14;
+      width: 220px;
     }
-    .empathy__silhouette--problems { left: -20px; }
-    .empathy__silhouette--solve { right: -20px; }
+    .empathy__silhouette--problems { left: -50px; }
+    .empathy__silhouette--solve { right: -50px; }
   }
 
   /* §3 共感リスト：1行1項目・余白最小・密度高 */
