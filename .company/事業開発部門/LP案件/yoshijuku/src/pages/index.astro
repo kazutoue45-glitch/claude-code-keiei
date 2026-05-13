@@ -1201,11 +1201,11 @@ const faqs = [
     }
   }
 
-  /* お悩み：オレンジ円に白の「?」（記号で識別） */
+  /* お悩み：オレンジ円に白の「?」（コンパクト） */
   .empathy__mark--q {
     flex-shrink: 0;
-    width: 34px;
-    height: 34px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: var(--orange);
     color: var(--paper);
@@ -1214,20 +1214,21 @@ const faqs = [
     justify-content: center;
     font-family: var(--font-serif);
     font-weight: 900;
-    font-size: 20px;
+    font-size: 13px;
     line-height: 1;
   }
 
-  /* 解決：丸ナシ・太いオレンジ単独チェック（?と形で明確に区別） */
+  /* 解決：丸ナシ・太いオレンジ単独チェック */
   .empathy__check {
     flex-shrink: 0;
-    width: 34px;
-    height: 34px;
+    width: 22px;
+    height: 22px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--orange);
   }
+  .empathy__check svg { width: 20px; height: 20px; }
 
   /* Before/After 切り替えの橋渡し・締めコピー（さらに圧縮） */
   .empathy__bridge,
