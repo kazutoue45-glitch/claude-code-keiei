@@ -934,8 +934,13 @@ const faqs = [
   }
 
   .hero__nav :global(.svc-card) {
-    flex: 1;
+    flex: 1 1 0;
     min-width: 0;
+  }
+
+  /* 中央カードは両側を斜めにカットされる分、DOM幅を slant/2 だけ広げて見える面積を揃える */
+  .hero__nav :global(.svc-card:nth-child(2)) {
+    flex: 1 1 calc(var(--slant) / 2);
   }
 
   /* カード①：右端を斜めに切る */
