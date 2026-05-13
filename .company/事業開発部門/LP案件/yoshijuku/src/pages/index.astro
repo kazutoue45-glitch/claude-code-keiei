@@ -340,6 +340,13 @@ const faqs = [
         <span>だから、義塾は選ばれています。</span>
       </p>
 
+      {/* ④-b 視線誘導矢印（次ブロック「3つの理由」へ） */}
+      <div class="empathy__arrow" aria-hidden="true">
+        <svg viewBox="0 0 60 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 8 L30 26 L54 8" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
       {/* ⑤ 3つの理由カード */}
       <div class="reasons__grid">
         {reasons.map((r) => <ReasonCard {...r} />)}
@@ -1235,6 +1242,31 @@ const faqs = [
     background: linear-gradient(transparent 60%, rgba(255, 105, 0, 0.32) 60%);
     line-height: 1.5;
     margin-top: 8px;
+    white-space: nowrap;
+  }
+
+  /* 視線誘導矢印（締め → 3つの理由へ） */
+  .empathy__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px auto 0;
+    color: var(--orange);
+    animation: arrow-bounce 1.8s ease-in-out infinite;
+  }
+
+  .empathy__arrow svg {
+    width: 60px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .empathy__arrow svg { width: 48px; }
+  }
+
+  @keyframes arrow-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.85; }
+    50% { transform: translateY(6px); opacity: 1; }
   }
 
   @media (max-width: 768px) {
@@ -1245,12 +1277,12 @@ const faqs = [
     }
   }
 
-  /* 3つの理由カードへの余白（締めとの間を適度に空ける） */
+  /* 3つの理由カードへの余白（矢印が間に入るので少しだけ確保） */
   .empathy .reasons__grid {
-    margin-top: 40px;
+    margin-top: 16px;
   }
   @media (max-width: 768px) {
-    .empathy .reasons__grid { margin-top: 32px; }
+    .empathy .reasons__grid { margin-top: 12px; }
   }
 
   /* =========================================
