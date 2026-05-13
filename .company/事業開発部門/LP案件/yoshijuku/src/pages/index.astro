@@ -1122,42 +1122,46 @@ const faqs = [
     .empathy :global(.sh) { margin-bottom: 28px; }
   }
 
-  /* シルエット：section 全体の左右端に固定配置（pairの高さに依存しない） */
+  /* シルエット：テキストに侵入しないよう画面端の外側寄りに配置 */
   .empathy__silhouette {
     position: absolute;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.2;
-    width: 260px;
+    opacity: 0.22;
+    width: 240px;
     height: auto;
   }
 
-  /* 悩みリスト周辺の左下：?を浮かべる人 */
+  /* PC: container 幅は中央 1180px。container 外側に半身が出る */
   .empathy__silhouette--problems {
-    left: -60px;
-    top: 120px;
+    left: max(-180px, calc((100vw - var(--container)) / 2 - 200px));
+    top: 140px;
   }
 
-  /* 解決リスト周辺の右下：歩く人 */
   .empathy__silhouette--solve {
-    right: -60px;
-    bottom: 240px;
+    right: max(-180px, calc((100vw - var(--container)) / 2 - 200px));
+    bottom: 200px;
   }
 
-  /* スマホ：画面端に小さく */
+  /* スマホ：完全に画面端の外側寄りに（テキストに被らない） */
   @media (max-width: 768px) {
     .empathy__silhouette {
-      opacity: 0.16;
-      width: 120px;
+      opacity: 0.18;
+      width: 90px;
     }
     .empathy__silhouette--problems {
-      left: -34px;
-      top: 110px;
+      left: -68px;   /* 画面に見えるのは 22px のみ。container padding 18px の外側に近い */
+      top: 90px;
     }
     .empathy__silhouette--solve {
-      right: -34px;
-      bottom: 280px;
+      right: -68px;  /* 同上 */
+      bottom: 220px;
     }
+  }
+
+  /* 極狭スマホはシルエット非表示（テキスト優先） */
+  @media (max-width: 360px) {
+    .empathy__silhouette { display: none; }
   }
 
   /* §3 共感リスト：1行1項目・余白最小・密度高 */
