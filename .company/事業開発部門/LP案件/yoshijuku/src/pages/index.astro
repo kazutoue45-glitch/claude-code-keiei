@@ -294,30 +294,7 @@ const faqs = [
         <span>義塾はこれで解決します！</span>
       </p>
 
-      {/* ③ 合格実績（Before→After畳みかけの間に信頼の根拠を差し込む） */}
-      <p class="empathy__bridge empathy__bridge--trust">
-        <span>まずは合格実績をご覧ください</span>
-      </p>
-
-      {/* 学校カード横スクロール（containerを超えて画面幅まで広げる） */}
-      <div class="trust__rail">
-        <ul class="trust__cards" aria-label="合格校一覧">
-          {passSchools.map((s) => (
-            <li
-              class={`trust__card ${s.img ? "" : "trust__card--placeholder"}`}
-              style={s.img ? `background-image: url(${base}images/schools/${s.img});` : ""}
-            >
-              <span class="trust__card-overlay" aria-hidden="true"></span>
-              <div class="trust__card-content">
-                <span class="trust__card-group">{s.group}</span>
-                <span class="trust__card-name">{s.name}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* ④ After：解決リスト＋右にシルエット（リストに追従） */}
+      {/* ③ After：解決リスト＋右にシルエット（具体的な解決約束 6項目） */}
       <div class="empathy__pair empathy__pair--solve">
         <ul class="empathy__list empathy__list--solve">
           {solveItems.map((item) => (
@@ -333,6 +310,31 @@ const faqs = [
         </ul>
         <img class="empathy__silhouette empathy__silhouette--solve" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
       </div>
+    </div>
+
+    {/* ④ ZERO型 ▼ 視線誘導ブロック＋証拠への橋渡し */}
+    <div class="empathy__transition">
+      <p class="empathy__transition-text">
+        <span>まずは合格実績をご覧ください</span>
+      </p>
+    </div>
+
+    {/* ⑤ 合格実績カード（証拠） */}
+    <div class="trust__rail trust__rail--inempathy">
+      <ul class="trust__cards" aria-label="合格校一覧">
+        {passSchools.map((s) => (
+          <li
+            class={`trust__card ${s.img ? "" : "trust__card--placeholder"}`}
+            style={s.img ? `background-image: url(${base}images/schools/${s.img});` : ""}
+          >
+            <span class="trust__card-overlay" aria-hidden="true"></span>
+            <div class="trust__card-content">
+              <span class="trust__card-group">{s.group}</span>
+              <span class="trust__card-name">{s.name}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -1015,22 +1017,47 @@ const faqs = [
   }
 
   /* =========================================
-     §2 共感内の合格実績ブロック（Before→After畳みかけの中間に挿入）
+     §2 共感末尾の ZERO型 ▼ 視線誘導ブロック＋合格実績（証拠）
      ========================================= */
-  /* 「まずは合格実績をご覧ください」橋渡しの上下余白 */
-  .empathy__bridge--trust {
-    margin-top: 48px;
-  }
-  @media (max-width: 768px) {
-    .empathy__bridge--trust { margin-top: 32px; }
+  .empathy__transition {
+    position: relative;
+    margin-top: 64px;
+    background: var(--purple-deep);
+    color: var(--paper);
+    padding: 56px 24px 92px;
+    /* 下端を ▼ に切り欠く（ZERO型） */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 44px), 50% 100%, 0 calc(100% - 44px));
   }
 
-  /* 合格実績バッジ後・After リストへの渡り余白 */
-  .empathy .trust__rail + .empathy__pair--solve {
-    margin-top: 56px;
+  .empathy__transition-text {
+    text-align: center;
+    margin: 0;
   }
+
+  .empathy__transition-text span {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 5.4vw, 32px);
+    font-weight: 900;
+    color: var(--paper);
+    background: linear-gradient(transparent 60%, var(--orange) 60%);
+    padding: 4px 12px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  }
+
+  /* 合格実績カードレール：▼ブロック直下に配置・上余白詰める */
+  .trust__rail--inempathy {
+    margin-top: 16px;
+  }
+
   @media (max-width: 768px) {
-    .empathy .trust__rail + .empathy__pair--solve { margin-top: 40px; }
+    .empathy__transition {
+      margin-top: 44px;
+      padding: 36px 20px 64px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 50% 100%, 0 calc(100% - 28px));
+    }
+    .trust__rail--inempathy { margin-top: 8px; }
   }
 
   .trust__eyebrow {
