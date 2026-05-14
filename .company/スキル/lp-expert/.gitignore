@@ -1,0 +1,27 @@
+# Environment variables (credentials)
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if scripts are added later)
+node_modules/
+package-lock.json
+
+# Deploy artifacts
+deploy/
+*.zip
+
+# Browser profile (Playwright sessions)
+_browser_profile/
