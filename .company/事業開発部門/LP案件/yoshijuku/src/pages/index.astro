@@ -938,10 +938,10 @@ const faqs = [
     min-width: 0;
   }
 
-  /* カード①：右端の斜めを内側に slant/4 だけシフト（カード①を少し広げ、カード②を相対的に縮める） */
+  /* カード①：右端の斜めを内側に slant 丸ごとシフト（カード①の上幅をカード②の上幅と揃える） */
   .hero__nav :global(.svc-card:nth-child(1)) {
-    clip-path: polygon(0 0, calc(100% - var(--slant) / 4) 0, calc(100% - 5 * var(--slant) / 4) 100%, 0 100%);
-    margin-right: calc(-5 * var(--slant) / 4);
+    clip-path: polygon(0 0, calc(100% - var(--slant)) 0, calc(100% - 2 * var(--slant)) 100%, 0 100%);
+    margin-right: calc(-2 * var(--slant));
   }
 
   /* カード②：両端を斜めに切る（変更なし） */
@@ -964,9 +964,12 @@ const faqs = [
   .hero__nav :global(.svc-card:nth-child(3) .svc-card__content) {
     padding-left: calc(18px + var(--slant));
   }
-  .hero__nav :global(.svc-card:nth-child(1) .svc-card__content),
   .hero__nav :global(.svc-card:nth-child(2) .svc-card__content) {
     padding-right: calc(18px + var(--slant));
+  }
+  /* カード①は右斜めを2倍シフトしているので、本文も矢印もその分内側に */
+  .hero__nav :global(.svc-card:nth-child(1) .svc-card__content) {
+    padding-right: calc(18px + 2 * var(--slant));
   }
 
   @media (max-width: 768px) {
