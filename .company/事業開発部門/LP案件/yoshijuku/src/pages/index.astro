@@ -1021,12 +1021,12 @@ const faqs = [
      ========================================= */
   .empathy__transition {
     position: relative;
-    margin-top: 64px;
+    margin-top: 48px;
     background: var(--purple-deep);
     color: var(--paper);
-    padding: 56px 24px 92px;
+    padding: 28px 24px 56px;
     /* 下端を ▼ に切り欠く（ZERO型） */
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 44px), 50% 100%, 0 calc(100% - 44px));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 32px), 50% 100%, 0 calc(100% - 32px));
   }
 
   .empathy__transition-text {
@@ -1051,9 +1051,9 @@ const faqs = [
 
   @media (max-width: 768px) {
     .empathy__transition {
-      margin-top: 44px;
-      padding: 36px 20px 64px;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 50% 100%, 0 calc(100% - 28px));
+      margin-top: 32px;
+      padding: 20px 20px 42px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), 50% 100%, 0 calc(100% - 22px));
     }
     .trust__rail--inempathy { margin-top: 8px; }
   }
