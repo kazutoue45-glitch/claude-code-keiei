@@ -267,33 +267,7 @@ const faqs = [
   {/* CTA ① FV直下（FV紫専用） */}
   <CtaButton text="今だけ初月無料で申し込む" href="#" id="cta-1" variant="fv" />
 
-  {/* ============ §2 合格実績（学校カード横スクロール） ============ */}
-  <section class="section section--purple-pale trust">
-    <div class="container">
-      <p class="trust__eyebrow">合格実績</p>
-      <h2 class="trust__title">卒塾生が進学した中学・高校</h2>
-    </div>
-
-    {/* 学校カード横スクロール（container を超えて画面幅まで広げる） */}
-    <div class="trust__rail">
-      <ul class="trust__cards" aria-label="合格校一覧">
-        {passSchools.map((s) => (
-          <li
-            class={`trust__card ${s.img ? "" : "trust__card--placeholder"}`}
-            style={s.img ? `background-image: url(${base}images/schools/${s.img});` : ""}
-          >
-            <span class="trust__card-overlay" aria-hidden="true"></span>
-            <div class="trust__card-content">
-              <span class="trust__card-group">{s.group}</span>
-              <span class="trust__card-name">{s.name}</span>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  {/* ============ §3 共感＋解決＋根拠（リスト脇にシルエット並行配置） ============ */}
+  {/* ============ §2 共感＋解決＋合格実績 ============ */}
   <section class="section section--pale-gray empathy">
     <div class="container">
       <SectionHeader
@@ -337,13 +311,36 @@ const faqs = [
         <img class="empathy__silhouette empathy__silhouette--solve" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
       </div>
 
+      {/* ④ 合格実績（共感セクションの末尾／信頼の根拠として配置） */}
+      <div class="empathy__trust">
+        <p class="trust__eyebrow">合格実績</p>
+        <h3 class="trust__title">卒塾生が進学した中学・高校</h3>
+      </div>
+    </div>
+
+    {/* 学校カード横スクロール（containerを超えて画面幅まで広げる） */}
+    <div class="trust__rail">
+      <ul class="trust__cards" aria-label="合格校一覧">
+        {passSchools.map((s) => (
+          <li
+            class={`trust__card ${s.img ? "" : "trust__card--placeholder"}`}
+            style={s.img ? `background-image: url(${base}images/schools/${s.img});` : ""}
+          >
+            <span class="trust__card-overlay" aria-hidden="true"></span>
+            <div class="trust__card-content">
+              <span class="trust__card-group">{s.group}</span>
+              <span class="trust__card-name">{s.name}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
   {/* CTA ② 共感末尾 */}
   <CtaButton text="塾長に無料相談する" href="#" id="cta-2" />
 
-  {/* ============ §4 3つの学び方（脱カード・レイヤー構成） ============ */}
+  {/* ============ §3 3つの学び方（脱カード・レイヤー構成） ============ */}
   <section class="section section--white learn section-anchor" id="services">
     <div class="container">
       <SectionHeader
@@ -416,7 +413,7 @@ const faqs = [
   {/* CTA ③ 3サービス比較末尾 */}
   <CtaButton text="塾長に無料相談する" href="#" id="cta-3" />
 
-  {/* ============ §5 校舎紹介＋「思い出の場所に」 ============ */}
+  {/* ============ §4 校舎紹介＋「思い出の場所に」 ============ */}
   <section class="section section--white campus">
     <div class="container">
       <SectionHeader
@@ -457,7 +454,7 @@ const faqs = [
     </div>
   </section>
 
-  {/* ============ §6 生徒・保護者の声／合格実績（仮値） ============ */}
+  {/* ============ §5 生徒・保護者の声（仮値） ============ */}
   <section class="section section--bg section--bg-voices voices">
     <div class="container">
       <SectionHeader
@@ -513,7 +510,7 @@ const faqs = [
   {/* CTA ④ 声・実績末尾【NEW】 */}
   <CtaButton text="塾長に無料相談する" href="#" id="cta-4" />
 
-  {/* ============ §7 講師紹介＋メディア・登壇実績 ============ */}
+  {/* ============ §6 講師紹介＋メディア・登壇実績 ============ */}
   <section class="section section--white section--bg section--bg-teachers teachers section-anchor" id="teachers">
     <div class="container">
       <SectionHeader
@@ -592,7 +589,7 @@ const faqs = [
     </div>
   </section>
 
-  {/* ============ §8 料金（カード型プラン表示） ============ */}
+  {/* ============ §7 料金（カード型プラン表示） ============ */}
   <section class="section section--pale-gray-2 pricing section-anchor" id="pricing">
     <div class="container">
       <SectionHeader
@@ -740,7 +737,7 @@ const faqs = [
   {/* CTA ⑤ キャンペーン再強調直後 */}
   <CtaButton text="今だけ初月無料で申し込む" href="#" id="cta-5" />
 
-  {/* ============ §9 FAQ ============ */}
+  {/* ============ §8 FAQ ============ */}
   <section class="section section--bg section--bg-faq faq section-anchor" id="faq">
     <div class="container container--narrow">
       <SectionHeader
@@ -755,7 +752,7 @@ const faqs = [
     </div>
   </section>
 
-  {/* ============ §10 アクセス・お問い合わせ ============ */}
+  {/* ============ §9 アクセス・お問い合わせ ============ */}
   <section class="section section--pale-gray access section-anchor" id="access">
     <div class="container container--narrow">
       <SectionHeader
@@ -1019,9 +1016,19 @@ const faqs = [
   }
 
   /* =========================================
-     §2 合格実績（学校カード横スクロール）
+     §2 共感末尾の合格実績ブロック（学校カード横スクロール）
      ========================================= */
-  .trust { padding: 64px 0 72px; }
+  .empathy__trust {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--purple-line);
+  }
+  @media (max-width: 768px) {
+    .empathy__trust {
+      margin-top: 44px;
+      padding-top: 28px;
+    }
+  }
 
   .trust__eyebrow {
     font-size: 12px;
