@@ -292,107 +292,78 @@ const faqs = [
         <img class="empathy__silhouette empathy__silhouette--solve" src={`${base}images/empathy-silhouette-solved.png`} alt="" aria-hidden="true" />
       </div>
 
-      {/* ④ 締めコピー＋▼形の視線誘導ブロック（ZERO LP参考） */}
-      <div class="empathy__transition">
-        <p class="empathy__close">
-          <span>だから、義塾は選ばれています。</span>
-        </p>
-      </div>
-
-      {/* ⑤ 3つの理由カード */}
-      <div class="reasons__grid">
-        {reasons.map((r) => <ReasonCard {...r} />)}
-      </div>
     </div>
   </section>
 
   {/* CTA ② 共感末尾 */}
   <CtaButton text="塾長に無料相談する" href="#" id="cta-2" />
 
-  {/* ============ §3 3サービス比較 ============ */}
-  <section class="section section--pale-gray services-detail section-anchor" id="services">
+  {/* ============ §3 3つの学び方（脱カード・レイヤー構成） ============ */}
+  <section class="section section--white learn section-anchor" id="services">
     <div class="container">
       <SectionHeader
         title="お子様に合う学び方が、必ずあります。"
         lead="成績が伸びないのは、お子様の能力ではなく、<span class='mark'>学び方が合っていないだけ</span>かもしれません。義塾は、リアル校舎・オンライン・家庭教師の<span class='num'>3</span>サービスを併走しています。"
       />
 
-      {/* ① リアル校舎 */}
-      <article class="svc-detail section-anchor" id="service-real" style="--accent:#4C1D95;">
-        <header class="svc-detail__head">
-          <span class="svc-detail__num">01</span>
-          <div>
-            <h3>義塾（リアル校舎）</h3>
-            <p class="svc-detail__lead">指導経験が豊富で安心できる9人の講師陣と、集中できる環境</p>
-          </div>
-        </header>
-        <div class="svc-detail__body">
-          <div class="svc-detail__photo">
-            <img src={`${base}images/service-real.svg`} alt="リアル校舎の授業風景" loading="lazy" />
-          </div>
-          <dl class="svc-detail__data">
+      {/* 01 リアル校舎 */}
+      <div class="learn__service learn__service--01 section-anchor" id="service-real" style="--accent:#4C1D95;">
+        <span class="learn__num" aria-hidden="true">01</span>
+        <div class="learn__photo">
+          <img src={`${base}images/room-individual.jpg`} alt="義塾の個別指導教室" loading="lazy" />
+          <span class="learn__photo-tag">リアル校舎</span>
+        </div>
+        <div class="learn__text">
+          <p class="learn__eyebrow">通塾型｜個別＋クラス</p>
+          <h3>9人の講師と、<br />同じ教室で学ぶ。</h3>
+          <p class="learn__lead">指導経験が豊富な講師陣と、集中できる環境。<br /><span class="mark">「家ではやる気が出ない」</span>を、教室の空気が変えます。</p>
+          <dl class="learn__data">
             <div><dt>対象</dt><dd>小3〜高3</dd></div>
-            <div><dt>指導形態</dt><dd>個別指導（月水木金 17:00〜21:40・45分選択制）／クラス授業（中1・中3・高1・高3）</dd></div>
-            <div><dt>強み</dt><dd>指導経験が豊富で安心できる講師陣／個別とクラスを必要に応じて使い分けられる選択肢の幅</dd></div>
-            <div><dt>おすすめ</dt><dd>新学期はクラス授業の受講が始めやすい時期です</dd></div>
+            <div><dt>指導</dt><dd>個別指導（月水木金 17:00〜21:40 / 45分選択制）<br />クラス授業（中1・中3・高1・高3）</dd></div>
+            <div><dt>強み</dt><dd>個別とクラスを必要に応じて使い分け可能</dd></div>
           </dl>
         </div>
-      </article>
+      </div>
 
-      {/* ② オンライン */}
-      <article class="svc-detail section-anchor" id="service-online" style="--accent:#2E8B57;">
-        <header class="svc-detail__head">
-          <span class="svc-detail__num">02</span>
-          <div>
-            <h3>義塾オンライン（オンラインプライベートレッスン）</h3>
-            <p class="svc-detail__lead">完全個別指導1対1、選べる4つの専門講座をご自宅から</p>
-          </div>
-        </header>
-        <div class="svc-detail__body">
-          <div class="svc-detail__photo">
-            <img src={`${base}images/service-online.svg`} alt="オンライン受講イメージ" loading="lazy" />
-          </div>
-          <dl class="svc-detail__data">
+      {/* 02 オンライン */}
+      <div class="learn__service learn__service--02 section-anchor" id="service-online" style="--accent:#2E8B57;">
+        <span class="learn__num" aria-hidden="true">02</span>
+        <div class="learn__photo">
+          <img src={`${base}images/service-online.svg`} alt="オンライン受講イメージ" loading="lazy" />
+          <span class="learn__photo-tag">オンライン</span>
+        </div>
+        <div class="learn__text">
+          <p class="learn__eyebrow">在宅型｜完全個別1対1</p>
+          <h3>家から、<br />専門の先生と1対1。</h3>
+          <p class="learn__lead">通塾なしで、<span class="mark">英検・TOEIC・探究プレゼン・AI音楽制作</span>の専門領域を深掘り。<br />TOEIC満点・英検1級講師が直接担当します。</p>
+          <dl class="learn__data">
             <div><dt>対象</dt><dd>小4〜社会人（講座により異なる）</dd></div>
-            <div><dt>指導形態</dt><dd>完全個別指導 1対1／オンラインプライベートレッスン</dd></div>
-            <div>
-              <dt>4つの講座</dt>
-              <dd>
-                <ul class="svc-detail__sublist">
-                  <li>探究プレゼン講座（小4〜高3）</li>
-                  <li>実践プレゼン講座（大学生・社会人・指導者）</li>
-                  <li>AI音楽制作講座（中1〜社会人）</li>
-                  <li>英検・TOEIC対策講座（中1〜社会人）</li>
-                </ul>
-              </dd>
-            </div>
-            <div><dt>強み</dt><dd>完全マンツーマンで密に伴走／TOEIC990点23回連続満点・英検1級保持のスペシャリスト講師が担当（英検・TOEIC講座）／受験以外の専門領域もカバー</dd></div>
+            <div><dt>指導</dt><dd>完全個別 1対1 / オンライン</dd></div>
+            <div><dt>講座</dt><dd>探究プレゼン／実践プレゼン／AI音楽制作／英検・TOEIC対策</dd></div>
           </dl>
         </div>
-      </article>
+      </div>
 
-      {/* ③ 家庭教師 */}
-      <article class="svc-detail section-anchor" id="service-tutor" style="--accent:#2563B8;">
-        <header class="svc-detail__head">
-          <span class="svc-detail__num">03</span>
-          <div>
-            <h3>義塾の家庭教師</h3>
-            <p class="svc-detail__lead">講師がご自宅へ。授業も進路相談も、塾長と直接つながる安心を。</p>
-          </div>
-        </header>
-        <div class="svc-detail__body">
-          <div class="svc-detail__photo">
-            <img src={`${base}images/service-tutor.svg`} alt="家庭教師訪問イメージ" loading="lazy" />
-          </div>
-          <dl class="svc-detail__data">
+      {/* 03 家庭教師 */}
+      <div class="learn__service learn__service--03 section-anchor" id="service-tutor" style="--accent:#2563B8;">
+        <span class="learn__num" aria-hidden="true">03</span>
+        <div class="learn__photo">
+          <img src={`${base}images/service-tutor.svg`} alt="家庭教師訪問イメージ" loading="lazy" />
+          <span class="learn__photo-tag">家庭教師</span>
+        </div>
+        <div class="learn__text">
+          <p class="learn__eyebrow">訪問型｜完全マンツーマン</p>
+          <h3>先生がご自宅へ。<br />進路相談も、塾長直結で。</h3>
+          <p class="learn__lead">通塾の時間がもったいない、自宅の方が集中できる。<br />週1日2時間、<span class="mark">第1期生特別価格</span>で2026年入塾生をお迎えします。</p>
+          <dl class="learn__data">
             <div><dt>対象</dt><dd>中1〜高2（中学受験生・高3は個別相談）</dd></div>
-            <div><dt>指導形態</dt><dd>完全マンツーマン／週1日2時間（月4回・計8時間）</dd></div>
-            <div><dt>強み</dt><dd>第1期生特別価格（2026年入塾生限定）／講師がご自宅まで訪問／公式LINEでいつでも塾長と連絡可能（授業だけでなく進路相談も安心）／兄弟姉妹・お友達とのペア受講でさらにお得</dd></div>
+            <div><dt>指導</dt><dd>週1日2時間（月4回・計8時間）／完全マンツーマン</dd></div>
+            <div><dt>強み</dt><dd>公式LINEで塾長と直接やりとり可能／兄弟姉妹・友達ペア受講可</dd></div>
           </dl>
         </div>
-      </article>
+      </div>
 
-      {/* §5.6 3サービス比較表（NEW・スキャナブル） */}
+      {/* 比較表（スキャナブル） */}
       <ServiceCompareTable services={servicesCompare} />
     </div>
   </section>
@@ -1145,202 +1116,184 @@ const faqs = [
     white-space: nowrap;
   }
 
-  /* §3 締め：▼形の塗りつぶしブロックで視線誘導（ZERO LP参考） */
-  .empathy__transition {
-    position: relative;
-    margin: 56px calc(50% - 50vw) 0;  /* container を超えて全幅に広げる */
-    background: var(--purple);
-    color: var(--paper);
-    padding: 44px 24px 80px;
-    /* 下端を ▼ に切り欠く */
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 36px), 50% 100%, 0 calc(100% - 36px));
-    z-index: 2;
-  }
-
-  .empathy__transition .empathy__close {
-    margin: 0 auto;
-    color: var(--paper);
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-  .empathy__transition .empathy__close span {
-    color: var(--paper);
-    background: linear-gradient(transparent 60%, var(--orange) 60%);
-    font-size: clamp(22px, 5.8vw, 32px);
-    white-space: nowrap;
-  }
-
   @media (max-width: 768px) {
-    .empathy__transition {
-      margin-top: 40px;
-      padding: 32px 20px 56px;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 50% 100%, 0 calc(100% - 24px));
-    }
-  }
-
-  @media (max-width: 768px) {
-    .empathy__bridge,
-    .empathy__close {
+    .empathy__bridge {
       margin: 32px auto 20px;
       font-size: 13px;
     }
   }
 
-  /* 3つの理由カードへの余白（▼ブロックの先端から少し下に） */
-  .empathy .reasons__grid {
-    margin-top: 40px;
+  /* =========================================
+     §3 3つの学び方（脱カード・レイヤー構成）
+     ========================================= */
+  .learn .container { position: relative; }
+
+  .learn__service {
+    position: relative;
+    display: grid;
+    align-items: center;
+    margin-top: 96px;
+    padding-top: 56px;
+    border-top: 1px solid var(--line);
+  }
+  .learn__service:first-of-type {
+    border-top: none;
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+
+  /* 巨大番号＝背景レイヤー */
+  .learn__num {
+    position: absolute;
+    font-family: var(--font-serif);
+    font-weight: 900;
+    color: var(--accent);
+    opacity: 0.07;
+    line-height: 0.82;
+    letter-spacing: -0.02em;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    font-size: clamp(180px, 28vw, 360px);
+  }
+  .learn__service--01 .learn__num { top: 20px; left: -8px; }
+  .learn__service--02 .learn__num { top: 20px; right: -8px; }
+  .learn__service--03 .learn__num { top: 20px; left: -8px; }
+
+  .learn__photo {
     position: relative;
     z-index: 1;
-  }
-  @media (max-width: 768px) {
-    .empathy .reasons__grid { margin-top: 32px; }
-  }
-
-  /* =========================================
-     §4 選ばれる3つの理由
-     ========================================= */
-  .reasons__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 24px;
-  }
-
-  @media (max-width: 900px) {
-    .reasons__grid { grid-template-columns: 1fr; gap: 8px; }
-  }
-
-  /* =========================================
-     §5 3サービス比較
-     ========================================= */
-  .svc-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    margin-top: 12px;
-    padding: 48px;
-    background: var(--paper);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-  }
-
-  .svc-detail:first-of-type { margin-top: 0; }
-
-  .svc-detail__head {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .svc-detail__num {
-    font-family: var(--font-serif);
-    font-size: 38px;
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
-    flex-shrink: 0;
-  }
-
-  .svc-detail__head h3 {
-    font-size: 22px;
-    margin-bottom: 6px;
-    color: var(--purple);
-  }
-
-  .svc-detail__lead {
-    font-size: 14px;
-    color: var(--charcoal-soft);
-    line-height: 1.7;
-  }
-
-  .svc-detail__body {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 32px;
-    align-items: start;
-  }
-
-  .svc-detail__photo {
-    border-radius: var(--radius-md);
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
     background: var(--pale-gray);
   }
-
-  .svc-detail__photo img {
+  .learn__photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
   }
-
-  .svc-detail__data {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .svc-detail__data > div {
-    display: grid;
-    grid-template-columns: 96px 1fr;
-    gap: 16px;
-    padding-bottom: 14px;
-    border-bottom: 1px dashed var(--line);
-  }
-
-  .svc-detail__data > div:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .svc-detail__data dt {
+  .learn__photo-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--accent);
+    color: var(--paper);
     font-size: 12px;
     font-weight: 700;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    padding-top: 2px;
+    letter-spacing: 0.18em;
+    padding: 8px 16px;
   }
 
-  .svc-detail__data dd {
+  .learn__text {
+    position: relative;
+    z-index: 2;
+  }
+  .learn__eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .learn__text h3 {
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 3.4vw, 34px);
+    color: var(--charcoal);
+    line-height: 1.45;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+  .learn__lead {
+    font-size: 16px;
+    color: var(--charcoal-soft);
+    line-height: 1.95;
+    margin-bottom: 28px;
+  }
+  .learn__data {
+    display: flex;
+    flex-direction: column;
+  }
+  .learn__data > div {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .learn__data > div:last-child {
+    border-bottom: none;
+  }
+  .learn__data dt {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    padding-top: 4px;
+  }
+  .learn__data dd {
     font-size: 14px;
     color: var(--charcoal-soft);
     line-height: 1.85;
   }
 
-  .svc-detail__sublist {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-top: 4px;
+  /* PC: ジグザグ配置・写真は端まではみ出す */
+  @media (min-width: 901px) {
+    .learn__service {
+      grid-template-columns: 1.05fr 1fr;
+      column-gap: 64px;
+    }
+    .learn__service--02 {
+      grid-template-columns: 1fr 1.05fr;
+    }
+    .learn__service--02 .learn__photo { order: 2; }
+    .learn__service--02 .learn__text { order: 1; }
+    /* 写真を画面端まで広げる（container を超える） */
+    .learn__service--01 .learn__photo,
+    .learn__service--03 .learn__photo {
+      margin-left: calc((100vw - var(--container)) / -2 - 24px);
+    }
+    .learn__service--02 .learn__photo {
+      margin-right: calc((100vw - var(--container)) / -2 - 24px);
+    }
   }
 
-  .svc-detail__sublist li {
-    padding-left: 14px;
-    position: relative;
-    font-size: 13px;
-    color: var(--charcoal-soft);
-  }
-
-  .svc-detail__sublist li::before {
-    content: "・";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: 700;
-  }
-
-  @media (max-width: 768px) {
-    .svc-detail { padding: 28px 22px; }
-    .svc-detail__head { flex-direction: row; gap: 14px; padding-bottom: 16px; }
-    .svc-detail__num { font-size: 30px; }
-    .svc-detail__head h3 { font-size: 18px; }
-    .svc-detail__lead { font-size: 13.5px; line-height: 1.75; }
-    .svc-detail__body { grid-template-columns: 1fr; gap: 20px; }
-    .svc-detail__data > div { grid-template-columns: 76px 1fr; gap: 12px; padding-bottom: 12px; }
-    .svc-detail__data dt { font-size: 11.5px; }
-    .svc-detail__data dd { font-size: 13.5px; line-height: 1.8; }
+  /* SP: 縦積み・写真→テキスト */
+  @media (max-width: 900px) {
+    .learn__service {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 64px;
+      padding-top: 40px;
+    }
+    .learn__service:first-of-type {
+      margin-top: 24px;
+      padding-top: 16px;
+    }
+    .learn__photo {
+      aspect-ratio: 5 / 4;
+      margin-left: calc(-1 * 18px);
+      margin-right: calc(-1 * 18px);
+      width: calc(100% + 36px);
+    }
+    .learn__num {
+      font-size: 220px;
+      opacity: 0.06;
+      top: 12px;
+    }
+    .learn__service--01 .learn__num { left: -12px; }
+    .learn__service--02 .learn__num { right: -12px; }
+    .learn__service--03 .learn__num { left: -12px; }
+    .learn__data > div {
+      grid-template-columns: 56px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+    }
+    .learn__data dt { font-size: 11.5px; }
+    .learn__data dd { font-size: 13.5px; }
   }
 
   /* =========================================
