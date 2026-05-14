@@ -14,6 +14,25 @@ import CtaButton from "../components/CtaButton.astro";
 
 const base = import.meta.env.BASE_URL;
 
+// §2 信頼帯：合格校（写真があるものはWikipediaから、無いものは色面プレースホルダ）
+const passSchools = [
+  { name: "大阪国際", group: "中学受験", img: null },
+  { name: "常翔啓光学園", group: "中学受験", img: null },
+  { name: "寝屋川", group: "高校受験", img: "neyagawa.jpg" },
+  { name: "牧野", group: "高校受験", img: "makino.jpg" },
+  { name: "四條畷", group: "高校受験", img: "shijonawate.jpg" },
+  { name: "東", group: "高校受験", img: "higashi.jpg" },
+  { name: "枚方", group: "高校受験", img: "hirakata.jpg" },
+  { name: "香里丘", group: "高校受験", img: null },
+  { name: "北かわち皐が丘", group: "高校受験", img: "kitakawachi.jpg" },
+  { name: "いちりつ", group: "高校受験", img: null },
+  { name: "大阪国際", group: "高校受験", img: null },
+  { name: "東海大付大阪仰星", group: "高校受験", img: null },
+  { name: "香里ヌヴェール学院", group: "高校受験", img: null },
+  { name: "四條畷学園", group: "高校受験", img: null },
+  { name: "常翔啓光学園", group: "高校受験", img: null },
+];
+
 // 3サービス（クイックナビ用・縦長カラムカード）
 const services = [
   {
@@ -248,53 +267,29 @@ const faqs = [
   {/* CTA ① FV直下（FV紫専用） */}
   <CtaButton text="今だけ初月無料で申し込む" href="#" id="cta-1" variant="fv" />
 
-  {/* ============ §2 信頼帯（合格校・講師資格・指導実績・LINE直結） ============ */}
-  <section class="section section--purple-pale section--bg section--bg-trust trust">
+  {/* ============ §2 合格実績（学校カード横スクロール） ============ */}
+  <section class="section section--purple-pale trust">
     <div class="container">
       <p class="trust__eyebrow">合格実績</p>
       <h2 class="trust__title">卒塾生が進学した中学・高校</h2>
+    </div>
 
-      {/* ① 合格校バッジ（横スクロール） */}
-      <div class="trust__schools-wrap">
-        <ul class="trust__schools" aria-label="合格校一覧">
-          <li class="trust__school-group">中学受験</li>
-          <li class="trust__school">大阪国際中</li>
-          <li class="trust__school">常翔啓光学園中</li>
-          <li class="trust__school-divider" aria-hidden="true"></li>
-          <li class="trust__school-group">高校受験</li>
-          <li class="trust__school">寝屋川高</li>
-          <li class="trust__school">牧野高</li>
-          <li class="trust__school">四條畷高</li>
-          <li class="trust__school">東高</li>
-          <li class="trust__school">枚方高</li>
-          <li class="trust__school">香里丘高</li>
-          <li class="trust__school">北かわち皐が丘高</li>
-          <li class="trust__school">いちりつ高</li>
-          <li class="trust__school">大阪国際高</li>
-          <li class="trust__school">東海大付大阪仰星高</li>
-          <li class="trust__school">香里ヌヴェール学院高</li>
-          <li class="trust__school">四條畷学園高</li>
-          <li class="trust__school">常翔啓光学園高</li>
-        </ul>
-        <span class="trust__schools-fade" aria-hidden="true"></span>
-      </div>
-      <p class="trust__note">※年度・人数は公開準備中</p>
-
-      {/* ②③④ 講師資格＋指導実績＋LINE直結 */}
-      <div class="trust__pillars">
-        <div class="trust__pillar">
-          <p class="trust__pillar-headline">TOEIC <span class="num">990</span>点</p>
-          <p class="trust__pillar-sub">23回連続満点／英検1級<br />赤本（過去問題集）執筆協力</p>
-        </div>
-        <div class="trust__pillar">
-          <p class="trust__pillar-headline">塾長 指導<span class="num">12</span>年</p>
-          <p class="trust__pillar-sub">大阪大学理学部卒<br />全9名体制で伴走</p>
-        </div>
-        <div class="trust__pillar">
-          <p class="trust__pillar-headline">公式LINE 直結</p>
-          <p class="trust__pillar-sub">塾長と直接相談可<br />進路・成績・通塾の全て</p>
-        </div>
-      </div>
+    {/* 学校カード横スクロール（container を超えて画面幅まで広げる） */}
+    <div class="trust__rail">
+      <ul class="trust__cards" aria-label="合格校一覧">
+        {passSchools.map((s) => (
+          <li
+            class={`trust__card ${s.img ? "" : "trust__card--placeholder"}`}
+            style={s.img ? `background-image: url(${base}images/schools/${s.img});` : ""}
+          >
+            <span class="trust__card-overlay" aria-hidden="true"></span>
+            <div class="trust__card-content">
+              <span class="trust__card-group">{s.group}</span>
+              <span class="trust__card-name">{s.name}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -1024,7 +1019,7 @@ const faqs = [
   }
 
   /* =========================================
-     §2 信頼帯（合格校バッジ＋講師資格＋指導実績＋LINE直結）
+     §2 合格実績（学校カード横スクロール）
      ========================================= */
   .trust { padding: 64px 0 72px; }
 
@@ -1041,134 +1036,103 @@ const faqs = [
     font-size: clamp(24px, 4vw, 36px);
     color: var(--purple-deep);
     line-height: 1.5;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
 
-  /* 合格校バッジ：横スクロール */
-  .trust__schools-wrap {
-    position: relative;
+  /* レール：containerを超えて画面幅まで広げる */
+  .trust__rail {
     margin: 0 calc(50% - 50vw);
     padding: 0 max(24px, calc((100vw - var(--container)) / 2));
   }
 
-  .trust__schools {
+  .trust__cards {
     display: flex;
     flex-wrap: nowrap;
-    gap: 10px;
+    gap: 12px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 8px 0 14px;
+    padding: 4px 0 18px;
     scrollbar-width: thin;
     scrollbar-color: var(--purple-line) transparent;
     -webkit-overflow-scrolling: touch;
   }
-  .trust__schools::-webkit-scrollbar { height: 6px; }
-  .trust__schools::-webkit-scrollbar-thumb {
+  .trust__cards::-webkit-scrollbar { height: 6px; }
+  .trust__cards::-webkit-scrollbar-thumb {
     background: var(--purple-line);
     border-radius: 3px;
   }
-  .trust__schools::-webkit-scrollbar-track { background: transparent; }
+  .trust__cards::-webkit-scrollbar-track { background: transparent; }
 
-  .trust__school {
+  /* 各カード：背景写真 or プレースホルダ */
+  .trust__card {
     flex: 0 0 auto;
-    background: var(--paper);
-    color: var(--purple-deep);
-    font-size: 14px;
-    font-weight: 700;
-    padding: 10px 18px;
-    border-radius: 999px;
-    white-space: nowrap;
+    width: 220px;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--purple);
+    background-size: cover;
+    background-position: center;
     box-shadow: var(--shadow-sm);
   }
 
-  .trust__school-group {
-    flex: 0 0 auto;
-    align-self: center;
-    font-size: 11px;
+  /* 写真なし：パープル系の塗りつぶしカード */
+  .trust__card--placeholder {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%);
+  }
+
+  /* 写真あり：暗幕オーバーレイ（下半分グラデ） */
+  .trust__card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 30%, rgba(0, 0, 0, 0.65) 100%);
+  }
+  .trust__card--placeholder .trust__card-overlay {
+    background: none;
+  }
+
+  .trust__card-content {
+    position: absolute;
+    inset: 0;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+  }
+
+  .trust__card-group {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--purple-deep);
+    font-size: 10.5px;
     font-weight: 700;
-    letter-spacing: 0.16em;
-    color: var(--purple);
-    padding: 0 6px 0 2px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border-radius: 999px;
     white-space: nowrap;
   }
 
-  .trust__school-divider {
-    flex: 0 0 auto;
-    align-self: stretch;
-    width: 1px;
-    background: var(--purple-line);
-    margin: 4px 8px;
-  }
-
-  /* 右端フェード（スクロール余地のヒント） */
-  .trust__schools-fade {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 56px;
-    height: 100%;
-    pointer-events: none;
-    background: linear-gradient(90deg, transparent, var(--purple-pale));
-  }
-
-  .trust__note {
-    font-size: 12px;
-    color: var(--muted);
-    margin: 6px 0 36px;
-  }
-
-  /* 3本柱：講師資格／指導実績／LINE直結 */
-  .trust__pillars {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--purple-line);
-    border-bottom: 1px solid var(--purple-line);
-  }
-
-  .trust__pillar {
-    padding: 28px 24px;
-    text-align: center;
-    border-right: 1px solid var(--purple-line);
-  }
-  .trust__pillar:last-child { border-right: none; }
-
-  .trust__pillar-headline {
+  .trust__card-name {
     font-family: var(--font-serif);
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 900;
-    color: var(--purple-deep);
-    line-height: 1.4;
-    margin-bottom: 10px;
+    color: var(--paper);
+    line-height: 1.3;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.02em;
   }
-
-  .trust__pillar-headline .num {
-    font-size: 1.6em;
-    margin: 0 0.04em;
-  }
-
-  .trust__pillar-sub {
-    font-size: 13px;
-    color: var(--charcoal-soft);
-    line-height: 1.7;
+  .trust__card--placeholder .trust__card-name {
+    text-shadow: none;
   }
 
   @media (max-width: 768px) {
     .trust { padding: 48px 0 56px; }
     .trust__title { margin-bottom: 20px; }
-    .trust__school { font-size: 13px; padding: 8px 14px; }
-    .trust__pillars {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-    .trust__pillar {
-      padding: 20px 0;
-      border-right: none;
-      border-bottom: 1px solid var(--purple-line);
-    }
-    .trust__pillar:last-child { border-bottom: none; }
-    .trust__pillar-headline { font-size: 17px; }
-    .trust__pillar-sub { font-size: 12.5px; }
+    .trust__card { width: 170px; }
+    .trust__card-name { font-size: 18px; }
+    .trust__card-group { font-size: 10px; padding: 3px 8px; }
   }
 
   /* =========================================
