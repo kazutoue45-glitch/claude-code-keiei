@@ -373,9 +373,8 @@ const faqs = [
 
           <details class="service__details">
             <summary>
-              <span class="more-label">ここから先は</span>
-              <span class="more-detail">対象・料金・時間割・担当講師・校舎</span>
-              <span class="more-arrow" aria-hidden="true">▼</span>
+              <span>続きを読む</span>
+              <span class="more-arrow" aria-hidden="true">▾</span>
             </summary>
 
             <div class="service__story service__story--continued">
@@ -459,9 +458,8 @@ const faqs = [
 
           <details class="service__details">
             <summary>
-              <span class="more-label">ここから先は</span>
-              <span class="more-detail">対象・料金・選べる4つの講座・受講までの流れ</span>
-              <span class="more-arrow" aria-hidden="true">▼</span>
+              <span>続きを読む</span>
+              <span class="more-arrow" aria-hidden="true">▾</span>
             </summary>
 
             <div class="service__story service__story--continued">
@@ -576,9 +574,8 @@ const faqs = [
 
           <details class="service__details">
             <summary>
-              <span class="more-label">ここから先は</span>
-              <span class="more-detail">対象・料金・指導形態・第1期生特別価格の詳細</span>
-              <span class="more-arrow" aria-hidden="true">▼</span>
+              <span>続きを読む</span>
+              <span class="more-arrow" aria-hidden="true">▾</span>
             </summary>
 
             <div class="service__story service__story--continued">
@@ -2037,7 +2034,7 @@ const faqs = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right center;
+    object-position: center center;
   }
   .service__hero-tint {
     position: absolute;
@@ -2220,10 +2217,10 @@ const faqs = [
     color: var(--paper);
   }
 
-  /* 詳細トグル：「ここから先は」型・上方に背景色フェード */
+  /* 詳細トグル：本文の続きをフェードで匂わせ、シンプルな「続きを読む」テキストのみ */
   .service__details {
     position: relative;
-    margin-top: 32px;
+    margin-top: 24px;
   }
   .service__details:not([open])::before {
     content: "";
@@ -2231,7 +2228,7 @@ const faqs = [
     left: -100vw;
     right: -100vw;
     bottom: 100%;
-    height: 110px;
+    height: 120px;
     background: linear-gradient(180deg, transparent 0%, var(--accent) 100%);
     pointer-events: none;
     z-index: 1;
@@ -2241,40 +2238,43 @@ const faqs = [
     z-index: 2;
     list-style: none;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
-    text-align: center;
-    gap: 4px;
-    padding: 22px 0;
-    border-top: 1px dashed rgba(255, 255, 255, 0.4);
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
-    transition: opacity 0.2s;
+    gap: 8px;
+    margin: 0 auto;
+    padding: 6px 2px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    transition: opacity 0.2s, border-color 0.2s;
   }
   .service__details > summary::-webkit-details-marker { display: none; }
-  .service__details > summary:hover { opacity: 0.85; }
-  .service__details > summary .more-label {
-    font-family: var(--font-serif);
-    font-size: 17px;
-    font-weight: 900;
-    color: var(--paper);
-    letter-spacing: 0.1em;
-  }
-  .service__details > summary .more-detail {
-    font-size: 12.5px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.82);
-    letter-spacing: 0.06em;
-    line-height: 1.6;
+  .service__details > summary:hover {
+    opacity: 0.85;
+    border-bottom-color: rgba(255, 255, 255, 0.7);
   }
   .service__details > summary .more-arrow {
-    margin-top: 6px;
-    font-size: 14px;
+    display: inline-block;
+    font-size: 11px;
     color: rgba(255, 255, 255, 0.85);
     transition: transform 0.25s ease;
   }
   .service__details[open] > summary .more-arrow {
     transform: rotate(180deg);
+  }
+  /* summary を中央寄せするためのwrapper代わり（detailsはblock、summaryはinline-flex） */
+  .service__details > summary {
+    display: flex;
+    width: max-content;
+    max-width: 100%;
+  }
+  .service__details {
+    text-align: center;
+  }
+  .service__details > *:not(summary) {
+    text-align: left;
   }
   .service__story--continued {
     margin-top: 28px;
@@ -2417,7 +2417,7 @@ const faqs = [
     .service:first-of-type { margin-top: 32px; }
     .service + .service { margin-top: 0; }
     .service__hero { aspect-ratio: 4 / 4.4; }
-    .service__hero-photo { object-position: right center; }
+    .service__hero-photo { object-position: center center; }
     .service__hero-tint {
       background: linear-gradient(180deg,
         color-mix(in srgb, var(--accent) 60%, transparent) 0%,
@@ -2446,8 +2446,7 @@ const faqs = [
     .service__course dl dt { font-size: 11px; }
     .service__course dl dd { font-size: 12.5px; }
     .service__steps li { font-size: 13.5px; }
-    .service__details > summary .more-label { font-size: 15.5px; }
-    .service__details > summary .more-detail { font-size: 11.5px; }
+    .service__details > summary { font-size: 13.5px; }
   }
 
   /* =========================================
