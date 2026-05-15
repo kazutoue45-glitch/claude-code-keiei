@@ -41,7 +41,7 @@ const services = [
     shortLabel: "成田町の校舎で学ぶ",
     anchorId: "service-real",
     accentColor: "#4C1D95",
-    bgImage: `${base}images/room-class.jpg`,
+    bgImage: `${base}images/hero-real.jpg`,
   },
   {
     index: "02",
@@ -49,7 +49,7 @@ const services = [
     shortLabel: "ご自宅から1対1",
     anchorId: "service-online",
     accentColor: "#2E8B57",
-    bgImage: `${base}images/building-exterior.jpg`,
+    bgImage: `${base}images/hero-online.jpg`,
   },
   {
     index: "03",
@@ -57,7 +57,7 @@ const services = [
     shortLabel: "講師がご自宅へ訪問",
     anchorId: "service-tutor",
     accentColor: "#2563B8",
-    bgImage: `${base}images/building-sign.jpg`,
+    bgImage: `${base}images/hero-tutor.jpg`,
   },
 ];
 
@@ -352,10 +352,14 @@ const faqs = [
         <div class="service__hero-tint" aria-hidden="true"></div>
         <div class="service__hero-content">
           <div class="container">
-            <span class="service__num" aria-hidden="true">01</span>
-            <p class="service__eyebrow">通塾型｜個別＋クラス</p>
-            <p class="service__name">義塾のリアル校舎</p>
-            <h3 class="service__catch">質問できる距離で、<br />考える力を育てる。</h3>
+            <div class="service__hero-top">
+              <span class="service__num" aria-hidden="true">01</span>
+              <h3 class="service__name">義塾のリアル校舎</h3>
+            </div>
+            <div class="service__hero-bottom">
+              <p class="service__eyebrow">通塾型｜個別＋クラス</p>
+              <p class="service__catch">質問できる距離で、<br />考える力を育てる。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -365,26 +369,33 @@ const faqs = [
           <div class="service__story">
             <p>「家ではどうしてもやる気が出ない」「親の前では、ついサボってしまう」——保護者の方からよく聞くお声です。</p>
             <p>義塾の校舎は、そんなお子様にとっての <span class="mark">「集中できる場所」</span> になります。9人の講師陣と顔を合わせ、わからないことをその場で質問できる。同じ机に向かう仲間がいる。教室の空気が、お子様の背中をそっと押し続けます。</p>
-            <p>個別指導とクラス授業を、その時々の状況に合わせて<span class="mark">使い分けられる</span>のも義塾だけの強み。基礎固めから受験対策まで、お子様のペースで「考える力」を育てます。</p>
-          </div>
-
-          <ul class="service__meta">
-            <li><span>対象</span><b>小3〜高3</b></li>
-            <li><span>指導形態</span><b>個別／クラス</b></li>
-            <li><span>月額目安</span><b>14,300〜44,000円</b></li>
-          </ul>
-
-          <div class="service__forwhom">
-            <p class="service__forwhom-title">こんな方におすすめ</p>
-            <ul>
-              <li>通塾できる</li>
-              <li>講師と顔を合わせて学びたい</li>
-              <li>クラスで切磋琢磨したい</li>
-            </ul>
           </div>
 
           <details class="service__details">
-            <summary>時間割・担当講師・校舎の詳細を見る</summary>
+            <summary>
+              <span class="more-label">ここから先は</span>
+              <span class="more-detail">対象・料金・時間割・担当講師・校舎</span>
+              <span class="more-arrow" aria-hidden="true">▼</span>
+            </summary>
+
+            <div class="service__story service__story--continued">
+              <p>個別指導とクラス授業を、その時々の状況に合わせて<span class="mark">使い分けられる</span>のも義塾だけの強み。基礎固めから受験対策まで、お子様のペースで「考える力」を育てます。</p>
+            </div>
+
+            <ul class="service__meta">
+              <li><span>対象</span><b>小3〜高3</b></li>
+              <li><span>指導形態</span><b>個別／クラス</b></li>
+              <li><span>月額目安</span><b>14,300〜44,000円</b></li>
+            </ul>
+
+            <div class="service__forwhom">
+              <p class="service__forwhom-title">こんな方におすすめ</p>
+              <ul>
+                <li>通塾できる</li>
+                <li>講師と顔を合わせて学びたい</li>
+                <li>クラスで切磋琢磨したい</li>
+              </ul>
+            </div>
 
             <div class="service__details-section">
               <h4>時間割</h4>
@@ -415,7 +426,7 @@ const faqs = [
               </ul>
             </div>
 
-            <a class="service__cta service__cta--in-details" href="#" data-service="real">公式LINEで無料相談する<span aria-hidden="true">›</span></a>
+            <CtaButton text="公式LINEで無料相談する" href="#" id="cta-service-real" />
           </details>
         </div>
       </div>
@@ -427,10 +438,14 @@ const faqs = [
         <div class="service__hero-tint" aria-hidden="true"></div>
         <div class="service__hero-content">
           <div class="container">
-            <span class="service__num" aria-hidden="true">02</span>
-            <p class="service__eyebrow">在宅型｜完全マンツーマン</p>
-            <p class="service__name">義塾オンライン</p>
-            <h3 class="service__catch">完全マンツーマンで<br /><span class="num">4</span>コマ完結。<br />受験英語からプレゼン・<wbr />AI音楽まで。</h3>
+            <div class="service__hero-top">
+              <span class="service__num" aria-hidden="true">02</span>
+              <h3 class="service__name">義塾オンライン</h3>
+            </div>
+            <div class="service__hero-bottom">
+              <p class="service__eyebrow">在宅型｜完全マンツーマン</p>
+              <p class="service__catch">完全マンツーマンで<span class="num">4</span>コマ完結。<br />受験英語からプレゼン・AI音楽まで。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -440,26 +455,33 @@ const faqs = [
           <div class="service__story">
             <p>「通塾の時間がもったいない」「もっと専門的に学ばせたい」——そんなご家庭にこそ、オンラインを選んでいただきたい。</p>
             <p>義塾オンラインは、Zoomで講師と <span class="mark">完全1対1</span>。1コマ45分、全4コマで「1つの力」を確実に身につける、<span class="mark">完結型</span>の設計です。続けるか迷う前に、まず一つ完成させる。それが、お子様の自信に変わります。</p>
-            <p>選べる講座は、英検・TOEIC、探究プレゼン、実践プレゼン、AI音楽制作の4つ。<span class="mark">TOEIC990点を23回連続満点・英検1級</span>保持の英語講師、<span class="mark">プレゼン講座を150本以上実施</span>してきた塾長が、それぞれ直接担当します。受験勉強だけでは伸ばせない「考える力」「伝える力」「表現する力」を、ご自宅から、専門家とマンツーマンで。</p>
-          </div>
-
-          <ul class="service__meta">
-            <li><span>対象</span><b>小4〜社会人</b></li>
-            <li><span>指導形態</span><b>完全1対1（Zoom）<small>1コマ45分／全4コマ完結</small></b></li>
-            <li><span>月額目安</span><b>22,000円〜<small>1コマ5,500円×4コマ</small></b></li>
-          </ul>
-
-          <div class="service__forwhom">
-            <p class="service__forwhom-title">こんな方におすすめ</p>
-            <ul>
-              <li>受験英語を確実に伸ばしたい</li>
-              <li>話す力・伝える力を本気で鍛えたい</li>
-              <li>AIで何か作ってみたい</li>
-            </ul>
           </div>
 
           <details class="service__details">
-            <summary>4つの講座と受講までの流れを見る</summary>
+            <summary>
+              <span class="more-label">ここから先は</span>
+              <span class="more-detail">対象・料金・選べる4つの講座・受講までの流れ</span>
+              <span class="more-arrow" aria-hidden="true">▼</span>
+            </summary>
+
+            <div class="service__story service__story--continued">
+              <p>選べる講座は、英検・TOEIC、探究プレゼン、実践プレゼン、AI音楽制作の4つ。<span class="mark">TOEIC990点を23回連続満点・英検1級</span>保持の英語講師、<span class="mark">プレゼン講座を150本以上実施</span>してきた塾長が、それぞれ直接担当します。</p>
+            </div>
+
+            <ul class="service__meta">
+              <li><span>対象</span><b>小4〜社会人</b></li>
+              <li><span>指導形態</span><b>完全1対1（Zoom）<small>1コマ45分／全4コマ完結</small></b></li>
+              <li><span>月額目安</span><b>22,000円〜<small>1コマ5,500円×4コマ</small></b></li>
+            </ul>
+
+            <div class="service__forwhom">
+              <p class="service__forwhom-title">こんな方におすすめ</p>
+              <ul>
+                <li>受験英語を確実に伸ばしたい</li>
+                <li>話す力・伝える力を本気で鍛えたい</li>
+                <li>AIで何か作ってみたい</li>
+              </ul>
+            </div>
 
             <div class="service__details-section">
               <h4>選べる4つの講座</h4>
@@ -521,7 +543,7 @@ const faqs = [
               </ol>
             </div>
 
-            <a class="service__cta service__cta--in-details" href="#" data-service="online">公式LINEで無料相談する<span aria-hidden="true">›</span></a>
+            <CtaButton text="公式LINEで無料相談する" href="#" id="cta-service-online" />
           </details>
         </div>
       </div>
@@ -533,10 +555,14 @@ const faqs = [
         <div class="service__hero-tint" aria-hidden="true"></div>
         <div class="service__hero-content">
           <div class="container">
-            <span class="service__num" aria-hidden="true">03</span>
-            <p class="service__eyebrow">訪問型｜完全マンツーマン</p>
-            <p class="service__name">義塾の家庭教師</p>
-            <h3 class="service__catch">先生がご自宅へ。<br />進路相談も、塾長と直接。</h3>
+            <div class="service__hero-top">
+              <span class="service__num" aria-hidden="true">03</span>
+              <h3 class="service__name">義塾の家庭教師</h3>
+            </div>
+            <div class="service__hero-bottom">
+              <p class="service__eyebrow">訪問型｜完全マンツーマン</p>
+              <p class="service__catch">先生がご自宅へ。<br />進路相談も、塾長と直接。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -546,26 +572,33 @@ const faqs = [
           <div class="service__story">
             <p>「うちの子は集団が苦手」「送迎の負担が大きい」「もう一段、学習環境を整えたい」——そんなお声に応えるのが、義塾の家庭教師サービスです。</p>
             <p>義塾の講師がご自宅へ訪問し、週1日2時間、お子様一人ひとりの学習環境に合わせて指導します。授業の時間だけではなく、<span class="mark">公式LINEで塾長と直接やりとり</span>できるので、進路相談も家庭学習の声かけも、いつでも相談できる安心が手に入ります。</p>
-            <p><span class="mark">2026年入塾の第1期生は特別価格</span>でお迎えします。兄弟姉妹・お友達とのペア受講にも対応。お子様のご自宅という、最も集中できる場所で、最も近い距離から伴走します。</p>
-          </div>
-
-          <ul class="service__meta">
-            <li><span>対象</span><b>中1〜高2</b></li>
-            <li><span>指導形態</span><b>訪問1対1<small>週1日2時間／月4回</small></b></li>
-            <li><span>月額目安</span><b>26,400円〜<small>＋交通費</small></b></li>
-          </ul>
-
-          <div class="service__forwhom">
-            <p class="service__forwhom-title">こんな方におすすめ</p>
-            <ul>
-              <li>通塾の送迎が難しい</li>
-              <li>自宅で集中して学びたい</li>
-              <li>兄弟姉妹で一緒に受けたい</li>
-            </ul>
           </div>
 
           <details class="service__details">
-            <summary>指導形態・料金・特長の詳細を見る</summary>
+            <summary>
+              <span class="more-label">ここから先は</span>
+              <span class="more-detail">対象・料金・指導形態・第1期生特別価格の詳細</span>
+              <span class="more-arrow" aria-hidden="true">▼</span>
+            </summary>
+
+            <div class="service__story service__story--continued">
+              <p><span class="mark">2026年入塾の第1期生は特別価格</span>でお迎えします。兄弟姉妹・お友達とのペア受講にも対応。お子様のご自宅という、最も集中できる場所で、最も近い距離から伴走します。</p>
+            </div>
+
+            <ul class="service__meta">
+              <li><span>対象</span><b>中1〜高2</b></li>
+              <li><span>指導形態</span><b>訪問1対1<small>週1日2時間／月4回</small></b></li>
+              <li><span>月額目安</span><b>26,400円〜<small>＋交通費</small></b></li>
+            </ul>
+
+            <div class="service__forwhom">
+              <p class="service__forwhom-title">こんな方におすすめ</p>
+              <ul>
+                <li>通塾の送迎が難しい</li>
+                <li>自宅で集中して学びたい</li>
+                <li>兄弟姉妹で一緒に受けたい</li>
+              </ul>
+            </div>
 
             <div class="service__details-section">
               <h4>指導形態・頻度</h4>
@@ -602,7 +635,7 @@ const faqs = [
               </ul>
             </div>
 
-            <a class="service__cta service__cta--in-details" href="#" data-service="tutor">公式LINEで無料相談する<span aria-hidden="true">›</span></a>
+            <CtaButton text="公式LINEで無料相談する" href="#" id="cta-service-tutor" />
           </details>
         </div>
       </div>
@@ -2023,25 +2056,44 @@ const faqs = [
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 36px 0;
   }
   .service__hero-content > .container {
     position: relative;
     max-width: var(--container);
     margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .service__hero-top {
+    position: relative;
   }
   .service__num {
     position: absolute;
-    top: -56px;
-    left: -8px;
+    top: -28px;
+    right: 0;
     font-family: var(--font-serif);
-    font-size: clamp(140px, 20vw, 260px);
+    font-size: clamp(120px, 16vw, 200px);
     font-weight: 900;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.16);
     letter-spacing: -0.02em;
     pointer-events: none;
     user-select: none;
+  }
+  .service__name {
+    position: relative;
+    font-family: var(--font-serif);
+    font-size: clamp(34px, 6vw, 64px);
+    font-weight: 900;
+    color: var(--paper);
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    margin: 0;
   }
   .service__eyebrow {
     display: inline-block;
@@ -2052,26 +2104,17 @@ const faqs = [
     color: var(--paper);
     padding: 6px 14px;
     border-radius: 999px;
-    margin-bottom: 18px;
-    backdrop-filter: blur(6px);
-  }
-  .service__name {
-    font-family: var(--font-serif);
-    font-size: clamp(15px, 2vw, 19px);
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.96);
-    letter-spacing: 0.16em;
     margin-bottom: 14px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
   }
   .service__catch {
     font-family: var(--font-serif);
-    font-size: clamp(28px, 4.6vw, 52px);
-    font-weight: 900;
-    color: var(--paper);
-    line-height: 1.4;
+    font-size: clamp(18px, 2.4vw, 26px);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.55;
     letter-spacing: 0.02em;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
     max-width: 720px;
   }
   .service__catch .num {
@@ -2177,34 +2220,81 @@ const faqs = [
     color: var(--paper);
   }
 
-  /* 詳細トグル */
+  /* 詳細トグル：「ここから先は」型・上方に背景色フェード */
   .service__details {
-    margin-top: 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    padding-top: 8px;
+    position: relative;
+    margin-top: 32px;
+  }
+  .service__details:not([open])::before {
+    content: "";
+    position: absolute;
+    left: -100vw;
+    right: -100vw;
+    bottom: 100%;
+    height: 110px;
+    background: linear-gradient(180deg, transparent 0%, var(--accent) 100%);
+    pointer-events: none;
+    z-index: 1;
   }
   .service__details > summary {
+    position: relative;
+    z-index: 2;
     list-style: none;
     cursor: pointer;
-    font-size: 13.5px;
-    font-weight: 700;
-    color: var(--paper);
-    letter-spacing: 0.06em;
-    padding: 16px 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    text-align: center;
+    gap: 4px;
+    padding: 22px 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.4);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+    transition: opacity 0.2s;
   }
   .service__details > summary::-webkit-details-marker { display: none; }
-  .service__details > summary::before {
-    content: "＋";
-    font-size: 18px;
-    width: 1em;
-    text-align: center;
-    transition: transform 0.2s;
+  .service__details > summary:hover { opacity: 0.85; }
+  .service__details > summary .more-label {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--paper);
+    letter-spacing: 0.1em;
   }
-  .service__details[open] > summary::before { content: "−"; }
-  .service__details > summary:hover { opacity: 0.8; }
+  .service__details > summary .more-detail {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.82);
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+  }
+  .service__details > summary .more-arrow {
+    margin-top: 6px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: transform 0.25s ease;
+  }
+  .service__details[open] > summary .more-arrow {
+    transform: rotate(180deg);
+  }
+  .service__story--continued {
+    margin-top: 28px;
+  }
+  .service__story--continued p {
+    margin-bottom: 0;
+  }
+  /* details 内に持ち上がった meta/forwhom の余白調整 */
+  .service__details > .service__meta {
+    margin-top: 28px;
+  }
+  .service__details > .service__forwhom {
+    margin-top: 24px;
+  }
+  /* details 内 CtaButton wrap のmargin上書き */
+  .service__details :global(.cta-wrap) {
+    margin: 36px auto 0;
+    max-width: 420px;
+    padding: 0;
+  }
 
   .service__details-section { margin: 12px 0 28px; }
   .service__details-section h4 {
@@ -2321,43 +2411,26 @@ const faqs = [
     line-height: 1.8;
   }
 
-  /* CTA：トグル内専用・控えめサイズ */
-  .service__cta--in-details {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 8px;
-    background: var(--paper);
-    color: var(--accent-deep, var(--accent));
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    padding: 12px 22px;
-    border-radius: 8px;
-    transition: opacity 0.2s;
-  }
-  .service__cta--in-details:hover { opacity: 0.85; }
-  .service__cta--in-details span {
-    font-size: 1.2em;
-    line-height: 1;
-  }
 
   @media (max-width: 768px) {
     .service { margin: 0; }
     .service:first-of-type { margin-top: 32px; }
     .service + .service { margin-top: 0; }
-    .service__hero { aspect-ratio: 4 / 3; }
+    .service__hero { aspect-ratio: 4 / 4.4; }
     .service__hero-photo { object-position: right center; }
     .service__hero-tint {
       background: linear-gradient(180deg,
-        transparent 0%,
+        color-mix(in srgb, var(--accent) 60%, transparent) 0%,
+        transparent 28%,
         transparent 50%,
         color-mix(in srgb, var(--accent) 55%, transparent) 80%,
         var(--accent) 100%);
     }
-    .service__hero-content { justify-content: flex-end; padding-bottom: 8px; }
-    .service__num { top: 8px; left: -4px; font-size: 160px; }
-    .service__eyebrow { font-size: 11px; padding: 5px 12px; margin-bottom: 14px; }
+    .service__hero-content { padding: 24px 0 18px; }
+    .service__num { top: -16px; right: -8px; font-size: 140px; }
+    .service__name { font-size: clamp(28px, 7.4vw, 40px); }
+    .service__catch { font-size: 16px; }
+    .service__eyebrow { font-size: 11px; padding: 5px 12px; margin-bottom: 12px; }
     .service__body { padding: 36px 0 48px; }
     .service__story p { font-size: 14.5px; line-height: 1.95; margin-bottom: 18px; }
     .service__meta { gap: 16px 24px; padding: 16px 0; margin: 22px 0; }
@@ -2373,7 +2446,8 @@ const faqs = [
     .service__course dl dt { font-size: 11px; }
     .service__course dl dd { font-size: 12.5px; }
     .service__steps li { font-size: 13.5px; }
-    .service__cta--in-details { font-size: 13.5px; padding: 11px 18px; }
+    .service__details > summary .more-label { font-size: 15.5px; }
+    .service__details > summary .more-detail { font-size: 11.5px; }
   }
 
   /* =========================================
