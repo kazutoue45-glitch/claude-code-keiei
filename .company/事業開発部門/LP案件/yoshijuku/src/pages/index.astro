@@ -2571,15 +2571,17 @@ const faqs = [
   .teacher-feat:first-of-type { margin-top: 40px; }
   .teacher-feat + .teacher-feat { margin-top: 32px; }
 
-  /* 写真はそのまま見せる（過去 section-teachers.jpg で「白オーバーレイで画像消える」却下済）
-     文字読みやすさは text-shadow と局所的な紫ティント（メッセージ等）で確保 */
+  /* 紫overlay：義塾ブランド色の purple-deep（フッターと同色）で写真全体に。
+     §3 リアル校舎の紫(#4C1D95)サービス色塗り全面とは別色で差別化。
+     上下を濃く・中央を薄くして写真質感を中央に残す */
   .teacher-feat__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.18) 0%,
-      rgba(255, 255, 255, 0.12) 40%,
-      rgba(255, 255, 255, 0.08) 100%);
+      rgba(26, 15, 46, 0.7) 0%,
+      rgba(26, 15, 46, 0.42) 30%,
+      rgba(26, 15, 46, 0.42) 65%,
+      rgba(26, 15, 46, 0.78) 100%);
     pointer-events: none;
   }
 
@@ -2609,7 +2611,7 @@ const faqs = [
   }
   .teacher-feat__icon--placeholder {
     background: linear-gradient(135deg, var(--paper) 0%, var(--purple-soft) 100%);
-    border: 2px solid var(--paper);
+    border: 2px solid rgba(255, 255, 255, 0.92);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2632,128 +2634,129 @@ const faqs = [
     max-width: 100%;
     font-size: 11.5px;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
     color: var(--paper);
-    background: var(--purple);
+    background: rgba(255, 255, 255, 0.18);
     padding: 5px 12px;
     border-radius: 999px;
+    backdrop-filter: blur(6px);
   }
   .teacher-feat__name {
     font-family: var(--font-serif);
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 900;
-    color: var(--purple);
+    color: var(--paper);
     line-height: 1.2;
     letter-spacing: 0.04em;
     margin: 4px 0 0;
-    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.85);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
   }
   .teacher-feat__name-en {
     display: block;
     font-size: 12px;
-    color: var(--purple);
+    color: rgba(255, 255, 255, 0.82);
     letter-spacing: 0.22em;
     margin-top: 2px;
-    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.85);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
 
-  /* 引用キャッチ：紫の太い縦バーと共に画面上に強くオーバーレイ */
+  /* 引用キャッチ：写真の上に直接白文字、左にオレンジバーで義塾アクセント */
   .teacher-feat__quote {
-    position: relative;
     font-family: var(--font-serif);
     font-size: clamp(20px, 2.8vw, 28px);
     font-weight: 700;
-    color: var(--purple);
+    color: var(--paper);
     line-height: 1.65;
     letter-spacing: 0.02em;
-    padding: 18px 22px;
-    background: rgba(255, 255, 255, 0.78);
-    border-left: 4px solid var(--purple);
-    backdrop-filter: blur(2px);
+    padding-left: 18px;
+    border-left: 3px solid var(--orange);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
   }
   .teacher-feat__quote .num {
-    color: var(--purple);
+    color: var(--paper);
     font-size: 1.05em;
     margin: 0 0.04em;
   }
 
-  /* 本文：写真の上で読みやすいよう薄い白フィルム背景＋黒文字 */
-  .teacher-feat__bio {
-    padding: 22px 24px;
-    background: rgba(255, 255, 255, 0.72);
-    border-left: 3px solid var(--purple-line);
-    backdrop-filter: blur(2px);
-  }
+  /* 本文：写真の上に直接白文字、text-shadow で読ませる */
   .teacher-feat__bio p {
     font-size: 15.5px;
-    line-height: 2.1;
-    color: var(--charcoal);
+    line-height: 2.05;
+    color: var(--paper);
     margin-bottom: 14px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   }
   .teacher-feat__bio p:last-child { margin-bottom: 0; }
-
-  /* リストブロックも同じく薄白フィルム */
-  .teacher-feat__section {
-    padding: 22px 24px;
-    background: rgba(255, 255, 255, 0.72);
-    border-left: 3px solid var(--purple-line);
-    backdrop-filter: blur(2px);
+  .teacher-feat__bio .mark {
+    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.6) 60%);
+    color: var(--paper);
+    font-weight: 700;
+    padding: 0 2px;
   }
+
+  /* セクション見出しブロック：写真の上に直接、白文字 */
+  .teacher-feat__section + .teacher-feat__section { margin-top: 8px; }
   .teacher-feat__h4 {
     font-family: var(--font-sans);
     font-size: 12px;
     font-weight: 800;
-    color: var(--purple);
+    color: var(--paper);
     letter-spacing: 0.22em;
     margin-bottom: 14px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--purple);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.55);
     text-transform: uppercase;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .teacher-feat__list li {
     display: flex;
     flex-direction: column;
     gap: 3px;
     padding: 10px 0;
-    border-bottom: 1px dashed rgba(76, 29, 149, 0.25);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.28);
   }
   .teacher-feat__list li:last-child { border-bottom: none; }
   .teacher-feat__list span {
     font-size: 14.5px;
     font-weight: 700;
-    color: var(--purple);
+    color: var(--paper);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .teacher-feat__list small {
     font-size: 12.5px;
-    color: var(--charcoal-soft);
+    color: rgba(255, 255, 255, 0.86);
     line-height: 1.75;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .teacher-feat__list--simple li {
     display: list-item;
     padding: 7px 0 7px 18px;
     border-bottom: none;
     font-size: 14px;
-    color: var(--charcoal);
+    color: var(--paper);
     line-height: 1.85;
     position: relative;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .teacher-feat__list--simple li::before {
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--purple);
+    color: var(--orange);
     font-weight: 900;
   }
 
-  /* メッセージ：紫を全面に効かせた塾長からの呼びかけブロック */
+  /* メッセージ：オレンジ左bar + 白文字、義塾の主役色を引き締める */
   .teacher-feat__message {
-    padding: 22px 26px;
-    background: var(--purple);
+    padding: 18px 22px;
+    background: rgba(26, 15, 46, 0.55);
     color: var(--paper);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.95;
     border-left: 4px solid var(--orange);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
   }
 
   @media (max-width: 768px) {
