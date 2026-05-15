@@ -422,14 +422,39 @@ const faqs = [
               </ul>
             </div>
 
-            <div class="service__details-section">
-              <h4>校舎（新築一戸建てを改装した3教室）</h4>
-              <ul>
-                <li>第一教室：クラス授業用の大きめの教室</li>
-                <li>第二教室：1枚板の机がある個別指導教室</li>
-                <li>第三教室：多目的に使用</li>
-              </ul>
-            </div>
+            <section class="service__memories">
+              <h4 class="service__memories-title">義塾を、<br />学生時代の思い出の場所に。</h4>
+              <p class="service__memories-lead">勉強の点数を上げるだけが、塾の役割ではないと考えています。お子様が大人になったとき、「あの教室で、先生や仲間と一緒に頑張った」と<strong>ふと思い出せる場所</strong>であってほしい——塾長の小川と9人の講師陣が、そんな想いで毎日この校舎の灯りをともしています。</p>
+
+              <div class="service__memories-scroll" role="region" aria-label="校舎の写真（横スクロール）">
+                <figure class="service__memory-photo">
+                  <img src={`${base}images/building-sign.jpg`} alt="義塾のエントランスサイン" loading="lazy" />
+                  <figcaption>
+                    <span class="service__memory-photo-no">01</span>
+                    <span class="service__memory-photo-label">エントランス</span>
+                  </figcaption>
+                </figure>
+                <figure class="service__memory-photo">
+                  <img src={`${base}images/room-class.jpg`} alt="第1教室／クラス授業用の教室" loading="lazy" />
+                  <figcaption>
+                    <span class="service__memory-photo-no">02</span>
+                    <span class="service__memory-photo-label">第1教室／クラス授業</span>
+                  </figcaption>
+                </figure>
+                <figure class="service__memory-photo">
+                  <img src={`${base}images/room-individual.jpg`} alt="第2教室／個別指導の教室" loading="lazy" />
+                  <figcaption>
+                    <span class="service__memory-photo-no">03</span>
+                    <span class="service__memory-photo-label">第2教室／個別指導</span>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <p class="service__memories-caption">
+                新築一戸建てを改装した3教室（クラス授業用／個別指導用／多目的）。<br />
+                体験授業の際に、ぜひ実際の教室をご覧ください。
+              </p>
+            </section>
 
             <CtaButton text="公式LINEで無料相談する" href="#" id="cta-service-real" />
           </details>
@@ -652,49 +677,6 @@ const faqs = [
 
   {/* CTA ③ 3サービス比較末尾 */}
   <CtaButton text="塾長に無料相談する" href="#" id="cta-3" />
-
-  {/* ============ §4 校舎紹介＋「思い出の場所に」 ============ */}
-  <section class="section section--purple-pale campus">
-    <div class="container">
-      <SectionHeader
-        title="義塾を、<br />学生時代の思い出の場所に。"
-        lead="勉強の点数を上げるだけが、塾の役割ではないと考えています。<br />お子様が大人になったとき、「あの教室で、先生や仲間と一緒に頑張った」と<strong class='text-orange'>ふと思い出せる場所</strong>であってほしい——塾長の小川と9人の講師陣が、そんな想いで毎日この校舎の灯りをともしています。"
-      />
-
-      <div class="campus__hero">
-        <figure class="campus__photo campus__photo--hero">
-          <img src={`${base}images/building-sign.jpg`} alt="義塾のエントランスサイン" loading="lazy" />
-          <figcaption>
-            <span class="campus__photo-no">01</span>
-            <span class="campus__photo-label">エントランス</span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="campus__rooms">
-        <figure class="campus__photo">
-          <img src={`${base}images/room-class.jpg`} alt="第1教室／クラス授業用の教室" loading="lazy" />
-          <figcaption>
-            <span class="campus__photo-no">02</span>
-            <span class="campus__photo-label">第1教室／クラス授業</span>
-          </figcaption>
-        </figure>
-
-        <figure class="campus__photo">
-          <img src={`${base}images/room-individual.jpg`} alt="第2教室／個別指導の教室" loading="lazy" />
-          <figcaption>
-            <span class="campus__photo-no">03</span>
-            <span class="campus__photo-label">第2教室／個別指導</span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <p class="campus__caption">
-        新築一戸建てを改装した、落ち着いて学べる学習空間です。<br />
-        体験授業の際に、ぜひ実際の教室をご覧ください。
-      </p>
-    </div>
-  </section>
 
   {/* ============ §5 生徒・保護者の声（仮値） ============ */}
   <section class="section section--bg section--bg-voices voices">
@@ -2450,102 +2432,108 @@ const faqs = [
   }
 
   /* =========================================
-     §4 校舎紹介＋「思い出の場所に」
-     （3カラムgridを廃止、フルブリードヒーロー+下に2枚並列の非対称構成）
+     §3 リアル校舎 details 内：「思い出の場所に」ブロック
+     （旧 §4 を統合・写真は横スクロール snap で縦長を回避）
      ========================================= */
-  .campus__hero {
-    margin-top: 32px;
-    border-radius: var(--radius-md);
-    overflow: hidden;
+  .service__memories {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
   }
-
-  .campus__rooms {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .service__memories-title {
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 2.6vw, 28px);
+    font-weight: 900;
+    color: var(--paper);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+  }
+  .service__memories-lead {
+    font-size: 14.5px;
+    line-height: 1.95;
+    color: rgba(255, 255, 255, 0.94);
+    margin-bottom: 24px;
+  }
+  .service__memories-lead strong {
+    color: var(--paper);
+    font-weight: 700;
+    background: linear-gradient(transparent 60%, rgba(255, 215, 100, 0.4) 60%);
+    padding: 0 2px;
+  }
+  /* 横スクロール写真ギャラリー */
+  .service__memories-scroll {
+    display: flex;
     gap: 12px;
-    margin-top: 12px;
-    border-radius: var(--radius-md);
-    overflow: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* containerのpaddingを越えてフルブリード気味に */
+    margin: 0 -16px;
+    padding: 0 16px 14px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.18);
   }
-
-  .campus__photo {
-    position: relative;
+  .service__memories-scroll::-webkit-scrollbar { height: 6px; }
+  .service__memories-scroll::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.18); border-radius: 3px; }
+  .service__memories-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.4); border-radius: 3px; }
+  .service__memory-photo {
+    flex: 0 0 78%;
+    max-width: 360px;
+    scroll-snap-align: start;
     margin: 0;
+    position: relative;
+    border-radius: 8px;
     overflow: hidden;
-    background: var(--pale-gray);
+    background: rgba(0, 0, 0, 0.18);
     aspect-ratio: 4 / 3;
   }
-
-  .campus__photo--hero {
-    aspect-ratio: 16 / 8;
-  }
-
-  .campus__photo img {
-    transition: transform 0.6s;
-  }
-
-  .campus__photo:hover img {
-    transform: scale(1.05);
-  }
-
-  .campus__photo img {
+  .service__memory-photo img {
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
-    image-orientation: from-image;
+    display: block;
   }
-
-  .campus__photo figcaption {
+  .service__memory-photo figcaption {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     display: flex;
     align-items: baseline;
-    gap: 12px;
-    padding: 32px 20px 18px;
-    background: linear-gradient(180deg, rgba(26, 15, 46, 0) 0%, rgba(26, 15, 46, 0.85) 70%);
+    gap: 10px;
+    padding: 24px 14px 12px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
     color: var(--paper);
   }
-
-  .campus__photo-no {
+  .service__memory-photo-no {
     font-family: var(--font-serif);
-    font-weight: 700;
+    font-weight: 900;
     font-size: 22px;
-    color: var(--gold-light);
-    letter-spacing: 0.04em;
     line-height: 1;
+    color: rgba(255, 215, 100, 0.95);
   }
-
-  .campus__photo-label {
+  .service__memory-photo-label {
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
-
-  .campus__caption {
-    margin-top: 56px;
-    font-size: 15px;
-    color: var(--charcoal-soft);
-    line-height: 2.1;
-    letter-spacing: 0.02em;
+  .service__memories-caption {
+    margin-top: 16px;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.86);
   }
 
-  @media (max-width: 900px) {
-    .campus__photo--hero { aspect-ratio: 16 / 10; }
-  }
-
-  @media (max-width: 540px) {
-    .campus__hero { margin-top: 24px; }
-    .campus__rooms {
-      grid-template-columns: 1fr;
-      gap: 8px;
+  @media (min-width: 769px) {
+    .service__memory-photo {
+      flex: 0 0 320px;
+      max-width: 380px;
     }
-    .campus__photo--hero { aspect-ratio: 4 / 3; }
-    .campus__photo { aspect-ratio: 4 / 3; }
-    .campus__caption { font-size: 14px; margin-top: 36px; }
+  }
+  @media (max-width: 540px) {
+    .service__memory-photo { flex-basis: 84%; }
   }
 
   /* =========================================
