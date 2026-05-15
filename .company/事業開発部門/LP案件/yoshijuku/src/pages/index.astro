@@ -2571,16 +2571,15 @@ const faqs = [
   .teacher-feat:first-of-type { margin-top: 40px; }
   .teacher-feat + .teacher-feat { margin-top: 32px; }
 
-  /* 白フォグ overlay：写真質感を残しつつ全テキストの可読性確保
-     accent色は使わず、暗くしない */
+  /* 写真はそのまま見せる（過去 section-teachers.jpg で「白オーバーレイで画像消える」却下済）
+     文字読みやすさは text-shadow と局所的な紫ティント（メッセージ等）で確保 */
   .teacher-feat__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.88) 0%,
-      rgba(255, 255, 255, 0.80) 30%,
-      rgba(255, 255, 255, 0.76) 60%,
-      rgba(255, 255, 255, 0.86) 100%);
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.12) 40%,
+      rgba(255, 255, 255, 0.08) 100%);
     pointer-events: none;
   }
 
@@ -2634,7 +2633,10 @@ const faqs = [
     font-size: 11.5px;
     font-weight: 700;
     letter-spacing: 0.16em;
-    color: var(--orange);
+    color: var(--paper);
+    background: var(--purple);
+    padding: 5px 12px;
+    border-radius: 999px;
   }
   .teacher-feat__name {
     font-family: var(--font-serif);
@@ -2644,23 +2646,30 @@ const faqs = [
     line-height: 1.2;
     letter-spacing: 0.04em;
     margin: 4px 0 0;
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.85);
   }
   .teacher-feat__name-en {
     display: block;
     font-size: 12px;
-    color: var(--muted);
+    color: var(--purple);
     letter-spacing: 0.22em;
     margin-top: 2px;
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.85);
   }
+
+  /* 引用キャッチ：紫の太い縦バーと共に画面上に強くオーバーレイ */
   .teacher-feat__quote {
+    position: relative;
     font-family: var(--font-serif);
     font-size: clamp(20px, 2.8vw, 28px);
     font-weight: 700;
     color: var(--purple);
-    line-height: 1.6;
+    line-height: 1.65;
     letter-spacing: 0.02em;
-    padding-left: 18px;
-    border-left: 3px solid var(--purple);
+    padding: 18px 22px;
+    background: rgba(255, 255, 255, 0.78);
+    border-left: 4px solid var(--purple);
+    backdrop-filter: blur(2px);
   }
   .teacher-feat__quote .num {
     color: var(--purple);
@@ -2668,6 +2677,13 @@ const faqs = [
     margin: 0 0.04em;
   }
 
+  /* 本文：写真の上で読みやすいよう薄い白フィルム背景＋黒文字 */
+  .teacher-feat__bio {
+    padding: 22px 24px;
+    background: rgba(255, 255, 255, 0.72);
+    border-left: 3px solid var(--purple-line);
+    backdrop-filter: blur(2px);
+  }
   .teacher-feat__bio p {
     font-size: 15.5px;
     line-height: 2.1;
@@ -2676,7 +2692,13 @@ const faqs = [
   }
   .teacher-feat__bio p:last-child { margin-bottom: 0; }
 
-  .teacher-feat__section + .teacher-feat__section { margin-top: 8px; }
+  /* リストブロックも同じく薄白フィルム */
+  .teacher-feat__section {
+    padding: 22px 24px;
+    background: rgba(255, 255, 255, 0.72);
+    border-left: 3px solid var(--purple-line);
+    backdrop-filter: blur(2px);
+  }
   .teacher-feat__h4 {
     font-family: var(--font-sans);
     font-size: 12px;
@@ -2719,15 +2741,15 @@ const faqs = [
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--orange);
+    color: var(--purple);
     font-weight: 900;
   }
 
+  /* メッセージ：紫を全面に効かせた塾長からの呼びかけブロック */
   .teacher-feat__message {
-    margin-top: 8px;
-    padding: 22px 24px;
-    background: rgba(255, 255, 255, 0.6);
-    color: var(--purple);
+    padding: 22px 26px;
+    background: var(--purple);
+    color: var(--paper);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.95;
