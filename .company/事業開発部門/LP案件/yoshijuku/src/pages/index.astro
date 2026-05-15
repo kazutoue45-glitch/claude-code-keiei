@@ -718,8 +718,8 @@ const faqs = [
         <div class="teacher-feat__hero-content">
           <div class="container">
             <header class="teacher-feat__head">
-              <div class="teacher-feat__icon teacher-feat__icon--placeholder" aria-label="小川先生（実写写真：クライアント手配中）">
-                <span>小</span>
+              <div class="teacher-feat__icon">
+                <img src={`${base}images/teacher-ogawa.png`} alt="小川 大輔 塾長" loading="lazy" />
               </div>
               <div class="teacher-feat__title-block">
                 <span class="teacher-feat__role">塾長／義塾代表</span>
@@ -770,8 +770,8 @@ const faqs = [
         <div class="teacher-feat__hero-content">
           <div class="container">
             <header class="teacher-feat__head">
-              <div class="teacher-feat__icon teacher-feat__icon--placeholder" aria-label="國府先生（実写写真：クライアント手配中）">
-                <span>國</span>
+              <div class="teacher-feat__icon teacher-feat__icon--illustration">
+                <img src={`${base}images/teacher-kokufu.png`} alt="國府 泰 担当講師" loading="lazy" />
               </div>
               <div class="teacher-feat__title-block">
                 <span class="teacher-feat__role">義塾オンライン｜英検・TOEIC対策講座 担当</span>
@@ -2627,19 +2627,21 @@ const faqs = [
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
   }
-  .teacher-feat__icon--placeholder {
-    background: linear-gradient(135deg, var(--paper) 0%, var(--purple-soft) 100%);
+  .teacher-feat__icon {
+    background: var(--paper);
     border: 2px solid rgba(255, 255, 255, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  .teacher-feat__icon--placeholder span {
-    font-family: var(--font-serif);
-    font-size: 50px;
-    font-weight: 900;
-    color: var(--purple);
-    line-height: 1;
+  .teacher-feat__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* 國府先生の線画イラストアイコンは余白を作って表示（cover でなく contain で） */
+  .teacher-feat__icon--illustration img {
+    object-fit: contain;
+    padding: 4px;
+    background: var(--paper);
   }
   .teacher-feat__title-block {
     display: flex;
