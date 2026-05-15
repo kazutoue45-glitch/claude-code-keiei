@@ -5,7 +5,6 @@ import ServiceCard from "../components/ServiceCard.astro";
 import ReasonCard from "../components/ReasonCard.astro";
 import ServiceCompareTable from "../components/ServiceCompareTable.astro";
 import VoiceCard from "../components/VoiceCard.astro";
-import TeacherCard from "../components/TeacherCard.astro";
 import PriceTable from "../components/PriceTable.astro";
 import PricePlan from "../components/PricePlan.astro";
 import QaItem from "../components/QaItem.astro";
@@ -711,50 +710,38 @@ const faqs = [
         title="お子様の未来に、本気で寄り添う<span class='num'>9</span>人の講師陣。"
         lead="義塾は、ただ勉強を教える場所ではありません。お子様一人ひとりの個性と目標に向き合い、<span class='mark'>「行きたい学校に行ける」</span>「学ぶことが好きになる」未来を、ベテランから若手まで、多様な経歴を持つ<span class='num'>9</span>名の講師陣と一緒に、本気で支える場所です。<br /><br />ここでは、義塾を率いる<strong class='text-orange'>塾長</strong>と、オンライン講座を担当する<strong class='text-orange'>英語スペシャリスト</strong>の<span class='num'>2</span>名をご紹介します。"
       />
-      <div class="teachers__grid">
-        <TeacherCard
-          name="小川 大輔"
-          nameEn="OGAWA Daisuke"
-          title="塾長／義塾代表"
-          quote="教育とエンタメを融合し、みんながワクワクするイベントを企画運営します"
-          bioParagraphs={[
-            "学歴：四條畷高校 → 大阪大学理学部物理学科卒業。",
-            "大手食品メーカーで約5年間勤務後、学習塾講師へ。12年間の講師経験を経て、2020年に新規校舎設立、2022年に新ブランド設立、2024年に日本を教育で元気にすべく小川探究を創設。",
-          ]}
-          achievements={[
-            { label: "小川探究 代表", desc: "探究教育のフロントランナー" },
-            { label: "プレゼン大会主催", desc: "次世代の表現者を育成する舞台を創出" },
-            { label: "「就プレ」講師", desc: "就活生へのプレゼン指導で実績多数" },
-            { label: "教育現場での指導", desc: "私立高校でのプレゼン授業を担当" },
-          ]}
-          message="公式LINEで、塾長の私と直接お話しできます。どんな小さな不安でも、まずはご相談ください。"
-        />
-        <TeacherCard
-          name="國府 泰"
-          nameEn="KOKUFU Yasushi"
-          title="義塾オンライン｜英検・TOEIC対策講座 担当"
-          quote="TOEIC23回連続満点。英語の壁を、論理で確実に超えさせます"
-          bioParagraphs={[
-            "大手予備校にて講師としての歩みを始める。高校・大学・医学部予備校で20年間指導。現在も赤本の執筆や入試問題作成に携わり続ける、受験英語の第一線を知るスペシャリスト。",
-            "TOEIC23回連続満点・英検1級を保持する圧倒的な英語力を武器に、京大・阪大をはじめとする最難関大学へ数多くの門下生を輩出。現在は義塾にて、少人数制の指導とオンライン講座を展開中。",
-          ]}
-          achievements={[
-            { label: "TOEIC 990点 23回連続取得", desc: "国内屈指の精緻な英語分析力" },
-            { label: "「English Booster」開発者", desc: "論理的再構築による独自メソッド" },
-            { label: "予備校20年・赤本執筆", desc: "京大・阪大など最難関大へ多数輩出" },
-            { label: "英検1級・超精密指導", desc: "高度な英作文・読解指導に定評" },
-          ]}
-        />
-      </div>
+      <article class="teacher-row">
+        <header class="teacher-row__head">
+          <div class="teacher-row__photo teacher-row__photo--placeholder" aria-label="小川先生（実写写真：クライアント手配中）">
+            <span class="teacher-row__initial">小</span>
+          </div>
+          <div class="teacher-row__name-block">
+            <h3 class="teacher-row__name">小川 大輔</h3>
+            <span class="teacher-row__name-en">OGAWA Daisuke</span>
+            <p class="teacher-row__title">塾長／義塾代表</p>
+          </div>
+        </header>
 
-      {/* §7.5 メディア・登壇実績（仮値・要差し替え） */}
-      <div class="media">
-        <h3 class="media__title">メディア・登壇実績</h3>
-        <!-- 要確認: 実際のメディア掲載・登壇先・年月をクライアントから取得して差し替え -->
+        <blockquote class="teacher-row__quote">「教育とエンタメを融合し、みんながワクワクするイベントを企画運営します」</blockquote>
 
-        <div class="media__group">
-          <h4 class="media__group-label">小川 大輔 塾長｜登壇・指導実績</h4>
-          <ul class="media__list">
+        <div class="teacher-row__bio">
+          <p>四條畷高校から大阪大学理学部物理学科を卒業。大手食品メーカーで約5年間勤務後、学習塾講師へ。<span class="num">12</span>年間の講師経験を経て、2020年に新規校舎設立、2022年に新ブランド設立、2024年に日本を教育で元気にすべく小川探究を創設。</p>
+        </div>
+
+        <div class="teacher-row__section">
+          <h4 class="teacher-row__section-title">専門・取り組み</h4>
+          <ul class="teacher-row__list">
+            <li><span>小川探究 代表</span><small>探究教育のフロントランナー</small></li>
+            <li><span>プレゼン大会主催</span><small>次世代の表現者を育成する舞台を創出</small></li>
+            <li><span>「就プレ」講師</span><small>就活生へのプレゼン指導で実績多数</small></li>
+            <li><span>教育現場での指導</span><small>私立高校でのプレゼン授業を担当</small></li>
+          </ul>
+        </div>
+
+        <div class="teacher-row__section">
+          <h4 class="teacher-row__section-title">登壇・指導実績</h4>
+          <!-- 要確認: 年月・掲載先・回数等をクライアントから取得 -->
+          <ul class="teacher-row__list teacher-row__list--simple">
             <li>私立高校 プレゼンテーション授業 登壇</li>
             <li>「就プレ」就活生向けプレゼン指導講師</li>
             <li>プレゼン大会 主催・審査員</li>
@@ -762,22 +749,48 @@ const faqs = [
           </ul>
         </div>
 
-        <div class="media__group">
-          <h4 class="media__group-label">國府 泰 担当講師｜実績</h4>
-          <ul class="media__list">
+        <p class="teacher-row__message">公式LINEで、塾長の私と直接お話しできます。どんな小さな不安でも、まずはご相談ください。</p>
+      </article>
+
+      <article class="teacher-row">
+        <header class="teacher-row__head">
+          <div class="teacher-row__photo teacher-row__photo--placeholder" aria-label="國府先生（実写写真：クライアント手配中）">
+            <span class="teacher-row__initial">國</span>
+          </div>
+          <div class="teacher-row__name-block">
+            <h3 class="teacher-row__name">國府 泰</h3>
+            <span class="teacher-row__name-en">KOKUFU Yasushi</span>
+            <p class="teacher-row__title">義塾オンライン｜英検・TOEIC対策講座 担当</p>
+          </div>
+        </header>
+
+        <blockquote class="teacher-row__quote">「TOEIC<span class="num">23</span>回連続満点。英語の壁を、論理で確実に超えさせます」</blockquote>
+
+        <div class="teacher-row__bio">
+          <p>大手予備校にて講師としての歩みを始め、高校・大学・医学部予備校で<span class="num">20</span>年間指導。現在も赤本の執筆や入試問題作成に携わり続ける、受験英語の第一線を知るスペシャリスト。</p>
+          <p>TOEIC<span class="num">23</span>回連続満点・英検<span class="num">1</span>級を保持する圧倒的な英語力を武器に、京大・阪大をはじめとする最難関大学へ数多くの門下生を輩出。現在は義塾にて、少人数制の指導とオンライン講座を展開中。</p>
+        </div>
+
+        <div class="teacher-row__section">
+          <h4 class="teacher-row__section-title">専門・取り組み</h4>
+          <ul class="teacher-row__list">
+            <li><span>TOEIC 990点 23回連続取得</span><small>国内屈指の精緻な英語分析力</small></li>
+            <li><span>「English Booster」開発者</span><small>論理的再構築による独自メソッド</small></li>
+            <li><span>予備校20年・赤本執筆</span><small>京大・阪大など最難関大へ多数輩出</small></li>
+            <li><span>英検1級・超精密指導</span><small>高度な英作文・読解指導に定評</small></li>
+          </ul>
+        </div>
+
+        <div class="teacher-row__section">
+          <h4 class="teacher-row__section-title">登壇・指導実績</h4>
+          <!-- 要確認: 年月・掲載先・回数等をクライアントから取得 -->
+          <ul class="teacher-row__list teacher-row__list--simple">
             <li>大手予備校 主任講師として20年指導</li>
             <li>赤本（過去問題集）執筆協力</li>
             <li>入試問題作成協力</li>
           </ul>
         </div>
-
-        <div class="media__group">
-          <h4 class="media__group-label">メディア掲載</h4>
-          <p class="media__pending">
-            ※ 地域情報誌・WEBメディア掲載先は調整中です。<!-- 要確認: 掲載媒体・年月 -->
-          </p>
-        </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -2534,79 +2547,152 @@ const faqs = [
   }
 
   /* =========================================
-     §7 講師紹介＋メディア・登壇実績
+     §6 講師紹介（カードUI廃止・エディトリアル横帯型）
+     メディア・登壇実績は別ブロックを廃止して各講師の section として統合
      ========================================= */
-  .teachers__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 24px;
+  .teacher-row {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
   }
+  .teacher-row:first-of-type { margin-top: 32px; }
+  .teacher-row:last-of-type { border-bottom: 1px solid var(--line); }
 
-  @media (max-width: 900px) {
-    .teachers__grid { grid-template-columns: 1fr; gap: 12px; }
+  .teacher-row__head {
+    display: flex;
+    align-items: center;
+    gap: 24px;
   }
-
-  .media {
-    margin-top: 96px;
-    padding: 48px 40px;
-    background: var(--pale-gray);
-    border-radius: var(--radius-md);
+  .teacher-row__photo {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
   }
-
-  .media__title {
-    font-size: 18px;
+  .teacher-row__photo--placeholder {
+    background: linear-gradient(135deg, var(--pale-gray) 0%, var(--purple-soft) 100%);
+    border: 1px dashed var(--purple-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .teacher-row__initial {
+    font-family: var(--font-serif);
+    font-size: 38px;
+    font-weight: 900;
     color: var(--purple);
-    margin-bottom: 32px;
-    padding-bottom: 14px;
-    border-bottom: 2px solid var(--purple-line);
+    line-height: 1;
+  }
+  .teacher-row__name {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    color: var(--purple);
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+  }
+  .teacher-row__name-en {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    margin-bottom: 6px;
+  }
+  .teacher-row__title {
+    font-size: 12.5px;
+    color: var(--orange);
+    font-weight: 700;
     letter-spacing: 0.06em;
   }
 
-  .media__group {
-    margin-bottom: 28px;
-  }
-
-  .media__group:last-child { margin-bottom: 0; }
-
-  .media__group-label {
-    font-size: 13px;
+  .teacher-row__quote {
+    font-family: var(--font-serif);
+    font-size: 19px;
     font-weight: 700;
     color: var(--purple);
-    margin-bottom: 12px;
-    padding-left: 12px;
-    border-left: 3px solid var(--orange);
+    line-height: 1.75;
+    padding-left: 18px;
+    border-left: 3px solid var(--purple);
   }
 
-  .media__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .media__list li {
-    background: var(--paper);
-    border: 1px solid var(--line);
+  .teacher-row__bio p {
+    font-size: 14.5px;
+    line-height: 2;
     color: var(--charcoal-soft);
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+  }
+  .teacher-row__bio p:last-child { margin-bottom: 0; }
+
+  .teacher-row__section-title {
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--purple);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
   }
 
-  .media__pending {
-    font-size: 12px;
+  .teacher-row__list li {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .teacher-row__list li:last-child { border-bottom: none; }
+  .teacher-row__list span {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--purple);
+  }
+  .teacher-row__list small {
+    font-size: 12.5px;
     color: var(--muted);
     line-height: 1.7;
-    padding: 12px 16px;
-    background: var(--paper);
-    border-radius: var(--radius-sm);
-    border: 1px dashed var(--line);
+  }
+  .teacher-row__list--simple li {
+    display: list-item;
+    padding: 6px 0 6px 16px;
+    border-bottom: none;
+    font-size: 14px;
+    color: var(--charcoal-soft);
+    line-height: 1.85;
+    position: relative;
+  }
+  .teacher-row__list--simple li::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-weight: 900;
+  }
+
+  .teacher-row__message {
+    margin-top: 4px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--line);
+    font-size: 14px;
+    line-height: 2;
+    color: var(--charcoal-soft);
   }
 
   @media (max-width: 768px) {
-    .media { padding: 28px 20px; margin-top: 56px; }
-    .media__title { font-size: 16px; }
+    .teacher-row { padding: 36px 0; gap: 22px; }
+    .teacher-row:first-of-type { margin-top: 20px; }
+    .teacher-row__head { gap: 16px; }
+    .teacher-row__photo { width: 76px; height: 76px; }
+    .teacher-row__initial { font-size: 30px; }
+    .teacher-row__name { font-size: 22px; }
+    .teacher-row__quote { font-size: 16.5px; padding-left: 14px; }
+    .teacher-row__bio p { font-size: 14px; line-height: 1.95; }
+    .teacher-row__list span { font-size: 13.5px; }
+    .teacher-row__list small { font-size: 12px; }
+    .teacher-row__list--simple li { font-size: 13.5px; }
   }
 
   /* =========================================
