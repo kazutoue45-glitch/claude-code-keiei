@@ -344,7 +344,6 @@ const faqs = [
         lead="成績が伸びないのは、お子様の能力ではなく、<span class='mark'>学び方が合っていないだけ</span>かもしれません。義塾は、リアル校舎・オンライン・家庭教師の<span class='num'>3</span>サービスを併走しています。"
       />
 
-      {/* 01 リアル校舎 */}
     </div>
 
     <article class="service service--real section-anchor" id="service-real" style="--accent:#4C1D95;--accent-deep:#2D1167;">
@@ -355,6 +354,7 @@ const faqs = [
           <div class="container">
             <span class="service__num" aria-hidden="true">01</span>
             <p class="service__eyebrow">通塾型｜個別＋クラス</p>
+            <p class="service__name">義塾のリアル校舎</p>
             <h3 class="service__catch">質問できる距離で、<br />考える力を育てる。</h3>
           </div>
         </div>
@@ -414,17 +414,12 @@ const faqs = [
                 <li>第三教室：多目的に使用</li>
               </ul>
             </div>
-          </details>
 
-          <a class="service__cta" href="#" data-service="real">校舎の見学・体験授業を申し込む<span aria-hidden="true">›</span></a>
+            <a class="service__cta service__cta--in-details" href="#" data-service="real">公式LINEで無料相談する<span aria-hidden="true">›</span></a>
+          </details>
         </div>
       </div>
     </article>
-
-    <div class="container">
-
-      {/* 02 オンライン */}
-    </div>
 
     <article class="service service--online section-anchor" id="service-online" style="--accent:#2E8B57;--accent-deep:#1F6240;">
       <div class="service__hero">
@@ -434,6 +429,7 @@ const faqs = [
           <div class="container">
             <span class="service__num" aria-hidden="true">02</span>
             <p class="service__eyebrow">在宅型｜完全マンツーマン</p>
+            <p class="service__name">義塾オンライン</p>
             <h3 class="service__catch">完全マンツーマンで<br /><span class="num">4</span>コマ完結。<br />受験英語からプレゼン・<wbr />AI音楽まで。</h3>
           </div>
         </div>
@@ -524,9 +520,9 @@ const faqs = [
                 <li>受講開始</li>
               </ol>
             </div>
-          </details>
 
-          <a class="service__cta" href="#" data-service="online">オンライン体験レッスンを申し込む<span aria-hidden="true">›</span></a>
+            <a class="service__cta service__cta--in-details" href="#" data-service="online">公式LINEで無料相談する<span aria-hidden="true">›</span></a>
+          </details>
         </div>
       </div>
     </article>
@@ -539,6 +535,7 @@ const faqs = [
           <div class="container">
             <span class="service__num" aria-hidden="true">03</span>
             <p class="service__eyebrow">訪問型｜完全マンツーマン</p>
+            <p class="service__name">義塾の家庭教師</p>
             <h3 class="service__catch">先生がご自宅へ。<br />進路相談も、塾長と直接。</h3>
           </div>
         </div>
@@ -604,9 +601,9 @@ const faqs = [
                 <li>授業＋進路相談の二重サポート</li>
               </ul>
             </div>
-          </details>
 
-          <a class="service__cta" href="#" data-service="tutor">家庭教師の無料相談を申し込む<span aria-hidden="true">›</span></a>
+            <a class="service__cta service__cta--in-details" href="#" data-service="tutor">公式LINEで無料相談する<span aria-hidden="true">›</span></a>
+          </details>
         </div>
       </div>
     </article>
@@ -1989,9 +1986,10 @@ const faqs = [
   .service {
     background: var(--accent);
     color: var(--paper);
-    margin: 56px 0;
+    margin: 0;
   }
-  .service:first-of-type { margin-top: 80px; }
+  .service:first-of-type { margin-top: 56px; }
+  .service + .service { margin-top: 0; }
 
   /* ヒーロー：写真にコピーを重ねる */
   .service__hero {
@@ -2056,6 +2054,15 @@ const faqs = [
     border-radius: 999px;
     margin-bottom: 18px;
     backdrop-filter: blur(6px);
+  }
+  .service__name {
+    font-family: var(--font-serif);
+    font-size: clamp(15px, 2vw, 19px);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.96);
+    letter-spacing: 0.16em;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
   .service__catch {
     font-family: var(--font-serif);
@@ -2314,35 +2321,31 @@ const faqs = [
     line-height: 1.8;
   }
 
-  /* CTA：白背景にservice色文字（コントラスト） */
-  .service__cta {
-    display: flex;
+  /* CTA：トグル内専用・控えめサイズ */
+  .service__cta--in-details {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
+    gap: 8px;
+    margin-top: 8px;
     background: var(--paper);
     color: var(--accent-deep, var(--accent));
-    font-size: 16px;
-    font-weight: 900;
-    letter-spacing: 0.06em;
-    padding: 20px 24px;
-    border-radius: 12px;
-    margin-top: 32px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 12px 22px;
+    border-radius: 8px;
+    transition: opacity 0.2s;
   }
-  .service__cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
-  }
-  .service__cta span {
-    font-size: 1.4em;
+  .service__cta--in-details:hover { opacity: 0.85; }
+  .service__cta--in-details span {
+    font-size: 1.2em;
     line-height: 1;
   }
 
   @media (max-width: 768px) {
-    .service { margin: 40px 0; }
-    .service:first-of-type { margin-top: 56px; }
+    .service { margin: 0; }
+    .service:first-of-type { margin-top: 32px; }
+    .service + .service { margin-top: 0; }
     .service__hero { aspect-ratio: 4 / 3; }
     .service__hero-photo { object-position: right center; }
     .service__hero-tint {
@@ -2370,7 +2373,7 @@ const faqs = [
     .service__course dl dt { font-size: 11px; }
     .service__course dl dd { font-size: 12.5px; }
     .service__steps li { font-size: 13.5px; }
-    .service__cta { font-size: 15px; padding: 18px 22px; }
+    .service__cta--in-details { font-size: 13.5px; padding: 11px 18px; }
   }
 
   /* =========================================
