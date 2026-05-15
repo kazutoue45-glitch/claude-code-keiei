@@ -2217,21 +2217,10 @@ const faqs = [
     color: var(--paper);
   }
 
-  /* 詳細トグル：本文の続きをフェードで匂わせ、シンプルな「続きを読む」テキストのみ */
+  /* 詳細トグル：シンプルな「続きを読む」テキストのみ（背景色フェードなし） */
   .service__details {
     position: relative;
-    margin-top: 24px;
-  }
-  .service__details:not([open])::before {
-    content: "";
-    position: absolute;
-    left: -100vw;
-    right: -100vw;
-    bottom: 100%;
-    height: 120px;
-    background: linear-gradient(180deg, transparent 0%, var(--accent) 100%);
-    pointer-events: none;
-    z-index: 1;
+    margin-top: 32px;
   }
   .service__details > summary {
     position: relative;
