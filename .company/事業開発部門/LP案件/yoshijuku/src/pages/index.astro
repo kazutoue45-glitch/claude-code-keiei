@@ -249,13 +249,15 @@ const faqs = [
       </div>
     </div>
 
-    {/* 下段：9人講師シルエットを背景に・リード文を上に重ねる */}
+    {/* 下段：リード文＋9人講師シルエット（画像として独立表示・素材を活かす） */}
     <div class="hero__panel">
-      <div class="hero__panel-bg" aria-label="9人の講師陣のシルエット" aria-hidden="true"></div>
       <p class="hero__sub">
         <span class="mark">成田町で高校受験に向き合うご家庭へ。</span><br />
         お子様を合格させたい想いに、<span class="num">9</span>人の講師陣が本気で応えます。
       </p>
+      <div class="hero__teachers" aria-label="9人の講師陣のシルエット">
+        <img src={`${base}images/teachers-silhouette-9.png`} alt="" loading="eager" />
+      </div>
     </div>
 
     {/* 3サービスナビ：横幅いっぱい・gap無し */}
@@ -582,6 +584,7 @@ const faqs = [
       <div class="service__hero">
         <img class="service__hero-photo" src={`${base}images/hero-tutor.jpg`} alt="自宅リビングで家庭教師から指導を受ける生徒" loading="lazy" />
         <div class="service__hero-tint" aria-hidden="true"></div>
+        <span class="service__new-badge" aria-label="新サービス">NEW</span>
         <div class="service__hero-content">
           <div class="container">
             <div class="service__hero-top">
@@ -1158,20 +1161,16 @@ const faqs = [
     filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.6));
   }
 
-  /* §1 FV 9人講師シルエット：hero__panel の背景に敷き、リード文を上に重ねる */
-  .hero__panel-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url("/claude-code-keiei/yoshijuku/images/teachers-silhouette-9.png");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: contain;
-    opacity: 0.22;
-    pointer-events: none;
+  /* §1 FV 9人講師シルエット：素材を活かすためリード文の下にフル表示（重ねない） */
+  .hero__teachers {
+    margin-top: 28px;
   }
-  .hero__sub {
-    position: relative;
-    z-index: 1;
+  .hero__teachers img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 640px;
+    margin: 0 auto;
   }
 
   .hero__sub {
@@ -2038,6 +2037,48 @@ const faqs = [
     aspect-ratio: 16 / 8;
     overflow: hidden;
   }
+  /* §3 家庭教師 hero 用 NEW バッジ（quicknav svc-card__new と同じプレミアムゴールド世界観） */
+  .service__new-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 76px;
+    height: 76px;
+    padding: 0 8px;
+    background:
+      radial-gradient(ellipse at 50% 28%, rgba(255, 255, 255, 0.45) 0%, transparent 50%),
+      linear-gradient(180deg, var(--gold-light) 0%, var(--gold-classic) 55%, var(--gold-shadow) 100%);
+    color: var(--burgundy);
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    border-radius: 50%;
+    border: 2px double var(--gold-dark);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+    box-shadow:
+      0 8px 18px rgba(139, 105, 20, 0.5),
+      0 0 0 4px rgba(255, 255, 255, 0.85),
+      inset 0 1px 2px rgba(255, 255, 255, 0.55);
+    pointer-events: none;
+  }
+  @media (max-width: 768px) {
+    .service__new-badge {
+      min-width: 56px;
+      height: 56px;
+      font-size: 18px;
+      top: 14px;
+      right: 14px;
+      box-shadow:
+        0 6px 14px rgba(139, 105, 20, 0.5),
+        0 0 0 3px rgba(255, 255, 255, 0.85),
+        inset 0 1px 2px rgba(255, 255, 255, 0.55);
+    }
+  }
   .service__hero-photo {
     position: absolute;
     inset: 0;
@@ -2769,7 +2810,11 @@ const faqs = [
     letter-spacing: 0.02em;
     padding-left: 16px;
     border-left: 3px solid var(--orange);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+    /* 写真質感の上で確実に浮かび上がるよう多重 text-shadow */
+    text-shadow:
+      0 2px 14px rgba(0, 0, 0, 0.75),
+      0 1px 4px rgba(0, 0, 0, 0.65),
+      0 0 2px rgba(0, 0, 0, 0.45);
     max-width: 720px;
   }
   .teacher-feat__quote .num {
