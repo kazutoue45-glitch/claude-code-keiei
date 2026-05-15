@@ -7,6 +7,7 @@ const {
   bgPosition = "center center",
   anchorId,
   accentColor,
+  isNew = false,
 } = Astro.props;
 ---
 
@@ -20,6 +21,8 @@ const {
     {bgImage && <img src={bgImage} alt="" loading="lazy" style={`object-position: ${bgPosition};`} />}
     <span class="svc-card__overlay" aria-hidden="true"></span>
   </div>
+
+  {isNew && <span class="svc-card__new" aria-label="新サービス">NEW</span>}
 
   <div class="svc-card__content">
     <span class="svc-card__num">{index}</span>
@@ -106,6 +109,7 @@ const {
     letter-spacing: 0.02em;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     margin-bottom: 8px;
+    white-space: nowrap;
   }
 
   .svc-card__sub {
@@ -150,5 +154,51 @@ const {
     .svc-card__title { font-size: 12px; }
     .svc-card__sub { font-size: 9px; }
     .svc-card__num { font-size: 22px; }
+  }
+
+  /* NEW バッジ：派手めにオレンジ円・回転・パルス・多重影。
+     親 svc-card に overflow:hidden があるので、はみ出さない top/right で配置 */
+  .svc-card__new {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    height: 52px;
+    padding: 0 6px;
+    background: linear-gradient(135deg, #FF8B36 0%, #E16800 100%);
+    color: var(--paper);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    border-radius: 50%;
+    box-shadow:
+      0 6px 16px rgba(225, 104, 0, 0.55),
+      0 0 0 3px rgba(255, 255, 255, 0.95),
+      0 0 0 5px rgba(225, 104, 0, 0.4);
+    transform: rotate(-12deg);
+    animation: svcNewPulse 1.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes svcNewPulse {
+    0%, 100% { transform: rotate(-12deg) scale(1); }
+    50% { transform: rotate(-12deg) scale(1.12); }
+  }
+  @media (max-width: 768px) {
+    .svc-card__new {
+      min-width: 38px;
+      height: 38px;
+      font-size: 11px;
+      top: 8px;
+      right: 8px;
+      box-shadow:
+        0 4px 10px rgba(225, 104, 0, 0.55),
+        0 0 0 2px rgba(255, 255, 255, 0.95),
+        0 0 0 3.5px rgba(225, 104, 0, 0.4);
+    }
   }
 </style>

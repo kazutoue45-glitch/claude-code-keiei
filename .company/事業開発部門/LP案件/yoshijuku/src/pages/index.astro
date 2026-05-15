@@ -35,7 +35,7 @@ const passSchools = [
 const services = [
   {
     index: "01",
-    title: "義塾（リアル校舎）",
+    title: "リアル校舎",
     shortLabel: "成田町の校舎で学ぶ",
     anchorId: "service-real",
     accentColor: "#4C1D95",
@@ -45,7 +45,7 @@ const services = [
   },
   {
     index: "02",
-    title: "義塾オンライン",
+    title: "オンライン",
     shortLabel: "ご自宅から1対1",
     anchorId: "service-online",
     accentColor: "#2E8B57",
@@ -55,13 +55,14 @@ const services = [
   },
   {
     index: "03",
-    title: "義塾の家庭教師",
+    title: "家庭教師",
     shortLabel: "講師がご自宅へ訪問",
     anchorId: "service-tutor",
     accentColor: "#2563B8",
     bgImage: `${base}images/hero-tutor.jpg`,
     // 生徒（中央寄り）と講師（右）の2人セットを縦長窓に収める
     bgPosition: "75% center",
+    isNew: true,
   },
 ];
 
@@ -226,7 +227,7 @@ const faqs = [
           <ruby>義塾<rt>よしじゅく</rt></ruby>
         </span>
         <span class="hero__topband-sub">
-          寝屋川市成田町の学習塾<br />
+          成田町の学習塾<br />
           <small>小学生・中学生・高校生 対応</small>
         </span>
       </div>
@@ -234,7 +235,7 @@ const faqs = [
 
     {/* FV画像エリア（実写：義塾校舎外観＋キャッチコピーオーバーレイ） */}
     <div class="hero__photo">
-      <img src={`${base}images/building-exterior.jpg`} alt="義塾の校舎外観（寝屋川市成田町）" loading="eager" />
+      <img src={`${base}images/building-exterior.jpg`} alt="義塾の校舎外観（成田町）" loading="eager" />
       <span class="hero__photo-tint" aria-hidden="true"></span>
 
       {/* タイトル：義塾ロゴ（毛筆書道・透過PNG） */}
@@ -251,7 +252,7 @@ const faqs = [
     {/* 下段：白背景のテキストエリア（サブコピー） */}
     <div class="hero__panel">
       <p class="hero__sub">
-        <span class="mark">寝屋川・成田町で高校受験に向き合うご家庭へ。</span><br />
+        <span class="mark">成田町で高校受験に向き合うご家庭へ。</span><br />
         お子様を合格させたい想いに、<span class="num">9</span>人の講師陣が本気で応えます。
       </p>
     </div>
@@ -681,7 +682,7 @@ const faqs = [
     <div class="container">
       <SectionHeader
         title="保護者・生徒の声"
-        lead="同じ寝屋川・成田町で「うちの子の番だ」と通い始めた先輩たちのご家庭から。"
+        lead="同じ成田町で「うちの子の番だ」と通い始めた先輩たちのご家庭から。"
       />
 
       {/* §6.4 保護者の声 */}
@@ -1001,7 +1002,7 @@ const faqs = [
       <div class="access__info">
         <h3 class="access__info-title">アクセス・お問い合わせ</h3>
         <dl class="access__info-list">
-          <div><dt>住所</dt><dd>〒572-0833 大阪府寝屋川市成田町32-24</dd></div>
+          <div><dt>住所</dt><dd>〒572-0833 成田町32-24</dd></div>
           <div><dt>校舎</dt><dd>新築一戸建てを改装した3教室（クラス授業／個別指導／多目的）</dd></div>
           <div><dt>TEL</dt><dd><a href="tel:0728147633">072-814-7633</a></dd></div>
           <div><dt>携帯</dt><dd><a href="tel:09085773169">090-8577-3169</a></dd></div>
