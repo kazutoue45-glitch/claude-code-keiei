@@ -681,18 +681,32 @@ const faqs = [
   <section class="section section--purple-pale teachers section-anchor" id="teachers">
     <div class="teachers__intro">
       <div class="container">
-        <div class="teachers__intro-inner">
-          <div class="teachers__intro-figure" aria-hidden="true">
-            <span class="teachers__intro-figure-num">9</span>
-            <span class="teachers__intro-figure-label">人体制</span>
-          </div>
-          <div class="teachers__intro-text">
-            <span class="section-eyebrow">TEACHERS</span>
-            <h2 class="teachers__intro-title">お子様の未来に、<br />本気で寄り添う<span class="mark">講師陣</span>。</h2>
-            <p class="teachers__intro-lead">義塾は、ただ勉強を教える場所ではありません。お子様一人ひとりの個性と目標に向き合い、<span class="mark">「行きたい学校に行ける」</span>「学ぶことが好きになる」未来を、ベテランから若手まで多様な経歴を持つ<span class="num">9</span>名の講師陣と一緒に、本気で支える場所です。</p>
-            <p class="teachers__intro-note">ここでは、義塾を率いる<strong class="text-orange">塾長</strong>と、オンライン講座を担当する<strong class="text-orange">英語スペシャリスト</strong>の<span class="num">2</span>名をご紹介します。</p>
+        <span class="section-eyebrow">TEACHERS</span>
+        <h2 class="teachers__intro-title">お子様の未来に、本気で寄り添う<span class="num">9</span>人の講師陣。</h2>
+        <p class="teachers__intro-lead">義塾は、ただ勉強を教える場所ではありません。お子様一人ひとりの個性と目標に向き合い、<span class="mark">「行きたい学校に行ける」</span>「学ぶことが好きになる」未来を、ベテランから若手まで多様な経歴を持つ<span class="num">9</span>名の講師陣と一緒に、本気で支える場所です。</p>
+
+        <div class="teachers__intro-faces" aria-label="9人の講師陣のうち代表2名">
+          <figure class="teachers__intro-face">
+            <img src={`${base}images/teacher-ogawa.png`} alt="小川 大輔 塾長" loading="lazy" />
+            <figcaption>
+              <strong>小川 大輔</strong>
+              <small>塾長</small>
+            </figcaption>
+          </figure>
+          <figure class="teachers__intro-face">
+            <img src={`${base}images/teacher-kokufu.png`} alt="國府 泰 英語担当" loading="lazy" />
+            <figcaption>
+              <strong>國府 泰</strong>
+              <small>英語担当</small>
+            </figcaption>
+          </figure>
+          <div class="teachers__intro-face teachers__intro-face--more" aria-hidden="true">
+            <span class="teachers__intro-more-num">+7</span>
+            <span class="teachers__intro-more-label">名の<br />講師陣</span>
           </div>
         </div>
+
+        <p class="teachers__intro-note">ここでは、義塾を率いる<strong class="text-orange">塾長</strong>と、オンライン講座を担当する<strong class="text-orange">英語スペシャリスト</strong>の<span class="num">2</span>名をご紹介します。</p>
       </div>
     </div>
 
@@ -2575,86 +2589,119 @@ const faqs = [
   }
 
   /* =========================================
-     §5 講師紹介 イントロ（2026-05-16 追加）
-     文字情報だけで地味だった先頭を、巨大な「9」数字＋ペールパープル背景＋
-     mark強調＋オレンジeyebrow でリッチ化
+     §5 講師紹介 イントロ（2026-05-16 改訂）
+     講師2名のアイコン＋「+7名」表記で「9人体制のうち代表2名を紹介」を視覚化
      ========================================= */
   .teachers__intro {
-    padding: 24px 0 12px;
+    padding: 20px 0 4px;
   }
-  .teachers__intro-inner {
-    display: grid;
-    grid-template-columns: minmax(160px, 220px) 1fr;
-    gap: 32px;
-    align-items: center;
-    max-width: 980px;
-    margin: 0 auto;
-  }
-  .teachers__intro-figure {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1;
-    background: radial-gradient(ellipse at 35% 30%, var(--paper) 0%, var(--purple-soft) 60%, var(--purple-pale) 100%);
-    border-radius: 50%;
-    box-shadow: 0 10px 28px rgba(76, 29, 149, 0.18), inset 0 2px 4px rgba(255, 255, 255, 0.7);
-  }
-  .teachers__intro-figure-num {
-    font-family: var(--font-serif);
-    font-size: clamp(96px, 14vw, 160px);
-    font-weight: 900;
-    color: var(--purple);
-    line-height: 1;
-    letter-spacing: -0.04em;
-    text-shadow: 0 4px 12px rgba(76, 29, 149, 0.25);
-  }
-  .teachers__intro-figure-label {
-    margin-top: 4px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    color: var(--orange);
-  }
-  .teachers__intro-text .section-eyebrow {
-    margin-bottom: 8px;
+  .teachers__intro .section-eyebrow {
+    margin-bottom: 10px;
   }
   .teachers__intro-title {
     font-family: var(--font-serif);
-    font-size: clamp(26px, 4.2vw, 40px);
+    font-size: clamp(24px, 4vw, 38px);
     font-weight: 900;
     line-height: 1.45;
     color: var(--purple);
     margin-bottom: 18px;
+    letter-spacing: 0.02em;
   }
   .teachers__intro-lead {
     font-size: 15.5px;
     line-height: 2.05;
     color: var(--charcoal);
-    margin-bottom: 14px;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+  .teachers__intro-faces {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .teachers__intro-face {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+  }
+  .teachers__intro-face img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--paper);
+    border: 2px solid var(--paper);
+    box-shadow: 0 6px 16px rgba(76, 29, 149, 0.18);
+  }
+  .teachers__intro-face figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .teachers__intro-face figcaption strong {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--purple);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+  .teachers__intro-face figcaption small {
+    font-size: 11.5px;
+    color: var(--orange);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+  .teachers__intro-face--more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple-soft) 0%, var(--purple-pale) 100%);
+    border: 1px dashed var(--purple-line);
+    color: var(--purple);
+    gap: 2px;
+  }
+  .teachers__intro-more-num {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--purple);
+    letter-spacing: -0.02em;
+  }
+  .teachers__intro-more-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--purple);
+    text-align: center;
+    line-height: 1.3;
   }
   .teachers__intro-note {
     font-size: 14px;
     line-height: 1.9;
     color: var(--charcoal-soft);
     padding: 14px 18px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.65);
     border-left: 3px solid var(--orange);
   }
   @media (max-width: 768px) {
-    .teachers__intro { padding: 8px 0 4px; }
-    .teachers__intro-inner {
-      grid-template-columns: 1fr;
-      gap: 18px;
-      text-align: left;
-    }
-    .teachers__intro-figure {
-      max-width: 160px;
-      margin: 0 auto;
-    }
-    .teachers__intro-title { font-size: 24px; }
-    .teachers__intro-lead { font-size: 14.5px; line-height: 1.95; }
+    .teachers__intro { padding: 4px 0 4px; }
+    .teachers__intro-title { font-size: 22px; }
+    .teachers__intro-lead { font-size: 14.5px; line-height: 1.95; margin-bottom: 22px; }
+    .teachers__intro-faces { gap: 14px; margin-bottom: 20px; }
+    .teachers__intro-face { gap: 10px; }
+    .teachers__intro-face img,
+    .teachers__intro-face--more { width: 64px; height: 64px; }
+    .teachers__intro-face figcaption strong { font-size: 14.5px; }
+    .teachers__intro-face figcaption small { font-size: 10.5px; }
+    .teachers__intro-more-num { font-size: 20px; }
     .teachers__intro-note { font-size: 13px; padding: 12px 14px; }
   }
 
