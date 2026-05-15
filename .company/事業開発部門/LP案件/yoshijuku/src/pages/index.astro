@@ -3060,23 +3060,33 @@ const faqs = [
   /* =========================================
      §10 アクセス
      ========================================= */
-  /* §9 Google Maps 埋め込み（場所表示のみ・クリック/スクロール無効でLP外遷移防止） */
+  /* §9 Google Maps 埋め込み：場所表示のみ
+     iframe を絶対配置で上下を意図的に切り捨て、
+     上端の Google ロゴ・下端の「マップで開く」「キーボードショートカット」等のリンクUIを
+     物理的に画面外に押し出して非表示にする */
   .access__map {
     margin: 24px 0;
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     position: relative;
+    height: 320px;
   }
   .access__map iframe {
-    display: block;
-    width: 100%;
-    height: 320px;
+    position: absolute;
+    top: -44px;
+    left: -16px;
+    width: calc(100% + 32px);
+    height: calc(100% + 100px);
     border: 0;
     pointer-events: none;
   }
   @media (max-width: 540px) {
-    .access__map iframe { height: 260px; }
+    .access__map { height: 260px; }
+    .access__map iframe {
+      top: -40px;
+      height: calc(100% + 88px);
+    }
   }
 
   /* §10 アクセス上のキャンペーン帯（obi）：badge-ribbon.png */
