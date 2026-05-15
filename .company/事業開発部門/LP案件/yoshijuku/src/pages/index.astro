@@ -2593,12 +2593,14 @@ const faqs = [
   .teacher-feat__tint {
     position: absolute;
     inset: 0;
-    /* 上は濃いめでテキスト読みやすく、中央は薄めで写真質感を見せる */
+    /* §2 section--bg-empathy と同じ白フォグ系統。LP全体で「暗いoverlay禁止」を厳守。
+       上はテキスト乗せ用に白で覆い、下に向かって透明＝被写体（プレゼン資料/赤本）を見せる */
     background: linear-gradient(180deg,
-      rgba(26, 15, 46, 0.78) 0%,
-      rgba(26, 15, 46, 0.62) 35%,
-      rgba(26, 15, 46, 0.45) 70%,
-      rgba(26, 15, 46, 0.30) 100%);
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(255, 255, 255, 0.58) 28%,
+      rgba(255, 255, 255, 0.30) 55%,
+      rgba(255, 255, 255, 0.10) 80%,
+      rgba(255, 255, 255, 0) 100%);
   }
   .teacher-feat__hero-content {
     position: relative;
@@ -2653,25 +2655,24 @@ const faqs = [
     font-weight: 700;
     letter-spacing: 0.18em;
     color: var(--paper);
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--purple);
     padding: 5px 12px;
     border-radius: 999px;
-    backdrop-filter: blur(6px);
   }
   .teacher-feat__name {
     font-family: var(--font-serif);
     font-size: clamp(30px, 4.8vw, 44px);
     font-weight: 900;
-    color: var(--paper);
+    color: var(--purple);
     line-height: 1.2;
     letter-spacing: 0.04em;
     margin: 4px 0 0;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.85);
   }
   .teacher-feat__name-en {
     display: block;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--muted);
     letter-spacing: 0.22em;
     margin-top: 2px;
   }
@@ -2679,38 +2680,38 @@ const faqs = [
     font-family: var(--font-serif);
     font-size: clamp(19px, 2.6vw, 26px);
     font-weight: 700;
-    color: var(--paper);
+    color: var(--purple);
     line-height: 1.6;
     letter-spacing: 0.02em;
     padding-left: 16px;
     border-left: 3px solid var(--orange);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.85);
     max-width: 720px;
   }
   .teacher-feat__quote .num {
-    color: var(--paper);
+    color: var(--purple);
     font-size: 1.05em;
     margin: 0 0.04em;
   }
 
-  /* hero 内 bio（リード文）：画像の上に直接、白文字＋text-shadow で読ませる */
+  /* hero 内 bio（リード文）：画像の上に直接、黒文字＋白text-shadow で読ませる */
   .teacher-feat__hero-content .teacher-feat__bio p {
     font-size: 14.5px;
     line-height: 2;
-    color: rgba(255, 255, 255, 0.96);
+    color: var(--charcoal);
     margin-bottom: 14px;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85), 0 0 4px rgba(255, 255, 255, 0.7);
     max-width: 720px;
   }
   .teacher-feat__hero-content .teacher-feat__bio p:last-child { margin-bottom: 0; }
   .teacher-feat__hero-content .teacher-feat__bio .mark {
-    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.55) 60%);
-    color: var(--paper);
+    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.4) 60%);
+    color: var(--charcoal);
     font-weight: 700;
     padding: 0 2px;
   }
   .teacher-feat__hero-content .teacher-feat__bio .num {
-    color: var(--paper);
+    color: var(--purple);
     font-size: 1.25em;
   }
 
