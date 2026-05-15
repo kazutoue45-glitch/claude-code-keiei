@@ -714,8 +714,8 @@ const faqs = [
 
     <article class="teacher-feat" style="--accent:#4C1D95;--accent-deep:#1A0F2E;">
       <div class="teacher-feat__hero">
+        <img class="teacher-feat__bg" src={`${base}images/teacher-bg-ogawa.jpg`} alt="" loading="lazy" />
         <div class="teacher-feat__tint" aria-hidden="true"></div>
-        <span class="teacher-feat__bignum" aria-hidden="true">01</span>
         <div class="teacher-feat__hero-content">
           <div class="container">
             <div class="teacher-feat__head">
@@ -768,8 +768,8 @@ const faqs = [
 
     <article class="teacher-feat" style="--accent:#2E8B57;--accent-deep:#1F6240;">
       <div class="teacher-feat__hero">
+        <img class="teacher-feat__bg" src={`${base}images/teacher-bg-kokufu.jpg`} alt="" loading="lazy" />
         <div class="teacher-feat__tint" aria-hidden="true"></div>
-        <span class="teacher-feat__bignum" aria-hidden="true">02</span>
         <div class="teacher-feat__hero-content">
           <div class="container">
             <div class="teacher-feat__head">
@@ -2583,36 +2583,33 @@ const faqs = [
   .teacher-feat:first-of-type { margin-top: 56px; }
   .teacher-feat + .teacher-feat { margin-top: 0; }
 
-  /* hero：accent カラーのソリッド＋微細グラデ＋大型背景数字（タイポ主導）。
-     §3 サービスhero（写真フルブリード）とは意図的に別表現で使い分ける */
+  /* hero：講師の哲学を象徴する抽象的な背景画像 + 控えめ tint で文字可読性確保
+     画像は teacher-bg-{name}.jpg として講師ごとに専用生成（流用禁止） */
   .teacher-feat__hero {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: var(--accent);
+    background: var(--accent-deep);
+  }
+  .teacher-feat__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 被写体（本/楽器/階段）は画像左半分に集中。center なら被写体が見える状態を維持 */
+    object-position: center center;
   }
   .teacher-feat__tint {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse at 80% 30%, color-mix(in srgb, var(--accent) 65%, white) 0%, transparent 55%),
-      linear-gradient(135deg, var(--accent-deep) 0%, var(--accent) 55%, color-mix(in srgb, var(--accent) 70%, var(--accent-deep)) 100%);
-  }
-  /* 背景タイポ：明朝の巨大番号（薄く） */
-  .teacher-feat__bignum {
-    position: absolute;
-    top: -36px;
-    right: -16px;
-    z-index: 0;
-    font-family: var(--font-serif);
-    font-size: clamp(220px, 32vw, 480px);
-    font-weight: 900;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.08);
-    letter-spacing: -0.04em;
-    pointer-events: none;
-    user-select: none;
+      linear-gradient(95deg,
+        rgba(0, 0, 0, 0.18) 0%,
+        rgba(0, 0, 0, 0.04) 35%,
+        color-mix(in srgb, var(--accent-deep) 32%, transparent) 70%,
+        color-mix(in srgb, var(--accent-deep) 55%, transparent) 100%);
   }
   .teacher-feat__hero-content {
     position: relative;
@@ -2630,6 +2627,15 @@ const faqs = [
     display: flex;
     flex-direction: column;
     gap: 28px;
+  }
+  /* PC：被写体（本/楽器/階段）が画像左半分に集中するため、テキスト群は右半分に押し込む */
+  @media (min-width: 769px) {
+    .teacher-feat__hero-content > .container {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: max(24px, calc((100% - var(--container)) / 2));
+      padding-left: 0;
+    }
   }
 
   .teacher-feat__head {
@@ -2792,11 +2798,13 @@ const faqs = [
 
   @media (max-width: 768px) {
     .teacher-feat__hero { aspect-ratio: 4 / 4.4; }
-    .teacher-feat__bignum {
-      top: -16px;
-      right: -8px;
-      font-size: 240px;
-      color: rgba(255, 255, 255, 0.1);
+    .teacher-feat__bg { object-position: 30% center; }
+    .teacher-feat__tint {
+      background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.12) 0%,
+        transparent 30%,
+        color-mix(in srgb, var(--accent-deep) 35%, transparent) 65%,
+        color-mix(in srgb, var(--accent-deep) 78%, transparent) 100%);
     }
     .teacher-feat__hero-content { padding: 28px 0; gap: 20px; }
     .teacher-feat__hero-content > .container { gap: 22px; }
