@@ -5,7 +5,6 @@ import ServiceCard from "../components/ServiceCard.astro";
 import ReasonCard from "../components/ReasonCard.astro";
 import ServiceCompareTable from "../components/ServiceCompareTable.astro";
 import VoiceCard from "../components/VoiceCard.astro";
-import AchievementBadge from "../components/AchievementBadge.astro";
 import TeacherCard from "../components/TeacherCard.astro";
 import PriceTable from "../components/PriceTable.astro";
 import PricePlan from "../components/PricePlan.astro";
@@ -679,41 +678,12 @@ const faqs = [
   <CtaButton text="塾長に無料相談する" href="#" id="cta-3" />
 
   {/* ============ §5 生徒・保護者の声（仮値） ============ */}
-  <section class="section section--bg section--bg-voices voices">
+  <section class="section section--pale-gray voices">
     <div class="container">
       <SectionHeader
-        title="義塾で、子どもが変わった。<br />保護者の声と合格実績。"
-        lead="ここで紹介するのは、実際に義塾に通われたご家庭の声と、卒塾生の合格実績の一部です。同じ寝屋川・成田町で「うちの子の番だ」と通い始めた先輩たちが、どんな未来をつかんだのか。"
+        title="保護者・生徒の声"
+        lead="同じ寝屋川・成田町で「うちの子の番だ」と通い始めた先輩たちのご家庭から。"
       />
-
-      {/* §6.3 合格実績（Notion確定リスト） */}
-      <div class="voices__achievements voices__achievements--two">
-        <!-- 要確認: 合格年度・人数・在籍期間・受講形態（学習塾広告ガイドライン準拠）の併記 -->
-        <AchievementBadge
-          label="中学受験"
-          schools={[
-            "大阪国際中学校",
-            "常翔啓光学園中学校",
-          ]}
-        />
-        <AchievementBadge
-          label="高校受験"
-          schools={[
-            "大阪国際高校",
-            "常翔啓光学園高校",
-            "東海大学付属大阪仰星高校",
-            "香里ヌヴェール学院高校",
-            "四條畷学園高校",
-            "寝屋川高校",
-            "東高校",
-            "牧野高校",
-            "枚方高校",
-            "いちりつ高校",
-            "香里丘高校",
-            "北かわち皐が丘高校",
-          ]}
-        />
-      </div>
 
       {/* §6.4 保護者の声 */}
       <h3 class="voices__subtitle">保護者の声</h3>
@@ -735,7 +705,7 @@ const faqs = [
   <CtaButton text="塾長に無料相談する" href="#" id="cta-4" />
 
   {/* ============ §6 講師紹介＋メディア・登壇実績 ============ */}
-  <section class="section section--white section--bg section--bg-teachers teachers section-anchor" id="teachers">
+  <section class="section section--white teachers section-anchor" id="teachers">
     <div class="container">
       <SectionHeader
         title="お子様の未来に、本気で寄り添う<span class='num'>9</span>人の講師陣。"
@@ -814,10 +784,7 @@ const faqs = [
   {/* ============ §7 料金（カード型プラン表示） ============ */}
   <section class="section section--white pricing section-anchor" id="pricing">
     <div class="container">
-      <SectionHeader
-        title="料金は、すべて明朗にお伝えします。"
-        lead="3つのサービスごとに、税込月額を明示しています。"
-      />
+      <SectionHeader title="料金一覧" />
 
       {/* === リアル校舎 === */}
       <div class="pricing__group" style="--accent:#4C1D95;">
@@ -2537,26 +2504,14 @@ const faqs = [
   }
 
   /* =========================================
-     §7 声・実績
+     §5 保護者・生徒の声
+     （合格実績は §2 既出のため §5 では削除、声のみに簡素化）
      ========================================= */
-  .voices__achievements {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .voices__achievements--two {
-    grid-template-columns: 1fr 2.4fr;
-    gap: 32px;
-    align-items: start;
-  }
-
   .voices__subtitle {
     font-family: var(--font-serif);
     font-size: 22px;
     color: var(--purple);
-    margin: 80px 0 40px;
+    margin: 56px 0 32px;
     letter-spacing: 0.04em;
   }
 
@@ -2573,8 +2528,6 @@ const faqs = [
   }
 
   @media (max-width: 900px) {
-    .voices__achievements,
-    .voices__achievements--two { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
     .voices__grid,
     .voices__grid--two { grid-template-columns: 1fr; gap: 8px; }
     .voices__subtitle { font-size: 19px; margin: 40px 0 20px; }
