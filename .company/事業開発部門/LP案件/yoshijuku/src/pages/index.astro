@@ -975,18 +975,6 @@ const faqs = [
         </dl>
       </div>
 
-      {/* Google Maps 埋め込み：572-0833 成田町32-24 */}
-      <div class="access__map" aria-label="義塾の地図">
-        <iframe
-          src="https://www.google.com/maps?q=%E3%80%92572-0833+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82%E6%88%90%E7%94%B0%E7%94%BA32-24&output=embed"
-          width="100%" height="320"
-          style="border:0;"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="義塾の所在地（成田町32-24）"
-        ></iframe>
-      </div>
-
       <p class="access__legal">
         ※ キャンペーンの対象期間・対象サービス・対象学年・適用条件の詳細は公式LINEにてご案内いたします。学習塾広告ガイドラインに沿って表記しています。
         <!-- 要確認: 法務注釈の最終文言（学習塾広告ガイドライン準拠） -->
@@ -3072,22 +3060,6 @@ const faqs = [
     filter: drop-shadow(0 10px 22px rgba(139, 105, 20, 0.32));
   }
 
-  /* §9 Google Maps 埋め込み（QRコードに代わって地図を配置） */
-  .access__map {
-    margin: 24px 0;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-  }
-  .access__map iframe {
-    display: block;
-    width: 100%;
-    height: 320px;
-    border: 0;
-  }
-  @media (max-width: 540px) {
-    .access__map iframe { height: 260px; }
-  }
 
   .access__info {
     background: var(--paper);
