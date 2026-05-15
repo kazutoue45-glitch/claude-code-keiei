@@ -2583,12 +2583,13 @@ const faqs = [
   .teacher-feat:first-of-type { margin-top: 56px; }
   .teacher-feat + .teacher-feat { margin-top: 0; }
 
-  /* hero：講師の哲学を象徴する抽象的な背景画像 + 控えめ tint で文字可読性確保
+  /* hero：講師の現場質感を表す実写写真（机・本・ノート・コーヒー等の学びの現場）
+     スマホファースト：縦長 4:5 で生成・表示。被写体は下半分、上半分はテキスト重ねスペース
      画像は teacher-bg-{name}.jpg として講師ごとに専用生成（流用禁止） */
   .teacher-feat__hero {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
     background: var(--accent-deep);
   }
@@ -2598,18 +2599,18 @@ const faqs = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* 被写体（本/楽器/階段）は画像左半分に集中。center なら被写体が見える状態を維持 */
     object-position: center center;
   }
   .teacher-feat__tint {
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(95deg,
-        rgba(0, 0, 0, 0.18) 0%,
-        rgba(0, 0, 0, 0.04) 35%,
-        color-mix(in srgb, var(--accent-deep) 32%, transparent) 70%,
-        color-mix(in srgb, var(--accent-deep) 55%, transparent) 100%);
+    /* 上半分（テキスト重ね位置）に accent-deep を被せて可読性確保、
+       下半分（被写体：机・本）は写真をそのまま見せる */
+    background: linear-gradient(180deg,
+      var(--accent-deep) 0%,
+      color-mix(in srgb, var(--accent-deep) 78%, transparent) 22%,
+      color-mix(in srgb, var(--accent-deep) 35%, transparent) 50%,
+      transparent 70%);
   }
   .teacher-feat__hero-content {
     position: relative;
@@ -2618,24 +2619,15 @@ const faqs = [
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 36px 0;
+    justify-content: flex-start;
+    padding: 28px 0;
   }
   .teacher-feat__hero-content > .container {
     max-width: var(--container);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 28px;
-  }
-  /* PC：被写体（本/楽器/階段）が画像左半分に集中するため、テキスト群は右半分に押し込む */
-  @media (min-width: 769px) {
-    .teacher-feat__hero-content > .container {
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: max(24px, calc((100% - var(--container)) / 2));
-      padding-left: 0;
-    }
+    gap: 22px;
   }
 
   .teacher-feat__head {
@@ -2797,16 +2789,7 @@ const faqs = [
   }
 
   @media (max-width: 768px) {
-    .teacher-feat__hero { aspect-ratio: 4 / 4.4; }
-    .teacher-feat__bg { object-position: 30% center; }
-    .teacher-feat__tint {
-      background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.12) 0%,
-        transparent 30%,
-        color-mix(in srgb, var(--accent-deep) 35%, transparent) 65%,
-        color-mix(in srgb, var(--accent-deep) 78%, transparent) 100%);
-    }
-    .teacher-feat__hero-content { padding: 28px 0; gap: 20px; }
+    .teacher-feat__hero-content { padding: 22px 0; gap: 18px; }
     .teacher-feat__hero-content > .container { gap: 22px; }
     .teacher-feat__head { gap: 16px; }
     .teacher-feat__icon { width: 96px; height: 96px; }
