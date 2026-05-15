@@ -146,22 +146,19 @@ const reasons = [
   },
 ];
 
-// §6 保護者の声（仮値・要差し替え）
+// §6 保護者の声（仮値・要差し替え／avatarSrc は claude-design Anti-slop "no fake faces" のため null）
 const parentVoices = [
   {
-    avatarSrc: `${base}images/voice-avatar-1.svg`,
     name: "Aさんのお母様",
     role: "中3／高校受験",
     quote: "数学が苦手で、夏休み前まで本当に間に合うのか不安でした。塾長が公式LINEで何度も状況を共有してくださり、家でどう声をかければいいかまで一緒に考えてくれて。本人も「先生が見てくれてる」と安心して机に向かえるようになりました。",
   },
   {
-    avatarSrc: `${base}images/voice-avatar-2.svg`,
     name: "Bさんのお父様",
     role: "高2／大学受験",
     quote: "部活との両立が心配でしたが、時間割を柔軟に組んでもらえたので最後まで続けられました。先生方それぞれの得意分野で見てくださるので、苦手科目も逃げずに向き合えたと思います。",
   },
   {
-    avatarSrc: `${base}images/voice-avatar-3.svg`,
     name: "Cさんのお母様",
     role: "小6／中学受験",
     quote: "大手塾も体験しましたが、最終的に義塾を選びました。一人ひとりの様子を見て指導の進め方を変えてくれる柔軟さが決め手です。志望校に合格できて、親子で本当に感謝しています。",
@@ -171,13 +168,11 @@ const parentVoices = [
 // §6 生徒の声（仮値・要差し替え）
 const studentVoices = [
   {
-    avatarSrc: `${base}images/voice-avatar-4.svg`,
     name: "Dくん",
     role: "中3／高校受験合格",
     quote: "質問しやすい雰囲気で、分からないところを放置せずに済みました。授業外でも先生がLINEで答えてくれて助かりました。",
   },
   {
-    avatarSrc: `${base}images/voice-avatar-5.svg`,
     name: "Eさん",
     role: "高3／大学受験合格",
     quote: "自分の志望校に詳しい先生が指導してくれたので、効率よく対策できました。",
@@ -633,15 +628,17 @@ const faqs = [
         lead="勉強の点数を上げるだけが、塾の役割ではないと考えています。<br />お子様が大人になったとき、「あの教室で、先生や仲間と一緒に頑張った」と<strong class='text-orange'>ふと思い出せる場所</strong>であってほしい——塾長の小川と9人の講師陣が、そんな想いで毎日この校舎の灯りをともしています。"
       />
 
-      <div class="campus__gallery">
-        <figure class="campus__photo">
+      <div class="campus__hero">
+        <figure class="campus__photo campus__photo--hero">
           <img src={`${base}images/building-sign.jpg`} alt="義塾のエントランスサイン" loading="lazy" />
           <figcaption>
             <span class="campus__photo-no">01</span>
             <span class="campus__photo-label">エントランス</span>
           </figcaption>
         </figure>
+      </div>
 
+      <div class="campus__rooms">
         <figure class="campus__photo">
           <img src={`${base}images/room-class.jpg`} alt="第1教室／クラス授業用の教室" loading="lazy" />
           <figcaption>
@@ -735,7 +732,6 @@ const faqs = [
           nameEn="OGAWA Daisuke"
           title="塾長／義塾代表"
           quote="教育とエンタメを融合し、みんながワクワクするイベントを企画運営します"
-          photoSrc={`${base}images/teacher-ogawa.svg`}
           bioParagraphs={[
             "学歴：四條畷高校 → 大阪大学理学部物理学科卒業。",
             "大手食品メーカーで約5年間勤務後、学習塾講師へ。12年間の講師経験を経て、2020年に新規校舎設立、2022年に新ブランド設立、2024年に日本を教育で元気にすべく小川探究を創設。",
@@ -753,7 +749,6 @@ const faqs = [
           nameEn="KOKUFU Yasushi"
           title="義塾オンライン｜英検・TOEIC対策講座 担当"
           quote="TOEIC23回連続満点。英語の壁を、論理で確実に超えさせます"
-          photoSrc={`${base}images/teacher-kokufu.svg`}
           bioParagraphs={[
             "大手予備校にて講師としての歩みを始める。高校・大学・医学部予備校で20年間指導。現在も赤本の執筆や入試問題作成に携わり続ける、受験英語の第一線を知るスペシャリスト。",
             "TOEIC23回連続満点・英検1級を保持する圧倒的な英語力を武器に、京大・阪大をはじめとする最難関大学へ数多くの門下生を輩出。現在は義塾にて、少人数制の指導とオンライン講座を展開中。",
@@ -2379,13 +2374,20 @@ const faqs = [
   }
 
   /* =========================================
-     §6 校舎紹介＋「思い出の場所に」（縦写真3枚・均等3列）
+     §4 校舎紹介＋「思い出の場所に」
+     （3カラムgridを廃止、フルブリードヒーロー+下に2枚並列の非対称構成）
      ========================================= */
-  .campus__gallery {
+  .campus__hero {
+    margin-top: 32px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .campus__rooms {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    margin-top: 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
     border-radius: var(--radius-md);
     overflow: hidden;
   }
@@ -2395,7 +2397,11 @@ const faqs = [
     margin: 0;
     overflow: hidden;
     background: var(--pale-gray);
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
+  }
+
+  .campus__photo--hero {
+    aspect-ratio: 16 / 8;
   }
 
   .campus__photo img {
@@ -2452,23 +2458,17 @@ const faqs = [
   }
 
   @media (max-width: 900px) {
-    .campus__gallery {
-      grid-template-columns: 1fr 1fr;
-      gap: 4px;
-    }
-    .campus__photo:nth-of-type(3) {
-      grid-column: 1 / -1;
-      aspect-ratio: 16 / 10;
-    }
-    .campus__photo:nth-of-type(3) figcaption { padding: 24px 18px 16px; }
+    .campus__photo--hero { aspect-ratio: 16 / 10; }
   }
 
   @media (max-width: 540px) {
-    .campus__gallery {
+    .campus__hero { margin-top: 24px; }
+    .campus__rooms {
       grid-template-columns: 1fr;
+      gap: 8px;
     }
-    .campus__photo,
-    .campus__photo:nth-of-type(3) { aspect-ratio: 4 / 5; }
+    .campus__photo--hero { aspect-ratio: 4 / 3; }
+    .campus__photo { aspect-ratio: 4 / 3; }
     .campus__caption { font-size: 14px; margin-top: 36px; }
   }
 

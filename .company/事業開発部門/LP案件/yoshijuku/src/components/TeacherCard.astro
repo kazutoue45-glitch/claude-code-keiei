@@ -13,8 +13,12 @@ const {
 
 <article class="teacher">
   <div class="teacher__head">
-    <div class="teacher__photo">
-      <img src={photoSrc} alt={`${name}先生`} loading="lazy" />
+    <div class={`teacher__photo ${photoSrc ? "" : "teacher__photo--placeholder"}`}>
+      {photoSrc ? (
+        <img src={photoSrc} alt={`${name}先生`} loading="lazy" />
+      ) : (
+        <span class="teacher__photo-initial" aria-label={`${name}先生（実写写真：クライアント手配中）`}>{name?.charAt(0)}</span>
+      )}
     </div>
     <div class="teacher__name">
       <h3>{name}</h3>
@@ -76,6 +80,22 @@ const {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  /* 写真が無い場合：grayボックス＋頭文字＋「クライアント手配中」をaria-labelで明示 */
+  .teacher__photo--placeholder {
+    background: linear-gradient(135deg, var(--pale-gray) 0%, var(--purple-soft) 100%);
+    border: 1px dashed var(--purple-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .teacher__photo-initial {
+    font-family: var(--font-serif);
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--purple);
+    line-height: 1;
   }
 
   .teacher__name h3 {
