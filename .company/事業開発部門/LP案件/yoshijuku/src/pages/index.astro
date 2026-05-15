@@ -759,7 +759,6 @@ const faqs = [
             </ul>
           </div>
 
-          <p class="teacher-feat__message">公式LINEで、塾長の私と直接お話しできます。どんな小さな不安でも、まずはご相談ください。</p>
         </div>
       </div>
     </article>
@@ -2593,13 +2592,20 @@ const faqs = [
   .teacher-feat__tint {
     position: absolute;
     inset: 0;
-    /* overlay は head/quote 領域の上部のみ・bio〜下は写真をそのまま見せる。
-       bio部分は text-shadow で読ませる */
-    background: linear-gradient(180deg,
-      color-mix(in srgb, var(--purple) 78%, transparent) 0%,
-      color-mix(in srgb, var(--purple) 42%, transparent) 22%,
-      color-mix(in srgb, var(--purple) 12%, transparent) 42%,
-      transparent 60%);
+    /* 上層：下端を白フェード（body白背景に自然繋ぎ・§3サービスhero同パターン）
+       下層：上部のみブランド紫overlay（head/quote読みやすく、bio〜中央は写真そのまま） */
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        transparent 72%,
+        rgba(255, 255, 255, 0.4) 85%,
+        rgba(255, 255, 255, 0.85) 95%,
+        var(--paper) 100%),
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--purple) 78%, transparent) 0%,
+        color-mix(in srgb, var(--purple) 42%, transparent) 22%,
+        color-mix(in srgb, var(--purple) 12%, transparent) 42%,
+        transparent 60%);
   }
   .teacher-feat__hero-content {
     position: relative;
