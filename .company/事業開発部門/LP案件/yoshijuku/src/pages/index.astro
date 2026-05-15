@@ -249,11 +249,9 @@ const faqs = [
       </div>
     </div>
 
-    {/* 下段：白背景のテキストエリア（サブコピー）＋9人講師シルエット */}
+    {/* 下段：9人講師シルエットを背景に・リード文を上に重ねる */}
     <div class="hero__panel">
-      <div class="hero__teachers" aria-label="9人の講師陣">
-        <img src={`${base}images/teachers-silhouette-9.png`} alt="" loading="eager" />
-      </div>
+      <div class="hero__panel-bg" aria-label="9人の講師陣のシルエット" aria-hidden="true"></div>
       <p class="hero__sub">
         <span class="mark">成田町で高校受験に向き合うご家庭へ。</span><br />
         お子様を合格させたい想いに、<span class="num">9</span>人の講師陣が本気で応えます。
@@ -1160,16 +1158,20 @@ const faqs = [
     filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.6));
   }
 
-  /* §1 FV 9人講師シルエット（リード文の上に配置） */
-  .hero__teachers {
-    margin-bottom: 24px;
+  /* §1 FV 9人講師シルエット：hero__panel の背景に敷き、リード文を上に重ねる */
+  .hero__panel-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("/claude-code-keiei/yoshijuku/images/teachers-silhouette-9.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    opacity: 0.22;
+    pointer-events: none;
   }
-  .hero__teachers img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 560px;
-    margin: 0 auto;
+  .hero__sub {
+    position: relative;
+    z-index: 1;
   }
 
   .hero__sub {
