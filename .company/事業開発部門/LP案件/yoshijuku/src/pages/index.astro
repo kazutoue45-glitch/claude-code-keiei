@@ -712,91 +712,107 @@ const faqs = [
       />
     </div>
 
-    <article class="teacher-feat" style={`background-image:url(${base}images/teacher-bg-ogawa.jpg);`}>
-      <div class="teacher-feat__overlay" aria-hidden="true"></div>
-      <div class="teacher-feat__inner">
-        <header class="teacher-feat__head">
-          <div class="teacher-feat__icon teacher-feat__icon--placeholder" aria-label="小川先生（実写写真：クライアント手配中）">
-            <span>小</span>
+    <article class="teacher-feat">
+      <div class="teacher-feat__hero">
+        <img class="teacher-feat__bg" src={`${base}images/teacher-bg-ogawa.jpg`} alt="" loading="lazy" />
+        <div class="teacher-feat__tint" aria-hidden="true"></div>
+        <div class="teacher-feat__hero-content">
+          <div class="container">
+            <header class="teacher-feat__head">
+              <div class="teacher-feat__icon teacher-feat__icon--placeholder" aria-label="小川先生（実写写真：クライアント手配中）">
+                <span>小</span>
+              </div>
+              <div class="teacher-feat__title-block">
+                <span class="teacher-feat__role">塾長／義塾代表</span>
+                <h3 class="teacher-feat__name">小川 大輔</h3>
+                <span class="teacher-feat__name-en">OGAWA Daisuke</span>
+              </div>
+            </header>
+            <blockquote class="teacher-feat__quote">教育とエンタメを融合し、<br />みんながワクワクするイベントを<br />企画運営します。</blockquote>
           </div>
-          <div class="teacher-feat__title-block">
-            <span class="teacher-feat__role">塾長／義塾代表</span>
-            <h3 class="teacher-feat__name">小川 大輔</h3>
-            <span class="teacher-feat__name-en">OGAWA Daisuke</span>
+        </div>
+      </div>
+
+      <div class="teacher-feat__body">
+        <div class="container">
+          <div class="teacher-feat__bio">
+            <p>四條畷高校から大阪大学理学部物理学科を卒業。大手食品メーカーで約5年間勤務後、学習塾講師の道へ。<span class="mark">指導歴<span class="num">12</span>年</span>を経て、2020年に新規校舎を設立、2022年に新ブランドを立ち上げ、2024年には「日本を教育で元気にする」という志のもと小川探究を創設しました。</p>
+            <p>探究プレゼン講座を<span class="num">150</span>本以上実施。生徒の中に眠る「自分の言葉」を引き出し、人前で語れる力に変える指導が真骨頂です。</p>
           </div>
-        </header>
 
-        <blockquote class="teacher-feat__quote">教育とエンタメを融合し、<br />みんながワクワクするイベントを<br />企画運営します。</blockquote>
+          <div class="teacher-feat__section">
+            <h4 class="teacher-feat__h4">専門・取り組み</h4>
+            <ul class="teacher-feat__list">
+              <li><span>小川探究 代表</span><small>探究教育のフロントランナー</small></li>
+              <li><span>プレゼン大会主催</span><small>次世代の表現者を育成する舞台を創出</small></li>
+              <li><span>「就プレ」講師</span><small>就活生へのプレゼン指導で実績多数</small></li>
+              <li><span>教育現場での指導</span><small>私立高校でのプレゼン授業を担当</small></li>
+            </ul>
+          </div>
 
-        <div class="teacher-feat__bio">
-          <p>四條畷高校から大阪大学理学部物理学科を卒業。大手食品メーカーで約5年間勤務後、学習塾講師の道へ。<span class="mark">指導歴<span class="num">12</span>年</span>を経て、2020年に新規校舎を設立、2022年に新ブランドを立ち上げ、2024年には「日本を教育で元気にする」という志のもと小川探究を創設しました。</p>
-          <p>探究プレゼン講座を150本以上実施。生徒の中に眠る「自分の言葉」を引き出し、人前で語れる力に変える指導が真骨頂です。</p>
+          <div class="teacher-feat__section">
+            <h4 class="teacher-feat__h4">登壇・指導実績</h4>
+            <!-- 要確認: 年月・掲載先・回数等をクライアントから取得 -->
+            <ul class="teacher-feat__list teacher-feat__list--simple">
+              <li>私立高校 プレゼンテーション授業 登壇</li>
+              <li>「就プレ」就活生向けプレゼン指導講師</li>
+              <li>プレゼン大会 主催・審査員</li>
+              <li>小川探究 代表として教育イベント多数開催</li>
+            </ul>
+          </div>
+
+          <p class="teacher-feat__message">公式LINEで、塾長の私と直接お話しできます。どんな小さな不安でも、まずはご相談ください。</p>
         </div>
-
-        <div class="teacher-feat__section">
-          <h4 class="teacher-feat__h4">専門・取り組み</h4>
-          <ul class="teacher-feat__list">
-            <li><span>小川探究 代表</span><small>探究教育のフロントランナー</small></li>
-            <li><span>プレゼン大会主催</span><small>次世代の表現者を育成する舞台を創出</small></li>
-            <li><span>「就プレ」講師</span><small>就活生へのプレゼン指導で実績多数</small></li>
-            <li><span>教育現場での指導</span><small>私立高校でのプレゼン授業を担当</small></li>
-          </ul>
-        </div>
-
-        <div class="teacher-feat__section">
-          <h4 class="teacher-feat__h4">登壇・指導実績</h4>
-          <!-- 要確認: 年月・掲載先・回数等をクライアントから取得 -->
-          <ul class="teacher-feat__list teacher-feat__list--simple">
-            <li>私立高校 プレゼンテーション授業 登壇</li>
-            <li>「就プレ」就活生向けプレゼン指導講師</li>
-            <li>プレゼン大会 主催・審査員</li>
-            <li>小川探究 代表として教育イベント多数開催</li>
-          </ul>
-        </div>
-
-        <p class="teacher-feat__message">公式LINEで、塾長の私と直接お話しできます。どんな小さな不安でも、まずはご相談ください。</p>
       </div>
     </article>
 
-    <article class="teacher-feat" style={`background-image:url(${base}images/teacher-bg-kokufu.jpg);`}>
-      <div class="teacher-feat__overlay" aria-hidden="true"></div>
-      <div class="teacher-feat__inner">
-        <header class="teacher-feat__head">
-          <div class="teacher-feat__icon teacher-feat__icon--placeholder" aria-label="國府先生（実写写真：クライアント手配中）">
-            <span>國</span>
+    <article class="teacher-feat">
+      <div class="teacher-feat__hero">
+        <img class="teacher-feat__bg" src={`${base}images/teacher-bg-kokufu.jpg`} alt="" loading="lazy" />
+        <div class="teacher-feat__tint" aria-hidden="true"></div>
+        <div class="teacher-feat__hero-content">
+          <div class="container">
+            <header class="teacher-feat__head">
+              <div class="teacher-feat__icon teacher-feat__icon--placeholder" aria-label="國府先生（実写写真：クライアント手配中）">
+                <span>國</span>
+              </div>
+              <div class="teacher-feat__title-block">
+                <span class="teacher-feat__role">義塾オンライン｜英検・TOEIC対策講座 担当</span>
+                <h3 class="teacher-feat__name">國府 泰</h3>
+                <span class="teacher-feat__name-en">KOKUFU Yasushi</span>
+              </div>
+            </header>
+            <blockquote class="teacher-feat__quote">TOEIC<span class="num">23</span>回連続満点。<br />英語の壁を、論理で<br />確実に超えさせます。</blockquote>
           </div>
-          <div class="teacher-feat__title-block">
-            <span class="teacher-feat__role">義塾オンライン｜英検・TOEIC対策講座 担当</span>
-            <h3 class="teacher-feat__name">國府 泰</h3>
-            <span class="teacher-feat__name-en">KOKUFU Yasushi</span>
+        </div>
+      </div>
+
+      <div class="teacher-feat__body">
+        <div class="container">
+          <div class="teacher-feat__bio">
+            <p>大手予備校にて講師としての歩みを始め、高校・大学・医学部予備校で<span class="mark"><span class="num">20</span>年間指導</span>。現在も赤本の執筆や入試問題作成に携わり続ける、受験英語の第一線を知るスペシャリストです。</p>
+            <p>TOEIC<span class="num">23</span>回連続満点・英検<span class="num">1</span>級保持の圧倒的な英語力を武器に、京大・阪大をはじめとする最難関大学へ数多くの門下生を輩出。義塾オンラインでは少人数制の英検・TOEIC対策講座を担当し、論理で英文を読み解く思考法を伝えています。</p>
           </div>
-        </header>
 
-        <blockquote class="teacher-feat__quote">TOEIC<span class="num">23</span>回連続満点。<br />英語の壁を、論理で<br />確実に超えさせます。</blockquote>
+          <div class="teacher-feat__section">
+            <h4 class="teacher-feat__h4">専門・取り組み</h4>
+            <ul class="teacher-feat__list">
+              <li><span>TOEIC 990点 23回連続取得</span><small>国内屈指の精緻な英語分析力</small></li>
+              <li><span>「English Booster」開発者</span><small>論理的再構築による独自メソッド</small></li>
+              <li><span>予備校20年・赤本執筆</span><small>京大・阪大など最難関大へ多数輩出</small></li>
+              <li><span>英検1級・超精密指導</span><small>高度な英作文・読解指導に定評</small></li>
+            </ul>
+          </div>
 
-        <div class="teacher-feat__bio">
-          <p>大手予備校にて講師としての歩みを始め、高校・大学・医学部予備校で<span class="mark"><span class="num">20</span>年間指導</span>。現在も赤本の執筆や入試問題作成に携わり続ける、受験英語の第一線を知るスペシャリストです。</p>
-          <p>TOEIC<span class="num">23</span>回連続満点・英検<span class="num">1</span>級保持の圧倒的な英語力を武器に、京大・阪大をはじめとする最難関大学へ数多くの門下生を輩出。義塾オンラインでは少人数制の英検・TOEIC対策講座を担当し、論理で英文を読み解く思考法を伝えています。</p>
-        </div>
-
-        <div class="teacher-feat__section">
-          <h4 class="teacher-feat__h4">専門・取り組み</h4>
-          <ul class="teacher-feat__list">
-            <li><span>TOEIC 990点 23回連続取得</span><small>国内屈指の精緻な英語分析力</small></li>
-            <li><span>「English Booster」開発者</span><small>論理的再構築による独自メソッド</small></li>
-            <li><span>予備校20年・赤本執筆</span><small>京大・阪大など最難関大へ多数輩出</small></li>
-            <li><span>英検1級・超精密指導</span><small>高度な英作文・読解指導に定評</small></li>
-          </ul>
-        </div>
-
-        <div class="teacher-feat__section">
-          <h4 class="teacher-feat__h4">登壇・指導実績</h4>
-          <!-- 要確認: 年月・掲載先・回数等をクライアントから取得 -->
-          <ul class="teacher-feat__list teacher-feat__list--simple">
-            <li>大手予備校 主任講師として20年指導</li>
-            <li>赤本（過去問題集）執筆協力</li>
-            <li>入試問題作成協力</li>
-          </ul>
+          <div class="teacher-feat__section">
+            <h4 class="teacher-feat__h4">登壇・指導実績</h4>
+            <!-- 要確認: 年月・掲載先・回数等をクライアントから取得 -->
+            <ul class="teacher-feat__list teacher-feat__list--simple">
+              <li>大手予備校 主任講師として20年指導</li>
+              <li>赤本（過去問題集）執筆協力</li>
+              <li>入試問題作成協力</li>
+            </ul>
+          </div>
         </div>
       </div>
     </article>
@@ -2556,44 +2572,62 @@ const faqs = [
 
   /* =========================================
      §6 講師紹介
-     全コンテンツを背景画像（実写・講師ごと専用生成）の上に重ねる構造
-     accent カラー（紫/緑）の overlay は使わず、白フォグで明るい質感維持
+     hero overlay（縦長4:5の実写写真 + 紫グラデで上下のみoverlay・中央は写真質感を見せる）
+     + body（白背景で詳細情報を読ませる）の2層構造
      カードUI（角丸+影+padding）は不使用
      ========================================= */
   .teacher-feat {
-    position: relative;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: var(--paper);
     color: var(--charcoal);
-    overflow: hidden;
   }
   .teacher-feat:first-of-type { margin-top: 40px; }
-  .teacher-feat + .teacher-feat { margin-top: 32px; }
+  .teacher-feat + .teacher-feat { margin-top: 0; }
 
-  /* 紫overlay：義塾ブランド色の purple-deep（フッターと同色）で写真全体に。
-     §3 リアル校舎の紫(#4C1D95)サービス色塗り全面とは別色で差別化。
-     上下を濃く・中央を薄くして写真質感を中央に残す */
-  .teacher-feat__overlay {
+  /* hero：縦長4:5実写写真をフルブリードで見せ、上下のみ purple-deep グラデで
+     役職pillと引用キャッチが乗る部分の文字可読性を確保。中央は写真そのまま */
+  .teacher-feat__hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--purple-deep);
+  }
+  .teacher-feat__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .teacher-feat__tint {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-      rgba(26, 15, 46, 0.7) 0%,
-      rgba(26, 15, 46, 0.42) 30%,
-      rgba(26, 15, 46, 0.42) 65%,
-      rgba(26, 15, 46, 0.78) 100%);
-    pointer-events: none;
+      rgba(26, 15, 46, 0.78) 0%,
+      rgba(26, 15, 46, 0.45) 22%,
+      rgba(26, 15, 46, 0.15) 45%,
+      rgba(26, 15, 46, 0.15) 65%,
+      rgba(26, 15, 46, 0.85) 100%);
   }
-
-  .teacher-feat__inner {
+  .teacher-feat__hero-content {
     position: relative;
     z-index: 1;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 56px 24px 64px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    justify-content: space-between;
+    padding: 28px 0 32px;
+  }
+  .teacher-feat__hero-content > .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
   }
 
   .teacher-feat__head {
@@ -2611,7 +2645,7 @@ const faqs = [
   }
   .teacher-feat__icon--placeholder {
     background: linear-gradient(135deg, var(--paper) 0%, var(--purple-soft) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.92);
+    border: 2px solid rgba(255, 255, 255, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2643,34 +2677,32 @@ const faqs = [
   }
   .teacher-feat__name {
     font-family: var(--font-serif);
-    font-size: clamp(32px, 5vw, 48px);
+    font-size: clamp(30px, 4.8vw, 44px);
     font-weight: 900;
     color: var(--paper);
     line-height: 1.2;
     letter-spacing: 0.04em;
     margin: 4px 0 0;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
   }
   .teacher-feat__name-en {
     display: block;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.78);
     letter-spacing: 0.22em;
     margin-top: 2px;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
-
-  /* 引用キャッチ：写真の上に直接白文字、左にオレンジバーで義塾アクセント */
   .teacher-feat__quote {
     font-family: var(--font-serif);
-    font-size: clamp(20px, 2.8vw, 28px);
+    font-size: clamp(18px, 2.4vw, 24px);
     font-weight: 700;
     color: var(--paper);
-    line-height: 1.65;
+    line-height: 1.6;
     letter-spacing: 0.02em;
-    padding-left: 18px;
+    padding-left: 16px;
     border-left: 3px solid var(--orange);
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    max-width: 720px;
   }
   .teacher-feat__quote .num {
     color: var(--paper);
@@ -2678,65 +2710,60 @@ const faqs = [
     margin: 0 0.04em;
   }
 
-  /* 本文：写真の上に直接白文字、text-shadow で読ませる */
+  /* body：白背景で詳細情報を読ませる */
+  .teacher-feat__body {
+    padding: 48px 0 64px;
+  }
+  .teacher-feat__body > .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
   .teacher-feat__bio p {
     font-size: 15.5px;
-    line-height: 2.05;
-    color: var(--paper);
+    line-height: 2.1;
+    color: var(--charcoal);
     margin-bottom: 14px;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   }
   .teacher-feat__bio p:last-child { margin-bottom: 0; }
-  .teacher-feat__bio .mark {
-    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.6) 60%);
-    color: var(--paper);
-    font-weight: 700;
-    padding: 0 2px;
-  }
 
-  /* セクション見出しブロック：写真の上に直接、白文字 */
-  .teacher-feat__section + .teacher-feat__section { margin-top: 8px; }
+  .teacher-feat__section { margin-top: 36px; }
   .teacher-feat__h4 {
     font-family: var(--font-sans);
     font-size: 12px;
     font-weight: 800;
-    color: var(--paper);
+    color: var(--purple);
     letter-spacing: 0.22em;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+    border-bottom: 2px solid var(--purple);
     text-transform: uppercase;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .teacher-feat__list li {
     display: flex;
     flex-direction: column;
     gap: 3px;
     padding: 10px 0;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.28);
+    border-bottom: 1px dashed rgba(76, 29, 149, 0.25);
   }
   .teacher-feat__list li:last-child { border-bottom: none; }
   .teacher-feat__list span {
     font-size: 14.5px;
     font-weight: 700;
-    color: var(--paper);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    color: var(--purple);
   }
   .teacher-feat__list small {
     font-size: 12.5px;
-    color: rgba(255, 255, 255, 0.86);
+    color: var(--charcoal-soft);
     line-height: 1.75;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .teacher-feat__list--simple li {
     display: list-item;
     padding: 7px 0 7px 18px;
     border-bottom: none;
     font-size: 14px;
-    color: var(--paper);
+    color: var(--charcoal);
     line-height: 1.85;
     position: relative;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .teacher-feat__list--simple li::before {
     content: "—";
@@ -2746,31 +2773,33 @@ const faqs = [
     font-weight: 900;
   }
 
-  /* メッセージ：オレンジ左bar + 白文字、義塾の主役色を引き締める */
+  /* メッセージ：紫塗りで塾長の声を引き締める */
   .teacher-feat__message {
-    padding: 18px 22px;
-    background: rgba(26, 15, 46, 0.55);
+    margin-top: 36px;
+    padding: 22px 26px;
+    background: var(--purple);
     color: var(--paper);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.95;
     border-left: 4px solid var(--orange);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
   }
 
   @media (max-width: 768px) {
-    .teacher-feat__inner { padding: 40px 20px 48px; gap: 22px; }
-    .teacher-feat__head { gap: 16px; }
-    .teacher-feat__icon { width: 88px; height: 88px; }
-    .teacher-feat__icon--placeholder span { font-size: 40px; }
-    .teacher-feat__name { font-size: clamp(26px, 6.6vw, 36px); }
-    .teacher-feat__quote { font-size: 17.5px; padding-left: 14px; line-height: 1.65; }
+    .teacher-feat__hero-content { padding: 22px 0 26px; gap: 14px; }
+    .teacher-feat__hero-content > .container { gap: 14px; }
+    .teacher-feat__head { gap: 14px; }
+    .teacher-feat__icon { width: 84px; height: 84px; }
+    .teacher-feat__icon--placeholder span { font-size: 38px; }
+    .teacher-feat__name { font-size: clamp(26px, 6.6vw, 34px); }
+    .teacher-feat__quote { font-size: 16px; padding-left: 12px; line-height: 1.65; }
+    .teacher-feat__body { padding: 36px 0 48px; }
     .teacher-feat__bio p { font-size: 14.5px; line-height: 2; }
+    .teacher-feat__section { margin-top: 28px; }
     .teacher-feat__list span { font-size: 14px; }
     .teacher-feat__list small { font-size: 12px; }
     .teacher-feat__list--simple li { font-size: 13.5px; }
-    .teacher-feat__message { padding: 18px 20px; font-size: 14.5px; }
+    .teacher-feat__message { margin-top: 28px; padding: 20px 22px; font-size: 14.5px; }
   }
 
   /* =========================================
