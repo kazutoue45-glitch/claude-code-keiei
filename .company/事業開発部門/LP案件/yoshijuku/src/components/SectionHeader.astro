@@ -13,67 +13,16 @@ const { eyebrow, title, lead, align = "left" } = Astro.props;
     margin-bottom: 56px;
   }
 
-  /* 装飾①：見出しの真上に紫の小さな点 3つ */
-  .sh::before {
-    content: "";
-    display: block;
-    width: 28px;
-    height: 4px;
-    background-image:
-      radial-gradient(circle, var(--purple) 50%, transparent 51%),
-      radial-gradient(circle, var(--purple) 50%, transparent 51%),
-      radial-gradient(circle, var(--purple) 50%, transparent 51%);
-    background-size: 4px 4px;
-    background-position: 0 center, 12px center, 24px center;
-    background-repeat: no-repeat;
-    margin-bottom: 18px;
-  }
-
-  /* 装飾②：見出しの左に短い紫の縦バー（タイトル本体をはみ出さない位置に） */
-  .sh :global(.section-title) {
-    position: relative;
-    padding-left: 14px;
-  }
-  .sh :global(.section-title)::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.32em;
-    bottom: 0.4em;
-    width: 3px;
-    background: var(--purple);
-    border-radius: 2px;
-  }
-  /* リード文も縦バーぶん字下げして揃える */
-  .sh :global(.section-lead) {
-    padding-left: 14px;
-  }
-
   .sh--center {
     text-align: center;
   }
-  .sh--center::before {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .sh--center :global(.section-title) {
-    padding-left: 0;
-    display: inline-block;
-  }
-  .sh--center :global(.section-title)::before {
-    display: none;
-  }
-  .sh--center :global(.section-lead) {
-    padding-left: 0;
+
+  .sh--center .section-lead {
     margin-left: auto;
     margin-right: auto;
   }
 
   @media (max-width: 768px) {
     .sh { margin-bottom: 40px; }
-    .sh :global(.section-title),
-    .sh :global(.section-lead) {
-      padding-left: 12px;
-    }
   }
 </style>
