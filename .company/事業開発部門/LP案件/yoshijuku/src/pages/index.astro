@@ -2279,11 +2279,15 @@ const faqs = [
   .service__details > .service__forwhom {
     margin-top: 24px;
   }
-  /* details 内 CtaButton wrap のmargin上書き */
+  /* details 内 CtaButton wrap のmargin・色上書き */
   .service__details :global(.cta-wrap) {
     margin: 36px auto 0;
     max-width: 420px;
     padding: 0;
+  }
+  /* CTA下のサブテキスト：service color背景上で読めるよう白に */
+  .service__details :global(.cta-wrap__sub) {
+    color: rgba(255, 255, 255, 0.92);
   }
 
   .service__details-section { margin: 12px 0 28px; }
