@@ -2348,14 +2348,13 @@ const faqs = [
   @media (max-width: 768px) {
     .service { margin: 40px 0; }
     .service:first-of-type { margin-top: 56px; }
-    .service__hero { aspect-ratio: 4 / 5; }
-    .service__hero-photo { object-position: center; }
+    .service__hero { aspect-ratio: 4 / 3; }
+    .service__hero-photo { object-position: right center; }
     .service__hero-tint {
       background: linear-gradient(180deg,
         transparent 0%,
-        transparent 35%,
-        color-mix(in srgb, var(--accent) 50%, transparent) 65%,
-        color-mix(in srgb, var(--accent) 92%, transparent) 92%,
+        transparent 50%,
+        color-mix(in srgb, var(--accent) 55%, transparent) 80%,
         var(--accent) 100%);
     }
     .service__hero-content { justify-content: flex-end; padding-bottom: 8px; }
