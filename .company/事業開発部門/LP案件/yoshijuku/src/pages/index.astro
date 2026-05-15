@@ -243,11 +243,10 @@ const faqs = [
         <img src={`${base}images/logo-yoshijuku.png`} alt="義塾（よしじゅく）" class="hero__logo" loading="eager" />
       </h1>
 
-    </div>
-
-    {/* §1 キャンペーン帯（obi）：badge-ribbon.png をhero下端の全幅で */}
-    <div class="hero__obi" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-      <img src={`${base}images/badge-ribbon.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="eager" />
+      {/* §1 円形メダル型ゴールドバッジ（写真下端寄り・白パネルにまたぐ） */}
+      <div class="hero__medal" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
+        <img src={`${base}images/badge-medal.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="eager" />
+      </div>
     </div>
 
     {/* 下段：リード文＋9人講師シルエット（画像として独立表示・素材を活かす） */}
@@ -955,9 +954,9 @@ const faqs = [
         lead="<strong class='text-orange'>新規入塾生限定／初月の授業料 1ヶ月無料。</strong><br />体験授業・無料相談・進路相談、すべて公式LINEから受け付けています。塾長が直接お返事します。"
       />
 
-      {/* §10 小型ゴールドバッジ（Codex生成 PNG） */}
-      <div class="access__mini-badge" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
-        <img src={`${base}images/badge-mini.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="lazy" />
+      {/* §10 キャンペーン帯（obi）：badge-ribbon.png でアクセス上に統一 */}
+      <div class="access__obi" aria-label="新規入塾生限定 初月授業料1ヶ月無料">
+        <img src={`${base}images/badge-ribbon.png`} alt="新規入塾生限定 初月授業料1ヶ月無料" loading="lazy" />
       </div>
     </div>
 
@@ -1091,21 +1090,26 @@ const faqs = [
     z-index: 3;
   }
 
-  /* §1 キャンペーン帯（obi）：hero下端の全幅でゴールドリボンを表示 */
-  .hero__obi {
-    margin: 0 auto;
-    padding: 12px 16px;
-    max-width: 100%;
-    text-align: center;
-    background: linear-gradient(180deg, rgba(255, 224, 102, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%);
+  /* §1 円形メダル型ゴールドバッジ（FVだけバッジ・他のキャンペーン訴求はobiで統一） */
+  .hero__medal {
+    position: absolute;
+    bottom: 22px;
+    right: 20px;
+    width: 130px;
+    height: 130px;
+    z-index: 4;
+    filter: drop-shadow(0 12px 22px rgba(26, 15, 46, 0.4));
+    animation: medal-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-  .hero__obi img {
-    display: block;
+  .hero__medal img {
     width: 100%;
-    height: auto;
-    max-width: 720px;
-    margin: 0 auto;
-    filter: drop-shadow(0 10px 22px rgba(139, 105, 20, 0.32));
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+  @keyframes medal-in {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
   }
 
   .hero__panel {
@@ -1204,7 +1208,7 @@ const faqs = [
     .hero__topband-sub { font-size: 10.5px; }
     .hero__panel { padding: 32px 20px 28px; }
     .hero__catch { padding: 0 20px 8px; }
-    .hero__obi { padding: 10px 12px; }
+    .hero__medal { width: 100px; height: 100px; bottom: 16px; right: 14px; }
   }
 
   @media (min-width: 769px) {
@@ -1217,7 +1221,7 @@ const faqs = [
     .hero__catch { padding: 0 56px 30px; }
     .hero__logo { width: clamp(280px, 38vw, 440px); }
     .hero__sub { font-size: 17px; }
-    .hero__obi { padding: 16px 24px; }
+    .hero__medal { width: 180px; height: 180px; bottom: 38px; right: 40px; }
   }
 
   /* =========================================
@@ -3055,18 +3059,17 @@ const faqs = [
   /* =========================================
      §10 アクセス
      ========================================= */
-  .access__mini-badge {
-    width: 120px;
-    height: 120px;
+  /* §10 アクセス上のキャンペーン帯（obi）：badge-ribbon.png */
+  .access__obi {
     margin: 40px auto 0;
-    filter: drop-shadow(0 6px 14px rgba(139, 105, 20, 0.32));
+    max-width: 720px;
+    text-align: center;
   }
-
-  .access__mini-badge img {
-    width: 100%;
-    height: 100%;
+  .access__obi img {
     display: block;
-    object-fit: contain;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 22px rgba(139, 105, 20, 0.32));
   }
 
   /* §9 Google Maps 埋め込み（QRコードに代わって地図を配置） */
@@ -3145,7 +3148,7 @@ const faqs = [
   @media (max-width: 768px) {
     .access__info { padding: 28px 22px; }
     .access__info-list > div { grid-template-columns: 80px 1fr; gap: 14px; }
-    .access__mini-badge { width: 104px; height: 104px; }
+    .access__obi { margin-top: 32px; }
   }
 </style>
 
