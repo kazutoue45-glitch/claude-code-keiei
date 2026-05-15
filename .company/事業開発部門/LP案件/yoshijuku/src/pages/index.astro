@@ -2016,11 +2016,12 @@ const faqs = [
   .service__hero-tint {
     position: absolute;
     inset: 0;
-    background: linear-gradient(95deg,
-      var(--accent) 0%,
-      color-mix(in srgb, var(--accent) 78%, transparent) 35%,
-      color-mix(in srgb, var(--accent) 30%, transparent) 65%,
-      transparent 95%);
+    background:
+      linear-gradient(95deg,
+        color-mix(in srgb, var(--accent) 88%, transparent) 0%,
+        color-mix(in srgb, var(--accent) 55%, transparent) 28%,
+        transparent 52%),
+      linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.18) 100%);
   }
   .service__hero-content {
     position: relative;
@@ -2351,8 +2352,10 @@ const faqs = [
     .service__hero-photo { object-position: center; }
     .service__hero-tint {
       background: linear-gradient(180deg,
-        color-mix(in srgb, var(--accent) 30%, transparent) 0%,
-        color-mix(in srgb, var(--accent) 70%, transparent) 50%,
+        transparent 0%,
+        transparent 35%,
+        color-mix(in srgb, var(--accent) 50%, transparent) 65%,
+        color-mix(in srgb, var(--accent) 92%, transparent) 92%,
         var(--accent) 100%);
     }
     .service__hero-content { justify-content: flex-end; padding-bottom: 8px; }
