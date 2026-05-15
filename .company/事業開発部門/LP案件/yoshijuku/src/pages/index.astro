@@ -350,25 +350,37 @@ const faqs = [
       />
 
       {/* 01 リアル校舎 */}
-      <div class="learn__service learn__service--01 section-anchor" id="service-real" style="--accent:#4C1D95;">
-        <span class="learn__num" aria-hidden="true">01</span>
-        <div class="learn__photo">
-          <img src={`${base}images/room-individual.jpg`} alt="義塾の個別指導教室" loading="lazy" />
-          <span class="learn__photo-tag">リアル校舎</span>
-        </div>
-        <div class="learn__text">
-          <p class="learn__eyebrow">通塾型｜個別＋クラス</p>
-          <h3>質問できる距離で、<br />考える力を育てる。</h3>
-          <p class="learn__lead">義塾の校舎で、<span class="num">9</span>人の講師陣と一緒に学ぶ通塾型サービス。指導経験豊富な講師が一人ひとりに向き合い、<span class="mark">個別とクラスを必要に応じて使い分け</span>ながら、お子様のペースで考える力を育てます。集中できる教室の空気が、「家ではやる気が出ない」を変えていきます。</p>
+    </div>
 
-          <ul class="learn__meta">
+    <article class="service service--real section-anchor" id="service-real" style="--accent:#4C1D95;--accent-deep:#2D1167;">
+      <div class="service__hero">
+        <img class="service__hero-photo" src={`${base}images/hero-real.jpg`} alt="義塾の校舎・個別指導教室" loading="lazy" />
+        <div class="service__hero-tint" aria-hidden="true"></div>
+        <div class="service__hero-content">
+          <div class="container">
+            <span class="service__num" aria-hidden="true">01</span>
+            <p class="service__eyebrow">通塾型｜個別＋クラス</p>
+            <h3 class="service__catch">質問できる距離で、<br />考える力を育てる。</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="service__body">
+        <div class="container">
+          <div class="service__story">
+            <p>「家ではどうしてもやる気が出ない」「親の前では、ついサボってしまう」——保護者の方からよく聞くお声です。</p>
+            <p>義塾の校舎は、そんなお子様にとっての <span class="mark">「集中できる場所」</span> になります。9人の講師陣と顔を合わせ、わからないことをその場で質問できる。同じ机に向かう仲間がいる。教室の空気が、お子様の背中をそっと押し続けます。</p>
+            <p>個別指導とクラス授業を、その時々の状況に合わせて<span class="mark">使い分けられる</span>のも義塾だけの強み。基礎固めから受験対策まで、お子様のペースで「考える力」を育てます。</p>
+          </div>
+
+          <ul class="service__meta">
             <li><span>対象</span><b>小3〜高3</b></li>
             <li><span>指導形態</span><b>個別／クラス</b></li>
             <li><span>月額目安</span><b>14,300〜44,000円</b></li>
           </ul>
 
-          <div class="learn__forwhom">
-            <p class="learn__forwhom-title">こんな方におすすめ</p>
+          <div class="service__forwhom">
+            <p class="service__forwhom-title">こんな方におすすめ</p>
             <ul>
               <li>通塾できる</li>
               <li>講師と顔を合わせて学びたい</li>
@@ -376,10 +388,10 @@ const faqs = [
             </ul>
           </div>
 
-          <details class="learn__details">
+          <details class="service__details">
             <summary>時間割・担当講師・校舎の詳細を見る</summary>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>時間割</h4>
               <ul>
                 <li>月・水・木・金 17:00〜21:40</li>
@@ -388,7 +400,7 @@ const faqs = [
               </ul>
             </div>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>担当講師（9名体制）</h4>
               <ul>
                 <li>塾長：小川 大輔（指導歴12年・複数校舎の立ち上げ経験）</li>
@@ -397,10 +409,9 @@ const faqs = [
                 <li>学校の教員免許を持つ講師</li>
                 <li>元気あふれる若手講師 ほか</li>
               </ul>
-              <p class="learn__details-note">詳細は §講師紹介 参照</p>
             </div>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>校舎（新築一戸建てを改装した3教室）</h4>
               <ul>
                 <li>第一教室：クラス授業用の大きめの教室</li>
@@ -410,30 +421,45 @@ const faqs = [
             </div>
           </details>
 
-          <a class="learn__cta" href="#" data-service="real">校舎の見学・体験授業を申し込む<span aria-hidden="true">›</span></a>
+          <a class="service__cta" href="#" data-service="real">校舎の見学・体験授業を申し込む<span aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    </article>
+
+    <div class="container">
+
+      {/* 02 オンライン */}
+    </div>
+
+    <article class="service service--online section-anchor" id="service-online" style="--accent:#2E8B57;--accent-deep:#1F6240;">
+      <div class="service__hero">
+        <img class="service__hero-photo" src={`${base}images/hero-online.jpg`} alt="自宅でオンライン1対1授業を受ける生徒" loading="lazy" />
+        <div class="service__hero-tint" aria-hidden="true"></div>
+        <div class="service__hero-content">
+          <div class="container">
+            <span class="service__num" aria-hidden="true">02</span>
+            <p class="service__eyebrow">在宅型｜完全マンツーマン</p>
+            <h3 class="service__catch">完全マンツーマンで<br /><span class="num">4</span>コマ完結。<br />受験英語からプレゼン・<wbr />AI音楽まで。</h3>
+          </div>
         </div>
       </div>
 
-      {/* 02 オンライン */}
-      <div class="learn__service learn__service--02 section-anchor" id="service-online" style="--accent:#2E8B57;">
-        <span class="learn__num" aria-hidden="true">02</span>
-        <div class="learn__photo">
-          <img src={`${base}images/scene-online.jpg`} alt="自宅でオンライン1対1授業を受ける生徒" loading="lazy" />
-          <span class="learn__photo-tag">オンライン</span>
-        </div>
-        <div class="learn__text">
-          <p class="learn__eyebrow">在宅型｜完全マンツーマン</p>
-          <h3>完全マンツーマンで<br /><span class="num">4</span>コマ完結。<br />受験英語からプレゼン・AI音楽まで。</h3>
-          <p class="learn__lead">通塾なしで、英検・TOEIC／探究プレゼン／実践プレゼン／AI音楽制作の<span class="mark">4つの専門講座</span>から選んで学べるオンラインサービス。Zoomで完全1対1、<span class="mark">1コマ45分・全4コマで1つの力を完成</span>させる設計です。TOEIC990点23回連続満点・英検1級保持の英語講師、プレゼン講座150本実施の塾長が直接指導します。</p>
+      <div class="service__body">
+        <div class="container">
+          <div class="service__story">
+            <p>「通塾の時間がもったいない」「もっと専門的に学ばせたい」——そんなご家庭にこそ、オンラインを選んでいただきたい。</p>
+            <p>義塾オンラインは、Zoomで講師と <span class="mark">完全1対1</span>。1コマ45分、全4コマで「1つの力」を確実に身につける、<span class="mark">完結型</span>の設計です。続けるか迷う前に、まず一つ完成させる。それが、お子様の自信に変わります。</p>
+            <p>選べる講座は、英検・TOEIC、探究プレゼン、実践プレゼン、AI音楽制作の4つ。<span class="mark">TOEIC990点を23回連続満点・英検1級</span>保持の英語講師、<span class="mark">プレゼン講座を150本以上実施</span>してきた塾長が、それぞれ直接担当します。受験勉強だけでは伸ばせない「考える力」「伝える力」「表現する力」を、ご自宅から、専門家とマンツーマンで。</p>
+          </div>
 
-          <ul class="learn__meta">
+          <ul class="service__meta">
             <li><span>対象</span><b>小4〜社会人</b></li>
-            <li><span>指導形態</span><b>完全マンツーマン1対1<small>（Zoom／1コマ45分／全4コマ完結）</small></b></li>
-            <li><span>月額目安</span><b>22,000円〜<small>（1コマ5,500円×4）</small></b></li>
+            <li><span>指導形態</span><b>完全1対1（Zoom）<small>1コマ45分／全4コマ完結</small></b></li>
+            <li><span>月額目安</span><b>22,000円〜<small>1コマ5,500円×4コマ</small></b></li>
           </ul>
 
-          <div class="learn__forwhom">
-            <p class="learn__forwhom-title">こんな方におすすめ</p>
+          <div class="service__forwhom">
+            <p class="service__forwhom-title">こんな方におすすめ</p>
             <ul>
               <li>受験英語を確実に伸ばしたい</li>
               <li>話す力・伝える力を本気で鍛えたい</li>
@@ -441,13 +467,13 @@ const faqs = [
             </ul>
           </div>
 
-          <details class="learn__details">
+          <details class="service__details">
             <summary>4つの講座と受講までの流れを見る</summary>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>選べる4つの講座</h4>
 
-              <div class="learn__course">
+              <div class="service__course">
                 <h5>講座<span class="num">1</span>｜探究プレゼン講座</h5>
                 <p>「自分は何者か」を見つけ、自分の言葉で伝えられるようになる3日間。小学4年生〜高校3年生が対象。受験勉強だけでは育たない「自分の興味を掘り下げて人前で語る力」を、4コマで完成させます。</p>
                 <dl>
@@ -459,7 +485,7 @@ const faqs = [
                 </dl>
               </div>
 
-              <div class="learn__course">
+              <div class="service__course">
                 <h5>講座<span class="num">2</span>｜実践プレゼン講座</h5>
                 <p>提案・営業・授業——伝えるすべての場面で結果を出すための4コマ。大学生・社会人・指導者が対象。NORDT思考（Needs/Original/Real/Design/Talk）とデザイン10という2つの型で、プレゼンを「センス」から「再現可能なスキル」に変えます。</p>
                 <dl>
@@ -470,7 +496,7 @@ const faqs = [
                 </dl>
               </div>
 
-              <div class="learn__course">
+              <div class="service__course">
                 <h5>講座<span class="num">3</span>｜AI音楽制作講座</h5>
                 <p>楽器も楽譜もいらない。プロンプトだけで自分のオリジナル曲が完成する2日間。小学4年生〜社会人が対象。生成AI（Suno等）とオリジナルのプロンプトガイドを使って、世界に1つの音楽を作ります。</p>
                 <dl>
@@ -482,7 +508,7 @@ const faqs = [
                 </dl>
               </div>
 
-              <div class="learn__course">
+              <div class="service__course">
                 <h5>講座<span class="num">4</span>｜英検・TOEIC対策講座</h5>
                 <p>TOEIC990点を23回連続。英検1級一発合格。その分析力を、4コマであなたに。中学1年生〜社会人が対象。大手予備校20年・指導2,000人以上の國府講師が、目標スコアまでの最短ルートを設計します。</p>
                 <dl>
@@ -494,9 +520,9 @@ const faqs = [
               </div>
             </div>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>受講までの流れ</h4>
-              <ol class="learn__steps">
+              <ol class="service__steps">
                 <li>公式LINE登録</li>
                 <li>希望講座をヒアリング</li>
                 <li>無料体験レッスン</li>
@@ -505,30 +531,40 @@ const faqs = [
             </div>
           </details>
 
-          <a class="learn__cta" href="#" data-service="online">オンライン体験レッスンを申し込む<span aria-hidden="true">›</span></a>
+          <a class="service__cta" href="#" data-service="online">オンライン体験レッスンを申し込む<span aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="service service--tutor section-anchor" id="service-tutor" style="--accent:#2563B8;--accent-deep:#174A87;">
+      <div class="service__hero">
+        <img class="service__hero-photo" src={`${base}images/hero-tutor.jpg`} alt="自宅リビングで家庭教師から指導を受ける生徒" loading="lazy" />
+        <div class="service__hero-tint" aria-hidden="true"></div>
+        <div class="service__hero-content">
+          <div class="container">
+            <span class="service__num" aria-hidden="true">03</span>
+            <p class="service__eyebrow">訪問型｜完全マンツーマン</p>
+            <h3 class="service__catch">先生がご自宅へ。<br />進路相談も、塾長と直接。</h3>
+          </div>
         </div>
       </div>
 
-      {/* 03 家庭教師 */}
-      <div class="learn__service learn__service--03 section-anchor" id="service-tutor" style="--accent:#2563B8;">
-        <span class="learn__num" aria-hidden="true">03</span>
-        <div class="learn__photo">
-          <img src={`${base}images/scene-tutor.jpg`} alt="自宅リビングで家庭教師から指導を受ける生徒" loading="lazy" />
-          <span class="learn__photo-tag">家庭教師</span>
-        </div>
-        <div class="learn__text">
-          <p class="learn__eyebrow">訪問型｜完全マンツーマン</p>
-          <h3>先生がご自宅へ。<br />進路相談も、塾長と直接。</h3>
-          <p class="learn__lead">義塾の講師がご自宅へ訪問する完全マンツーマン指導。週1日2時間の授業に加え、<span class="mark">塾長と公式LINEで直接やりとり</span>できるので、進路相談・家庭学習の声かけまで含めて伴走します。<span class="mark">2026年入塾の第1期生は特別価格</span>でお迎えします。</p>
+      <div class="service__body">
+        <div class="container">
+          <div class="service__story">
+            <p>「うちの子は集団が苦手」「送迎の負担が大きい」「もう一段、学習環境を整えたい」——そんなお声に応えるのが、義塾の家庭教師サービスです。</p>
+            <p>義塾の講師がご自宅へ訪問し、週1日2時間、お子様一人ひとりの学習環境に合わせて指導します。授業の時間だけではなく、<span class="mark">公式LINEで塾長と直接やりとり</span>できるので、進路相談も家庭学習の声かけも、いつでも相談できる安心が手に入ります。</p>
+            <p><span class="mark">2026年入塾の第1期生は特別価格</span>でお迎えします。兄弟姉妹・お友達とのペア受講にも対応。お子様のご自宅という、最も集中できる場所で、最も近い距離から伴走します。</p>
+          </div>
 
-          <ul class="learn__meta">
+          <ul class="service__meta">
             <li><span>対象</span><b>中1〜高2</b></li>
-            <li><span>指導形態</span><b>訪問1対1／週1日2時間</b></li>
-            <li><span>月額目安</span><b>26,400円〜</b></li>
+            <li><span>指導形態</span><b>訪問1対1<small>週1日2時間／月4回</small></b></li>
+            <li><span>月額目安</span><b>26,400円〜<small>＋交通費</small></b></li>
           </ul>
 
-          <div class="learn__forwhom">
-            <p class="learn__forwhom-title">こんな方におすすめ</p>
+          <div class="service__forwhom">
+            <p class="service__forwhom-title">こんな方におすすめ</p>
             <ul>
               <li>通塾の送迎が難しい</li>
               <li>自宅で集中して学びたい</li>
@@ -536,10 +572,10 @@ const faqs = [
             </ul>
           </div>
 
-          <details class="learn__details">
+          <details class="service__details">
             <summary>指導形態・料金・特長の詳細を見る</summary>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>指導形態・頻度</h4>
               <ul>
                 <li>完全マンツーマン訪問</li>
@@ -548,7 +584,7 @@ const faqs = [
               </ul>
             </div>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>担当講師</h4>
               <ul>
                 <li>塾長または義塾講師陣から派遣（→ §講師紹介参照）</li>
@@ -556,7 +592,7 @@ const faqs = [
               </ul>
             </div>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>料金（第<span class="num">1</span>期生特別価格／2026年入塾生限定）</h4>
               <ul>
                 <li>通常1名：月額26,400円＋講師交通費</li>
@@ -565,7 +601,7 @@ const faqs = [
               </ul>
             </div>
 
-            <div class="learn__details-section">
+            <div class="service__details-section">
               <h4>この家庭教師ならではの安心</h4>
               <ul>
                 <li>講師がご自宅まで訪問するので送迎不要</li>
@@ -575,10 +611,12 @@ const faqs = [
             </div>
           </details>
 
-          <a class="learn__cta" href="#" data-service="tutor">家庭教師の無料相談を申し込む<span aria-hidden="true">›</span></a>
+          <a class="service__cta" href="#" data-service="tutor">家庭教師の無料相談を申し込む<span aria-hidden="true">›</span></a>
         </div>
       </div>
+    </article>
 
+    <div class="container">
       {/* 比較表（スキャナブル） */}
       <ServiceCompareTable services={servicesCompare} />
     </div>
@@ -1948,6 +1986,394 @@ const faqs = [
     .learn__details-data dt { font-size: 11px; }
     .learn__details-data dd { font-size: 13px; }
     .learn__cta { font-size: 14px; padding: 14px 18px; }
+  }
+
+  /* =========================================
+     §3 サービス紹介（フルブリード・イメージカラー背景・写真にコピー重ね）
+     ========================================= */
+  .service {
+    background: var(--accent);
+    color: var(--paper);
+    margin: 56px 0;
+  }
+  .service:first-of-type { margin-top: 80px; }
+
+  /* ヒーロー：写真にコピーを重ねる */
+  .service__hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    overflow: hidden;
+  }
+  .service__hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+  .service__hero-tint {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(95deg,
+      var(--accent) 0%,
+      color-mix(in srgb, var(--accent) 78%, transparent) 35%,
+      color-mix(in srgb, var(--accent) 30%, transparent) 65%,
+      transparent 95%);
+  }
+  .service__hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .service__hero-content > .container {
+    position: relative;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .service__num {
+    position: absolute;
+    top: -56px;
+    left: -8px;
+    font-family: var(--font-serif);
+    font-size: clamp(140px, 20vw, 260px);
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.14);
+    letter-spacing: -0.02em;
+    pointer-events: none;
+    user-select: none;
+  }
+  .service__eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--paper);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(6px);
+  }
+  .service__catch {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 4.6vw, 52px);
+    font-weight: 900;
+    color: var(--paper);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    max-width: 720px;
+  }
+  .service__catch .num {
+    color: var(--paper);
+    font-size: 1.05em;
+    margin: 0 0.05em;
+  }
+
+  /* 本文：service color背景にホワイト */
+  .service__body {
+    padding: 56px 0 72px;
+  }
+  .service__body > .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .service__story p {
+    font-size: 16px;
+    line-height: 2.1;
+    color: rgba(255, 255, 255, 0.96);
+    margin-bottom: 22px;
+  }
+  .service__story p:last-child { margin-bottom: 0; }
+  .service__story .mark {
+    background: linear-gradient(transparent 60%, rgba(255, 215, 100, 0.4) 60%);
+    color: var(--paper);
+    font-weight: 700;
+    padding: 0 2px;
+  }
+
+  /* メタ情報1行 */
+  .service__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 36px;
+    padding: 22px 0;
+    margin: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .service__meta li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+  .service__meta span {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .service__meta b {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--paper);
+    letter-spacing: 0.02em;
+  }
+  .service__meta b small {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+  }
+
+  /* こんな方におすすめ コールアウト */
+  .service__forwhom {
+    background: rgba(0, 0, 0, 0.18);
+    padding: 22px 26px;
+    margin: 28px 0;
+    border-radius: 8px;
+  }
+  .service__forwhom-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 14px;
+  }
+  .service__forwhom ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .service__forwhom li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 15px;
+    color: var(--paper);
+    line-height: 1.7;
+  }
+  .service__forwhom li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--paper);
+  }
+
+  /* 詳細トグル */
+  .service__details {
+    margin-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 8px;
+  }
+  .service__details > summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--paper);
+    letter-spacing: 0.06em;
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .service__details > summary::-webkit-details-marker { display: none; }
+  .service__details > summary::before {
+    content: "＋";
+    font-size: 18px;
+    width: 1em;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .service__details[open] > summary::before { content: "−"; }
+  .service__details > summary:hover { opacity: 0.8; }
+
+  .service__details-section { margin: 12px 0 28px; }
+  .service__details-section h4 {
+    font-family: var(--font-serif);
+    font-size: 15.5px;
+    font-weight: 900;
+    color: var(--paper);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.04em;
+  }
+  .service__details-section ul,
+  .service__details-section ol {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 0;
+  }
+  .service__details-section ul li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.85;
+  }
+  .service__details-section ul li::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: var(--paper);
+    font-weight: 700;
+  }
+
+  /* 受講までの流れ（番号ステップ） */
+  .service__steps {
+    counter-reset: svc-step;
+  }
+  .service__steps li {
+    counter-increment: svc-step;
+    list-style: none;
+    padding-left: 36px !important;
+    position: relative;
+    font-size: 14.5px;
+    color: var(--paper) !important;
+    line-height: 1.8;
+  }
+  .service__steps li::before {
+    content: counter(svc-step) !important;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 24px;
+    height: 24px;
+    background: var(--paper) !important;
+    color: var(--accent) !important;
+    font-family: var(--font-serif) !important;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px !important;
+  }
+
+  /* 4つの講座カード（オンライン詳細内） */
+  .service__course {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .service__course:last-child { border-bottom: none; }
+  .service__course h5 {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--paper);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+  .service__course h5 .num {
+    color: var(--paper);
+    font-size: 1.2em;
+    margin: 0 0.06em;
+  }
+  .service__course > p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.95;
+    margin-bottom: 14px;
+  }
+  .service__course dl {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.22);
+    padding: 16px 18px;
+    border-radius: 6px;
+  }
+  .service__course dl > div {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 14px;
+  }
+  .service__course dl dt {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.72);
+    letter-spacing: 0.04em;
+    padding-top: 2px;
+  }
+  .service__course dl dd {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.8;
+  }
+
+  /* CTA：白背景にservice色文字（コントラスト） */
+  .service__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background: var(--paper);
+    color: var(--accent-deep, var(--accent));
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-top: 32px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  }
+  .service__cta span {
+    font-size: 1.4em;
+    line-height: 1;
+  }
+
+  @media (max-width: 768px) {
+    .service { margin: 40px 0; }
+    .service:first-of-type { margin-top: 56px; }
+    .service__hero { aspect-ratio: 4 / 5; }
+    .service__hero-photo { object-position: center; }
+    .service__hero-tint {
+      background: linear-gradient(180deg,
+        color-mix(in srgb, var(--accent) 30%, transparent) 0%,
+        color-mix(in srgb, var(--accent) 70%, transparent) 50%,
+        var(--accent) 100%);
+    }
+    .service__hero-content { justify-content: flex-end; padding-bottom: 8px; }
+    .service__num { top: 8px; left: -4px; font-size: 160px; }
+    .service__eyebrow { font-size: 11px; padding: 5px 12px; margin-bottom: 14px; }
+    .service__body { padding: 36px 0 48px; }
+    .service__story p { font-size: 14.5px; line-height: 1.95; margin-bottom: 18px; }
+    .service__meta { gap: 16px 24px; padding: 16px 0; margin: 22px 0; }
+    .service__meta b { font-size: 16px; }
+    .service__forwhom { padding: 18px 20px; margin: 22px 0; }
+    .service__forwhom li { font-size: 14px; }
+    .service__details > summary { font-size: 13px; padding: 14px 0; }
+    .service__details-section h4 { font-size: 14.5px; }
+    .service__details-section ul li { font-size: 13px; }
+    .service__course h5 { font-size: 15.5px; }
+    .service__course > p { font-size: 13.5px; }
+    .service__course dl > div { grid-template-columns: 76px 1fr; gap: 10px; }
+    .service__course dl dt { font-size: 11px; }
+    .service__course dl dd { font-size: 12.5px; }
+    .service__steps li { font-size: 13.5px; }
+    .service__cta { font-size: 15px; padding: 18px 22px; }
   }
 
   /* =========================================
