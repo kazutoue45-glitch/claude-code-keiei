@@ -2715,14 +2715,20 @@ const faqs = [
   .teacher-feat__tint {
     position: absolute;
     inset: 0;
-    /* 紫overlay を撤去し、下端の白フェードのみ（body白背景に自然繋ぎ）。
-       読みやすさは hero-content の半透明白パネルで担保（案A） */
-    background: linear-gradient(180deg,
-      transparent 0%,
-      transparent 72%,
-      rgba(255, 255, 255, 0.4) 85%,
-      rgba(255, 255, 255, 0.85) 95%,
-      var(--paper) 100%);
+    /* 上層：下端を白フェード（body白背景に自然繋ぎ）
+       下層：上部のブランド紫overlay（head/quote 領域の読みやすさ確保） */
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        transparent 72%,
+        rgba(255, 255, 255, 0.4) 85%,
+        rgba(255, 255, 255, 0.85) 95%,
+        var(--paper) 100%),
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--purple) 78%, transparent) 0%,
+        color-mix(in srgb, var(--purple) 42%, transparent) 22%,
+        color-mix(in srgb, var(--purple) 12%, transparent) 42%,
+        transparent 60%);
   }
   .teacher-feat__hero-content {
     position: relative;
@@ -2771,7 +2777,7 @@ const faqs = [
     flex-direction: column;
     gap: 4px;
   }
-  /* 文字周辺だけ「白く滲む（多重 glow）」で写真は文字以外で見える＋文字浮き上がる */
+  /* 紫overlay の上に白文字＋強い黒多重影で立体的に浮き上がらせる */
   .teacher-feat__role {
     display: inline-block;
     width: max-content;
@@ -2780,76 +2786,76 @@ const faqs = [
     font-weight: 700;
     letter-spacing: 0.18em;
     color: var(--paper);
-    background: var(--purple);
+    background: rgba(255, 255, 255, 0.2);
     padding: 5px 12px;
     border-radius: 999px;
-    box-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
   }
   .teacher-feat__name {
     font-family: var(--font-serif);
     font-size: clamp(30px, 4.8vw, 44px);
     font-weight: 900;
-    color: var(--purple);
+    color: var(--paper);
     line-height: 1.2;
     letter-spacing: 0.04em;
     margin: 4px 0 0;
     text-shadow:
-      0 0 6px rgba(255, 255, 255, 0.95),
-      0 0 14px rgba(255, 255, 255, 0.85),
-      0 0 24px rgba(255, 255, 255, 0.55);
+      0 3px 16px rgba(0, 0, 0, 0.85),
+      0 2px 6px rgba(0, 0, 0, 0.9),
+      0 0 2px rgba(0, 0, 0, 0.7);
   }
   .teacher-feat__name-en {
     display: block;
     font-size: 12px;
-    color: var(--purple);
+    color: rgba(255, 255, 255, 0.92);
     letter-spacing: 0.22em;
     margin-top: 2px;
     text-shadow:
-      0 0 4px rgba(255, 255, 255, 0.95),
-      0 0 10px rgba(255, 255, 255, 0.75);
+      0 2px 8px rgba(0, 0, 0, 0.8),
+      0 1px 3px rgba(0, 0, 0, 0.85);
   }
   .teacher-feat__quote {
     font-family: var(--font-serif);
     font-size: clamp(19px, 2.6vw, 26px);
     font-weight: 700;
-    color: var(--purple);
+    color: var(--paper);
     line-height: 1.6;
     letter-spacing: 0.02em;
     padding-left: 16px;
     border-left: 3px solid var(--orange);
     max-width: 720px;
     text-shadow:
-      0 0 6px rgba(255, 255, 255, 0.95),
-      0 0 14px rgba(255, 255, 255, 0.8),
-      0 0 22px rgba(255, 255, 255, 0.5);
+      0 3px 14px rgba(0, 0, 0, 0.85),
+      0 2px 6px rgba(0, 0, 0, 0.9),
+      0 0 2px rgba(0, 0, 0, 0.7);
   }
   .teacher-feat__quote .num {
-    color: var(--purple);
+    color: var(--paper);
     font-size: 1.05em;
     margin: 0 0.04em;
   }
 
-  /* hero 内 bio（リード文）：charcoal文字＋白多重glowで写真の上で読める */
+  /* hero 内 bio：白文字＋強い黒多重影で確実に浮き上がらせる */
   .teacher-feat__hero-content .teacher-feat__bio p {
     font-size: 14.5px;
     line-height: 2;
-    color: var(--charcoal);
+    color: var(--paper);
     margin-bottom: 14px;
     max-width: 720px;
     text-shadow:
-      0 0 4px rgba(255, 255, 255, 0.95),
-      0 0 10px rgba(255, 255, 255, 0.85),
-      0 0 18px rgba(255, 255, 255, 0.55);
+      0 2px 10px rgba(0, 0, 0, 0.9),
+      0 1px 4px rgba(0, 0, 0, 0.95),
+      0 0 2px rgba(0, 0, 0, 0.8);
   }
   .teacher-feat__hero-content .teacher-feat__bio p:last-child { margin-bottom: 0; }
   .teacher-feat__hero-content .teacher-feat__bio .mark {
-    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.4) 60%);
-    color: var(--charcoal);
+    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.6) 60%);
+    color: var(--paper);
     font-weight: 700;
     padding: 0 2px;
   }
   .teacher-feat__hero-content .teacher-feat__bio .num {
-    color: var(--purple);
+    color: var(--paper);
     font-size: 1.25em;
   }
 
