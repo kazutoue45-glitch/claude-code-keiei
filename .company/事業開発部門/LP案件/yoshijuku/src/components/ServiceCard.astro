@@ -165,11 +165,10 @@ const {
     top: 14px;
     right: 10px;
     z-index: 3;
-    font-family: "Playfair Display", Georgia, "Noto Serif JP", serif;
-    font-style: italic;
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: 0;
+    font-family: "DM Serif Display", "Noto Serif JP", Georgia, serif;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
     line-height: 1;
     color: transparent;
     background: linear-gradient(
@@ -192,8 +191,9 @@ const {
     animation: svcNewShine 6s ease-out infinite;
     pointer-events: none;
     filter:
-      drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45))
-      drop-shadow(0 0 1px rgba(139, 105, 20, 0.6));
+      drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6))
+      drop-shadow(0 0 2px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 1px rgba(139, 105, 20, 0.8));
   }
   /* 反射光：素早く左→右に走り、長めの待機。一定速ではなくメリハリ */
   @keyframes svcNewShine {
@@ -203,7 +203,7 @@ const {
   }
   @media (max-width: 768px) {
     .svc-card__new {
-      font-size: 20px;
+      font-size: 24px;
       top: 10px;
       right: 8px;
     }

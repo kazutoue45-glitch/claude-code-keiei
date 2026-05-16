@@ -2042,11 +2042,10 @@ const faqs = [
     top: 24px;
     right: 24px;
     z-index: 2;
-    font-family: "Playfair Display", Georgia, "Noto Serif JP", serif;
-    font-style: italic;
-    font-size: 56px;
-    font-weight: 900;
-    letter-spacing: 0;
+    font-family: "DM Serif Display", "Noto Serif JP", Georgia, serif;
+    font-size: 62px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
     line-height: 1;
     color: transparent;
     background: linear-gradient(
@@ -2069,8 +2068,9 @@ const faqs = [
     animation: serviceNewShine 6s ease-out infinite;
     pointer-events: none;
     filter:
-      drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5))
-      drop-shadow(0 0 2px rgba(139, 105, 20, 0.7));
+      drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6))
+      drop-shadow(0 0 3px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 2px rgba(139, 105, 20, 0.8));
   }
   /* 反射光：素早く左→右に走り、長めの待機。一定速ではなくメリハリ */
   @keyframes serviceNewShine {
@@ -2080,7 +2080,7 @@ const faqs = [
   }
   @media (max-width: 768px) {
     .service__new-badge {
-      font-size: 34px;
+      font-size: 42px;
       top: 16px;
       right: 16px;
     }
