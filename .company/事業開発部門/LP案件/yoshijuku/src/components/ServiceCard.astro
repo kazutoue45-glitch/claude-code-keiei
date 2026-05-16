@@ -22,7 +22,7 @@ const {
     <span class="svc-card__overlay" aria-hidden="true"></span>
   </div>
 
-  {isNew && <span class="svc-card__new" aria-label="新サービス">NEW</span>}
+  {isNew && <span class="svc-card__new" aria-label="新サービス">New!</span>}
 
   <div class="svc-card__content">
     <span class="svc-card__num">{index}</span>
@@ -187,15 +187,17 @@ const {
     background-position: 200% center;
     -webkit-background-clip: text;
     background-clip: text;
-    transform: rotate(-14deg);
-    animation: svcNewShine 3s linear infinite;
+    transform: rotate(14deg);
+    animation: svcNewShine 6s ease-out infinite;
     pointer-events: none;
     filter:
       drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45))
       drop-shadow(0 0 1px rgba(139, 105, 20, 0.6));
   }
+  /* 反射光：素早く左→右に走り、長めの待機。一定速ではなくメリハリ */
   @keyframes svcNewShine {
     0%   { background-position: 200% center; }
+    20%  { background-position: -100% center; }
     100% { background-position: -100% center; }
   }
   @media (max-width: 768px) {
