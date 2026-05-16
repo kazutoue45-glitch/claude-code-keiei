@@ -151,22 +151,12 @@ const reasons = [
   },
 ];
 
-// §6 保護者の声（仮値・要差し替え／avatarSrc は claude-design Anti-slop "no fake faces" のため null）
+// §6 保護者の声（Notion §4.2 から取得・実データ／avatarSrc は claude-design Anti-slop "no fake faces" のため null）
 const parentVoices = [
   {
-    name: "Aさんのお母様",
-    role: "中3／高校受験",
-    quote: "数学が苦手で、夏休み前まで本当に間に合うのか不安でした。塾長が公式LINEで何度も状況を共有してくださり、家でどう声をかければいいかまで一緒に考えてくれて。本人も「先生が見てくれてる」と安心して机に向かえるようになりました。",
-  },
-  {
-    name: "Bさんのお父様",
-    role: "高2／大学受験",
-    quote: "部活との両立が心配でしたが、時間割を柔軟に組んでもらえたので最後まで続けられました。先生方それぞれの得意分野で見てくださるので、苦手科目も逃げずに向き合えたと思います。",
-  },
-  {
-    name: "Cさんのお母様",
-    role: "小6／中学受験",
-    quote: "大手塾も体験しましたが、最終的に義塾を選びました。一人ひとりの様子を見て指導の進め方を変えてくれる柔軟さが決め手です。志望校に合格できて、親子で本当に感謝しています。",
+    name: "中高生の姉妹のお母様",
+    role: "中高生姉妹／受験対応",
+    quote: "中高生の姉妹でお世話になっております。先生方は皆様優しく、アットホームな雰囲気の中で楽しく学べているようです。自習室も積極的に利用させていただいており、誘惑の多い自宅よりも集中して取り組める環境に感謝しています。受験期には的確なデータ分析で娘を合格へと導いてくださり、勉強からメンタルまで幅広く支えていただきました。非常に信頼できる塾として、これからも通い続けたいと思います。",
   },
 ];
 
@@ -808,7 +798,7 @@ const faqs = [
 
       <h3 class="voices__subtitle">保護者の声</h3>
       <!-- 要確認: 実際の保護者インタビュー・アンケートから取得して差し替え -->
-      <div class="voices__grid">
+      <div class="voices__grid voices__grid--single">
         {parentVoices.map((v) => <VoiceCard {...v} />)}
       </div>
 
@@ -2586,6 +2576,13 @@ const faqs = [
   .voices__grid--two {
     grid-template-columns: repeat(2, 1fr);
     max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* 1件のみの場合（保護者の声 1件・実データ）：中央寄せで広めに */
+  .voices__grid--single {
+    grid-template-columns: 1fr;
+    max-width: 720px;
     margin: 0 auto;
   }
 
