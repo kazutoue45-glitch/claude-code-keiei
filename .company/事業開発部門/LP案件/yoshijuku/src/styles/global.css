@@ -76,24 +76,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ふりがな ruby の上下隙間調整：スマホで詰める */
-ruby {
-  ruby-position: over;
-  ruby-align: center;
-}
-ruby rt {
-  font-size: 0.45em;
-  line-height: 1;
-  letter-spacing: 0.05em;
-}
-@media (max-width: 768px) {
-  ruby rt {
-    font-size: 0.42em;
-    line-height: 0.9;
-    transform: translateY(2px);
-    display: inline-block;
-  }
-}
 
 img {
   max-width: 100%;
