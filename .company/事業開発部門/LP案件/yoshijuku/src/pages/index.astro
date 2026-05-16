@@ -2730,18 +2730,11 @@ const faqs = [
     padding: 36px 0 48px;
   }
   .teacher-feat__hero-content > .container {
-    max-width: 640px;
+    max-width: var(--container);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    /* 案A：テキスト群だけ半透明白パネル＋backdrop-blur。写真は周辺で見える */
-    background: rgba(255, 255, 255, 0.86);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: var(--radius-md);
-    padding: 28px 26px;
-    box-shadow: 0 8px 24px rgba(76, 29, 149, 0.12);
+    gap: 22px;
   }
 
   .teacher-feat__head {
@@ -2778,7 +2771,7 @@ const faqs = [
     flex-direction: column;
     gap: 4px;
   }
-  /* 案A：白パネル上に置く文字は紫/charcoal で text-shadow なし */
+  /* 文字周辺だけ「白く滲む（多重 glow）」で写真は文字以外で見える＋文字浮き上がる */
   .teacher-feat__role {
     display: inline-block;
     width: max-content;
@@ -2790,6 +2783,7 @@ const faqs = [
     background: var(--purple);
     padding: 5px 12px;
     border-radius: 999px;
+    box-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
   }
   .teacher-feat__name {
     font-family: var(--font-serif);
@@ -2799,13 +2793,20 @@ const faqs = [
     line-height: 1.2;
     letter-spacing: 0.04em;
     margin: 4px 0 0;
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.95),
+      0 0 14px rgba(255, 255, 255, 0.85),
+      0 0 24px rgba(255, 255, 255, 0.55);
   }
   .teacher-feat__name-en {
     display: block;
     font-size: 12px;
-    color: var(--muted);
+    color: var(--purple);
     letter-spacing: 0.22em;
     margin-top: 2px;
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.95),
+      0 0 10px rgba(255, 255, 255, 0.75);
   }
   .teacher-feat__quote {
     font-family: var(--font-serif);
@@ -2817,6 +2818,10 @@ const faqs = [
     padding-left: 16px;
     border-left: 3px solid var(--orange);
     max-width: 720px;
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.95),
+      0 0 14px rgba(255, 255, 255, 0.8),
+      0 0 22px rgba(255, 255, 255, 0.5);
   }
   .teacher-feat__quote .num {
     color: var(--purple);
@@ -2824,17 +2829,21 @@ const faqs = [
     margin: 0 0.04em;
   }
 
-  /* hero 内 bio（リード文）：白パネル上に charcoal 文字で確実に読める */
+  /* hero 内 bio（リード文）：charcoal文字＋白多重glowで写真の上で読める */
   .teacher-feat__hero-content .teacher-feat__bio p {
     font-size: 14.5px;
     line-height: 2;
     color: var(--charcoal);
     margin-bottom: 14px;
     max-width: 720px;
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.95),
+      0 0 10px rgba(255, 255, 255, 0.85),
+      0 0 18px rgba(255, 255, 255, 0.55);
   }
   .teacher-feat__hero-content .teacher-feat__bio p:last-child { margin-bottom: 0; }
   .teacher-feat__hero-content .teacher-feat__bio .mark {
-    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.35) 60%);
+    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.4) 60%);
     color: var(--charcoal);
     font-weight: 700;
     padding: 0 2px;
@@ -2920,8 +2929,7 @@ const faqs = [
     .teacher-feat__icon { width: 84px; height: 84px; }
     .teacher-feat__icon--placeholder span { font-size: 38px; }
     .teacher-feat__name { font-size: clamp(26px, 6.6vw, 34px); }
-    /* 案A：白パネル背景になったので text-shadow 不要 */
-    .teacher-feat__hero-content > .container { padding: 22px 20px; gap: 16px; }
+    .teacher-feat__hero-content > .container { gap: 18px; }
     .teacher-feat__quote { font-size: 17px; padding-left: 12px; line-height: 1.65; }
     .teacher-feat__hero-content .teacher-feat__bio p {
       font-size: 13.5px; line-height: 1.95; margin-bottom: 12px;
