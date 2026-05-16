@@ -2036,46 +2036,50 @@ const faqs = [
     aspect-ratio: 16 / 8;
     overflow: hidden;
   }
-  /* §3 家庭教師 hero 用 NEW バッジ（quicknav svc-card__new と同じプレミアムゴールド世界観） */
+  /* §3 家庭教師 hero NEW バッジ：quicknav と同じ斜め金色シャインテキスト */
   .service__new-badge {
     position: absolute;
-    top: 18px;
-    right: 18px;
+    top: 24px;
+    right: 24px;
     z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 76px;
-    height: 76px;
-    padding: 0;
-    background:
-      radial-gradient(ellipse at 50% 28%, rgba(255, 255, 255, 0.45) 0%, transparent 50%),
-      linear-gradient(180deg, var(--gold-light) 0%, var(--gold-classic) 55%, var(--gold-shadow) 100%);
-    color: var(--burgundy);
-    font-family: var(--font-serif);
-    font-size: 24px;
+    font-family: var(--font-sans);
+    font-size: 48px;
     font-weight: 900;
-    letter-spacing: 0.02em;
-    border-radius: 50%;
-    border: 2px double var(--gold-dark);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
-    box-shadow:
-      0 8px 18px rgba(139, 105, 20, 0.5),
-      0 0 0 4px rgba(255, 255, 255, 0.85),
-      inset 0 1px 2px rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: transparent;
+    background: linear-gradient(
+      100deg,
+      #8B6914 0%,
+      #B8860B 18%,
+      #D4AF37 32%,
+      #FFE7A0 46%,
+      #FFFFFF 50%,
+      #FFE7A0 54%,
+      #D4AF37 68%,
+      #B8860B 82%,
+      #8B6914 100%
+    );
+    background-size: 250% 100%;
+    background-position: 200% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform: rotate(-14deg);
+    animation: serviceNewShine 3s linear infinite;
     pointer-events: none;
+    filter:
+      drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 2px rgba(139, 105, 20, 0.7));
+  }
+  @keyframes serviceNewShine {
+    0%   { background-position: 200% center; }
+    100% { background-position: -100% center; }
   }
   @media (max-width: 768px) {
     .service__new-badge {
-      width: 56px;
-      height: 56px;
-      font-size: 18px;
-      top: 14px;
-      right: 14px;
-      box-shadow:
-        0 6px 14px rgba(139, 105, 20, 0.5),
-        0 0 0 3px rgba(255, 255, 255, 0.85),
-        inset 0 1px 2px rgba(255, 255, 255, 0.55);
+      font-size: 34px;
+      top: 16px;
+      right: 16px;
     }
   }
   .service__hero-photo {

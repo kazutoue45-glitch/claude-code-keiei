@@ -157,48 +157,52 @@ const {
     .svc-card__num { font-size: 22px; }
   }
 
-  /* NEW バッジ：badge-medal（初月授業料1ヶ月無料）と同じプレミアムゴールドの世界観で統一。
-     img-placeholder--gold パターン（gold-light→classic→shadow グラデ、2px double dark border、
-     burgundy 文字、白text-shadow）と整合 */
+  /* NEW バッジ：斜め金色シャインテキスト（円形廃止）
+     background-clip: text + linear-gradient のメタリックグラデを
+     左→右にアニメーションで反射光を走らせる */
   .svc-card__new {
     position: absolute;
-    top: 10px;
+    top: 14px;
     right: 10px;
     z-index: 3;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    padding: 0;
-    background:
-      radial-gradient(ellipse at 50% 28%, rgba(255, 255, 255, 0.45) 0%, transparent 50%),
-      linear-gradient(180deg, var(--gold-light) 0%, var(--gold-classic) 55%, var(--gold-shadow) 100%);
-    color: var(--burgundy);
-    font-family: var(--font-serif);
-    font-size: 17px;
+    font-family: var(--font-sans);
+    font-size: 26px;
     font-weight: 900;
-    letter-spacing: 0.02em;
-    border-radius: 50%;
-    border: 2px double var(--gold-dark);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
-    box-shadow:
-      0 6px 14px rgba(139, 105, 20, 0.5),
-      0 0 0 3px rgba(255, 255, 255, 0.85),
-      inset 0 1px 2px rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: transparent;
+    background: linear-gradient(
+      100deg,
+      #8B6914 0%,
+      #B8860B 18%,
+      #D4AF37 32%,
+      #FFE7A0 46%,
+      #FFFFFF 50%,
+      #FFE7A0 54%,
+      #D4AF37 68%,
+      #B8860B 82%,
+      #8B6914 100%
+    );
+    background-size: 250% 100%;
+    background-position: 200% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform: rotate(-14deg);
+    animation: svcNewShine 3s linear infinite;
     pointer-events: none;
+    filter:
+      drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45))
+      drop-shadow(0 0 1px rgba(139, 105, 20, 0.6));
+  }
+  @keyframes svcNewShine {
+    0%   { background-position: 200% center; }
+    100% { background-position: -100% center; }
   }
   @media (max-width: 768px) {
     .svc-card__new {
-      width: 40px;
-      height: 40px;
-      font-size: 13px;
-      top: 8px;
+      font-size: 20px;
+      top: 10px;
       right: 8px;
-      box-shadow:
-        0 4px 10px rgba(139, 105, 20, 0.5),
-        0 0 0 2px rgba(255, 255, 255, 0.85),
-        inset 0 1px 2px rgba(255, 255, 255, 0.55);
     }
   }
 </style>
