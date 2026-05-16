@@ -9,7 +9,7 @@ const {
 
 <article class="voice">
   <span class="voice__quote-mark" aria-hidden="true">&ldquo;</span>
-  <blockquote class="voice__quote">{quote}</blockquote>
+  <blockquote class="voice__quote" set:html={quote}></blockquote>
   <footer class="voice__author">
     <div class="voice__avatar">
       {avatarSrc ? (
