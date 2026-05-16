@@ -720,7 +720,7 @@ const faqs = [
               <div class="teacher-feat__title-block">
                 <span class="teacher-feat__role">塾長／義塾代表</span>
                 <h3 class="teacher-feat__name">小川 大輔</h3>
-                <span class="teacher-feat__name-en">OGAWA Daisuke</span>
+                <span class="teacher-feat__name-en">Ogawa Daisuke</span>
               </div>
             </header>
             <blockquote class="teacher-feat__quote">教育とエンタメを融合し、みんながワクワクするイベントを企画運営します。</blockquote>
@@ -771,7 +771,7 @@ const faqs = [
               <div class="teacher-feat__title-block">
                 <span class="teacher-feat__role">義塾オンライン／英検・TOEIC対策講座 主任講師</span>
                 <h3 class="teacher-feat__name">國府 泰</h3>
-                <span class="teacher-feat__name-en">KOKUFU Hiroshi</span>
+                <span class="teacher-feat__name-en">Kokufu Hiroshi</span>
               </div>
             </header>
             <blockquote class="teacher-feat__quote">TOEIC<span class="num">23</span>回連続満点。英語の壁を、論理で確実に超えさせます。</blockquote>
@@ -2715,20 +2715,14 @@ const faqs = [
   .teacher-feat__tint {
     position: absolute;
     inset: 0;
-    /* 上層：下端を白フェード（body白背景に自然繋ぎ・§3サービスhero同パターン）
-       下層：上部のみブランド紫overlay（head/quote読みやすく、bio〜中央は写真そのまま） */
-    background:
-      linear-gradient(180deg,
-        transparent 0%,
-        transparent 72%,
-        rgba(255, 255, 255, 0.4) 85%,
-        rgba(255, 255, 255, 0.85) 95%,
-        var(--paper) 100%),
-      linear-gradient(180deg,
-        color-mix(in srgb, var(--purple) 78%, transparent) 0%,
-        color-mix(in srgb, var(--purple) 42%, transparent) 22%,
-        color-mix(in srgb, var(--purple) 12%, transparent) 42%,
-        transparent 60%);
+    /* 紫overlay を撤去し、下端の白フェードのみ（body白背景に自然繋ぎ）。
+       読みやすさは hero-content の半透明白パネルで担保（案A） */
+    background: linear-gradient(180deg,
+      transparent 0%,
+      transparent 72%,
+      rgba(255, 255, 255, 0.4) 85%,
+      rgba(255, 255, 255, 0.85) 95%,
+      var(--paper) 100%);
   }
   .teacher-feat__hero-content {
     position: relative;
@@ -2736,11 +2730,18 @@ const faqs = [
     padding: 36px 0 48px;
   }
   .teacher-feat__hero-content > .container {
-    max-width: var(--container);
+    max-width: 640px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 18px;
+    /* 案A：テキスト群だけ半透明白パネル＋backdrop-blur。写真は周辺で見える */
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: var(--radius-md);
+    padding: 28px 26px;
+    box-shadow: 0 8px 24px rgba(76, 29, 149, 0.12);
   }
 
   .teacher-feat__head {
@@ -2777,6 +2778,7 @@ const faqs = [
     flex-direction: column;
     gap: 4px;
   }
+  /* 案A：白パネル上に置く文字は紫/charcoal で text-shadow なし */
   .teacher-feat__role {
     display: inline-block;
     width: max-content;
@@ -2785,25 +2787,23 @@ const faqs = [
     font-weight: 700;
     letter-spacing: 0.18em;
     color: var(--paper);
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--purple);
     padding: 5px 12px;
     border-radius: 999px;
-    backdrop-filter: blur(6px);
   }
   .teacher-feat__name {
     font-family: var(--font-serif);
     font-size: clamp(30px, 4.8vw, 44px);
     font-weight: 900;
-    color: var(--paper);
+    color: var(--purple);
     line-height: 1.2;
     letter-spacing: 0.04em;
     margin: 4px 0 0;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
   }
   .teacher-feat__name-en {
     display: block;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--muted);
     letter-spacing: 0.22em;
     margin-top: 2px;
   }
@@ -2811,46 +2811,36 @@ const faqs = [
     font-family: var(--font-serif);
     font-size: clamp(19px, 2.6vw, 26px);
     font-weight: 700;
-    color: var(--paper);
+    color: var(--purple);
     line-height: 1.6;
     letter-spacing: 0.02em;
     padding-left: 16px;
     border-left: 3px solid var(--orange);
-    /* 写真質感の上で確実に浮かび上がるよう多重 text-shadow */
-    text-shadow:
-      0 2px 14px rgba(0, 0, 0, 0.75),
-      0 1px 4px rgba(0, 0, 0, 0.65),
-      0 0 2px rgba(0, 0, 0, 0.45);
     max-width: 720px;
   }
   .teacher-feat__quote .num {
-    color: var(--paper);
+    color: var(--purple);
     font-size: 1.05em;
     margin: 0 0.04em;
   }
 
-  /* hero 内 bio（リード文）：overlay なしの位置に配置されるため、
-     強めの text-shadow（多重）で写真の上で確実に読めるようにする */
+  /* hero 内 bio（リード文）：白パネル上に charcoal 文字で確実に読める */
   .teacher-feat__hero-content .teacher-feat__bio p {
     font-size: 14.5px;
     line-height: 2;
-    color: var(--paper);
+    color: var(--charcoal);
     margin-bottom: 14px;
-    text-shadow:
-      0 2px 12px rgba(0, 0, 0, 0.85),
-      0 1px 4px rgba(0, 0, 0, 0.75),
-      0 0 2px rgba(0, 0, 0, 0.6);
     max-width: 720px;
   }
   .teacher-feat__hero-content .teacher-feat__bio p:last-child { margin-bottom: 0; }
   .teacher-feat__hero-content .teacher-feat__bio .mark {
-    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.55) 60%);
-    color: var(--paper);
+    background: linear-gradient(transparent 60%, rgba(232, 122, 46, 0.35) 60%);
+    color: var(--charcoal);
     font-weight: 700;
     padding: 0 2px;
   }
   .teacher-feat__hero-content .teacher-feat__bio .num {
-    color: var(--paper);
+    color: var(--purple);
     font-size: 1.25em;
   }
 
@@ -2930,19 +2920,11 @@ const faqs = [
     .teacher-feat__icon { width: 84px; height: 84px; }
     .teacher-feat__icon--placeholder span { font-size: 38px; }
     .teacher-feat__name { font-size: clamp(26px, 6.6vw, 34px); }
-    /* スマホはシャドーを薄く・距離を詰める（こくふFB：PCはOKだがスマホで邪魔） */
-    .teacher-feat__name { text-shadow: 0 1px 6px rgba(0, 0, 0, 0.22); }
-    .teacher-feat__quote {
-      font-size: 17px; padding-left: 12px; line-height: 1.65;
-      text-shadow:
-        0 1px 4px rgba(0, 0, 0, 0.25),
-        0 1px 2px rgba(0, 0, 0, 0.18);
-    }
+    /* 案A：白パネル背景になったので text-shadow 不要 */
+    .teacher-feat__hero-content > .container { padding: 22px 20px; gap: 16px; }
+    .teacher-feat__quote { font-size: 17px; padding-left: 12px; line-height: 1.65; }
     .teacher-feat__hero-content .teacher-feat__bio p {
       font-size: 13.5px; line-height: 1.95; margin-bottom: 12px;
-      text-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.28),
-        0 1px 2px rgba(0, 0, 0, 0.2);
     }
     .teacher-feat__body { padding: 36px 0 48px; }
     .teacher-feat__section { margin-top: 28px; }
