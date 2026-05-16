@@ -313,22 +313,42 @@ const faqs = [
       </p>
     </div>
 
-    {/* ⑤ 合格実績カード（証拠） */}
+    {/* ⑤ 合格実績カード（証拠）：中学受験・高校受験を2行に分けて表示（こくふFB対応） */}
     <div class="trust__rail trust__rail--inempathy">
-      <ul class="trust__cards" aria-label="合格校一覧">
-        {passSchools.map((s) => (
-          <li
-            class={`trust__card ${s.img ? "" : "trust__card--placeholder"}`}
-            style={s.img ? `background-image: url(${base}images/schools/${s.img});` : ""}
-          >
-            <span class="trust__card-overlay" aria-hidden="true"></span>
-            <div class="trust__card-content">
-              <span class="trust__card-group">{s.group}</span>
-              <span class="trust__card-name">{s.name}</span>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div class="trust__row">
+        <p class="trust__row-label">中学受験 合格校</p>
+        <ul class="trust__cards" aria-label="中学受験 合格校一覧">
+          {passSchools.filter((s) => s.group === "中学受験").map((s) => (
+            <li
+              class={`trust__card ${s.img ? "" : "trust__card--placeholder"}`}
+              style={s.img ? `background-image: url(${base}images/schools/${s.img});` : ""}
+            >
+              <span class="trust__card-overlay" aria-hidden="true"></span>
+              <div class="trust__card-content">
+                <span class="trust__card-group">{s.group}</span>
+                <span class="trust__card-name">{s.name}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="trust__row">
+        <p class="trust__row-label">高校受験 合格校</p>
+        <ul class="trust__cards" aria-label="高校受験 合格校一覧">
+          {passSchools.filter((s) => s.group === "高校受験").map((s) => (
+            <li
+              class={`trust__card ${s.img ? "" : "trust__card--placeholder"}`}
+              style={s.img ? `background-image: url(${base}images/schools/${s.img});` : ""}
+            >
+              <span class="trust__card-overlay" aria-hidden="true"></span>
+              <div class="trust__card-content">
+                <span class="trust__card-group">{s.group}</span>
+                <span class="trust__card-name">{s.name}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -340,7 +360,7 @@ const faqs = [
     <div class="container">
       <SectionHeader
         title="義塾3つの学び方"
-        lead="成績が伸びないのは、お子様の能力ではなく、<span class='mark'>学び方が合っていないだけ</span>かもしれません。義塾は、リアル校舎・オンライン・家庭教師の<span class='num'>3</span>サービスを併走しています。"
+        lead="義塾は、リアル校舎・オンライン・家庭教師の<span class='num'>3</span>サービスを併走しています。<span class='mark'>お子様一人ひとりの状況に合わせて、最適な学び方をご提案できる</span>。それが義塾の強みです。"
       />
 
     </div>
@@ -751,7 +771,7 @@ const faqs = [
               <div class="teacher-feat__title-block">
                 <span class="teacher-feat__role">義塾オンライン／英検・TOEIC対策講座 主任講師</span>
                 <h3 class="teacher-feat__name">國府 泰</h3>
-                <span class="teacher-feat__name-en">KOKUFU Yasushi</span>
+                <span class="teacher-feat__name-en">KOKUFU Hiroshi</span>
               </div>
             </header>
             <blockquote class="teacher-feat__quote">TOEIC<span class="num">23</span>回連続満点。英語の壁を、論理で確実に超えさせます。</blockquote>
@@ -1281,6 +1301,28 @@ const faqs = [
   .trust__rail {
     margin: 0 calc(50% - 50vw);
     padding: 0 max(24px, calc((100vw - var(--container)) / 2));
+  }
+
+  /* 中受/高受 を2行に分けて表示（こくふFB対応：スマホで両方見える） */
+  .trust__row + .trust__row {
+    margin-top: 18px;
+  }
+  .trust__row-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--purple);
+    margin-bottom: 10px;
+    padding-left: 2px;
+  }
+  @media (max-width: 768px) {
+    .trust__row + .trust__row {
+      margin-top: 14px;
+    }
+    .trust__row-label {
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
   }
 
   .trust__cards {
