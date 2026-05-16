@@ -77,15 +77,17 @@ const {
     height: 52px;
     border-radius: 50%;
     overflow: hidden;
-    background: var(--pale-gray);
+    background: var(--paper);
     border: 2px solid var(--paper);
     box-shadow: 0 0 0 1px var(--purple-line);
   }
 
+  /* 線画イラストアバターは contain で全体表示 */
   .voice__avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
   }
 
   .voice__meta {
